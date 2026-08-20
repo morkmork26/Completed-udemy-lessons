@@ -8,24 +8,18 @@
 :root{--bg:#0a0a1a;--surface:#12122a;--surface2:#1a1a3e;--border:#2a2a4e;--text:#e2e8f0;--text-dim:#94a3b8;--accent:#3b82f6;--accent2:#22c55e;--accent3:#f97316;--accent4:#a855f7;--gold:#fbbf24}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,sans-serif;line-height:1.7;min-height:100vh}
-
 .hero{text-align:center;padding:80px 20px 60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(59,130,246,0.12) 0%,transparent 60%);pointer-events:none}
 .hero h1{font-size:2.8em;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;position:relative}
 .hero .subtitle{color:var(--text-dim);font-size:1.1em;position:relative}
 .hero .author{color:var(--accent);font-size:0.9em;margin-top:12px;position:relative}
-
 .stats-bar{display:flex;justify-content:center;gap:30px;padding:20px;flex-wrap:wrap}
 .stat-pill{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:8px 24px;display:flex;align-items:center;gap:8px}
 .stat-pill .num{font-weight:bold;font-size:1.2em;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-pill .label{color:var(--text-dim);font-size:0.85em}
-
 .container{max-width:1100px;margin:0 auto;padding:20px}
-
 .section-title{color:var(--text-dim);font-size:0.85em;text-transform:uppercase;letter-spacing:2px;margin:40px 0 20px;padding-left:4px}
-
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
-
 .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s ease;cursor:pointer;text-decoration:none;color:inherit;display:block;position:relative}
 .card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 40px rgba(59,130,246,0.15)}
 .card-banner{height:8px;width:100%}
@@ -44,72 +38,33 @@ body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-ap
 .card-footer{border-top:1px solid var(--border);padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
 .card-footer .status{font-size:0.8em;font-weight:600}
 .status-complete{color:var(--accent2)}
-.status-progress{color:var(--gold)}
-.status-planned{color:var(--text-dim)}
 .card-footer .arrow{color:var(--accent);font-size:1.2em;transition:transform 0.3s}
 .card:hover .arrow{transform:translateX(4px)}
-
 .badge-complete{position:absolute;top:16px;right:16px;background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3);padding:2px 10px;border-radius:8px;font-size:0.7em;font-weight:bold}
-.badge-progress{position:absolute;top:16px;right:16px;background:rgba(251,191,36,0.15);color:#fbbf24;border:1px solid rgba(251,191,36,0.3);padding:2px 10px;border-radius:8px;font-size:0.7em;font-weight:bold}
-
 footer{text-align:center;padding:40px 20px;color:var(--text-dim);font-size:0.8em;border-top:1px solid var(--border);margin-top:60px}
 footer a{color:var(--accent);text-decoration:none}
-
-@media (max-width:768px){
-    .hero{padding:50px 16px 40px}
-    .hero h1{font-size:1.8em}
-    .grid{grid-template-columns:1fr}
-    .stats-bar{gap:12px}
-    .stat-pill{padding:6px 16px}
-}
-@media (max-width:480px){
-    .hero h1{font-size:1.4em}
-    .stats-bar{flex-direction:column;align-items:center}
-}
+@media (max-width:768px){.hero{padding:50px 16px 40px}.hero h1{font-size:1.8em}.grid{grid-template-columns:1fr}.stats-bar{gap:12px}.stat-pill{padding:6px 16px}}
+@media (max-width:480px){.hero h1{font-size:1.4em}.stats-bar{flex-direction:column;align-items:center}}
 </style>
 </head>
 <body>
 
 <div class="hero">
     <h1>Completed Udemy Lessons</h1>
-    <div class="subtitle">Comprehensive notes, transcripts, and interactive exercises from Udemy Business courses</div>
+    <div class="subtitle">Interactive enhanced notes with visual learning elements, code labs, and tool replicas</div>
     <div class="author">M. Burgos | Analog Devices</div>
 </div>
 
 <div class="stats-bar">
-    <div class="stat-pill"><span class="num">12</span><span class="label">Enrolled Courses</span></div>
-    <div class="stat-pill"><span class="num">4</span><span class="label">Notes Completed</span></div>
-    <div class="stat-pill"><span class="num">2,029</span><span class="label">Total Lectures</span></div>
+    <div class="stat-pill"><span class="num">3</span><span class="label">Completed Courses</span></div>
+    <div class="stat-pill"><span class="num">386</span><span class="label">Lectures</span></div>
+    <div class="stat-pill"><span class="num">65</span><span class="label">Code Labs</span></div>
+    <div class="stat-pill"><span class="num">3</span><span class="label">Tool Replicas</span></div>
 </div>
 
 <div class="container">
-
     <div class="section-title">Completed Notes</div>
     <div class="grid">
-        <a class="card" href="courses/agentic-ai-intro.html">
-            <div class="card-banner" style="background:linear-gradient(90deg,#3b82f6,#a855f7)"></div>
-            <span class="badge-complete">COMPLETE</span>
-            <div class="card-body">
-                <h3>Intro to AI Agents and Agentic AI</h3>
-                <div class="course-source">Udemy Business | 53 Lectures | ~2h 11m</div>
-                <div class="card-tags">
-                    <span class="tag tag-blue">AI Agents</span>
-                    <span class="tag tag-purple">Architecture</span>
-                    <span class="tag tag-green">n8n</span>
-                    <span class="tag tag-orange">Prompt Engineering</span>
-                </div>
-                <div class="card-stats">
-                    <span>9 Sections</span>
-                    <span>52 Transcripts</span>
-                    <span>4 Code Exercises</span>
-                    <span>80/20 Summaries</span>
-                </div>
-            </div>
-            <div class="card-footer">
-                <span class="status status-complete">Notes Complete</span>
-                <span class="arrow">&rarr;</span>
-            </div>
-        </a>
 
         <a class="card" href="courses/ai-agent-bootcamp-2026.html">
             <div class="card-banner" style="background:linear-gradient(90deg,#22c55e,#3b82f6)"></div>
@@ -117,25 +72,26 @@ footer a{color:var(--accent);text-decoration:none}
             <div class="card-body">
                 <h3>The AI Agent Bootcamp 2026</h3>
                 <div class="course-source">Udemy Business | 217 Lectures | ~11h 46m</div>
-                <div class="card-tags"><span class="tag tag-green">AI Bootcamp</span><span class="tag tag-purple">Complete Course</span></div>
-                <div class="card-stats"><span>40 Sections</span><span>216 Lectures</span><span>65 Code Walkthroughs</span><span>80/20 Summaries</span></div>
+                <div class="card-tags"><span class="tag tag-green">AI Bootcamp</span><span class="tag tag-blue">Complete Course</span></div>
+                <div class="card-stats"><span>40 Sections</span><span>216 Lectures</span><span>65 Code Labs</span><span>3 Tool Replicas</span></div>
             </div>
-            <div class="card-footer"><span class="status status-complete">Notes Complete</span><span class="arrow">&rarr;</span></div>
+            <div class="card-footer"><span class="status status-complete">Enhanced Edition</span><span class="arrow">&rarr;</span></div>
         </a>
+
         <a class="card" href="courses/mcp-developer-guide.html">
-            <div class="card-banner" style="background:linear-gradient(90deg,#059669,#0077b6)"></div>
+            <div class="card-banner" style="background:linear-gradient(90deg,#a855f7,#3b82f6)"></div>
             <span class="badge-complete">COMPLETE</span>
             <div class="card-body">
                 <h3>Complete MCP Developer Guide</h3>
                 <div class="course-source">Udemy Business | 96 Lectures | ~7h</div>
-                <div class="card-tags"><span class="tag tag-green">MCP</span><span class="tag tag-blue">AI Agents</span><span class="tag tag-purple">RAG</span></div>
+                <div class="card-tags"><span class="tag tag-purple">MCP</span><span class="tag tag-blue">AI Agents</span><span class="tag tag-green">RAG</span></div>
                 <div class="card-stats"><span>12 Sections</span><span>96 Lectures</span><span>79 Visual Elements</span><span>80/20 Summaries</span></div>
             </div>
             <div class="card-footer"><span class="status status-complete">Notes Complete</span><span class="arrow">&rarr;</span></div>
         </a>
 
         <a class="card" href="courses/rest-api-design.html">
-            <div class="card-banner" style="background:linear-gradient(90deg,#e76f51,#f4a261)"></div>
+            <div class="card-banner" style="background:linear-gradient(90deg,#f97316,#ef4444)"></div>
             <span class="badge-complete">COMPLETE</span>
             <div class="card-body">
                 <h3>REST API Design - The Complete Guide</h3>
@@ -145,131 +101,8 @@ footer a{color:var(--accent);text-decoration:none}
             </div>
             <div class="card-footer"><span class="status status-complete">Notes Complete</span><span class="arrow">&rarr;</span></div>
         </a>
+
     </div>
-
-    <div class="section-title">Enrolled (Notes Pending)</div>
-    <div class="grid">
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#f97316,#fbbf24)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>AI Agents &amp; Workflows - The Practical Guide</h3>
-                <div class="course-source">Udemy Business | 114 Lectures | ~6h 41m</div>
-                <div class="card-tags"><span class="tag tag-orange">AI Workflows</span><span class="tag tag-blue">Practical</span></div>
-                <div class="card-stats"><span>114 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#a855f7,#ec4899)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>Verilog HDL Fundamentals</h3>
-                <div class="course-source">Udemy Business | 189 Lectures | ~5h 23m</div>
-                <div class="card-tags"><span class="tag tag-purple">Verilog</span><span class="tag tag-blue">HDL</span></div>
-                <div class="card-stats"><span>189 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#ef4444,#f97316)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>Crash Course Digital Electronics</h3>
-                <div class="course-source">Udemy Business | 97 Lectures | ~8h 38m</div>
-                <div class="card-tags"><span class="tag tag-orange">Digital Electronics</span></div>
-                <div class="card-stats"><span>97 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#3b82f6,#22c55e)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>The Complete LabVIEW Essentials</h3>
-                <div class="course-source">Udemy Business | 142 Lectures | ~10h 21m</div>
-                <div class="card-tags"><span class="tag tag-blue">LabVIEW</span><span class="tag tag-green">Data Acquisition</span></div>
-                <div class="card-stats"><span>142 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#fbbf24,#f97316)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>The Complete SQL Bootcamp</h3>
-                <div class="course-source">Udemy Business | 83 Lectures | ~8h 52m</div>
-                <div class="card-tags"><span class="tag tag-gold">SQL</span><span class="tag tag-blue">Database</span></div>
-                <div class="card-stats"><span>83 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#22c55e,#fbbf24)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>Statistics for Data Science and Business Analysis</h3>
-                <div class="course-source">Udemy Business | 92 Lectures | ~4h 52m</div>
-                <div class="card-tags"><span class="tag tag-green">Statistics</span><span class="tag tag-blue">Data Science</span></div>
-                <div class="card-stats"><span>92 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#3b82f6,#a855f7)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>Data Analyst: Professional Certificate</h3>
-                <div class="course-source">Udemy Business | 353 Lectures | ~38h 17m</div>
-                <div class="card-tags"><span class="tag tag-blue">Data Analysis</span><span class="tag tag-purple">Certificate</span></div>
-                <div class="card-stats"><span>353 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#f97316,#3b82f6)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>The Data Analyst Course: Complete Bootcamp</h3>
-                <div class="course-source">Udemy Business | 286 Lectures | ~21h 33m</div>
-                <div class="card-tags"><span class="tag tag-orange">Data Analyst</span><span class="tag tag-blue">Bootcamp</span></div>
-                <div class="card-stats"><span>286 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#fbbf24,#ef4444)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>Cryptocurrency Investment Course</h3>
-                <div class="course-source">Udemy Business | 201 Lectures | ~19h 47m</div>
-                <div class="card-tags"><span class="tag tag-gold">Crypto</span><span class="tag tag-orange">Investment</span></div>
-                <div class="card-stats"><span>201 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-
-        <div class="card" style="cursor:default;opacity:0.7">
-            <div class="card-banner" style="background:linear-gradient(90deg,#ef4444,#fbbf24)"></div>
-            <span class="badge-progress">ENROLLED</span>
-            <div class="card-body">
-                <h3>Cryptocurrency &amp; Bitcoin: Trading with TA</h3>
-                <div class="course-source">Udemy Business | 129 Lectures | ~12h 19m</div>
-                <div class="card-tags"><span class="tag tag-orange">Crypto</span><span class="tag tag-gold">Trading</span></div>
-                <div class="card-stats"><span>129 lectures available</span></div>
-            </div>
-            <div class="card-footer"><span class="status status-progress">Pending</span><span class="arrow" style="opacity:0.3">&rarr;</span></div>
-        </div>
-    </div>
-
 </div>
 
 <footer>
