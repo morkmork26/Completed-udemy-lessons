@@ -188,9 +188,270 @@ details[open] > .code-lab-summary::before { transform: rotate(90deg); }
   .n8n-workspace { left: 120px; }
   .n8n-toolbar { left: 120px; }
 }
+
+/* Sidebar Navigation */
+.sidebar-toggle{position:fixed;top:1rem;left:1rem;z-index:1001;width:40px;height:40px;border-radius:10px;background:var(--card-bg, rgba(26,41,66,0.6));border:1px solid var(--border, rgba(255,255,255,0.1));backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;color:var(--text, #e6edf3);font-size:1.2rem}
+.sidebar-toggle:hover{transform:scale(1.05);border-color:var(--teal, #00b4d8)}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.sidebar-overlay.active{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:300px;background:var(--navy, #0f1b2d);border-right:1px solid var(--border, rgba(255,255,255,0.1));z-index:999;transform:translateX(-100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;padding:60px 0 20px;backdrop-filter:blur(20px)}
+.sidebar.open{transform:translateX(0)}
+.sidebar-header{padding:0 16px 16px;border-bottom:1px solid var(--border, rgba(255,255,255,0.1));margin-bottom:8px}
+.sidebar-header h3{font-size:0.85rem;color:var(--teal, #00b4d8);font-weight:700;letter-spacing:0.5px}
+.sidebar-section{margin:4px 0}
+.sidebar-section-btn{width:100%;text-align:left;background:none;border:none;padding:10px 16px;color:var(--text, #e6edf3);font-size:0.8rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.2s;font-family:inherit}
+.sidebar-section-btn:hover{background:rgba(0,180,216,0.05)}
+.sidebar-section-btn .arrow{transition:transform 0.2s;font-size:0.6rem;opacity:0.5}
+.sidebar-section-btn.expanded .arrow{transform:rotate(90deg)}
+.sidebar-section-btn .sec-num{color:var(--teal, #00b4d8);min-width:24px;font-size:0.7rem}
+.sidebar-lessons{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.sidebar-lessons.expanded{max-height:2000px}
+.sidebar-lesson{display:block;padding:6px 16px 6px 44px;color:var(--text-muted, #8b949e);font-size:0.72rem;text-decoration:none;transition:all 0.15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-left:2px solid transparent;line-height:1.6}
+.sidebar-lesson:hover{color:var(--teal, #00b4d8);background:rgba(0,180,216,0.03);border-left-color:var(--teal, #00b4d8)}
+.sidebar-lesson.active{color:var(--teal, #00b4d8);border-left-color:var(--teal, #00b4d8);background:rgba(0,180,216,0.06);font-weight:600}
+@media(min-width:1400px){.sidebar{transform:translateX(0);width:260px;padding-top:20px}.sidebar-toggle{display:none}.sidebar-overlay{display:none}.section,.section-directory{margin-left:260px}}
+@media(max-width:768px){.sidebar{width:280px}}
 </style>
 </head>
 <body>
+<div class="sidebar-toggle" id="sidebarToggle">&#9776;</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<nav class="sidebar" id="courseSidebar">
+<div class="sidebar-header"><h3>Course Navigation</h3></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S01</span>Understanding AI agents</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture-1">What Does the Course Cover</a>
+<a class="sidebar-lesson" href="#lecture-2">What Is an AI agent?</a>
+<a class="sidebar-lesson" href="#lecture-3">Why AI Agents Are Believed to Be the Next Big</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S02</span>Essential ingredients for building AI ag</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture-4">Intro</a>
+<a class="sidebar-lesson" href="#lecture-5">Environment – The External World That the Age</a>
+<a class="sidebar-lesson" href="#lecture-6">Sensors – How the Agent Collects Data About i</a>
+<a class="sidebar-lesson" href="#lecture-7">Model – the Agent’s Way of Making Sense of In</a>
+<a class="sidebar-lesson" href="#lecture-8">Decision-making Logic – Rules and Objectives </a>
+<a class="sidebar-lesson" href="#lecture-9">Actions – How the Agent Shapes the Environmen</a>
+<a class="sidebar-lesson" href="#lecture-10">The Updated Environment</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S03</span>from simple to complex structures</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture-11">Intro</a>
+<a class="sidebar-lesson" href="#lecture-12">Key Characteristics of AI Agents</a>
+<a class="sidebar-lesson" href="#lecture-13">Simple Reflex Agent</a>
+<a class="sidebar-lesson" href="#lecture-14">Model-based Reflex Agent</a>
+<a class="sidebar-lesson" href="#lecture-15">Goal-based Agent</a>
+<a class="sidebar-lesson" href="#lecture-16">Utility-based Agent</a>
+<a class="sidebar-lesson" href="#lecture-17">Learning Agent</a>
+<a class="sidebar-lesson" href="#lecture-18">Intro</a>
+<a class="sidebar-lesson" href="#lecture-19">Learning from Humans</a>
+<a class="sidebar-lesson" href="#lecture-20">Learning from External Systems</a>
+<a class="sidebar-lesson" href="#lecture-21">Intro</a>
+<a class="sidebar-lesson" href="#lecture-22">Distinguishing LLMs vs AI Workflows vs Agents</a>
+<a class="sidebar-lesson" href="#lecture-23">How AI Agents Reason and Act (ReAct)</a>
+<a class="sidebar-lesson" href="#lecture-24">How AI Agents Reason without Observation (ReW</a>
+<a class="sidebar-lesson" href="#lecture-25">Single Agents</a>
+<a class="sidebar-lesson" href="#lecture-26">Multi-agents</a>
+<a class="sidebar-lesson" href="#lecture-27">Intro</a>
+<a class="sidebar-lesson" href="#lecture-28">How to Implement AI Agents in Your Business</a>
+<a class="sidebar-lesson" href="#lecture-29">Select a Model</a>
+<a class="sidebar-lesson" href="#lecture-30">External Tools the Agent Can Use</a>
+<a class="sidebar-lesson" href="#lecture-31">Configuring Instructions and Prompt Engineeri</a>
+<a class="sidebar-lesson" href="#lecture-32">Few-shot Prompting</a>
+<a class="sidebar-lesson" href="#lecture-33">Chain of Thought Reasoning</a>
+<a class="sidebar-lesson" href="#lecture-34">Guardrails</a>
+<a class="sidebar-lesson" href="#lecture-35">The Importance of Human Intervention</a>
+<a class="sidebar-lesson" href="#lecture-36">How to Evaluate AI Agents</a>
+<a class="sidebar-lesson" href="#lecture-37">Introduction to n8n</a>
+<a class="sidebar-lesson" href="#lecture-38">Node Types in n8n</a>
+<a class="sidebar-lesson" href="#lecture-39">The Project We Will Build</a>
+<a class="sidebar-lesson" href="#lecture-40">Defining Your Agent's Personality: The System</a>
+<a class="sidebar-lesson" href="#lecture-41">Adding the Brain: Making Your Workflow Think</a>
+<a class="sidebar-lesson" href="#lecture-42">Implementing Memory in n8n: Building Memory f</a>
+<a class="sidebar-lesson" href="#lecture-43">Integrating Tools: Google Sheets and Gmail</a>
+<a class="sidebar-lesson" href="#lecture-44">Producing the Final Output</a>
+<a class="sidebar-lesson" href="#lecture-45">Intro</a>
+<a class="sidebar-lesson" href="#lecture-46">APIs</a>
+<a class="sidebar-lesson" href="#lecture-47">Cloud Services</a>
+<a class="sidebar-lesson" href="#lecture-48">Data and Knowledge Integration</a>
+<a class="sidebar-lesson" href="#lecture-49">Development Frameworks</a>
+<a class="sidebar-lesson" href="#lecture-50">Deployment</a>
+<a class="sidebar-lesson" href="#lecture-51">The Key Value Proposition of AI Agents</a>
+<a class="sidebar-lesson" href="#lecture-52">AI Agents as Teammates</a>
+<a class="sidebar-lesson" href="#lecture-53">Intro</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S04</span>Foundations of Agentic AI</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture-54">Agentic Workflows vs. AI Agents</a>
+<a class="sidebar-lesson" href="#lecture-55">Core Building Blocks of an AI agent</a>
+<a class="sidebar-lesson" href="#lecture-56">When (and when not) to Use AI Agents</a>
+<a class="sidebar-lesson" href="#lecture-57">Why Architecture Matters: Scaling, Reliabilit</a>
+<a class="sidebar-lesson" href="#lecture-58">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-59">General Principles of Prompt Structuring</a>
+<a class="sidebar-lesson" href="#lecture-60">Prompting Frameworks</a>
+<a class="sidebar-lesson" href="#lecture-61">Positive and Negative Prompting</a>
+<a class="sidebar-lesson" href="#lecture-62">Chain-of-Thought (CoT)</a>
+<a class="sidebar-lesson" href="#lecture-63">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-64">The Augmented LLM</a>
+<a class="sidebar-lesson" href="#lecture-65">Prompt Chaining</a>
+<a class="sidebar-lesson" href="#lecture-66">Routing</a>
+<a class="sidebar-lesson" href="#lecture-67">Parallelization</a>
+<a class="sidebar-lesson" href="#lecture-68">Orchestrator-worker</a>
+<a class="sidebar-lesson" href="#lecture-69">Evaluator-optimizer</a>
+<a class="sidebar-lesson" href="#lecture-70">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-71">When to Use a Single Agent Architecture</a>
+<a class="sidebar-lesson" href="#lecture-72">Reflection</a>
+<a class="sidebar-lesson" href="#lecture-73">ReAct (Think-Do)</a>
+<a class="sidebar-lesson" href="#lecture-74">Reflexion</a>
+<a class="sidebar-lesson" href="#lecture-75">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-76">Task Decomposition</a>
+<a class="sidebar-lesson" href="#lecture-77">The Importance of Planning</a>
+<a class="sidebar-lesson" href="#lecture-78">Plan and Solve</a>
+<a class="sidebar-lesson" href="#lecture-79">ReWOO</a>
+<a class="sidebar-lesson" href="#lecture-80">Tree of Thought</a>
+<a class="sidebar-lesson" href="#lecture-81">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-82">When to Use Single vs. Multi-agent Systems</a>
+<a class="sidebar-lesson" href="#lecture-83">Vertical vs Horizontal Architectures</a>
+<a class="sidebar-lesson" href="#lecture-84">Challenges with Group Conversations</a>
+<a class="sidebar-lesson" href="#lecture-85">Supervisor</a>
+<a class="sidebar-lesson" href="#lecture-86">Hierarchical Teams</a>
+<a class="sidebar-lesson" href="#lecture-87">Dynamic Teams</a>
+<a class="sidebar-lesson" href="#lecture-88">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-89">Agents and Asyncronous Task Execution</a>
+<a class="sidebar-lesson" href="#lecture-90">Performance Metrics - Latency and Cost</a>
+<a class="sidebar-lesson" href="#lecture-91">Error Handling and Recovery</a>
+<a class="sidebar-lesson" href="#lecture-92">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-93">Short-term Context Buffer</a>
+<a class="sidebar-lesson" href="#lecture-94">Vector store RAG</a>
+<a class="sidebar-lesson" href="#lecture-95">Entity-level Memory</a>
+<a class="sidebar-lesson" href="#lecture-96">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-97">Self-reflection</a>
+<a class="sidebar-lesson" href="#lecture-98">Human-in-the-loop</a>
+<a class="sidebar-lesson" href="#lecture-99">Governance Patterns</a>
+<a class="sidebar-lesson" href="#lecture-100">Guardrails and Policy Enforcement</a>
+<a class="sidebar-lesson" href="#lecture-101">Cost-limiter</a>
+<a class="sidebar-lesson" href="#lecture-102">A/B Shadow Testing</a>
+<a class="sidebar-lesson" href="#lecture-103">Bias and Fairness Systems</a>
+<a class="sidebar-lesson" href="#lecture-104">Section Introduction</a>
+<a class="sidebar-lesson" href="#lecture-105">How to Measure Agent Performance</a>
+<a class="sidebar-lesson" href="#lecture-106">Offline Benchmarks</a>
+<a class="sidebar-lesson" href="#lecture-107">Online Metrics</a>
+<a class="sidebar-lesson" href="#lecture-108">Introduction</a>
+<a class="sidebar-lesson" href="#lecture-109">Business Applications of LangChain</a>
+<a class="sidebar-lesson" href="#lecture-110">What Makes LangChain Powerful?</a>
+<a class="sidebar-lesson" href="#lecture-111">What Does the Course Cover?</a>
+<a class="sidebar-lesson" href="#lecture-112">Tokens</a>
+<a class="sidebar-lesson" href="#lecture-113">Models and Prices</a>
+<a class="sidebar-lesson" href="#lecture-114">Setting Up a Custom Anaconda Environment for </a>
+<a class="sidebar-lesson" href="#lecture-115">Obtaining an OpenAI API Key</a>
+<a class="sidebar-lesson" href="#lecture-116">Setting the API Key as an Environment Variabl</a>
+<a class="sidebar-lesson" href="#lecture-117">First Steps</a>
+<a class="sidebar-lesson" href="#lecture-118">System, User, and Assistant Roles</a>
+<a class="sidebar-lesson" href="#lecture-119">Creating a Sarcastic Chatbot</a>
+<a class="sidebar-lesson" href="#lecture-120">Temperature, Max Tokens, and Streaming</a>
+<a class="sidebar-lesson" href="#lecture-121">The LangChain Framework</a>
+<a class="sidebar-lesson" href="#lecture-122">ChatOpenAI</a>
+<a class="sidebar-lesson" href="#lecture-123">System and Human Messages</a>
+<a class="sidebar-lesson" href="#lecture-124">AI Messages</a>
+<a class="sidebar-lesson" href="#lecture-125">Prompt Templates and Prompt Values</a>
+<a class="sidebar-lesson" href="#lecture-126">Chat Prompt Templates and Chat Prompt Values</a>
+<a class="sidebar-lesson" href="#lecture-127">Few-Shot Chat Message Prompt Templates</a>
+<a class="sidebar-lesson" href="#lecture-128">String Output Parser</a>
+<a class="sidebar-lesson" href="#lecture-129">Comma-Separated List Output Parser</a>
+<a class="sidebar-lesson" href="#lecture-130">Datetime Output Parser</a>
+<a class="sidebar-lesson" href="#lecture-131">Piping a Prompt, Model, and an Output Parser</a>
+<a class="sidebar-lesson" href="#lecture-132">Batching</a>
+<a class="sidebar-lesson" href="#lecture-133">Streaming</a>
+<a class="sidebar-lesson" href="#lecture-134">The Runnable and RunnableSequence Classes</a>
+<a class="sidebar-lesson" href="#lecture-135">Piping Chains and the RunnablePassthrough Cla</a>
+<a class="sidebar-lesson" href="#lecture-136">Graphing Runnables</a>
+<a class="sidebar-lesson" href="#lecture-137">RunnableParallel</a>
+<a class="sidebar-lesson" href="#lecture-138">Piping a RunnableParallel with Other Runnable</a>
+<a class="sidebar-lesson" href="#lecture-139">RunnableLambda</a>
+<a class="sidebar-lesson" href="#lecture-140">The @chain Decorator</a>
+<a class="sidebar-lesson" href="#lecture-141">How to Integrate Custom Data into an LLM</a>
+<a class="sidebar-lesson" href="#lecture-142">Introduction to RAG</a>
+<a class="sidebar-lesson" href="#lecture-143">Introduction to Document Loading and Splittin</a>
+<a class="sidebar-lesson" href="#lecture-144">Introduction to Document Embedding</a>
+<a class="sidebar-lesson" href="#lecture-145">Introduction to Document Storing, Retrieval, </a>
+<a class="sidebar-lesson" href="#lecture-146">Indexing: Document Loading with PyPDFLoader</a>
+<a class="sidebar-lesson" href="#lecture-147">Indexing: Document Loading with Docx2txtLoade</a>
+<a class="sidebar-lesson" href="#lecture-148">Indexing: Document Splitting with Character T</a>
+<a class="sidebar-lesson" href="#lecture-149">Indexing: Document Splitting with Character T</a>
+<a class="sidebar-lesson" href="#lecture-150">Indexing: Document Splitting with Markdown He</a>
+<a class="sidebar-lesson" href="#lecture-151">Indexing: Text Embedding with OpenAI</a>
+<a class="sidebar-lesson" href="#lecture-152">Indexing: Creating a Chroma Vector Store</a>
+<a class="sidebar-lesson" href="#lecture-153">Indexing: Inspecting and Managing Documents i</a>
+<a class="sidebar-lesson" href="#lecture-154">Retrieval: Similarity Search</a>
+<a class="sidebar-lesson" href="#lecture-155">Retrieval: Maximal Marginal Relevance Search</a>
+<a class="sidebar-lesson" href="#lecture-156">Retrieval: Vector Store-Backed Retriever</a>
+<a class="sidebar-lesson" href="#lecture-157">Generation: Stuffing Documents</a>
+<a class="sidebar-lesson" href="#lecture-158">Generation: Generating a Response</a>
+<a class="sidebar-lesson" href="#lecture-159">Welcome to the LangGraph Module</a>
+<a class="sidebar-lesson" href="#lecture-160">What You Will See Next</a>
+<a class="sidebar-lesson" href="#lecture-161">Model Prerequisites</a>
+<a class="sidebar-lesson" href="#lecture-162">Setting Up the Environment</a>
+<a class="sidebar-lesson" href="#lecture-163">States, Nodes, and Edges</a>
+<a class="sidebar-lesson" href="#lecture-164">First Graph: Importing Relevant Classes</a>
+<a class="sidebar-lesson" href="#lecture-165">First Graph: Defining a State and a Node</a>
+<a class="sidebar-lesson" href="#lecture-166">First Graph: Building the Graph</a>
+<a class="sidebar-lesson" href="#lecture-167">Conditional Edges: Defining Nodes and a Routi</a>
+<a class="sidebar-lesson" href="#lecture-168">Conditional Edges: Building the Graph</a>
+<a class="sidebar-lesson" href="#lecture-169">The Annotated Construct and Reducer Functions</a>
+<a class="sidebar-lesson" href="#lecture-170">Reducer Functions in Action</a>
+<a class="sidebar-lesson" href="#lecture-171">The MessagesState Class</a>
+<a class="sidebar-lesson" href="#lecture-172">The RemoveMessages Class</a>
+<a class="sidebar-lesson" href="#lecture-173">Trimming Messages</a>
+<a class="sidebar-lesson" href="#lecture-174">Summarizing Messages</a>
+<a class="sidebar-lesson" href="#lecture-175">Checkpointers and Threads</a>
+<a class="sidebar-lesson" href="#lecture-176">Short-Term Memory with the InMemorySaver Clas</a>
+<a class="sidebar-lesson" href="#lecture-177">The StateSnapshot Class</a>
+<a class="sidebar-lesson" href="#lecture-178">Long-Term Memory with SQLite</a>
+<a class="sidebar-lesson" href="#lecture-179">Conclusion</a>
+<a class="sidebar-lesson" href="#lecture-180">What does the course cover?</a>
+<a class="sidebar-lesson" href="#lecture-181">Agent Development Tools</a>
+<a class="sidebar-lesson" href="#lecture-182">Why LangGraph?</a>
+<a class="sidebar-lesson" href="#lecture-183">Anatomy of a LangGraph Project</a>
+<a class="sidebar-lesson" href="#lecture-184">Prompt Techniques Part 1</a>
+<a class="sidebar-lesson" href="#lecture-185">Prompt Techniques Part 2</a>
+<a class="sidebar-lesson" href="#lecture-186">Prompting Tips and Tricks</a>
+<a class="sidebar-lesson" href="#lecture-187">System Input vs. User Input</a>
+<a class="sidebar-lesson" href="#lecture-188">Behind Scenes - Project Helper Chatbot</a>
+<a class="sidebar-lesson" href="#lecture-189">Project: Job-Helper agent (ReAct)</a>
+<a class="sidebar-lesson" href="#lecture-190">ReAct Аrchitecture Recap</a>
+<a class="sidebar-lesson" href="#lecture-191">Adding Funds to Your OpenAI API Account</a>
+<a class="sidebar-lesson" href="#lecture-192">Setting Your OpenAI API Key</a>
+<a class="sidebar-lesson" href="#lecture-193">Setup &amp; Installation</a>
+<a class="sidebar-lesson" href="#lecture-194">Building the Tools: File Reader</a>
+<a class="sidebar-lesson" href="#lecture-195">Building the Tools: Web Search API</a>
+<a class="sidebar-lesson" href="#lecture-196">Integrating Tools into the Agent</a>
+<a class="sidebar-lesson" href="#lecture-197">Building the Assistant Node</a>
+<a class="sidebar-lesson" href="#lecture-198">Building the Graph</a>
+<a class="sidebar-lesson" href="#lecture-199">Running the Graph</a>
+<a class="sidebar-lesson" href="#lecture-200">Adding Memory</a>
+<a class="sidebar-lesson" href="#lecture-201">Conncecting to LangSmith</a>
+<a class="sidebar-lesson" href="#lecture-202">ReWOO Architecture Overview</a>
+<a class="sidebar-lesson" href="#lecture-203">Building the Planner Node</a>
+<a class="sidebar-lesson" href="#lecture-204">Implementing the Executor</a>
+<a class="sidebar-lesson" href="#lecture-205">Implementing the Solver</a>
+<a class="sidebar-lesson" href="#lecture-206">Wiring Up the ReWOO Graph</a>
+<a class="sidebar-lesson" href="#lecture-207">ReAct vs ReWOO</a>
+<a class="sidebar-lesson" href="#lecture-208">Project Overview</a>
+<a class="sidebar-lesson" href="#lecture-209">Human-in-the-Loop (HITL)</a>
+<a class="sidebar-lesson" href="#lecture-210">Parallelization</a>
+<a class="sidebar-lesson" href="#lecture-211">Initializing the State</a>
+<a class="sidebar-lesson" href="#lecture-212">Building the Human-in-the-loop</a>
+<a class="sidebar-lesson" href="#lecture-213">Creating Pre-Made “Advisor” Nodes</a>
+<a class="sidebar-lesson" href="#lecture-214">Collection Node and Building the Graph</a>
+<a class="sidebar-lesson" href="#lecture-215">Finalizing the project</a>
+<a class="sidebar-lesson" href="#lecture-216">Bonus lecture</a>
+</div></div>
+</nav>
+
 <div class="theme-toggle" onclick="toggleTheme()">&#x1F313;</div>
 <div class="cover">
   <span class="badge badge-green">COMPLETE</span>
@@ -6489,6 +6750,66 @@ function resetWorkflow() {
   statusEl.textContent = 'Ready';
 }
 
+</script>
+
+<script>
+(function(){
+  const sidebar = document.getElementById('courseSidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const toggle = document.getElementById('sidebarToggle');
+  if(!sidebar) return;
+
+  toggle.addEventListener('click', ()=>{
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+  overlay.addEventListener('click', ()=>{
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+  // Section expand/collapse
+  document.querySelectorAll('.sidebar-section-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.classList.toggle('expanded');
+      const lessons = btn.nextElementSibling;
+      lessons.classList.toggle('expanded');
+    });
+  });
+
+  // Highlight current lesson on scroll
+  const lessons = document.querySelectorAll('.sidebar-lesson');
+  const targets = [];
+  lessons.forEach(l=>{
+    const id = l.getAttribute('href')?.replace('#','');
+    if(id){const el=document.getElementById(id);if(el)targets.push({link:l,el:el})}
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', ()=>{
+    if(!ticking){requestAnimationFrame(()=>{
+      const scrollY = window.scrollY + 150;
+      let current = null;
+      for(const t of targets){if(t.el.offsetTop <= scrollY) current = t}
+      lessons.forEach(l=>l.classList.remove('active'));
+      if(current){
+        current.link.classList.add('active');
+        // Expand parent section
+        const parent = current.link.closest('.sidebar-lessons');
+        if(parent && !parent.classList.contains('expanded')){
+          parent.classList.add('expanded');
+          parent.previousElementSibling.classList.add('expanded');
+        }
+      }
+      ticking = false;
+    });ticking=true}
+  });
+
+  // Close sidebar on lesson click (mobile)
+  lessons.forEach(l=>l.addEventListener('click',()=>{
+    if(window.innerWidth < 1400){sidebar.classList.remove('open');overlay.classList.remove('active')}
+  }));
+})();
 </script>
 </body>
 </html>

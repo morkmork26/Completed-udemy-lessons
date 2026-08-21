@@ -152,9 +152,182 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
   .lesson { opacity: 1; transform: none; page-break-inside: avoid; }
   .section-header { position: static; }
 }
+
+/* Sidebar Navigation */
+.sidebar-toggle{position:fixed;top:1rem;left:1rem;z-index:1001;width:40px;height:40px;border-radius:10px;background:var(--card-bg, rgba(26,41,66,0.6));border:1px solid var(--border, rgba(255,255,255,0.1));backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;color:var(--text, #e6edf3);font-size:1.2rem}
+.sidebar-toggle:hover{transform:scale(1.05);border-color:var(--teal, #00b4d8)}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.sidebar-overlay.active{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:300px;background:var(--navy, #0f1b2d);border-right:1px solid var(--border, rgba(255,255,255,0.1));z-index:999;transform:translateX(-100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;padding:60px 0 20px;backdrop-filter:blur(20px)}
+.sidebar.open{transform:translateX(0)}
+.sidebar-header{padding:0 16px 16px;border-bottom:1px solid var(--border, rgba(255,255,255,0.1));margin-bottom:8px}
+.sidebar-header h3{font-size:0.85rem;color:var(--teal, #00b4d8);font-weight:700;letter-spacing:0.5px}
+.sidebar-section{margin:4px 0}
+.sidebar-section-btn{width:100%;text-align:left;background:none;border:none;padding:10px 16px;color:var(--text, #e6edf3);font-size:0.8rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.2s;font-family:inherit}
+.sidebar-section-btn:hover{background:rgba(0,180,216,0.05)}
+.sidebar-section-btn .arrow{transition:transform 0.2s;font-size:0.6rem;opacity:0.5}
+.sidebar-section-btn.expanded .arrow{transform:rotate(90deg)}
+.sidebar-section-btn .sec-num{color:var(--teal, #00b4d8);min-width:24px;font-size:0.7rem}
+.sidebar-lessons{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.sidebar-lessons.expanded{max-height:2000px}
+.sidebar-lesson{display:block;padding:6px 16px 6px 44px;color:var(--text-muted, #8b949e);font-size:0.72rem;text-decoration:none;transition:all 0.15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-left:2px solid transparent;line-height:1.6}
+.sidebar-lesson:hover{color:var(--teal, #00b4d8);background:rgba(0,180,216,0.03);border-left-color:var(--teal, #00b4d8)}
+.sidebar-lesson.active{color:var(--teal, #00b4d8);border-left-color:var(--teal, #00b4d8);background:rgba(0,180,216,0.06);font-weight:600}
+@media(min-width:1400px){.sidebar{transform:translateX(0);width:260px;padding-top:20px}.sidebar-toggle{display:none}.sidebar-overlay{display:none}.section,.section-directory{margin-left:260px}}
+@media(max-width:768px){.sidebar{width:280px}}
 </style>
 </head>
 <body>
+<div class="sidebar-toggle" id="sidebarToggle">&#9776;</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<nav class="sidebar" id="courseSidebar">
+<div class="sidebar-header"><h3>Course Navigation</h3></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S01</span>Get Started with the Course: AI Agents &</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture1">L1 Introduction</a>
+<a class="sidebar-lesson" href="#lecture2">L2 What You Will Learn</a>
+<a class="sidebar-lesson" href="#lecture3">L3 Requirements</a>
+<a class="sidebar-lesson" href="#lecture4">L4 Course Structure</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S02</span>Building AI Agents Step by Step</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture5">L5 Introduction to Agents</a>
+<a class="sidebar-lesson" href="#lecture6">L6 What is an Agent?</a>
+<a class="sidebar-lesson" href="#lecture7">L7 ReAct Prompting</a>
+<a class="sidebar-lesson" href="#lecture8">L8 Tool Calling</a>
+<a class="sidebar-lesson" href="#lecture9">L9 Agent Demo</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S03</span>Mastering Model Context Protocol (MCP)</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture10">L10 Introduction to MCP</a>
+<a class="sidebar-lesson" href="#lecture11">L11 Resources</a>
+<a class="sidebar-lesson" href="#lecture12">L12 MCP Overview</a>
+<a class="sidebar-lesson" href="#lecture13">L13 Common MCP Clients</a>
+<a class="sidebar-lesson" href="#lecture14">L14 Common MCP Servers</a>
+<a class="sidebar-lesson" href="#lecture15">L15 [IMPORTANT] Fix MCP Support on VS Code</a>
+<a class="sidebar-lesson" href="#lecture16">L16 Install MCP Servers</a>
+<a class="sidebar-lesson" href="#lecture17">L17 Environment Setup</a>
+<a class="sidebar-lesson" href="#lecture18">L18 Create a Simple MCP Server</a>
+<a class="sidebar-lesson" href="#lecture19">L19 Debug Your MCP Server</a>
+<a class="sidebar-lesson" href="#lecture20">L20 Install Your MCP Server</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S04</span>APIs for AI Developers: Foundations &amp</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture21">L21 Introduction</a>
+<a class="sidebar-lesson" href="#lecture22">L22 Resources</a>
+<a class="sidebar-lesson" href="#lecture23">L23 What is an API?</a>
+<a class="sidebar-lesson" href="#lecture24">L24 Awesome APIs</a>
+<a class="sidebar-lesson" href="#lecture25">L25 Bruno: API Clients</a>
+<a class="sidebar-lesson" href="#lecture26">L26 HTTP Methods</a>
+<a class="sidebar-lesson" href="#lecture27">L27 Notebook: Experiment with an API</a>
+<a class="sidebar-lesson" href="#lecture28">L28 Conclusion</a>
+<a class="sidebar-lesson" href="#lecture29">L29 Challenge</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S05</span>Create a News MCP Server</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture30">L30 Introduction</a>
+<a class="sidebar-lesson" href="#lecture31">L31 Resources</a>
+<a class="sidebar-lesson" href="#lecture32">L32 Materials We Will Use</a>
+<a class="sidebar-lesson" href="#lecture33">L33 Environment Setup</a>
+<a class="sidebar-lesson" href="#lecture34">L34 Create Your MCP Server With LLMs</a>
+<a class="sidebar-lesson" href="#lecture35">L35 Code Review</a>
+<a class="sidebar-lesson" href="#lecture36">L36 Debug with MCP Inspector</a>
+<a class="sidebar-lesson" href="#lecture37">L37 Try It Out</a>
+<a class="sidebar-lesson" href="#lecture38">L38 Challenge</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S06</span>MCP Transports: How Agents Communicate</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture39">L39 Introduction to Transports</a>
+<a class="sidebar-lesson" href="#lecture40">L40 Client-Server Architecture</a>
+<a class="sidebar-lesson" href="#lecture41">L41 JSON-RPC Messages</a>
+<a class="sidebar-lesson" href="#lecture42">L42 Transports in MCP</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S07</span>MCP Security — Protecting Your AI System</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture43">L43 Introduction</a>
+<a class="sidebar-lesson" href="#lecture44">L44 Resources</a>
+<a class="sidebar-lesson" href="#lecture45">L45 Malicious MCP Servers</a>
+<a class="sidebar-lesson" href="#lecture46">L46 Create a Malicious MCP Server</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S08</span>Remote MCP Servers — Scaling AI Beyond L</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture47">L47 Introduction to Remote MCP</a>
+<a class="sidebar-lesson" href="#lecture48">L48 Resources</a>
+<a class="sidebar-lesson" href="#lecture49">L49 Streamable HTTP</a>
+<a class="sidebar-lesson" href="#lecture50">L50 Create a Remote MCP Server</a>
+<a class="sidebar-lesson" href="#lecture51">L51 Connect to a Remote MCP Server</a>
+<a class="sidebar-lesson" href="#lecture52">L52 MCP on FastAPI</a>
+<a class="sidebar-lesson" href="#lecture53">L53 Multiple MCP Servers on a Single App</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S09</span>MCP Authentication — Securing Access</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture54">L54 Introduction to Authentication</a>
+<a class="sidebar-lesson" href="#lecture55">L55 Resources</a>
+<a class="sidebar-lesson" href="#lecture56">L56 The Need for Auth in MCP</a>
+<a class="sidebar-lesson" href="#lecture57">L57 Why not Local Auth in MCP?</a>
+<a class="sidebar-lesson" href="#lecture58">L58 Shift to Remote MCP</a>
+<a class="sidebar-lesson" href="#lecture59">L59 What is OAuth</a>
+<a class="sidebar-lesson" href="#lecture60">L60 OAuth 2.1 Workflow</a>
+<a class="sidebar-lesson" href="#lecture61">L61 Starting point: MCP Without Auth</a>
+<a class="sidebar-lesson" href="#lecture62">L62 ScaleKit Auth Stack</a>
+<a class="sidebar-lesson" href="#lecture63">L63 Endpoint Discovery</a>
+<a class="sidebar-lesson" href="#lecture64">L64 Create Auth Middleware</a>
+<a class="sidebar-lesson" href="#lecture65">L65 Token Validation</a>
+<a class="sidebar-lesson" href="#lecture66">L66 Auth In Action</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S10</span>Agentic RAG with MCP</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture67">L67 Intro</a>
+<a class="sidebar-lesson" href="#lecture68">L68 Resources</a>
+<a class="sidebar-lesson" href="#lecture69">L69 What is RAG?</a>
+<a class="sidebar-lesson" href="#lecture70">L70 RAG Pipeline</a>
+<a class="sidebar-lesson" href="#lecture71">L71 Embeddings</a>
+<a class="sidebar-lesson" href="#lecture72">L72 Vector Databases</a>
+<a class="sidebar-lesson" href="#lecture73">L73 Agentic RAG</a>
+<a class="sidebar-lesson" href="#lecture74">L74 Notebook: Setup</a>
+<a class="sidebar-lesson" href="#lecture75">L75 Notebook: Extraction</a>
+<a class="sidebar-lesson" href="#lecture76">L76 Notebook: Loading</a>
+<a class="sidebar-lesson" href="#lecture77">L77 Notebook: Query the Database</a>
+<a class="sidebar-lesson" href="#lecture78">L78 MCP Server: Set Up Environment</a>
+<a class="sidebar-lesson" href="#lecture79">L79 MCP Server: Initialize Database</a>
+<a class="sidebar-lesson" href="#lecture80">L80 MCP Server: Ingest Documents Tool</a>
+<a class="sidebar-lesson" href="#lecture81">L81 MCP Server: Initialize Server &amp; Tools</a>
+<a class="sidebar-lesson" href="#lecture82">L82 MCP Server: Debugging</a>
+<a class="sidebar-lesson" href="#lecture83">L83 MCP Server: Create Query DB Tool</a>
+<a class="sidebar-lesson" href="#lecture84">L84 MCP Server: Create Status Tool</a>
+<a class="sidebar-lesson" href="#lecture85">L85 MCP Server: Test it on Remote Client!</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S11</span>Final Project: Deploy Your MCP Server</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture86">L86 Introduction</a>
+<a class="sidebar-lesson" href="#lecture87">L87 Resources</a>
+<a class="sidebar-lesson" href="#lecture88">L88 Render</a>
+<a class="sidebar-lesson" href="#lecture89">L89 Turn MCP Server into Remote MCP Server</a>
+<a class="sidebar-lesson" href="#lecture90">L90 Add Auth to MCP Server</a>
+<a class="sidebar-lesson" href="#lecture91">L91 Register on ScaleKit</a>
+<a class="sidebar-lesson" href="#lecture92">L92 Push to GitHub</a>
+<a class="sidebar-lesson" href="#lecture93">L93 Deploy to Render</a>
+<a class="sidebar-lesson" href="#lecture94">L94 Update ScaleKit Prod Config</a>
+<a class="sidebar-lesson" href="#lecture95">L95 Demo of Deployment</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S12</span>Conclusion</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#lecture96">L96 End</a>
+</div></div>
+</nav>
+
 <div class="progress-bar" id="progressBar"></div>
 <div class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">&#x1F313;</div>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#x2191;</button>
@@ -3222,6 +3395,66 @@ document.querySelectorAll('.dir-card').forEach(card => {
     }
   });
 });
+</script>
+
+<script>
+(function(){
+  const sidebar = document.getElementById('courseSidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const toggle = document.getElementById('sidebarToggle');
+  if(!sidebar) return;
+
+  toggle.addEventListener('click', ()=>{
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+  overlay.addEventListener('click', ()=>{
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+  // Section expand/collapse
+  document.querySelectorAll('.sidebar-section-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.classList.toggle('expanded');
+      const lessons = btn.nextElementSibling;
+      lessons.classList.toggle('expanded');
+    });
+  });
+
+  // Highlight current lesson on scroll
+  const lessons = document.querySelectorAll('.sidebar-lesson');
+  const targets = [];
+  lessons.forEach(l=>{
+    const id = l.getAttribute('href')?.replace('#','');
+    if(id){const el=document.getElementById(id);if(el)targets.push({link:l,el:el})}
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', ()=>{
+    if(!ticking){requestAnimationFrame(()=>{
+      const scrollY = window.scrollY + 150;
+      let current = null;
+      for(const t of targets){if(t.el.offsetTop <= scrollY) current = t}
+      lessons.forEach(l=>l.classList.remove('active'));
+      if(current){
+        current.link.classList.add('active');
+        // Expand parent section
+        const parent = current.link.closest('.sidebar-lessons');
+        if(parent && !parent.classList.contains('expanded')){
+          parent.classList.add('expanded');
+          parent.previousElementSibling.classList.add('expanded');
+        }
+      }
+      ticking = false;
+    });ticking=true}
+  });
+
+  // Close sidebar on lesson click (mobile)
+  lessons.forEach(l=>l.addEventListener('click',()=>{
+    if(window.innerWidth < 1400){sidebar.classList.remove('open');overlay.classList.remove('active')}
+  }));
+})();
 </script>
 </body>
 </html>

@@ -150,9 +150,175 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
   .comparison-table { font-size: 0.75rem; }
   .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; }
 }
+
+/* Sidebar Navigation */
+.sidebar-toggle{position:fixed;top:1rem;left:1rem;z-index:1001;width:40px;height:40px;border-radius:10px;background:var(--card-bg, rgba(26,41,66,0.6));border:1px solid var(--border, rgba(255,255,255,0.1));backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.3s;color:var(--text, #e6edf3);font-size:1.2rem}
+.sidebar-toggle:hover{transform:scale(1.05);border-color:var(--teal, #00b4d8)}
+.sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:998;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.sidebar-overlay.active{opacity:1;pointer-events:auto}
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:300px;background:var(--navy, #0f1b2d);border-right:1px solid var(--border, rgba(255,255,255,0.1));z-index:999;transform:translateX(-100%);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);overflow-y:auto;padding:60px 0 20px;backdrop-filter:blur(20px)}
+.sidebar.open{transform:translateX(0)}
+.sidebar-header{padding:0 16px 16px;border-bottom:1px solid var(--border, rgba(255,255,255,0.1));margin-bottom:8px}
+.sidebar-header h3{font-size:0.85rem;color:var(--teal, #00b4d8);font-weight:700;letter-spacing:0.5px}
+.sidebar-section{margin:4px 0}
+.sidebar-section-btn{width:100%;text-align:left;background:none;border:none;padding:10px 16px;color:var(--text, #e6edf3);font-size:0.8rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all 0.2s;font-family:inherit}
+.sidebar-section-btn:hover{background:rgba(0,180,216,0.05)}
+.sidebar-section-btn .arrow{transition:transform 0.2s;font-size:0.6rem;opacity:0.5}
+.sidebar-section-btn.expanded .arrow{transform:rotate(90deg)}
+.sidebar-section-btn .sec-num{color:var(--teal, #00b4d8);min-width:24px;font-size:0.7rem}
+.sidebar-lessons{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.sidebar-lessons.expanded{max-height:2000px}
+.sidebar-lesson{display:block;padding:6px 16px 6px 44px;color:var(--text-muted, #8b949e);font-size:0.72rem;text-decoration:none;transition:all 0.15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-left:2px solid transparent;line-height:1.6}
+.sidebar-lesson:hover{color:var(--teal, #00b4d8);background:rgba(0,180,216,0.03);border-left-color:var(--teal, #00b4d8)}
+.sidebar-lesson.active{color:var(--teal, #00b4d8);border-left-color:var(--teal, #00b4d8);background:rgba(0,180,216,0.06);font-weight:600}
+@media(min-width:1400px){.sidebar{transform:translateX(0);width:260px;padding-top:20px}.sidebar-toggle{display:none}.sidebar-overlay{display:none}.section,.section-directory{margin-left:260px}}
+@media(max-width:768px){.sidebar{width:280px}}
 </style>
 </head>
 <body>
+<div class="sidebar-toggle" id="sidebarToggle">&#9776;</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<nav class="sidebar" id="courseSidebar">
+<div class="sidebar-header"><h3>Course Navigation</h3></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S01</span>Welcome</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s1l1">L1: Course Introduction</a>
+<a class="sidebar-lesson" href="#s1l2">L2: Join The Software Architects Community</a>
+<a class="sidebar-lesson" href="#s1l3">L3: Who Is This Course For?</a>
+<a class="sidebar-lesson" href="#s1l4">L4: What We Will Talk About in This Course</a>
+<a class="sidebar-lesson" href="#s1l5">L5: An Update for Udemy Students</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S02</span>API Basics</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s2l6">L6: Skip This Section If...</a>
+<a class="sidebar-lesson" href="#s2l7">L7: What Is an API?</a>
+<a class="sidebar-lesson" href="#s2l8">L8: API Types</a>
+<a class="sidebar-lesson" href="#s2l9">L9: Importance of API</a>
+<a class="sidebar-lesson" href="#s2l10">L10: Why Do You Need a Well Designed API?</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S03</span>Web APIs</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s3l11">L11: Skip This Section If...</a>
+<a class="sidebar-lesson" href="#s3l12">L12: Web APIs</a>
+<a class="sidebar-lesson" href="#s3l13">L13: SOAP</a>
+<a class="sidebar-lesson" href="#s3l14">L14: REST</a>
+<a class="sidebar-lesson" href="#s3l15">L15: GraphQL</a>
+<a class="sidebar-lesson" href="#s3l16">L16: gRPC</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S04</span>REST Basics</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s4l17">L17: What is REST?</a>
+<a class="sidebar-lesson" href="#s4l18">L18: Structure of REST API Request</a>
+<a class="sidebar-lesson" href="#s4l19">L19: Structure of REST API Response</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S05</span>Introduction to Beeceptor</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s5l20">L20: What is Beeceptor?</a>
+<a class="sidebar-lesson" href="#s5l21">L21: Using Beeceptor</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S06</span>Introduction to Postman</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s6l22">L22: What is Postman?</a>
+<a class="sidebar-lesson" href="#s6l23">L23: Downloading Postman</a>
+<a class="sidebar-lesson" href="#s6l24">L24: Using Postman</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S07</span>HTTP Verbs</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s7l25">L25: Introduction to HTTP Verbs</a>
+<a class="sidebar-lesson" href="#s7l26">L26: The GET Verb</a>
+<a class="sidebar-lesson" href="#s7l27">L27: The POST Verb</a>
+<a class="sidebar-lesson" href="#s7l28">L28: The PUT Verb</a>
+<a class="sidebar-lesson" href="#s7l29">L29: The DELETE Verb</a>
+<a class="sidebar-lesson" href="#s7l30">L30: Additional Verbs</a>
+<a class="sidebar-lesson" href="#s7l31">L31: HTTP Verbs Summary</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S08</span>URL Structure</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s8l32">L32: Introduction to URL Structure</a>
+<a class="sidebar-lesson" href="#s8l33">L33: Domain Name</a>
+<a class="sidebar-lesson" href="#s8l34">L34: The API Word</a>
+<a class="sidebar-lesson" href="#s8l35">L35: Version</a>
+<a class="sidebar-lesson" href="#s8l36">L36: Entity</a>
+<a class="sidebar-lesson" href="#s8l37">L37: ID Parameter</a>
+<a class="sidebar-lesson" href="#s8l38">L38: Sub Entities</a>
+<a class="sidebar-lesson" href="#s8l39">L39: Query Parameters</a>
+<a class="sidebar-lesson" href="#s8l40">L40: Plural vs Singular</a>
+<a class="sidebar-lesson" href="#s8l41">L41: URL Structure Summary</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S09</span>Response Codes</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s9l42">L42: What Are Response Codes?</a>
+<a class="sidebar-lesson" href="#s9l43">L43: Response Code Groups</a>
+<a class="sidebar-lesson" href="#s9l44">L44: 2XX Success Codes</a>
+<a class="sidebar-lesson" href="#s9l45">L45: 4XX Client Error Codes</a>
+<a class="sidebar-lesson" href="#s9l46">L46: 5XX Server Error Codes</a>
+<a class="sidebar-lesson" href="#s9l47">L47: Additional Response Codes</a>
+<a class="sidebar-lesson" href="#s9l48">L48: Response Codes Summary</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S10</span>REST API Documentation</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s10l49">L49: Introduction to Documentation</a>
+<a class="sidebar-lesson" href="#s10l50">L50: Introduction to OpenAPI</a>
+<a class="sidebar-lesson" href="#s10l51">L51: OpenAPI Demo</a>
+<a class="sidebar-lesson" href="#s10l52">L52: Overview of the Swagger Format</a>
+<a class="sidebar-lesson" href="#s10l53">L53: Implementing OpenAPI</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S11</span>REST API Versioning</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s11l54">L54: Importance of Versioning</a>
+<a class="sidebar-lesson" href="#s11l55">L55: Location of Version in the API</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S12</span>Authentication &amp; Authorization</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s12l56">L56: Introduction to Authentication and Autho</a>
+<a class="sidebar-lesson" href="#s12l57">L57: THE OAuth Protocol</a>
+<a class="sidebar-lesson" href="#s12l58">L58: The JWT</a>
+<a class="sidebar-lesson" href="#s12l59">L59: JWT in REST API</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S13</span>Performance</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s13l60">L60: Introduction to Performance</a>
+<a class="sidebar-lesson" href="#s13l61">L61: Important Information About This Section</a>
+<a class="sidebar-lesson" href="#s13l62">L62: Async Operations</a>
+<a class="sidebar-lesson" href="#s13l63">L63: Caching</a>
+<a class="sidebar-lesson" href="#s13l64">L64: Rate Limit</a>
+<a class="sidebar-lesson" href="#s13l65">L65: Quota</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S14</span>Monitoring</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s14l66">L66: Introduction to Monitoring</a>
+<a class="sidebar-lesson" href="#s14l67">L67: Metrics for Monitoring</a>
+<a class="sidebar-lesson" href="#s14l68">L68: Implementing Monitoring</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S15</span>Advanced Topics</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s15l69">L69: Introduction to Advanced Topics</a>
+<a class="sidebar-lesson" href="#s15l70">L70: HATEOAS</a>
+<a class="sidebar-lesson" href="#s15l71">L71: API Gateway &amp; Discovery</a>
+</div></div>
+<div class="sidebar-section">
+<button class="sidebar-section-btn"><span class="arrow">&#9654;</span><span class="sec-num">S16</span>Conclusion</button>
+<div class="sidebar-lessons">
+<a class="sidebar-lesson" href="#s16l72">L72: Conclusion</a>
+<a class="sidebar-lesson" href="#s16l73">L73: BONUS: Next Steps</a>
+</div></div>
+</nav>
+
 <div class="progress-bar" id="progressBar"></div>
 <div class="theme-toggle" onclick="toggleTheme()">&#x1F313;</div>
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#x2191;</button>
@@ -1058,6 +1224,66 @@ function filterLessons(query) {
     sec.style.display = hasVisible ? '' : 'none';
   });
 }
+</script>
+
+<script>
+(function(){
+  const sidebar = document.getElementById('courseSidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const toggle = document.getElementById('sidebarToggle');
+  if(!sidebar) return;
+
+  toggle.addEventListener('click', ()=>{
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+  overlay.addEventListener('click', ()=>{
+    sidebar.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+  // Section expand/collapse
+  document.querySelectorAll('.sidebar-section-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      btn.classList.toggle('expanded');
+      const lessons = btn.nextElementSibling;
+      lessons.classList.toggle('expanded');
+    });
+  });
+
+  // Highlight current lesson on scroll
+  const lessons = document.querySelectorAll('.sidebar-lesson');
+  const targets = [];
+  lessons.forEach(l=>{
+    const id = l.getAttribute('href')?.replace('#','');
+    if(id){const el=document.getElementById(id);if(el)targets.push({link:l,el:el})}
+  });
+
+  let ticking = false;
+  window.addEventListener('scroll', ()=>{
+    if(!ticking){requestAnimationFrame(()=>{
+      const scrollY = window.scrollY + 150;
+      let current = null;
+      for(const t of targets){if(t.el.offsetTop <= scrollY) current = t}
+      lessons.forEach(l=>l.classList.remove('active'));
+      if(current){
+        current.link.classList.add('active');
+        // Expand parent section
+        const parent = current.link.closest('.sidebar-lessons');
+        if(parent && !parent.classList.contains('expanded')){
+          parent.classList.add('expanded');
+          parent.previousElementSibling.classList.add('expanded');
+        }
+      }
+      ticking = false;
+    });ticking=true}
+  });
+
+  // Close sidebar on lesson click (mobile)
+  lessons.forEach(l=>l.addEventListener('click',()=>{
+    if(window.innerWidth < 1400){sidebar.classList.remove('open');overlay.classList.remove('active')}
+  }));
+})();
 </script>
 </body>
 </html>
