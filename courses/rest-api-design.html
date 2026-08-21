@@ -173,6 +173,22 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 .sidebar-lesson.active{color:var(--teal, #00b4d8);border-left-color:var(--teal, #00b4d8);background:rgba(0,180,216,0.06);font-weight:600}
 @media(min-width:1400px){.sidebar{width:300px}.sidebar-toggle{top:1.2rem;left:1.2rem;width:42px;height:42px}}
 @media(max-width:768px){.sidebar{width:280px}}
+
+/* Quiz styles */
+.quiz-section{margin:24px 0;padding:24px;background:var(--bg-secondary);border-radius:var(--radius-lg,12px);border:1px solid var(--border)}
+.quiz-section h3{color:var(--purple,#8b5cf6);margin-bottom:16px;font-size:1.1rem}
+.quiz-question{margin-bottom:20px}
+.quiz-question .q-text{font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:12px 16px;border-radius:var(--radius,12px);border:2px solid var(--border);cursor:pointer;transition:all 0.3s;color:var(--text-light);font-size:0.9rem;line-height:1.4;background:var(--card-bg)}
+.quiz-opt:hover:not(.disabled){border-color:var(--teal,#00b4d8);background:rgba(0,180,216,0.05)}
+.quiz-opt.correct{border-color:#10b981!important;background:rgba(16,185,129,0.1)!important;color:#6ee7b7!important}
+.quiz-opt.wrong{border-color:#ef4444!important;background:rgba(239,68,68,0.1)!important;color:#fca5a5!important}
+.quiz-opt.disabled{cursor:default;opacity:0.7}
+.quiz-opt.disabled.correct{opacity:1}
+.quiz-explanation{margin-top:10px;padding:12px 16px;border-radius:var(--radius,12px);background:rgba(16,185,129,0.08);border-left:3px solid #10b981;color:#a7f3d0;font-size:0.85rem;line-height:1.5;display:none}
+.quiz-explanation.show{display:block}
+.quiz-score{margin-top:16px;padding:12px 16px;border-radius:var(--radius,12px);background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(0,180,216,0.1));text-align:center;font-weight:600;color:var(--teal-light,#48cae4);font-size:0.9rem;display:none}
 </style>
 </head>
 <body>
@@ -487,7 +503,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>REST API is the most common and popular web API standard, surpassing SOAP, GraphQL, and gRPC in adoption</li><li>All major websites (Amazon, Twitter, Facebook, eBay, Slack, Twilio) expose REST APIs</li><li>Developers expect REST API availability; its absence can directly harm a product&#x27;s adoption and business viability</li><li>REST API is platform-agnostic: any backend language (.NET, Java, Python, Node.js) can serve it, and any client can consume it</li><li>API design is a core responsibility of software architects</li></ul>
     <div class="example-box"><div class="example-title">Universal Expectation</div><p>When developers evaluate a new web service, the first thing they look for is a REST API. A site without one loses credibility and potential integrations.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>REST API is not just one option among many; it is the industry default that architects must master</li><li>Platform independence is a key reason REST dominates: the same API serves mobile, web, and third-party clients alike</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What is the primary goal of this course?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Build mobile apps from the ground up</div>
+<div class="quiz-opt">Master frontend web development skills</div>
+<div class="quiz-opt">Study database administration deeply</div>
+<div class="quiz-opt">Learn to design robust REST APIs</div>
+</div>
+<div class="quiz-explanation">💡 This course focuses on teaching proper REST API design principles and best practices.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Who is the instructor's target audience for this course?</div>
+<div class="quiz-options">
+<div class="quiz-opt">UI designers creating user interfaces</div>
+<div class="quiz-opt">Network engineers managing firewalls</div>
+<div class="quiz-opt">Developers wanting to build better APIs</div>
+<div class="quiz-opt">Data scientists working with big data</div>
+</div>
+<div class="quiz-explanation">💡 The course targets developers who want to improve their API design skills.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s1l2">
     <h3>L2: Join The Software Architects Community</h3>
     <div class="eighty-twenty"><p>Community resource for software architects to connect and share knowledge.</p></div>
@@ -496,7 +535,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="concept-grid"><div class="concept-card"><div class="card-icon">🤝</div><div class="card-title">Peer Networking</div><div class="card-desc">Connect with fellow software architects for knowledge exchange</div></div><div class="concept-card"><div class="card-icon">💬</div><div class="card-title">Discussion Forums</div><div class="card-desc">Ask questions and share solutions with the community</div></div><div class="concept-card"><div class="card-icon">📚</div><div class="card-title">Shared Resources</div><div class="card-desc">Access curated materials and best practices from peers</div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Professional communities accelerate learning through shared experience and peer review</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What benefit does joining a professional community provide?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Guaranteed job placement at top firms</div>
+<div class="quiz-opt">Automatic promotion at your workplace</div>
+<div class="quiz-opt">Free certification for all cloud exams</div>
+<div class="quiz-opt">Access to networking and shared knowledge</div>
+</div>
+<div class="quiz-explanation">💡 Professional communities offer networking opportunities and shared learning resources.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Why is community engagement valuable for software architects?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It replaces formal education fully</div>
+<div class="quiz-opt">It guarantees higher annual salary</div>
+<div class="quiz-opt">It enables peer review and feedback</div>
+<div class="quiz-opt">It removes the need for practice</div>
+</div>
+<div class="quiz-explanation">💡 Community engagement provides peer review, diverse perspectives, and continuous learning.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s1l3">
     <h3>L3: Who Is This Course For?</h3>
     <div class="eighty-twenty"><p>API design benefits anyone involved in software development, from architects who define APIs to developers, team leads, and QA engineers who consume or validate them.</p></div>
@@ -505,7 +567,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="concept-grid"><div class="concept-card"><div class="card-icon">🏗️</div><div class="card-title">Architects</div><div class="card-desc">Define API contracts as core architectural responsibility</div></div><div class="concept-card"><div class="card-icon">👨‍💻</div><div class="card-title">Developers</div><div class="card-desc">Build and consume APIs with design awareness</div></div><div class="concept-card"><div class="card-icon">👥</div><div class="card-title">Team Leads</div><div class="card-desc">Evaluate API quality and guide technical decisions</div></div><div class="concept-card"><div class="card-icon">🧪</div><div class="card-title">QA Engineers</div><div class="card-desc">Validate APIs against design specifications</div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>API literacy is not just for backend developers; it is a cross-functional skill that impacts product quality at every level</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. Which role benefits most from learning REST API design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Graphic designers creating brand logos</div>
+<div class="quiz-opt">Accountants managing financial books</div>
+<div class="quiz-opt">Lawyers drafting legal contracts now</div>
+<div class="quiz-opt">Backend developers building services</div>
+</div>
+<div class="quiz-explanation">💡 Backend developers directly apply REST API design principles in their daily work.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What prerequisite knowledge is helpful for this course?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Expert knowledge of machine learning</div>
+<div class="quiz-opt">Professional experience in data mining</div>
+<div class="quiz-opt">Advanced skills in hardware design work</div>
+<div class="quiz-opt">Basic understanding of web protocols</div>
+</div>
+<div class="quiz-explanation">💡 A basic understanding of HTTP and web protocols helps in learning REST API design.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s1l4">
     <h3>L4: What We Will Talk About in This Course</h3>
     <div class="eighty-twenty"><p>The course progresses from foundational API and web concepts through REST specification details (verbs, URLs, status codes) to advanced topics like versioning, authentication, performance, and monitoring.</p></div>
@@ -513,7 +598,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Foundation: API basics, then web API specifics, then REST fundamentals</li><li>Core REST: HTTP verbs, URL structure (described as the single most important topic), and response status codes</li><li>Operational: Documentation, versioning, authentication/authorization, performance optimization</li><li>Advanced: Monitoring with live demos, plus rarely-used but important-to-know techniques</li><li>Tooling: Beeceptor for mocking and Postman for testing are introduced before diving into REST specs</li></ul>
     
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>URL structure is the single most critical design decision in REST API design</li><li>The learning path moves from theory to tooling to specification to operational maturity</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. Which topic is covered in this REST API design course?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Mobile UI animation and transitions</div>
+<div class="quiz-opt">Machine learning model optimization</div>
+<div class="quiz-opt">URL structure and HTTP verb usage</div>
+<div class="quiz-opt">Database sharding and replication</div>
+</div>
+<div class="quiz-explanation">💡 The course covers URL structure, HTTP verbs, response codes, versioning, and more.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What aspect of APIs does this course emphasize most?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Low-level network socket programming</div>
+<div class="quiz-opt">Operating system kernel development</div>
+<div class="quiz-opt">Proper design patterns and conventions</div>
+<div class="quiz-opt">Frontend JavaScript framework selection</div>
+</div>
+<div class="quiz-explanation">💡 The course emphasizes proper design patterns that make APIs intuitive and maintainable.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s1l5">
     <h3>L5: An Update for Udemy Students</h3>
     <div class="eighty-twenty"><p>Administrative update for Udemy platform students.</p></div>
@@ -527,7 +635,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <div class="section" id="section2">
-  <div class="section-header"><h2>S02: API Basics</h2></div>
+  <div class="section-header"><h2>S02: API Basics</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. Why do instructors provide course updates to students?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To reflect new industry best practices</div>
+<div class="quiz-opt">To change the course topic entirely</div>
+<div class="quiz-opt">To increase the total video duration</div>
+<div class="quiz-opt">To remove previously useful content</div>
+</div>
+<div class="quiz-explanation">💡 Updates ensure course content stays aligned with current industry standards.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What should students do when course content is updated?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Restart the entire course from scratch</div>
+<div class="quiz-opt">Request a full refund from the site</div>
+<div class="quiz-opt">Review new material for fresh insights</div>
+<div class="quiz-opt">Ignore updates and skip all new parts</div>
+</div>
+<div class="quiz-explanation">💡 Reviewing updated material helps students stay current with best practices.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s2l6">
     <h3>L6: Skip This Section If...</h3>
     <div class="eighty-twenty"><p>Section can be skipped by those already familiar with API fundamentals.</p></div>
@@ -537,7 +668,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="step-breakdown"><div class="step-item"><div class="step-circle">1</div><div class="step-content"><h4>Assess Your Knowledge</h4><p>Can you explain what an API is and how HTTP request/response cycles work?</p></div></div><div class="step-item"><div class="step-circle">2</div><div class="step-content"><h4>Decide</h4><p>If yes, skip this section. If unsure, proceed for a solid foundation.</p></div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Self-assessment of existing knowledge allows efficient use of course time by skipping familiar material</li><li>If unsure whether to skip, briefly skim the section; gaps in fundamentals compound later</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. When might a student skip introductory sections?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When the section has the most new info</div>
+<div class="quiz-opt">When they want to miss critical content</div>
+<div class="quiz-opt">When the instructor recommends watching</div>
+<div class="quiz-opt">When they already know the basic concepts</div>
+</div>
+<div class="quiz-explanation">💡 Students with prior knowledge can skip introductory content to save time.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What is the risk of skipping foundational lessons?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Getting a higher score on all quizzes</div>
+<div class="quiz-opt">Learning advanced topics more rapidly</div>
+<div class="quiz-opt">Completing the course much too quickly</div>
+<div class="quiz-opt">Missing key terminology used later on</div>
+</div>
+<div class="quiz-explanation">💡 Skipping foundations may cause confusion when advanced topics reference earlier concepts.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s2l7">
     <h3>L7: What Is an API?</h3>
     <div class="eighty-twenty"><p>An API (Application Programming Interface) is a set of clearly defined methods that allow software components to communicate with each other, analogous to how a user interface exposes functionality to humans.</p></div>
@@ -545,7 +699,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>API stands for Application Programming Interface</li><li>Wikipedia definition: &#x27;a set of clearly defined methods of communication among various components&#x27;</li><li>A user interface exposes functionality visually to humans; an API exposes functionality programmatically to applications</li><li>The word &#x27;exposed&#x27; is critical: an API defines what is visible and accessible to external consumers</li><li>API content (URLs, JSON, parameters) is designed for machine consumption, not human readability</li><li>The address line of an API request (the URL) is the primary element REST API design focuses on</li></ul>
     <div class="example-box"><div class="example-title">UI vs API Analogy</div><p>A website homepage is a user interface showing visual content to humans. An API endpoint serves the same underlying data but formatted for applications (JSON with URLs, parameters, and structured fields).</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>An API is fundamentally about exposure: it defines the contract between software components, determining what operations and data are accessible</li><li>Understanding the UI analogy clarifies API design: just as good UI design makes apps intuitive for users, good API design makes integration intuitive for developers</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What does API stand for in software development?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Abstract Platform Interchange op</div>
+<div class="quiz-opt">Automated Processing Instrument</div>
+<div class="quiz-opt">Application Programming Interface</div>
+<div class="quiz-opt">Applied Protocol Integration sys</div>
+</div>
+<div class="quiz-explanation">💡 API stands for Application Programming Interface, a contract between software components.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What is the primary purpose of an API?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Render graphical user interface views</div>
+<div class="quiz-opt">Compile source code into binary files</div>
+<div class="quiz-opt">Store data in relational databases</div>
+<div class="quiz-opt">Enable communication between systems</div>
+</div>
+<div class="quiz-explanation">💡 APIs enable different software systems to communicate and exchange data.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s2l8">
     <h3>L8: API Types</h3>
     <div class="eighty-twenty"><p>APIs exist in four major categories (Operating System, Library, Remote, and Web), each serving a different integration scope, with Web APIs being the most widely used and the focus of REST design.</p></div>
@@ -553,7 +730,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Operating System API: applications request OS services (file system, network devices, UI elements) through the OS API; Win32 API is the most well-known example</li><li>Library API: reusable code packages expose functionality through APIs; examples include jQuery for DOM manipulation and Apache Commons for Java utilities</li><li>Remote API: enables communication between applications on different machines; RMI (Remote Method Invocation) in Java and DCOM in Windows are classic examples</li><li>Web API: the most common type today; uses standard web protocols (primarily HTTP) to enable cross-platform, cross-network communication</li><li>Web APIs are the broadest and most platform-agnostic category, which is why REST API design focuses here</li></ul>
     <div class="example-box"><div class="example-title">Operating System API</div><p>When an application displays a button on Windows, it calls the Win32 API to request the OS to render that UI element.</p></div><div class="example-box"><div class="example-title">Library API</div><p>A JavaScript developer calls jQuery&#x27;s $.ajax() method; this is consuming the jQuery library&#x27;s API.</p></div><div class="example-box"><div class="example-title">Remote API</div><p>Java RMI allows one JVM to invoke methods on an object residing in another JVM on a different machine.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Each API type serves a progressively wider integration scope: same-machine OS calls, same-process libraries, cross-machine remote calls, and finally cross-network web APIs</li><li>Web APIs subsume much of what Remote APIs once did, with the added benefit of platform independence and HTTP standardization</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. Which of these is a common API architectural style?</div>
+<div class="quiz-options">
+<div class="quiz-opt">REST using HTTP protocol methods</div>
+<div class="quiz-opt">CSS for styling web page layouts</div>
+<div class="quiz-opt">HTML for structuring web documents</div>
+<div class="quiz-opt">SQL for querying database tables</div>
+</div>
+<div class="quiz-explanation">💡 REST is one of the most common API architectural styles, using HTTP methods.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. How do API types differ from one another?</div>
+<div class="quiz-options">
+<div class="quiz-opt">In the cost of server hardware used</div>
+<div class="quiz-opt">In their protocols and data formats</div>
+<div class="quiz-opt">In the color of their documentation</div>
+<div class="quiz-opt">In which programming language is best</div>
+</div>
+<div class="quiz-explanation">💡 API types differ in protocols (HTTP, TCP), data formats (JSON, XML), and interaction patterns.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s2l9">
     <h3>L9: Importance of API</h3>
     <div class="eighty-twenty"><p>APIs are essential because modern architectures (mobile apps, SPAs) require them to communicate with backend servers, and they also enable business extension and monetization.</p></div>
@@ -561,7 +761,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Mobile applications have no way to access backend data without an API; they run as separate processes on separate devices</li><li>Single Page Applications (SPAs) built with React, Angular, or Vue render on the client and must call server APIs for data</li><li>APIs extend an application&#x27;s reach by allowing third-party developers to build on top of the platform</li><li>APIs enable monetization: companies can charge for API access (per-call pricing, subscription tiers)</li><li>Twitter is a classic example: it became a platform rather than just a website because its API let thousands of third-party apps interact with it</li><li>Without an API, a backend application is isolated and limited to whatever frontend the developer builds</li></ul>
     <div class="example-box"><div class="example-title">Twitter Platform Effect</div><p>Twitter&#x27;s open API allowed third-party developers to build clients, analytics tools, and bots, transforming Twitter from a single website into an ecosystem of thousands of applications.</p></div><div class="example-box"><div class="example-title">API Monetization</div><p>Services like Twilio charge per API call (SMS sent, call made), turning backend capabilities directly into revenue streams.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>An API is not optional in modern architecture; it is the mandatory communication channel between any client (mobile, SPA, third-party) and the server</li><li>APIs transform products from isolated applications into extensible platforms with monetization potential</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. Why are APIs important in modern software systems?</div>
+<div class="quiz-options">
+<div class="quiz-opt">They eliminate the need for databases</div>
+<div class="quiz-opt">They make hardware upgrades obsolete</div>
+<div class="quiz-opt">They replace all user interface layers</div>
+<div class="quiz-opt">They enable modular system integration</div>
+</div>
+<div class="quiz-explanation">💡 APIs enable modular architecture where systems integrate without tight coupling.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What business value do well-designed APIs provide?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Reduced need for any documentation work</div>
+<div class="quiz-opt">Removal of the need for testing code</div>
+<div class="quiz-opt">Faster partner and third-party adoption</div>
+<div class="quiz-opt">Elimination of all security requirements</div>
+</div>
+<div class="quiz-explanation">💡 Well-designed APIs accelerate adoption by partners and third-party developers.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s2l10">
     <h3>L10: Why Do You Need a Well Designed API?</h3>
     <div class="eighty-twenty"><p>Developers consuming an API are customers with alternatives; a poorly designed API drives them to competitors, while a well-designed one reduces support costs and increases adoption.</p></div>
@@ -573,7 +796,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s2"><h4>&#x1F4DD; Section 2 Quick Check</h4><div class="quiz-question" data-correct="1"><p>What distinguishes an API from a UI?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">APIs serve humans, UIs serve software</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">APIs serve software, UIs serve humans</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">Both serve only machines</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">UIs are newer than APIs</div></div></div></div>
 
 <div class="section" id="section3">
-  <div class="section-header"><h2>S03: Web APIs</h2></div>
+  <div class="section-header"><h2>S03: Web APIs</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What problem does poor API design cause?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Improved security with zero weak points</div>
+<div class="quiz-opt">Reduced server costs and less latency</div>
+<div class="quiz-opt">Faster onboarding for new developers</div>
+<div class="quiz-opt">Confusion and high developer friction</div>
+</div>
+<div class="quiz-explanation">💡 Poor API design causes confusion, increases learning curve, and leads to misuse.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. What characteristic defines a well-designed API?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Intuitive and consistent naming patterns</div>
+<div class="quiz-opt">Maximum number of endpoints possible</div>
+<div class="quiz-opt">Cryptic codes that save URL characters</div>
+<div class="quiz-opt">Frequent breaking changes each release</div>
+</div>
+<div class="quiz-explanation">💡 Well-designed APIs use intuitive, consistent naming that developers can predict.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s3l11">
     <h3>L11: Skip This Section If...</h3>
     <div class="eighty-twenty"><p>Section can be skipped by those already familiar with web API types.</p></div>
@@ -583,7 +829,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="step-breakdown"><div class="step-item"><div class="step-circle">1</div><div class="step-content"><h4>Self-Check</h4><p>Can you explain the differences between SOAP, REST, GraphQL, and gRPC?</p></div></div><div class="step-item"><div class="step-circle">2</div><div class="step-content"><h4>Decide</h4><p>If yes, skip ahead. If not, this section fills critical context for design choices later.</p></div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Understanding API types (SOAP, REST, GraphQL, gRPC) provides context for why REST design choices matter</li><li>Skip only if you can confidently explain the trade-offs between each API style</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What knowledge lets you skip the web API basics section?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Familiarity with HTTP and web services</div>
+<div class="quiz-opt">Knowledge of only embedded C systems</div>
+<div class="quiz-opt">Background in pure mathematics theory</div>
+<div class="quiz-opt">Experience only in desktop GUI apps now</div>
+</div>
+<div class="quiz-explanation">💡 If you already understand HTTP and web services, you can skip the basics section.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Why does the course offer skip guidance for sections?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To respect experienced learners' time</div>
+<div class="quiz-opt">To reduce the course completion rate</div>
+<div class="quiz-opt">To hide important material from people</div>
+<div class="quiz-opt">To discourage watching the full course</div>
+</div>
+<div class="quiz-explanation">💡 Skip guidance helps experienced learners focus on new material efficiently.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s3l12">
     <h3>L12: Web APIs</h3>
     <div class="eighty-twenty"><p>Web APIs are platform-agnostic interfaces that use standard HTTP protocols in a request/response model, differentiated primarily by their request and response formats and content.</p></div>
@@ -591,7 +860,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Definition: an API exposed by a web component that allows other components to interact with it over the network</li><li>Platform agnostic: a .NET component can communicate with a Python component seamlessly through a web API</li><li>Standard protocols: almost all web APIs operate over HTTP</li><li>Request/response paradigm: a client sends an HTTP request and receives an HTTP response</li><li>Web API types are differentiated by four axes: request format, request content, response format, and response content</li><li>The four major web API types are SOAP, REST, GraphQL, and gRPC</li></ul>
     <div class="example-box"><div class="example-title">Cross-Platform Communication</div><p>A .NET microservice sends an HTTP request to a Python service&#x27;s web API. Neither service needs to know the other&#x27;s implementation language; HTTP and JSON serve as the universal contract.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Platform agnosticism is the defining advantage of web APIs over OS, library, or remote APIs</li><li>When evaluating or comparing web API types, focus on the four differentiation axes: request format, request content, response format, response content</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What distinguishes a Web API from other API types?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It only works on local file systems</div>
+<div class="quiz-opt">It uses Bluetooth for data transfers</div>
+<div class="quiz-opt">It requires direct hardware bus access</div>
+<div class="quiz-opt">It communicates over HTTP or HTTPS</div>
+</div>
+<div class="quiz-explanation">💡 Web APIs communicate over HTTP/HTTPS protocols across networks.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What is a common data format used by Web APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">MP3 for audio streaming playback</div>
+<div class="quiz-opt">PDF for document formatting layout</div>
+<div class="quiz-opt">JSON for structured data exchange</div>
+<div class="quiz-opt">JPEG for image rendering purposes</div>
+</div>
+<div class="quiz-explanation">💡 JSON is the most common data format for Web API request and response bodies.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s3l13">
     <h3>L13: SOAP</h3>
     <div class="eighty-twenty"><p>SOAP (Simple Object Access Protocol) is an XML-based, RPC-style web API from 1998 that is extensible but largely outdated, suitable only for legacy system integration.</p></div>
@@ -600,7 +892,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="example-box"><div class="example-title">SOAP Stock Price Request</div><p>A SOAP request wraps the method call &#x27;GetStockPrice&#x27; with parameter &#x27;StockName=IBM&#x27; inside an XML envelope with a body element. The strict XML structure contrasts sharply with REST&#x27;s simpler URL+JSON approach.</p></div>
     <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Aspect</th><th>SOAP</th><th>Modern Alternative (REST)</th></tr></thead><tbody><tr><td>Format</td><td>XML envelopes</td><td>JSON</td></tr><tr><td>Style</td><td>RPC (call named methods)</td><td>Message (send to URLs)</td></tr><tr><td>Complexity</td><td>High (schemas, WSDL)</td><td>Low (URL + verb)</td></tr><tr><td>Use Case</td><td>Legacy integration only</td><td>General purpose</td></tr></tbody></table></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>SOAP&#x27;s XML verbosity and RPC coupling made it powerful but complex; REST replaced it by favoring simplicity and resource-oriented design</li><li>SOAP knowledge remains relevant only for legacy integration scenarios</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What data format does SOAP primarily use for messages?</div>
+<div class="quiz-options">
+<div class="quiz-opt">CSV with comma-separated columns</div>
+<div class="quiz-opt">XML with a strict envelope structure</div>
+<div class="quiz-opt">JSON with flexible key-value pairs</div>
+<div class="quiz-opt">YAML with indentation-based syntax</div>
+</div>
+<div class="quiz-explanation">💡 SOAP uses XML with a strict envelope structure including header and body elements.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What is a key characteristic of the SOAP protocol?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Lightweight with minimal message overhead</div>
+<div class="quiz-opt">Exclusive use of GET HTTP method only</div>
+<div class="quiz-opt">Strict contracts defined by WSDL files</div>
+<div class="quiz-opt">No support for enterprise transactions</div>
+</div>
+<div class="quiz-explanation">💡 SOAP relies on WSDL files to define strict service contracts and operations.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s3l14">
     <h3>L14: REST</h3>
     <div class="eighty-twenty"><p>REST (Representational State Transfer) is a message-style web API based on URLs and JSON, designed in 2000 by Roy Fielding, that became the de facto standard because of its simplicity: send to a URL, get back JSON.</p></div>
@@ -609,7 +924,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="example-box"><div class="example-title">REST vs SOAP Simplicity</div><p>To get a stock price via SOAP, a client constructs an XML envelope calling &#x27;GetStockPrice&#x27;. Via REST, the client simply sends GET /api/stocks/IBM and receives a JSON response. The reduction in ceremony is dramatic.</p></div>
     <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Aspect</th><th>REST</th><th>SOAP</th></tr></thead><tbody><tr><td>Year</td><td>2000</td><td>1998</td></tr><tr><td>Format</td><td>JSON (lightweight)</td><td>XML (verbose)</td></tr><tr><td>Style</td><td>Message to URL</td><td>RPC method call</td></tr><tr><td>Simplicity</td><td>High</td><td>Low</td></tr><tr><td>Adoption</td><td>De facto standard</td><td>Legacy only</td></tr></tbody></table></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>REST&#x27;s dominance stems from its radical simplicity: URL + JSON eliminated the XML overhead and RPC coupling that made SOAP burdensome</li><li>Message-style design decouples clients from server internals; the URL and HTTP verb convey intent without exposing method names</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What does REST stand for in API terminology?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Recursive Entity Structuring Template</div>
+<div class="quiz-opt">Reliable Encrypted Streaming Transport</div>
+<div class="quiz-opt">Remote Execution Service Technology</div>
+<div class="quiz-opt">Representational State Transfer style</div>
+</div>
+<div class="quiz-explanation">💡 REST stands for Representational State Transfer, an architectural style for APIs.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which constraint is fundamental to REST architecture?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Mandatory XML for all data payloads</div>
+<div class="quiz-opt">Persistent connection between requests</div>
+<div class="quiz-opt">Stateless client-server interactions</div>
+<div class="quiz-opt">Single endpoint for every operation</div>
+</div>
+<div class="quiz-explanation">💡 REST requires stateless interactions where each request contains all needed information.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s3l15">
     <h3>L15: GraphQL</h3>
     <div class="eighty-twenty"><p>GraphQL enables clients to specify exactly which fields they need in a single query, eliminating over-fetching and under-fetching, but requires more upfront development effort and can suffer from performance issues compared to REST.</p></div>
@@ -618,7 +956,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="example-box"><div class="example-title">GraphQL Field Selection</div><p>A query for &#x27;posts&#x27; specifies only id, title, body, publishDate, and author.name. The response contains exactly those fields, nothing more. A REST equivalent would return the entire post object including fields the client does not need.</p></div>
     <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Aspect</th><th>GraphQL</th><th>REST</th></tr></thead><tbody><tr><td>Query Precision</td><td>Client specifies exact fields</td><td>Server defines fixed response shape</td></tr><tr><td>Over-fetching</td><td>Eliminated</td><td>Common problem</td></tr><tr><td>Development Effort</td><td>Higher upfront</td><td>Lower upfront</td></tr><tr><td>Performance</td><td>Can degrade with complex queries</td><td>Pre-optimized endpoints</td></tr><tr><td>Real-time</td><td>Built-in subscriptions</td><td>Requires separate mechanism</td></tr></tbody></table></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>GraphQL trades REST&#x27;s simplicity for query precision; the right choice depends on whether the application&#x27;s data access patterns are complex enough to justify the overhead</li><li>The subscription capability for real-time data updates is a unique strength not available in standard REST</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What problem does GraphQL solve compared to REST?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Missing authentication in all requests</div>
+<div class="quiz-opt">Lack of support for JSON format data</div>
+<div class="quiz-opt">Over-fetching and under-fetching data</div>
+<div class="quiz-opt">Inability to use HTTP for transport</div>
+</div>
+<div class="quiz-explanation">💡 GraphQL lets clients request exactly the data they need, avoiding over/under-fetching.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. How does a GraphQL client specify the data it needs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">By sending a query describing fields</div>
+<div class="quiz-opt">By using different HTTP verbs for each</div>
+<div class="quiz-opt">By appending filters to the URL path</div>
+<div class="quiz-opt">By setting custom headers per request</div>
+</div>
+<div class="quiz-explanation">💡 GraphQL clients send queries that specify exactly which fields and relations to return.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s3l16">
     <h3>L16: gRPC</h3>
     <div class="eighty-twenty"><p>gRPC, built on HTTP/2 and Protocol Buffers, delivers high-performance bidirectional streaming but requires specialized libraries on both ends and has not yet achieved widespread adoption.</p></div>
@@ -630,7 +991,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s3"><h4>&#x1F4DD; Section 3 Quick Check</h4><div class="quiz-question" data-correct="3"><p>Which protocol uses Protobuf (binary) format?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">SOAP</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">REST</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">GraphQL</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">gRPC</div></div></div></div>
 
 <div class="section" id="section4">
-  <div class="section-header"><h2>S04: REST Basics</h2></div>
+  <div class="section-header"><h2>S04: REST Basics</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What serialization format does gRPC use by default?</div>
+<div class="quiz-options">
+<div class="quiz-opt">XML for verbose structured messages</div>
+<div class="quiz-opt">Protocol Buffers for compact binary</div>
+<div class="quiz-opt">CSV for simple tabular data exchange</div>
+<div class="quiz-opt">JSON for human-readable text format</div>
+</div>
+<div class="quiz-explanation">💡 gRPC uses Protocol Buffers (protobuf) for efficient binary serialization.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. What transport protocol does gRPC rely on?</div>
+<div class="quiz-options">
+<div class="quiz-opt">HTTP/2 for multiplexed streaming</div>
+<div class="quiz-opt">SMTP for message delivery queuing</div>
+<div class="quiz-opt">FTP for reliable file transfer jobs</div>
+<div class="quiz-opt">HTTP/1.0 for simple request-reply</div>
+</div>
+<div class="quiz-explanation">💡 gRPC uses HTTP/2, enabling multiplexed streams and bidirectional communication.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s4l17">
     <h3>L17: What is REST?</h3>
     <div class="eighty-twenty"><p>REST (Representational State Transfer) means that a client requests a resource&#x27;s current state from a server and receives back a representation of that state, typically as JSON.</p></div>
@@ -638,7 +1022,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>REST stands for Representational State Transfer; each word carries specific meaning</li><li>State: the current properties of a resource, or the result of an action performed on it</li><li>Representation: the format in which the state is encoded and transmitted (usually JSON)</li><li>Transfer: the state representation moves from server to client (or confirmation of an action moves back)</li><li>Request/response model: client sends a request specifying a resource, server returns a representation of that resource&#x27;s state</li><li>For retrieval (GET): the response contains the resource&#x27;s current property values as JSON</li><li>For actions (DELETE, PUT): the response contains a representation confirming the action&#x27;s result, not necessarily the resource data itself</li></ul>
     <div class="example-box"><div class="example-title">GET Order State</div><p>Client requests GET /orders/17. The server returns a JSON representation of order 17&#x27;s state: order date, customer, and line items. The JSON is the &#x27;representation&#x27; of the &#x27;state&#x27; being &#x27;transferred&#x27;.</p></div><div class="example-box"><div class="example-title">DELETE Action Result</div><p>Client requests DELETE /orders/17. The server returns a representation confirming deletion succeeded. The &#x27;state&#x27; here is the result of the delete action, not the order&#x27;s properties.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>The name &#x27;Representational State Transfer&#x27; is not arbitrary jargon; it precisely describes the mechanics: transfer a representation of a resource&#x27;s state</li><li>REST treats everything as a resource with state, and every API interaction is about transferring a snapshot of that state in a standard representation format</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. Which principle is NOT part of REST architecture?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Mandatory server-side session storage</div>
+<div class="quiz-opt">Stateless communication between parties</div>
+<div class="quiz-opt">Uniform interface for all resources now</div>
+<div class="quiz-opt">Client-server separation of concerns</div>
+</div>
+<div class="quiz-explanation">💡 REST requires statelessness, meaning the server must NOT store session state.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What makes REST different from RPC-style APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">REST uses only binary data formats now</div>
+<div class="quiz-opt">REST avoids using HTTP methods fully</div>
+<div class="quiz-opt">REST models resources not operations</div>
+<div class="quiz-opt">REST requires persistent connections</div>
+</div>
+<div class="quiz-explanation">💡 REST focuses on resources (nouns) while RPC focuses on operations (verbs).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s4l18">
     <h3>L18: Structure of REST API Request</h3>
     <div class="eighty-twenty"><p>A REST API request consists of four components: the HTTP method (verb) that declares intent, the URL that locates the resource, headers that carry metadata, and an optional body that contains the request payload.</p></div>
@@ -646,7 +1053,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Method (HTTP verb): GET, POST, PUT, DELETE; each verb has a specific, well-defined role</li><li>URL: the address of the resource, optionally including query parameters</li><li>Headers: metadata about the request (User-Agent, Authorization, Cache-Control, Host, Content-Type)</li><li>Body: the content/payload of the request; optional and not present in all request types (e.g., GET typically has no body)</li><li>The verb + URL combination is the most critical part; it declares what action to perform on which resource</li></ul>
     <div class="example-box"><div class="example-title">Anatomy of a GET Request</div><p>Method: GET | URL: /api/orders/17 | Headers: User-Agent, Host, Cache-Control | Body: (none). The verb declares read intent, the URL identifies the resource, and headers provide context. No body is needed for a retrieval.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>The four request components map to a simple question: What do you want to do (method), to which resource (URL), with what context (headers), carrying what data (body)?</li><li>GET requests typically omit the body; the URL alone identifies the resource to retrieve</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What are the main components of a REST API request?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Database name, table, column, and row</div>
+<div class="quiz-opt">Server IP, port, socket, and buffer</div>
+<div class="quiz-opt">HTTP method, URL, headers, and body</div>
+<div class="quiz-opt">File path, name, extension, and size</div>
+</div>
+<div class="quiz-explanation">💡 A REST request consists of the HTTP method, URL, headers, and optional body.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. Where is the resource identifier placed in a REST request?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Inside the request body as a JSON field</div>
+<div class="quiz-opt">As a custom HTTP header value entry</div>
+<div class="quiz-opt">In the TCP packet payload directly now</div>
+<div class="quiz-opt">In the URL path after the base domain</div>
+</div>
+<div class="quiz-explanation">💡 The resource identifier is part of the URL path (e.g., /api/users/123).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s4l19">
     <h3>L19: Structure of REST API Response</h3>
     <div class="eighty-twenty"><p>A REST API response contains three components: a numeric status code indicating success or failure, headers with response metadata, and an optional body carrying the resource&#x27;s state representation (usually JSON).</p></div>
@@ -658,7 +1088,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s4"><h4>&#x1F4DD; Section 4 Quick Check</h4><div class="quiz-question" data-correct="2"><p>How many constraints define a true REST API?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">3</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">4</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">6</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">8</div></div></div></div>
 
 <div class="section" id="section5">
-  <div class="section-header"><h2>S05: Introduction to Beeceptor</h2></div>
+  <div class="section-header"><h2>S05: Introduction to Beeceptor</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What does the HTTP status code in a response indicate?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The total size of the response payload</div>
+<div class="quiz-opt">The outcome of the client request made</div>
+<div class="quiz-opt">The programming language of the server</div>
+<div class="quiz-opt">The geographic location of the server</div>
+</div>
+<div class="quiz-explanation">💡 HTTP status codes indicate whether a request succeeded, failed, or requires action.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Which part of a REST response contains the actual data?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The response body in JSON or XML form</div>
+<div class="quiz-opt">The URL that was originally requested</div>
+<div class="quiz-opt">The status code number in the header</div>
+<div class="quiz-opt">The HTTP method that was used to call</div>
+</div>
+<div class="quiz-explanation">💡 The response body contains the actual data payload, typically in JSON format.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s5l20">
     <h3>L20: What is Beeceptor?</h3>
     <div class="eighty-twenty"><p>Beeceptor is a free, no-code web tool that creates mock REST API endpoints, allowing API behavior to be simulated and tested without writing any backend code.</p></div>
@@ -666,7 +1119,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Beeceptor is a REST API mocking website: it simulates real API endpoints with configurable responses</li><li>No coding required; all API definitions are configured through the web UI</li><li>Free tier allows up to 50 requests per day, sufficient for learning and light testing</li><li>Paid tiers available for higher request volumes and production-level testing</li><li>Mocking enables API design and testing before backend implementation begins</li></ul>
     <div class="example-box"><div class="example-title">Prototype Before You Build</div><p>A team designing a new API can mock all endpoints in Beeceptor, share the mock URLs with frontend developers, and iterate on the API contract before writing a single line of backend code.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>API mocking tools like Beeceptor decouple API design from implementation, enabling parallel frontend and backend development</li><li>Mocking is a design-first approach: define the contract, test it, then build the real implementation to match</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is Beeceptor used for in API development?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Deploying production server clusters</div>
+<div class="quiz-opt">Creating mock API endpoints quickly</div>
+<div class="quiz-opt">Monitoring live traffic in real time</div>
+<div class="quiz-opt">Managing database schema migrations</div>
+</div>
+<div class="quiz-explanation">💡 Beeceptor is a tool for creating mock API endpoints for testing purposes.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. When would a developer use a mock API tool?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When the frontend is already completed</div>
+<div class="quiz-opt">When the API is fully deployed and live</div>
+<div class="quiz-opt">When no testing is needed at all here</div>
+<div class="quiz-opt">When the real backend is not yet built</div>
+</div>
+<div class="quiz-explanation">💡 Mock APIs are useful when the backend isn't ready but frontend development must proceed.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s5l21">
     <h3>L21: Using Beeceptor</h3>
     <div class="eighty-twenty"><p>Setting up a Beeceptor mock involves choosing a subdomain, creating mocking rules that define the HTTP method, URL path, status code, and response body, then testing the endpoint in a browser.</p></div>
@@ -678,7 +1154,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <div class="section" id="section6">
-  <div class="section-header"><h2>S06: Introduction to Postman</h2></div>
+  <div class="section-header"><h2>S06: Introduction to Postman</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. How do you define a mock response in Beeceptor?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Edit the server's operating system files</div>
+<div class="quiz-opt">Write SQL queries against a database now</div>
+<div class="quiz-opt">Configure rules with path and response</div>
+<div class="quiz-opt">Deploy containers with Docker Compose</div>
+</div>
+<div class="quiz-explanation">💡 Beeceptor lets you configure rules matching paths to predefined responses.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What can you customize in a Beeceptor mock endpoint?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The network bandwidth of the consumer</div>
+<div class="quiz-opt">The client's operating system and browser</div>
+<div class="quiz-opt">Status code, headers, and response body</div>
+<div class="quiz-opt">The physical server location and region</div>
+</div>
+<div class="quiz-explanation">💡 You can customize the status code, headers, and body of mock responses.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s6l22">
     <h3>L22: What is Postman?</h3>
     <div class="eighty-twenty"><p>Postman is the industry-standard REST API client that allows developers to construct requests (setting verb, URL, headers, body), send them, and inspect the full response (status, headers, body).</p></div>
@@ -687,7 +1186,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="step-breakdown"><div class="step-item"><div class="step-circle">1</div><div class="step-content"><h4>Set HTTP Verb</h4><p>Choose GET, POST, PUT, DELETE, or PATCH for the request type</p></div></div><div class="step-item"><div class="step-circle">2</div><div class="step-content"><h4>Enter URL</h4><p>Specify the API endpoint URL to target</p></div></div><div class="step-item"><div class="step-circle">3</div><div class="step-content"><h4>Configure Headers/Body</h4><p>Add headers (Content-Type, Auth) and request body as needed</p></div></div><div class="step-item"><div class="step-circle">4</div><div class="step-content"><h4>Send and Inspect</h4><p>View response status, headers, body, time, and size</p></div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Postman bridges the gap between API design and validation: it provides a visual interface to exercise every aspect of a REST API request and inspect every aspect of the response</li><li>While Beeceptor creates the mock API, Postman is the tool used to interact with it (and later, with real APIs)</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What is the primary use of Postman in API work?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Designing relational database schemas</div>
+<div class="quiz-opt">Writing frontend JavaScript components</div>
+<div class="quiz-opt">Managing cloud server infrastructure</div>
+<div class="quiz-opt">Testing and exploring API endpoints</div>
+</div>
+<div class="quiz-explanation">💡 Postman is primarily used for testing, exploring, and documenting API endpoints.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which feature makes Postman popular among developers?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Native mobile app development toolkit</div>
+<div class="quiz-opt">Easy request building with a visual UI</div>
+<div class="quiz-opt">Built-in database management interface</div>
+<div class="quiz-opt">Automatic code deployment to production</div>
+</div>
+<div class="quiz-explanation">💡 Postman's visual interface makes it easy to build and test API requests.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s6l23">
     <h3>L23: Downloading Postman</h3>
     <div class="eighty-twenty"><p>Postman is downloaded from getpostman.com, installed as a desktop application, and ready to use immediately with no additional configuration.</p></div>
@@ -695,7 +1217,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Download from https://getpostman.com</li><li>Select the appropriate operating system version (Windows, macOS, Linux)</li><li>Installation is a standard desktop app install with no special configuration</li><li>The application is ready to use immediately after installation</li></ul>
     
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Postman&#x27;s zero-configuration installation reflects its design philosophy: minimize friction between the developer and the API</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. On which platforms is Postman available for download?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Only on Windows desktop computers</div>
+<div class="quiz-opt">Windows, macOS, and Linux systems</div>
+<div class="quiz-opt">Only as a mobile iOS application</div>
+<div class="quiz-opt">Exclusively on Apple macOS devices</div>
+</div>
+<div class="quiz-explanation">💡 Postman is available as a desktop application on Windows, macOS, and Linux.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is an alternative to the Postman desktop app?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A hardware device for API testing only</div>
+<div class="quiz-opt">The Postman web version in a browser</div>
+<div class="quiz-opt">An Excel spreadsheet with API macros</div>
+<div class="quiz-opt">A command-line-only Linux terminal tool</div>
+</div>
+<div class="quiz-explanation">💡 Postman offers a web-based version accessible through any modern browser.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s6l24">
     <h3>L24: Using Postman</h3>
     <div class="eighty-twenty"><p>Postman&#x27;s interface centers on a request builder (verb selector, URL bar, headers/body tabs) and a response viewer (JSON body, status code, timing, size), with a console that reveals the raw HTTP network traffic.</p></div>
@@ -707,7 +1252,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <div class="section" id="section7">
-  <div class="section-header"><h2>S07: HTTP Verbs</h2></div>
+  <div class="section-header"><h2>S07: HTTP Verbs</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. How do you send a GET request using Postman?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Deploy a server and wait for traffic</div>
+<div class="quiz-opt">Write raw TCP packets in hex format</div>
+<div class="quiz-opt">Configure a database connection string</div>
+<div class="quiz-opt">Select GET method and enter the URL</div>
+</div>
+<div class="quiz-explanation">💡 In Postman, select GET from the method dropdown, enter the URL, and click Send.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Where do you view the API response in Postman?</div>
+<div class="quiz-options">
+<div class="quiz-opt">In a separate downloaded text file only</div>
+<div class="quiz-opt">In the operating system event log viewer</div>
+<div class="quiz-opt">In the response panel below the request</div>
+<div class="quiz-opt">In the browser developer tools console</div>
+</div>
+<div class="quiz-explanation">💡 Postman displays the response body, headers, and status in the panel below.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l25">
     <h3>L25: Introduction to HTTP Verbs</h3>
     <div class="eighty-twenty"><p>HTTP verbs (GET, POST, PUT, DELETE) map directly to CRUD operations and form an integral, mandatory part of every REST request that dictates the action performed on a resource.</p></div>
@@ -715,7 +1283,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>REST APIs perform four fundamental actions on resources: retrieve, add, update, and delete, collectively known as CRUD (Create, Read, Update, Delete).</li><li>HTTP verbs are part of the HTTP standard, not a REST-specific invention; REST reuses existing standards rather than inventing new ones.</li><li>Always use the correct verb. A common beginner mistake is defaulting to GET for every operation regardless of intent.</li><li>The verb improves readability: seeing GET immediately communicates retrieval; seeing DELETE communicates removal, with no code inspection required.</li><li>The HTTP verb must be treated as an integral part of the URL, not an afterthought.</li></ul>
     <div class="example-box"><div class="example-title">CRUD Mapping</div><p>GET = Read, POST = Create, PUT = Update, DELETE = Delete. These four cover the vast majority of REST operations.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>HTTP verbs map one-to-one with CRUD: GET reads, POST creates, PUT updates, DELETE removes.</li><li>Always select the semantically correct verb; never default to GET for all operations.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What do HTTP verbs represent in a REST API?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The network protocol version in use</div>
+<div class="quiz-opt">The action to perform on a resource</div>
+<div class="quiz-opt">The format of the response data type</div>
+<div class="quiz-opt">The authentication method being used</div>
+</div>
+<div class="quiz-explanation">💡 HTTP verbs (GET, POST, PUT, DELETE) indicate what action to perform on the resource.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. Why is choosing the correct HTTP verb important?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It determines the server's CPU speed</div>
+<div class="quiz-opt">It selects which database to query now</div>
+<div class="quiz-opt">It controls the network routing path</div>
+<div class="quiz-opt">It communicates intent to the server</div>
+</div>
+<div class="quiz-explanation">💡 The correct verb clearly communicates the client's intent and expected behavior.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l26">
     <h3>L26: The GET Verb</h3>
     <div class="eighty-twenty"><p>GET is exclusively for retrieving resources; it must never include a request body, and it is the default verb sent by web browsers.</p></div>
@@ -723,7 +1314,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>GET is used exclusively for resource retrieval; never for adding, updating, or deleting.</li><li>Browsers send GET by default when a URL is typed into the address bar.</li><li>GET requests should not include a body. The method and URL alone carry all required information.</li><li>Parameters are optional but often used so the server knows which resources to return.</li><li>GET URLs have a practical length limit (roughly 1,000-2,000 characters). Exceeding it triggers an error such as HTTP 414.</li></ul>
     <div class="example-box"><div class="example-title">Browser Default</div><p>Typing google.com in Chrome&#x27;s address bar sends GET google.com. Developer tools confirm the request method is GET with a 200 OK response.</p></div><div class="example-box"><div class="example-title">API Retrieval</div><p>GET /api/order returns order data as JSON. The response body contains the resource; the request body remains empty.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>GET is retrieval-only and must carry zero body; all data lives in the URL.</li><li>Be aware of URL length limits when encoding many query parameters.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What is the purpose of the HTTP GET method?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Update all fields of a resource at once</div>
+<div class="quiz-opt">Create a brand new resource on the server</div>
+<div class="quiz-opt">Delete an existing resource permanently</div>
+<div class="quiz-opt">Retrieve a resource without modifying it</div>
+</div>
+<div class="quiz-explanation">💡 GET retrieves a resource without causing any side effects or modifications.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. Which property must a GET request always have?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It must include a JSON body in request</div>
+<div class="quiz-opt">It must require admin authentication</div>
+<div class="quiz-opt">It must modify server state each time</div>
+<div class="quiz-opt">It must be safe and idempotent always</div>
+</div>
+<div class="quiz-explanation">💡 GET must be safe (no side effects) and idempotent (same result on repeat).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l27">
     <h3>L27: The POST Verb</h3>
     <div class="eighty-twenty"><p>POST is used exclusively to create new resources, carrying the full entity representation in the request body rather than in the URL.</p></div>
@@ -731,7 +1345,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>POST is used solely to create (add) resources. It should never be used for retrieval, update, or deletion.</li><li>The resource representation is sent in the request body (usually JSON), not in the URL.</li><li>POST requests should not use query parameters; all data belongs in the body.</li><li>POST has no practical length limitation since the payload is in the body, not the URL.</li><li>POST is not idempotent: repeated identical requests create multiple resources.</li></ul>
     <div class="example-box"><div class="example-title">Creating an Order</div><p>POST /api/order with body {&quot;date&quot;: &quot;12/12/2018&quot;, &quot;total&quot;: 47.5} adds a new order. The server responds with a &#x27;created&#x27; status.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>POST creates resources with data in the body, not the URL.</li><li>POST is not idempotent; repeated calls produce duplicate entities.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. When should the HTTP POST method be used?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To create a new resource on the server</div>
+<div class="quiz-opt">To check if the server is running fine</div>
+<div class="quiz-opt">To delete a resource from the database</div>
+<div class="quiz-opt">To retrieve existing data without change</div>
+</div>
+<div class="quiz-explanation">💡 POST is used to create new resources, with the server assigning the identifier.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Is the POST method considered idempotent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">No, each call may create a new resource</div>
+<div class="quiz-opt">Yes, it never changes server state at all</div>
+<div class="quiz-opt">No, but it deletes resources on repeat</div>
+<div class="quiz-opt">Yes, repeated calls have same effect now</div>
+</div>
+<div class="quiz-explanation">💡 POST is not idempotent; calling it multiple times may create multiple resources.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l28">
     <h3>L28: The PUT Verb</h3>
     <div class="eighty-twenty"><p>PUT modifies existing resources and must be idempotent, meaning repeated identical requests always produce the same single result with no duplicate entities.</p></div>
@@ -739,7 +1376,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>PUT updates (modifies) existing resources. POST creates; PUT updates.</li><li>PUT requests carry data in the body, similar to POST, and should not use query parameters.</li><li>PUT must be idempotent: executing the same request N times always results in exactly one consistent entity.</li><li>If PUT targets a non-existent resource, the spec suggests creating it, but returning an error is also acceptable.</li><li>Idempotency means the result is identical regardless of how many times the request is repeated.</li></ul>
     <div class="example-box"><div class="example-title">Idempotency Contrast</div><p>Sending POST /order three times creates three orders. Sending PUT /order/17 three times with the same data still results in one updated order. PUT is idempotent; POST is not.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>PUT is the update verb and must guarantee idempotency.</li><li>POST and PUT share structure (body payload, no query params) but differ in semantics and idempotency.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What does the HTTP PUT method do to a resource?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Partially updates only some of the fields</div>
+<div class="quiz-opt">Replaces the entire resource with new data</div>
+<div class="quiz-opt">Retrieves the resource in its current state</div>
+<div class="quiz-opt">Adds a new resource without an identifier</div>
+</div>
+<div class="quiz-explanation">💡 PUT replaces the entire resource with the provided representation.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. How does PUT differ from PATCH in REST APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">PUT replaces fully while PATCH is partial</div>
+<div class="quiz-opt">PUT is unsafe while PATCH is always safe</div>
+<div class="quiz-opt">PUT creates new while PATCH deletes old</div>
+<div class="quiz-opt">PUT is read-only while PATCH writes data</div>
+</div>
+<div class="quiz-explanation">💡 PUT replaces the entire resource; PATCH updates only specified fields.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l29">
     <h3>L29: The DELETE Verb</h3>
     <div class="eighty-twenty"><p>DELETE removes a specified resource, requires an identifier parameter, and must not include a request body.</p></div>
@@ -747,7 +1407,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>DELETE is used exclusively to remove resources. Never use it for retrieval, creation, or updates.</li><li>DELETE almost always requires an identifier parameter so the server knows which resource to remove.</li><li>DELETE must not include a request body; it operates with method, URL, and headers only.</li><li>DELETE is structurally similar to GET: both are body-less and carry parameters in the URL.</li><li>The server responds with a status confirmation of the deletion.</li></ul>
     <div class="example-box"><div class="example-title">Deleting an Order</div><p>DELETE /api/order/45 removes order 45. The response confirms: &#x27;Order 45 has been deleted.&#x27; No body is sent with the request.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>DELETE removes resources identified by a URL parameter, with no request body.</li><li>Structurally, DELETE mirrors GET: both are body-less, parameter-driven operations.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What happens when a DELETE request succeeds?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The specified resource is removed fully</div>
+<div class="quiz-opt">A new resource is created in its place</div>
+<div class="quiz-opt">The resource is duplicated on the server</div>
+<div class="quiz-opt">All resources in the collection are kept</div>
+</div>
+<div class="quiz-explanation">💡 A successful DELETE removes the specified resource from the server.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. Is the DELETE method considered idempotent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">No, each delete creates a new resource copy</div>
+<div class="quiz-opt">No, repeated deletes cause server failures</div>
+<div class="quiz-opt">Yes, but only if the server uses caching</div>
+<div class="quiz-opt">Yes, deleting same resource twice is fine</div>
+</div>
+<div class="quiz-explanation">💡 DELETE is idempotent; deleting an already-deleted resource returns the same result.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l30">
     <h3>L30: Additional Verbs</h3>
     <div class="eighty-twenty"><p>Beyond the core four verbs, HTTP defines PATCH (partial update), HEAD (metadata-only response), and OPTIONS (supported-verbs discovery), which serve specialized roles.</p></div>
@@ -755,7 +1438,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>PATCH is similar to PUT but supports partial updates, sending only the fields that changed rather than the complete entity.</li><li>HEAD is similar to GET but returns only the status code and headers, with no response body. Useful for existence pre-checks.</li><li>OPTIONS asks the server which verbs are supported for a specific URL. The server responds with an Allow header listing them.</li><li>These additional verbs are part of the HTTP standard but are rarely used in day-to-day REST API development.</li></ul>
     <div class="example-box"><div class="example-title">PATCH Partial Update</div><p>A car entity has five properties. PATCH sends only {color: &#x27;red&#x27;, maxSpeed: 200}, and the server updates just those two fields.</p></div><div class="example-box"><div class="example-title">HEAD Existence Check</div><p>HEAD /api/order/17 returns 200 (exists) or 404 (not found) without transferring the order data.</p></div><div class="example-box"><div class="example-title">OPTIONS Discovery</div><p>OPTIONS /example.org returns Allow: OPTIONS, GET, HEAD, POST, indicating those four verbs are supported.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>PATCH enables partial updates; HEAD checks existence without data; OPTIONS discovers supported methods.</li><li>These verbs are rarely needed but worth recognizing when encountered.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What does the HTTP PATCH method do?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Retrieves metadata about the API server</div>
+<div class="quiz-opt">Deletes a subset of resources by filter</div>
+<div class="quiz-opt">Completely replaces the entire resource</div>
+<div class="quiz-opt">Partially updates fields of a resource</div>
+</div>
+<div class="quiz-explanation">💡 PATCH applies partial modifications to a resource, unlike PUT's full replacement.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is the purpose of the HTTP OPTIONS method?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Encrypts the connection with a new key</div>
+<div class="quiz-opt">Describes allowed methods for a resource</div>
+<div class="quiz-opt">Streams real-time data to the API client</div>
+<div class="quiz-opt">Sends a resource to the server for saving</div>
+</div>
+<div class="quiz-explanation">💡 OPTIONS returns which HTTP methods are allowed for a specific resource.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s7l31">
     <h3>L31: HTTP Verbs Summary</h3>
     <div class="eighty-twenty"><p>The four primary HTTP verbs differ in purpose, body inclusion, and parameter location; a quick-reference matrix captures their essential characteristics.</p></div>
@@ -767,7 +1473,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s7"><h4>&#x1F4DD; Section 7 Quick Check</h4><div class="quiz-question" data-correct="2"><p>Which HTTP verb is idempotent but NOT safe?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">GET</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">POST</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">PUT</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">OPTIONS</div></div><div class="quiz-question" data-correct="2"><p>Which verb should be used for partial updates?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">PUT</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">POST</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">PATCH</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">DELETE</div></div></div></div>
 
 <div class="section" id="section8">
-  <div class="section-header"><h2>S08: URL Structure</h2></div>
+  <div class="section-header"><h2>S08: URL Structure</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. Which HTTP verb is both safe and idempotent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">POST because it creates new resources</div>
+<div class="quiz-opt">DELETE because it removes data from store</div>
+<div class="quiz-opt">PUT because it replaces existing resources</div>
+<div class="quiz-opt">GET because it only reads server data</div>
+</div>
+<div class="quiz-explanation">💡 GET is both safe (no side effects) and idempotent (repeatable with same result).</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which verb pair covers basic CRUD create and read?</div>
+<div class="quiz-options">
+<div class="quiz-opt">DELETE for create and PATCH for reading</div>
+<div class="quiz-opt">GET for create and POST for read queries</div>
+<div class="quiz-opt">POST for create and GET for read data</div>
+<div class="quiz-opt">PUT for create and DELETE for read data</div>
+</div>
+<div class="quiz-explanation">💡 POST creates resources and GET retrieves them in standard REST conventions.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l32">
     <h3>L32: Introduction to URL Structure</h3>
     <div class="eighty-twenty"><p>The URL is the most visible and most judged part of any API; it must be self-explanatory, consistent, and predictable to drive developer adoption.</p></div>
@@ -775,7 +1504,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>The URL is the most important and most visible part of an API. It is the first thing developers judge.</li><li>A good URL is self-explanatory: its purpose is clear without reading documentation.</li><li>A good URL is consistent: all endpoints follow the same structural template.</li><li>A good URL is predictable: knowing one endpoint enables guessing the structure of others.</li><li>Poor URL design actively repels API consumers regardless of backend quality.</li></ul>
     
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Design URLs to be self-explanatory, consistent, and predictable.</li><li>The URL is the API&#x27;s first impression; invest time in getting it right.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. Why is URL structure important in REST API design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It determines the server response speed</div>
+<div class="quiz-opt">It defines the authentication flow used</div>
+<div class="quiz-opt">It makes the API intuitive for clients</div>
+<div class="quiz-opt">It controls which database is selected</div>
+</div>
+<div class="quiz-explanation">💡 A well-structured URL makes the API predictable and easy for developers to use.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. What does a REST API URL typically represent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A path to a specific resource or set</div>
+<div class="quiz-opt">A command to execute on the server now</div>
+<div class="quiz-opt">A function call with input parameters</div>
+<div class="quiz-opt">A query to run against the SQL database</div>
+</div>
+<div class="quiz-explanation">💡 REST URLs represent resources (nouns), not actions or commands.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l33">
     <h3>L33: Domain Name</h3>
     <div class="eighty-twenty"><p>The domain name is the URL&#x27;s foundation; it should use HTTPS and ideally include the word &#x27;api&#x27; (e.g., api.myapp.com) to clearly signal an API endpoint.</p></div>
@@ -783,7 +1535,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>The domain should be an FQDN or server name. Always use HTTPS; never HTTP.</li><li>Include &#x27;api&#x27; in the domain name (e.g., api.myapp.com) to distinguish API endpoints from web pages.</li><li>If &#x27;api&#x27; cannot be part of the domain, place it as the first path segment: myapp.com/api/...</li><li>Google uses apis.google.com; eBay uses api.ebay.com. Both are valid patterns.</li></ul>
     <div class="example-box"><div class="example-title">eBay Pattern</div><p>https://api.ebay.com/... places &#x27;api&#x27; as a subdomain.</p></div><div class="example-box"><div class="example-title">Google Pattern</div><p>https://apis.google.com/... uses &#x27;apis&#x27; in the subdomain.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Always use HTTPS and signal API intent with &#x27;api&#x27; in the domain or path.</li><li>The domain name sets the context for every endpoint that follows.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What role does the domain name play in an API URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It sets the response format to use now</div>
+<div class="quiz-opt">It identifies the host serving the API</div>
+<div class="quiz-opt">It determines the HTTP method to employ</div>
+<div class="quiz-opt">It specifies which resource to retrieve</div>
+</div>
+<div class="quiz-explanation">💡 The domain name identifies the server hosting the API (e.g., api.example.com).</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What is a common subdomain convention for APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Using 'ftp' for REST service endpoints</div>
+<div class="quiz-opt">Using 'www' for all API traffic routes</div>
+<div class="quiz-opt">Using 'api' as the subdomain prefix</div>
+<div class="quiz-opt">Using 'mail' for API request handling</div>
+</div>
+<div class="quiz-explanation">💡 Many organizations use 'api' as a subdomain (api.company.com) for their APIs.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l34">
     <h3>L34: The API Word</h3>
     <div class="eighty-twenty"><p>The &#x27;api&#x27; segment in the URL explicitly differentiates the API representation from the website&#x27;s visual representation at the same domain.</p></div>
@@ -792,7 +1567,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="example-box"><div class="example-title">Path Segment</div><p>https://myapp.beeceptor.com/api/v1/order places &#x27;api&#x27; as the first path component.</p></div><div class="example-box"><div class="example-title">Subdomain</div><p>https://api.google.com/v1/books places &#x27;api&#x27; in the subdomain, omitting it from the path.</p></div>
     <div class="comparison-table-wrap"><table class="comparison-table"><thead><tr><th>Placement</th><th>Example</th><th>When to Use</th></tr></thead><tbody><tr><td>Path segment</td><td>myapp.com/api/v1/orders</td><td>Default choice; simple and explicit</td></tr><tr><td>Subdomain</td><td>api.myapp.com/v1/orders</td><td>When API is a separate service/host</td></tr><tr><td>Already in domain</td><td>api-service.com/v1/orders</td><td>No need to repeat; domain implies API</td></tr></tbody></table></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Always include &#x27;api&#x27; early in the URL to separate the API surface from the website.</li><li>Subdomain or path segment placement both work; pick one and stay consistent.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. Where can the word 'api' appear in a REST URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Only inside the request body as a field</div>
+<div class="quiz-opt">Only in the response headers from server</div>
+<div class="quiz-opt">As subdomain or as a URL path segment</div>
+<div class="quiz-opt">Only in the authentication token value</div>
+</div>
+<div class="quiz-explanation">💡 The word 'api' can appear as a subdomain (api.example.com) or path segment (/api/v1/).</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. Why include 'api' in the URL at all?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To bypass server authentication entirely</div>
+<div class="quiz-opt">To make the URL longer and more complex</div>
+<div class="quiz-opt">To satisfy a strict HTTP protocol mandate</div>
+<div class="quiz-opt">To distinguish API from web page routes</div>
+</div>
+<div class="quiz-explanation">💡 Including 'api' clearly separates API endpoints from regular web page routes.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l35">
     <h3>L35: Version</h3>
     <div class="eighty-twenty"><p>The version segment (e.g., /v1/) appears after the API word, uses a positive integer optionally prefixed with &#x27;v&#x27;, and enables clients to target a specific API release.</p></div>
@@ -801,7 +1599,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="example-box"><div class="example-title">Versioned URL</div><p>https://myapp.com/api/v1/order clearly indicates version 1 of the order API.</p></div>
     <div class="step-breakdown"><div class="step-item"><div class="step-circle">1</div><div class="step-content"><h4>Base Domain</h4><p>myapp.com</p></div></div><div class="step-item"><div class="step-circle">2</div><div class="step-content"><h4>API Segment</h4><p>/api</p></div></div><div class="step-item"><div class="step-circle">3</div><div class="step-content"><h4>Version</h4><p>/v1 (positive integer, optionally prefixed with v)</p></div></div><div class="step-item"><div class="step-circle">4</div><div class="step-content"><h4>Resource</h4><p>/orders (the entity being accessed)</p></div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Place the version immediately after /api/ as a simple positive integer (v1, v2, etc.).</li><li>The version segment allows clients to lock to a known API contract.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. How is versioning typically shown in a REST API URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">As a path segment like /v1/ or /v2/</div>
+<div class="quiz-opt">By encoding it inside the request body</div>
+<div class="quiz-opt">By changing the HTTP method for each</div>
+<div class="quiz-opt">By adding a suffix to the domain name</div>
+</div>
+<div class="quiz-explanation">💡 Versioning commonly appears as a path segment (e.g., /api/v1/users).</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Why is versioning necessary in REST API design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To make URLs longer and more descriptive</div>
+<div class="quiz-opt">To allow changes without breaking clients</div>
+<div class="quiz-opt">To limit the number of active API users</div>
+<div class="quiz-opt">To enforce different auth for each version</div>
+</div>
+<div class="quiz-explanation">💡 Versioning lets you evolve the API while existing clients continue working.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l36">
     <h3>L36: Entity</h3>
     <div class="eighty-twenty"><p>The entity segment names the resource the API operates on, must be a single noun (never a verb), and is the semantic core of every REST URL.</p></div>
@@ -809,7 +1630,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>The entity is the main resource the API operates on. It appears after the version segment.</li><li>Always use a noun, never a verb. The HTTP method provides the action.</li><li>Prefer a single word for the entity name to maximize readability.</li><li>GET /order, POST /order, DELETE /order: the same entity with different verbs produces different operations.</li><li>Examples of valid entities: order, employees, travel, products.</li></ul>
     <div class="example-box"><div class="example-title">Self-Documenting</div><p>GET /api/v1/order: the verb (GET) provides the action, the noun (order) identifies the resource. The URL reads like a sentence.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Entity names must be nouns; the HTTP verb already provides the action.</li><li>A single-word entity maximizes URL clarity and developer comprehension.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What does the entity segment in a URL represent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The version of the API being called here</div>
+<div class="quiz-opt">The HTTP method to use for the request</div>
+<div class="quiz-opt">The authentication token for the call</div>
+<div class="quiz-opt">The type of resource being accessed now</div>
+</div>
+<div class="quiz-explanation">💡 The entity segment represents the resource type (e.g., /users, /orders, /products).</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. How should entity names be formatted in REST URLs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">As uppercase verbs like /GET_USERS</div>
+<div class="quiz-opt">As encoded numbers like /entity_001</div>
+<div class="quiz-opt">As lowercase plural nouns like /users</div>
+<div class="quiz-opt">As camelCase actions like /getUsers</div>
+</div>
+<div class="quiz-explanation">💡 REST convention uses lowercase plural nouns for entity names in URLs.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l37">
     <h3>L37: ID Parameter</h3>
     <div class="eighty-twenty"><p>The ID parameter is an optional path segment that targets a specific resource instance; when present, the API must return exactly one entity or an error.</p></div>
@@ -817,7 +1661,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>The ID parameter is optional. It comes directly after the entity name in the URL path.</li><li>When present, the server must return exactly one entity or an error (404).</li><li>The ID represents the unique identifier of a specific resource instance.</li><li>Not all API calls require an ID; retrieval of collections, for example, omits it.</li><li>If no entity matches the ID, the server returns an error, not an empty result.</li></ul>
     <div class="example-box"><div class="example-title">Specific Order</div><p>GET /api/v1/order/17 retrieves order 17. If order 17 does not exist, the server returns 404.</p></div><div class="example-box"><div class="example-title">Collection (No ID)</div><p>GET /api/v1/orders returns all orders. No ID parameter is needed.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>The ID parameter targets a single resource and mandates a one-entity response or a 404 error.</li><li>Omit the ID when the operation applies to the entire collection.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What purpose does the ID parameter serve in a URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It sets the response format to XML only</div>
+<div class="quiz-opt">It specifies the HTTP verb to use here</div>
+<div class="quiz-opt">It identifies one specific resource item</div>
+<div class="quiz-opt">It filters results by creation date range</div>
+</div>
+<div class="quiz-explanation">💡 The ID parameter identifies a specific resource instance (e.g., /users/123).</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Where is the ID parameter placed in a REST URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">In a custom HTTP header called X-ID now</div>
+<div class="quiz-opt">After the entity name in the URL path</div>
+<div class="quiz-opt">Before the domain name as a subdomain</div>
+<div class="quiz-opt">Inside the request body as a JSON field</div>
+</div>
+<div class="quiz-explanation">💡 The ID follows the entity name in the path (e.g., /api/v1/users/456).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l38">
     <h3>L38: Sub Entities</h3>
     <div class="eighty-twenty"><p>Sub-entities model hierarchical relationships by nesting child resources under a parent&#x27;s ID in the URL path (e.g., /order/17/items).</p></div>
@@ -825,7 +1692,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Sub-entities represent child resources that belong to a parent entity.</li><li>They appear after the parent entity&#x27;s ID: /entity/{id}/sub-entity.</li><li>The URL path communicates the ownership hierarchy: /order/17/items means items belonging to order 17.</li><li>Sub-entities can also accept ID parameters for targeting specific children: /order/17/items/3.</li><li>Avoid deep nesting; keep the hierarchy shallow for readability.</li></ul>
     <div class="example-box"><div class="example-title">Order Items</div><p>GET /api/v1/order/17/items retrieves all items for order 17. The URL path reveals the parent-child relationship.</p></div><div class="example-box"><div class="example-title">Specific Sub-Entity</div><p>GET /api/v1/order/17/items/3 retrieves item 3 within order 17.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Sub-entities nest child resources under parent IDs to express ownership hierarchies.</li><li>The URL path itself communicates the relationship: /parent/{id}/children.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. How are sub-entities represented in a REST URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">As HTTP headers in the request message</div>
+<div class="quiz-opt">As nested path segments after parent</div>
+<div class="quiz-opt">As query parameters appended with and</div>
+<div class="quiz-opt">As separate domains for each child item</div>
+</div>
+<div class="quiz-explanation">💡 Sub-entities are nested in the path (e.g., /users/123/orders).</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. When should you use sub-entities in URL design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When resources have no relationships</div>
+<div class="quiz-opt">When you need to reduce URL path length</div>
+<div class="quiz-opt">When you want to flatten all endpoints</div>
+<div class="quiz-opt">When a resource belongs to another one</div>
+</div>
+<div class="quiz-explanation">💡 Sub-entities express parent-child relationships (e.g., a user's orders).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l39">
     <h3>L39: Query Parameters</h3>
     <div class="eighty-twenty"><p>Query parameters appear after &#x27;?&#x27; for flexible filtering and may return zero to many results, fundamentally differing from ID parameters which mandate exactly one result.</p></div>
@@ -833,7 +1723,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Query parameters follow &#x27;?&#x27; and are concatenated with &#x27;&amp;&#x27;. They filter collection-level requests.</li><li>Unlike ID parameters, query parameters can return zero to many entities, and zero is not an error.</li><li>Any number of query parameters can be combined; ID parameters are always singular.</li><li>Query parameters support search, filtering, date ranges, pagination, and sorting.</li><li>ID parameters mandate exactly one entity or an error; query parameters have no such constraint.</li></ul>
     <div class="example-box"><div class="example-title">Date Range Filter</div><p>GET /api/v1/orders?fromDate=2023-01-01&amp;toDate=2023-12-31 retrieves orders within the date range. Zero results is a valid response.</p></div><div class="example-box"><div class="example-title">Starts-With Filter</div><p>GET /api/v1/order/17/items?startsWith=a returns items whose names begin with &#x27;a&#x27;.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Query parameters provide flexible, multi-criteria filtering with zero-to-many results.</li><li>The key design difference: ID parameters guarantee one result or an error; query parameters accept any count.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What are query parameters used for in REST URLs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Identifying which resource to retrieve</div>
+<div class="quiz-opt">Defining the response content type used</div>
+<div class="quiz-opt">Specifying the HTTP method for the call</div>
+<div class="quiz-opt">Filtering, sorting, and paging results</div>
+</div>
+<div class="quiz-explanation">💡 Query parameters handle filtering, sorting, pagination, and search operations.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. How are query parameters formatted in a URL?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Before the domain as path prefix segments</div>
+<div class="quiz-opt">Inside curly braces within the path itself</div>
+<div class="quiz-opt">As comma-separated values in the headers</div>
+<div class="quiz-opt">After a question mark as key=value pairs</div>
+</div>
+<div class="quiz-explanation">💡 Query parameters follow a '?' and use key=value pairs joined by '&'.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l40">
     <h3>L40: Plural vs Singular</h3>
     <div class="eighty-twenty"><p>Use singular nouns when the endpoint returns exactly one entity and plural nouns when it may return multiple; always prioritize readability over rigid rules.</p></div>
@@ -841,7 +1754,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Singular vs. plural entity naming has no universally correct answer.</li><li>Best practice: use singular when returning exactly one entity, plural when returning a collection.</li><li>Readability and developer intuition should drive the decision.</li><li>GET /order/17 (singular, one result) vs. GET /orders?user=John (plural, potentially many results).</li><li>Consistency within the API matters more than which convention is chosen.</li></ul>
     <div class="example-box"><div class="example-title">Singular</div><p>GET /api/v1/order/17 returns one order. Singular &#x27;order&#x27; signals a single-entity response.</p></div><div class="example-box"><div class="example-title">Plural</div><p>GET /api/v1/orders?user=John returns zero or more orders. Plural &#x27;orders&#x27; signals a collection response.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Match singular/plural to the expected response cardinality for maximum readability.</li><li>Consistency across the API matters more than which specific convention is adopted.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What is the recommended naming for REST resource endpoints?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Plural nouns like /users and /orders</div>
+<div class="quiz-opt">Verbs like /getUser and /createOrder</div>
+<div class="quiz-opt">Singular nouns like /user and /order</div>
+<div class="quiz-opt">Adjectives like /active and /complete</div>
+</div>
+<div class="quiz-explanation">💡 REST convention recommends plural nouns for consistency across all endpoints.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Why is consistency in plural/singular naming important?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It improves database query performance</div>
+<div class="quiz-opt">It reduces developer cognitive load</div>
+<div class="quiz-opt">It satisfies HTTP protocol requirements</div>
+<div class="quiz-opt">It makes the server respond much faster</div>
+</div>
+<div class="quiz-explanation">💡 Consistent naming reduces confusion and helps developers predict endpoint patterns.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s8l41">
     <h3>L41: URL Structure Summary</h3>
     <div class="eighty-twenty"><p>A well-formed REST URL follows the template: {domain}/api/{version}/{entity}/{id}/{sub-entity}?{query}, with ID, sub-entity, and query parameters being optional.</p></div>
@@ -853,7 +1789,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s8"><h4>&#x1F4DD; Section 8 Quick Check</h4><div class="quiz-question" data-correct="1"><p>What is the correct URL format for a sub-entity?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">/order/items/17</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">/order/17/items</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">/items?order=17</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">/17/order/items</div></div></div></div>
 
 <div class="section" id="section9">
-  <div class="section-header"><h2>S09: Response Codes</h2></div>
+  <div class="section-header"><h2>S09: Response Codes</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the correct order of URL components?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Version, domain, ID, entity, then API</div>
+<div class="quiz-opt">Domain, API, version, entity, then ID</div>
+<div class="quiz-opt">Entity, ID, domain, version, then API</div>
+<div class="quiz-opt">ID, entity, version, API, then domain</div>
+</div>
+<div class="quiz-explanation">💡 A well-structured URL follows: domain/api/version/entity/id pattern.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Which URL follows REST best practices correctly?</div>
+<div class="quiz-options">
+<div class="quiz-opt">GET /api/v1/users/42 for one user</div>
+<div class="quiz-opt">POST /api/v1/read_users/42 data</div>
+<div class="quiz-opt">GET /api/v1/getUser?action=fetch</div>
+<div class="quiz-opt">GET /api/v1/user/fetch/42/item</div>
+</div>
+<div class="quiz-explanation">💡 GET /api/v1/users/42 follows REST conventions with plural noun and resource ID.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l42">
     <h3>L42: What Are Response Codes?</h3>
     <div class="eighty-twenty"><p>Response codes are three-digit status indicators that instantly communicate whether a request succeeded or failed, and if it failed, whether the fault lies with the client or the server.</p></div>
@@ -861,7 +1820,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Response codes notify the client whether the request succeeded or failed, and why.</li><li>Most API clients check the status code first and only parse the body if the code indicates success.</li><li>Monitoring tools rely on response codes to detect and report API health issues.</li><li>Response codes are easy to implement but frequently overlooked, leading to incorrect status reporting.</li><li>The default status code is 200 (OK). Developers must actively set appropriate codes rather than relying on the default.</li></ul>
     <div class="example-box"><div class="example-title">Client Behavior</div><p>A client receives 200 and proceeds to parse the JSON body. It receives 500 and skips body parsing, triggering its error-handling flow instead.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Response codes are standardized success/failure signals that drive client and monitoring behavior.</li><li>Always set the correct code explicitly; never rely on the 200 default for all outcomes.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What information do HTTP response codes convey?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The result status of the client request</div>
+<div class="quiz-opt">The programming language of backend</div>
+<div class="quiz-opt">The speed of the network connection</div>
+<div class="quiz-opt">The size of the server hardware used</div>
+</div>
+<div class="quiz-explanation">💡 Response codes tell the client whether their request succeeded or failed and why.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Who defines the standard HTTP response codes?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The browser vendors for their products</div>
+<div class="quiz-opt">Cloud providers for their platforms</div>
+<div class="quiz-opt">The IETF through RFC specifications</div>
+<div class="quiz-opt">Each individual API developer alone</div>
+</div>
+<div class="quiz-explanation">💡 HTTP response codes are standardized by the IETF in RFC specifications.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l43">
     <h3>L43: Response Code Groups</h3>
     <div class="eighty-twenty"><p>HTTP response codes are organized into five groups by first digit (1xx-5xx), but REST API developers primarily work with three: 2xx (success), 4xx (client error), and 5xx (server error).</p></div>
@@ -869,7 +1851,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Five groups exist, identified by the first digit: 1xx, 2xx, 3xx, 4xx, 5xx.</li><li>1xx (Informational): Do not use in REST APIs.</li><li>2xx (Success): The request was processed successfully.</li><li>3xx (Redirection): Handled by infrastructure, not application code.</li><li>4xx (Client Error): The client sent a bad request. The client must fix the problem.</li><li>5xx (Server Error): Something failed on the server. The client cannot fix it.</li></ul>
     
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>REST API developers work with three groups: 2xx (success), 4xx (client error), 5xx (server error).</li><li>Ignore 1xx entirely and leave 3xx to infrastructure components.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What does the 2XX response code group indicate?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The resource has moved to a new location</div>
+<div class="quiz-opt">The server encountered an internal error</div>
+<div class="quiz-opt">The request was processed successfully</div>
+<div class="quiz-opt">The client sent an invalid request now</div>
+</div>
+<div class="quiz-explanation">💡 2XX codes indicate the request was successfully received and processed.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which response code group indicates client errors?</div>
+<div class="quiz-options">
+<div class="quiz-opt">2XX for successful operation responses</div>
+<div class="quiz-opt">3XX for redirection to new locations</div>
+<div class="quiz-opt">4XX for client-side request problems</div>
+<div class="quiz-opt">5XX for server-side internal failures</div>
+</div>
+<div class="quiz-explanation">💡 4XX codes indicate the client made an error (bad request, unauthorized, not found).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l44">
     <h3>L44: 2XX Success Codes</h3>
     <div class="eighty-twenty"><p>The essential 2xx codes are 200 (OK, general success), 201 (Created, new resource), 202 (Accepted, processing pending), and 204 (No Content, success with no body).</p></div>
@@ -877,7 +1882,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>200 OK: Default success code. Request succeeded. Body typically contains the requested or created resource.</li><li>201 Created: A new resource was created. Expected response for POST. May include a Location header.</li><li>202 Accepted: Request received, processing is pending. No notification when processing completes.</li><li>204 No Content: Request succeeded but no body is returned. Used for bulk updates or delete confirmations.</li><li>When a GET query returns zero results, return 200 with an empty body, not 204.</li></ul>
     <div class="example-box"><div class="example-title">GET + 200</div><p>GET /api/v1/order/17 returns 200 with the order JSON in the body.</p></div><div class="example-box"><div class="example-title">POST + 201</div><p>POST /api/v1/order returns 201 with a Location header pointing to the new order.</p></div><div class="example-box"><div class="example-title">Async + 202</div><p>POST /api/v1/batch-import returns 202: the server accepted the data but processing is still underway.</p></div><div class="example-box"><div class="example-title">Empty Query</div><p>GET /orders?fromDate=2099-01-01 returns 200 with an empty array, not 204.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Use 200 for general success, 201 for creation, 202 for async acceptance, 204 for body-less success.</li><li>When GET returns zero matching entities, respond with 200 and an empty collection, not 204.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What does HTTP status code 201 indicate?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The request was received but not acted on</div>
+<div class="quiz-opt">A new resource was created successfully</div>
+<div class="quiz-opt">The resource was deleted from the server</div>
+<div class="quiz-opt">The client needs to authenticate first</div>
+</div>
+<div class="quiz-explanation">💡 201 Created indicates a new resource was successfully created on the server.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. When should an API return 204 No Content?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When the resource was not found on server</div>
+<div class="quiz-opt">When the server is overloaded with traffic</div>
+<div class="quiz-opt">When authentication credentials are wrong</div>
+<div class="quiz-opt">When the action succeeded with no body</div>
+</div>
+<div class="quiz-explanation">💡 204 is used when the request succeeded but there's no content to return (e.g., DELETE).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l45">
     <h3>L45: 4XX Client Error Codes</h3>
     <div class="eighty-twenty"><p>The essential 4xx codes are 400 (bad request), 401 (unauthenticated), 403 (forbidden despite authentication), and 404 (resource not found); each signals a different client-side fault the caller must resolve.</p></div>
@@ -885,7 +1913,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>400 Bad Request: Generic client error. The request is malformed or violates validation rules.</li><li>RFC 7807 defines a standard JSON format for 400 error details (type, title, invalid-params).</li><li>401 Unauthorized: The client is not authenticated. The server does not know who is calling.</li><li>403 Forbidden: The client is authenticated but lacks permission. The server knows who is calling and rejects access.</li><li>401 vs 403: 401 = &#x27;identify yourself&#x27;; 403 = &#x27;I know you, but you are not allowed.&#x27;</li><li>404 Not Found: The specific resource targeted by an ID parameter does not exist.</li><li>404 applies to ID-based lookups, not query-parameter searches that return zero results.</li></ul>
     <div class="example-box"><div class="example-title">Auth Flow</div><p>Client calls API, gets 401. Client authenticates. Client retries, gets 403. The user is known but forbidden from accessing that resource.</p></div><div class="example-box"><div class="example-title">404 Scope</div><p>GET /order/99 returns 404 if order 99 does not exist. GET /orders?user=nobody returns 200 with an empty array.</p></div><div class="example-box"><div class="example-title">RFC 7807</div><p>A 400 response body includes {type: &#x27;https://...&#x27;, title: &#x27;Invalid parameters&#x27;, invalid_params: [{name: &#x27;age&#x27;, reason: &#x27;must be positive&#x27;}]}.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>401 means &#x27;who are you?&#x27;; 403 means &#x27;you are not allowed.&#x27; Never confuse them.</li><li>404 is for missing specific resources (ID lookups), not for empty query results.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What does HTTP status code 404 mean?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The request body format is not valid</div>
+<div class="quiz-opt">The client is not authorized to access</div>
+<div class="quiz-opt">The requested resource was not found</div>
+<div class="quiz-opt">The server crashed during request work</div>
+</div>
+<div class="quiz-explanation">💡 404 Not Found means the server cannot find the requested resource.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. When should an API return a 401 response?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When the server runs out of disk space</div>
+<div class="quiz-opt">When the client has no valid credentials</div>
+<div class="quiz-opt">When the request method is not allowed</div>
+<div class="quiz-opt">When the resource is permanently deleted</div>
+</div>
+<div class="quiz-explanation">💡 401 Unauthorized is returned when authentication credentials are missing or invalid.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l46">
     <h3>L46: 5XX Server Error Codes</h3>
     <div class="eighty-twenty"><p>500 Internal Server Error signals an unrecoverable server-side failure; it intentionally withholds technical details to prevent security exposure, and the client can take no corrective action.</p></div>
@@ -893,7 +1944,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>500 Internal Server Error: A server-side failure occurred. The request could not be completed.</li><li>500 responses must not expose internal details (SQL statements, stack traces) to avoid security risks.</li><li>Client cannot fix a 500 error. This contrasts with 4xx where client action is required.</li><li>All four primary verbs (GET, POST, PUT, DELETE) can produce 500 errors.</li><li>Other 5xx codes exist (502 Bad Gateway, 503 Service Unavailable) but are typically handled by infrastructure, not application code.</li></ul>
     <div class="example-box"><div class="example-title">Security Risk</div><p>Returning &#x27;SQL error: SELECT * FROM users WHERE...&#x27; in a 500 response exposes the database schema. Instead, return a generic &#x27;Internal Server Error&#x27; message.</p></div><div class="example-box"><div class="example-title">4xx vs 5xx</div><p>401: &#x27;You need to authenticate&#x27; (client can fix). 500: &#x27;Something broke on our end&#x27; (client cannot fix).</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>500 signals a server fault with no client remedy; never expose internal details in the response.</li><li>The key 4xx vs 5xx distinction: 4xx = client must fix it; 5xx = server must fix it.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What does HTTP status code 500 indicate?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The client lacks permission to access it</div>
+<div class="quiz-opt">An unexpected error occurred on server</div>
+<div class="quiz-opt">The resource was not found at that path</div>
+<div class="quiz-opt">The client sent a malformed request body</div>
+</div>
+<div class="quiz-explanation">💡 500 Internal Server Error indicates an unexpected condition on the server side.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What does a 503 Service Unavailable response mean?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The response body exceeds maximum size</div>
+<div class="quiz-opt">The requested URL format is not valid</div>
+<div class="quiz-opt">The client's credentials were revoked now</div>
+<div class="quiz-opt">The server is temporarily overloaded</div>
+</div>
+<div class="quiz-explanation">💡 503 means the server is temporarily unable to handle requests (maintenance/overload).</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l47">
     <h3>L47: Additional Response Codes</h3>
     <div class="eighty-twenty"><p>Non-standard status codes (e.g., WebDAV&#x27;s 207 Multi-Status) exist for specialized use cases like batch operations, but should only be used when the client explicitly supports them.</p></div>
@@ -901,7 +1975,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Non-standard status codes exist outside the W3C HTTP standard, introduced by companies and protocols.</li><li>207 Multi-Status (WebDAV): Used for batch operations where each entity has its own success/failure status.</li><li>The 207 response body contains per-entity status codes in a structured format.</li><li>Most clients expect standard codes and may treat non-standard codes as errors.</li><li>Only use non-standard codes when the client explicitly supports and expects them.</li></ul>
     <div class="example-box"><div class="example-title">207 Multi-Status</div><p>A batch save of 10 entities: 8 return status 200 (success), 2 return status 400 (validation error). The overall response is 207 with per-entity detail.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Non-standard codes like 207 solve niche problems (batch operations) but require explicit client support.</li><li>Default to standard codes (200, 201, 204, 400, 401, 403, 404, 500) unless there is a compelling reason.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What does HTTP status code 304 Not Modified mean?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The server moved to a different location</div>
+<div class="quiz-opt">The resource was permanently removed now</div>
+<div class="quiz-opt">The cached version is still valid to use</div>
+<div class="quiz-opt">The request requires client authentication</div>
+</div>
+<div class="quiz-explanation">💡 304 tells the client its cached version is still current; no new data needed.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. When is HTTP status code 429 returned?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When the client sends too many requests</div>
+<div class="quiz-opt">When the URL path contains invalid chars</div>
+<div class="quiz-opt">When SSL certificate validation has failed</div>
+<div class="quiz-opt">When the server's database is corrupted</div>
+</div>
+<div class="quiz-explanation">💡 429 Too Many Requests is returned when the client exceeds the rate limit.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s9l48">
     <h3>L48: Response Codes Summary</h3>
     <div class="eighty-twenty"><p>Stick to the six most universally understood status codes (200, 201, 204, 400, 404, 500); always set the appropriate code explicitly rather than relying on the 200 default.</p></div>
@@ -913,7 +2010,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s9"><h4>&#x1F4DD; Section 9 Quick Check</h4><div class="quiz-question" data-correct="2"><p>What does a 404 status code indicate?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">Server error</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">Unauthorized</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">Resource not found</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">Bad request</div></div><div class="quiz-question" data-correct="1"><p>Which 2XX code means &#x27;created&#x27;?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">200</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">201</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">202</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">204</div></div></div></div>
 
 <div class="section" id="section10">
-  <div class="section-header"><h2>S10: REST API Documentation</h2></div>
+  <div class="section-header"><h2>S10: REST API Documentation</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. Which code group should you use for a successful POST?</div>
+<div class="quiz-options">
+<div class="quiz-opt">2XX codes, specifically 201 Created</div>
+<div class="quiz-opt">5XX codes to show server processed it</div>
+<div class="quiz-opt">4XX codes to indicate client did well</div>
+<div class="quiz-opt">3XX codes to redirect after creation</div>
+</div>
+<div class="quiz-explanation">💡 A successful POST that creates a resource should return 201 Created.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is the best practice for error response bodies?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Only use the status code with no details</div>
+<div class="quiz-opt">Include error code and a clear message</div>
+<div class="quiz-opt">Return an empty body with no explanation</div>
+<div class="quiz-opt">Send the full server stack trace to all</div>
+</div>
+<div class="quiz-explanation">💡 Error responses should include an error code and clear message to help debugging.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s10l49">
     <h3>L49: Introduction to Documentation</h3>
     <div class="eighty-twenty"><p>An undocumented API is an unused API; comprehensive documentation is the single most important factor in driving developer adoption.</p></div>
@@ -921,7 +2041,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>No developer will voluntarily use an undocumented API.</li><li>Documentation is crucial for API adoption, regardless of the API&#x27;s technical quality.</li><li>Good documentation makes the API easier to use and lowers the learning curve.</li><li>Professional documentation signals that the API and its maintainers are reliable.</li><li>Documentation quality directly influences the size of the API&#x27;s developer community.</li></ul>
     <div class="example-box"><div class="example-title">Adoption Barrier</div><p>A technically excellent API with zero documentation attracts zero voluntary users. The same API with comprehensive docs attracts a thriving developer community.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>An undocumented API is effectively an unusable API.</li><li>Documentation quality is a direct proxy for developer trust and adoption rates.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. Why is API documentation critical for adoption?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It replaces the need for proper error handling here</div>
+<div class="quiz-opt">It eliminates all bugs in the implementation code now</div>
+<div class="quiz-opt">Documentation makes the server run much faster now</div>
+<div class="quiz-opt">Developers cannot use what they cannot understand</div>
+</div>
+<div class="quiz-explanation">💡 Good documentation is essential because developers need to understand the API to use it.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What should good API documentation include?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Only the server's internal source code files</div>
+<div class="quiz-opt">Marketing material about the company's brand</div>
+<div class="quiz-opt">Just the domain name and nothing else at all</div>
+<div class="quiz-opt">Endpoints, parameters, and response examples</div>
+</div>
+<div class="quiz-explanation">💡 Good docs include endpoints, parameters, request/response examples, and error codes.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s10l50">
     <h3>L50: Introduction to OpenAPI</h3>
     <div class="eighty-twenty"><p>OpenAPI (formerly Swagger) is the de facto standard for REST API documentation, describing endpoints, parameters, authentication, and metadata in a machine-readable format that auto-generates docs, test clients, and client libraries.</p></div>
@@ -929,7 +2072,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>OpenAPI (formerly Swagger) is the de facto standard for REST API documentation.</li><li>It describes endpoints, parameters, authentication, and general API metadata in a structured format.</li><li>Auto-generates interactive test beds that allow developers to call the API directly from the docs.</li><li>Generates client libraries in multiple languages (Java, .NET, Python) from the API description.</li><li>Supports Design-First: write documentation first, then generate compliant API code.</li><li>Compatible with most development platforms; documentation can be auto-generated from code.</li></ul>
     <div class="example-box"><div class="example-title">Test Bed</div><p>OpenAPI documentation for a pet store API includes a &#x27;Try it out&#x27; button. Clicking it sends a real GET request and displays the response inline.</p></div><div class="example-box"><div class="example-title">Design-First</div><p>A team writes the OpenAPI spec before coding. The spec generates both documentation and a server stub that enforces the documented contract.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>OpenAPI is the industry standard; every REST API should have an OpenAPI specification.</li><li>Beyond docs, OpenAPI generates test clients, client libraries, and even server code.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What is OpenAPI in the context of REST APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A testing framework for API load scenarios</div>
+<div class="quiz-opt">A cloud hosting service for API deployment</div>
+<div class="quiz-opt">A standard specification for describing APIs</div>
+<div class="quiz-opt">A programming language for building backends</div>
+</div>
+<div class="quiz-explanation">💡 OpenAPI is a specification standard for describing REST API interfaces.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What was OpenAPI previously known as?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The GraphQL schema definition language</div>
+<div class="quiz-opt">The WSDL standard for SOAP web services</div>
+<div class="quiz-opt">The gRPC protocol buffer format standard</div>
+<div class="quiz-opt">The Swagger Specification for REST APIs</div>
+</div>
+<div class="quiz-explanation">💡 OpenAPI was formerly known as the Swagger Specification before being standardized.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s10l51">
     <h3>L51: OpenAPI Demo</h3>
     <div class="eighty-twenty"><p>OpenAPI documentation provides a fully interactive interface with live endpoint testing, verb-color-coded grouping, parameter details, and response previews, all auto-generated from the API definition.</p></div>
@@ -937,7 +2103,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Swagger UI groups endpoints by resource tags and color-codes them by HTTP verb.</li><li>Each endpoint expands to show parameters, request body schema, and possible response codes.</li><li>The &#x27;Try it out&#x27; button sends real requests and displays live responses inline.</li><li>Swagger Inspector reverse-engineers OpenAPI specs from existing APIs by inspecting endpoints.</li><li>SwaggerHub hosts and provides an editor for OpenAPI specifications.</li><li>The underlying swagger.json can be manually written or auto-generated from code.</li></ul>
     <div class="example-box"><div class="example-title">Pet Store Demo</div><p>The Swagger Pet Store documentation groups endpoints under Pet, Store, and User tags. Clicking &#x27;Find pets by status&#x27; reveals a dropdown for available/pending/sold, with execute returning live JSON or XML.</p></div><div class="example-box"><div class="example-title">Swagger Inspector</div><p>Pasting an existing API URL into Swagger Inspector auto-generates an OpenAPI definition that can be exported to SwaggerHub for editing.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>OpenAPI UI is both documentation and live test client in one interface.</li><li>Swagger Inspector can bootstrap documentation from existing APIs without manual authoring.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What tool is commonly used to visualize OpenAPI specs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">PowerPoint slides with API screenshots</div>
+<div class="quiz-opt">Microsoft Word for static API documents</div>
+<div class="quiz-opt">Swagger UI for interactive documentation</div>
+<div class="quiz-opt">Excel spreadsheets with endpoint listings</div>
+</div>
+<div class="quiz-explanation">💡 Swagger UI renders OpenAPI specs as interactive, explorable documentation.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What can you do with an interactive OpenAPI document?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Automatically deploy code to production</div>
+<div class="quiz-opt">Try API calls directly from the browser</div>
+<div class="quiz-opt">Create mobile apps without any coding</div>
+<div class="quiz-opt">Generate database schemas from the spec</div>
+</div>
+<div class="quiz-explanation">💡 Interactive OpenAPI docs let developers try API calls directly from the browser.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s10l52">
     <h3>L52: Overview of the Swagger Format</h3>
     <div class="eighty-twenty"><p>The swagger.json file is a structured JSON document containing API metadata (info), endpoint definitions (paths), and per-endpoint details (verb, parameters, responses), all rendered automatically into the documentation UI.</p></div>
@@ -945,7 +2134,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>swagger.json is the single source of truth for OpenAPI documentation.</li><li>The &#x27;info&#x27; section contains metadata: title, version, description, contact, license, terms of service.</li><li>The &#x27;paths&#x27; section maps URL paths to HTTP verb definitions.</li><li>Each verb definition includes summary, tags, consumes/produces, parameters, and response codes.</li><li>Tags group endpoints in the UI (e.g., all /pet endpoints grouped under &#x27;Pet&#x27;).</li><li>The file can be manually written but is best auto-generated by libraries.</li></ul>
     <div class="example-box"><div class="example-title">Info Section</div><p>The info block defines {title: &#x27;Pet Store&#x27;, version: &#x27;1.0&#x27;, description: &#x27;Sample server&#x27;}. This data appears in the UI header.</p></div><div class="example-box"><div class="example-title">Path Entry</div><p>The path &#x27;/pet&#x27; with verb &#x27;POST&#x27; includes summary: &#x27;Add a new pet&#x27;, consumes: [&#x27;application/json&#x27;], responses: {405: &#x27;Invalid Input&#x27;}.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>The swagger.json file has a clear structure: info (metadata) + paths (endpoint definitions per verb).</li><li>Auto-generate this file from code rather than writing it by hand.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What format are OpenAPI/Swagger files written in?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Plain text without any structure here</div>
+<div class="quiz-opt">YAML or JSON structured documents</div>
+<div class="quiz-opt">HTML with embedded JavaScript code</div>
+<div class="quiz-opt">Binary encoded protocol buffer format</div>
+</div>
+<div class="quiz-explanation">💡 OpenAPI specifications are written in YAML or JSON format.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What key sections does an OpenAPI document contain?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Just the server IP address and port num</div>
+<div class="quiz-opt">Info, paths, components, and servers</div>
+<div class="quiz-opt">Only error codes without path detail</div>
+<div class="quiz-opt">Only a list of URL strings and nothing</div>
+</div>
+<div class="quiz-explanation">💡 An OpenAPI document includes info, servers, paths, and components sections.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s10l53">
     <h3>L53: Implementing OpenAPI</h3>
     <div class="eighty-twenty"><p>OpenAPI documentation is best auto-generated from code using platform-specific libraries (e.g., Swashbuckle for .NET), which produce the swagger.json and Swagger UI from existing controllers and XML comments with minimal configuration.</p></div>
@@ -957,7 +2169,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <div class="section" id="section11">
-  <div class="section-header"><h2>S11: REST API Versioning</h2></div>
+  <div class="section-header"><h2>S11: REST API Versioning</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What approach generates OpenAPI specs from existing code?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Design-first by writing spec manually</div>
+<div class="quiz-opt">Deploy-first by inspecting live traffic</div>
+<div class="quiz-opt">Testing-first by running auto scripts</div>
+<div class="quiz-opt">Code-first with annotations in source</div>
+</div>
+<div class="quiz-explanation">💡 Code-first approach generates OpenAPI specs from annotations in source code.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is the advantage of design-first OpenAPI approach?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It requires no collaboration between teams</div>
+<div class="quiz-opt">Teams agree on the contract before coding</div>
+<div class="quiz-opt">It eliminates the need for any testing now</div>
+<div class="quiz-opt">It automatically writes all backend code</div>
+</div>
+<div class="quiz-explanation">💡 Design-first lets teams agree on the API contract before writing implementation code.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s11l54">
     <h3>L54: Importance of Versioning</h3>
     <div class="eighty-twenty"><p>API versioning is essential because APIs inevitably evolve, yet producers cannot control or force client upgrade cycles; a clear version support policy gives clients predictable migration timelines.</p></div>
@@ -965,7 +2200,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>APIs will inevitably be updated: actions added, removed, or modified over time.</li><li>API producers do not control clients: they cannot force upgrades or dictate client tooling.</li><li>A version support policy must state the minimum supported lifetime of each API version.</li><li>Clients need predictable timelines to plan their migration to newer versions.</li><li>Without versioning, every change is potentially breaking for existing consumers.</li><li>Salesforce example: each API version is supported for a minimum of three years from release.</li></ul>
     <div class="example-box"><div class="example-title">Salesforce Policy</div><p>Salesforce guarantees each API version is supported for a minimum of three years from the date of first release, giving clients a clear migration window.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Versioning is mandatory because APIs evolve and producers cannot control client upgrade cycles.</li><li>Always publish a version support policy with explicit lifetime guarantees.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What happens without API versioning when changes occur?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Performance improves for every consumer</div>
+<div class="quiz-opt">All clients automatically adapt to changes</div>
+<div class="quiz-opt">Existing client applications may break</div>
+<div class="quiz-opt">The server rejects all incoming requests</div>
+</div>
+<div class="quiz-explanation">💡 Without versioning, breaking changes can disrupt existing client applications.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What type of change requires a new API version?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Fixing a bug in the server-side logic</div>
+<div class="quiz-opt">Removing or renaming existing fields</div>
+<div class="quiz-opt">Adding a new optional field to responses</div>
+<div class="quiz-opt">Improving internal performance of queries</div>
+</div>
+<div class="quiz-explanation">💡 Breaking changes like removing or renaming fields require a new API version.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s11l55">
     <h3>L55: Location of Version in the API</h3>
     <div class="eighty-twenty"><p>Version can be placed in the URL path (most common, easiest), the request header (most REST-correct), or a query parameter (worst option, avoid); use URL or header, never query parameters.</p></div>
@@ -977,7 +2235,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s11"><h4>&#x1F4DD; Section 11 Quick Check</h4><div class="quiz-question" data-correct="3"><p>Where is the recommended location for API version?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">HTTP header</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">URL path</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">Query parameter</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">URL path or header (both acceptable)</div></div></div></div>
 
 <div class="section" id="section12">
-  <div class="section-header"><h2>S12: Authentication &amp; Authorization</h2></div>
+  <div class="section-header"><h2>S12: Authentication &amp; Authorization</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What are common places to put the API version?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Only in server configuration file settings</div>
+<div class="quiz-opt">Only inside the response body JSON data</div>
+<div class="quiz-opt">Only in the database schema version table</div>
+<div class="quiz-opt">In the URL path or in a request header</div>
+</div>
+<div class="quiz-explanation">💡 API versions are commonly placed in the URL path (/v1/) or request headers.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What is the advantage of URL-based versioning?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It hides the version from all clients</div>
+<div class="quiz-opt">It eliminates the need for any docs</div>
+<div class="quiz-opt">It is visible and easy to understand</div>
+<div class="quiz-opt">It allows unlimited versions for free</div>
+</div>
+<div class="quiz-explanation">💡 URL-based versioning is immediately visible and intuitive for developers.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s12l56">
     <h3>L56: Introduction to Authentication and Authorization</h3>
     <div class="eighty-twenty"><p>Authentication identifies WHO the user is; authorization determines WHAT the user is allowed to do, and the API itself merely transports credentials to the underlying code for decision-making.</p></div>
@@ -985,7 +2266,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Authentication is the process of identifying a user; authorization is the process of determining their access rights.</li><li>APIs are rarely fully public; most require some form of identity verification and permission enforcement.</li><li>The API layer does not perform authentication or authorization checks itself. It passes credential data to the backend code, which makes the access decision.</li><li>The two concepts are distinct but complementary: authentication always precedes authorization in the flow.</li></ul>
     <div class="example-box"><div class="example-title">API Auth Flow</div><p>A user calls an API, passing authentication data (e.g., a token). The API forwards that data to the backend code, which validates identity and checks permissions before granting or denying access.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Authentication answers identity; authorization answers permissions. Both are required for secured APIs.</li><li>The API is a transport mechanism for credentials, not the decision-maker.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What is the difference between authentication and authorization?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Auth is for APIs; authz is for databases</div>
+<div class="quiz-opt">Auth checks access; authz verifies identity</div>
+<div class="quiz-opt">Auth verifies identity; authz checks access</div>
+<div class="quiz-opt">Both mean the same thing in API security</div>
+</div>
+<div class="quiz-explanation">💡 Authentication verifies who you are; authorization determines what you can access.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Why do REST APIs need authentication mechanisms?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To verify the identity of each API caller</div>
+<div class="quiz-opt">To prevent the API from being documented</div>
+<div class="quiz-opt">To remove the need for HTTPS encryption</div>
+<div class="quiz-opt">To make the API slower for all users here</div>
+</div>
+<div class="quiz-explanation">💡 Authentication ensures only verified users or services can access the API.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s12l57">
     <h3>L57: THE OAuth Protocol</h3>
     <div class="eighty-twenty"><p>OAuth 2.0 delegates authentication to a trusted third-party authorization server, which issues access tokens so that the resource server (API) never handles raw user credentials directly.</p></div>
@@ -993,7 +2297,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>OAuth 2.0 has four components: User (human or software), Client App (the application accessing the API), Authorization Server (identifies the user and issues tokens), and Resource Server (the API being accessed).</li><li>The flow begins when the client app calls the API anonymously. The resource server redirects to the authorization server.</li><li>The authorization server authenticates the user, obtains consent, and returns an access token to the client app.</li><li>The client app sends the access token to the resource server, which uses it to identify the user and enforce permissions.</li><li>The resource server must pre-register with the authorization server (app registration) so the auth server recognizes it and knows where to return tokens.</li><li>App registration requires providing the app name, a callback URL, and produces a Client ID and Client Secret used during the OAuth flow.</li></ul>
     <div class="example-box"><div class="example-title">Feedly + Facebook Login</div><p>When a user logs into Feedly, the app redirects to Facebook (authorization server). Facebook authenticates the user and returns identity data to Feedly, which never sees the user&#x27;s Facebook password.</p></div><div class="example-box"><div class="example-title">GitHub App Registration</div><p>A developer registers their application on GitHub&#x27;s developer portal, providing the app name and callback URL. GitHub generates a Client ID and Client Secret for use in the OAuth flow.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>OAuth 2.0 separates the concerns of identity verification (auth server) from resource serving (API), so user credentials are never exposed to the client app or resource server.</li><li>App registration is a prerequisite; without it, the authorization server will not recognize the calling application.</li><li>The access token is the currency of OAuth: it encodes identity and permissions without transmitting raw credentials.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What problem does OAuth solve for API consumers?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Direct database access for all API clients</div>
+<div class="quiz-opt">Delegated access without sharing passwords</div>
+<div class="quiz-opt">Removing encryption from all API requests</div>
+<div class="quiz-opt">Eliminating the need for user accounts now</div>
+</div>
+<div class="quiz-explanation">💡 OAuth allows users to grant third-party access without sharing their credentials.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What does an OAuth access token represent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The user's password in encrypted format</div>
+<div class="quiz-opt">A permanent key that never expires here</div>
+<div class="quiz-opt">The server's private encryption key val</div>
+<div class="quiz-opt">Permission to access specific resources</div>
+</div>
+<div class="quiz-explanation">💡 An OAuth access token represents granted permission to access specific resources.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s12l58">
     <h3>L58: The JWT</h3>
     <div class="eighty-twenty"><p>A JSON Web Token (JWT) is a compact, self-contained string composed of three Base64-encoded sections (Header, Payload, Signature) that carries user identity and permissions without requiring the server to query a database on every request.</p></div>
@@ -1001,7 +2328,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>JWT stands for JSON Web Token. It is the standard access token format used with OAuth 2.0.</li><li>The Header contains the token type (JWT) and the signing algorithm (e.g., HS256).</li><li>The Payload contains the actual user data needed for authorization decisions: name, role, organization, and any custom claims. There is no enforced standard format.</li><li>The Signature is a cryptographic hash of Header + Payload + Secret. It prevents tampering during transit.</li><li>The token is encoded (Base64), not encrypted. Anyone can decode and read the payload. The signature only ensures integrity, not confidentiality.</li><li>The three sections are concatenated with dots: header.payload.signature</li></ul>
     <div class="example-box"><div class="example-title">JWT Header</div><p>{&quot;typ&quot;: &quot;JWT&quot;, &quot;alg&quot;: &quot;HS256&quot;} specifies the token type and the HMAC-SHA256 signing algorithm.</p></div><div class="example-box"><div class="example-title">JWT Payload</div><p>{&quot;name&quot;: &quot;John Doe&quot;, &quot;role&quot;: &quot;admin&quot;, &quot;sub&quot;: &quot;1234567890&quot;} carries the claims about the user that the API uses for authorization.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>JWT is self-contained: the server can make auth decisions from the token alone, without a database lookup.</li><li>The signature guarantees integrity but not confidentiality; sensitive data should not be placed in the payload without additional encryption.</li><li>The payload format is flexible, but consistent claim naming across services simplifies authorization logic.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What are the three parts of a JWT token?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Domain, path, and query string segment</div>
+<div class="quiz-opt">Request, response, and error body now</div>
+<div class="quiz-opt">Username, password, and role name here</div>
+<div class="quiz-opt">Header, payload, and signature parts</div>
+</div>
+<div class="quiz-explanation">💡 A JWT consists of a header (algorithm), payload (claims), and signature.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. How is a JWT token typically transmitted?</div>
+<div class="quiz-options">
+<div class="quiz-opt">As a query parameter in the URL path</div>
+<div class="quiz-opt">Inside the request body as form field</div>
+<div class="quiz-opt">In the Authorization header as Bearer</div>
+<div class="quiz-opt">As a cookie set by the client app now</div>
+</div>
+<div class="quiz-explanation">💡 JWTs are typically sent in the Authorization header as 'Bearer <token>'.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s12l59">
     <h3>L59: JWT in REST API</h3>
     <div class="eighty-twenty"><p>In a REST API, the JWT is transmitted via the Authorization header using the Bearer scheme (Authorization: Bearer &lt;token&gt;), keeping auth data out of the URL and request body.</p></div>
@@ -1013,7 +2363,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s12"><h4>&#x1F4DD; Section 12 Quick Check</h4><div class="quiz-question" data-correct="1"><p>What are the three parts of a JWT?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">Auth, Token, Key</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">Header, Payload, Signature</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">User, Role, Permission</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">Public, Private, Secret</div></div></div></div>
 
 <div class="section" id="section13">
-  <div class="section-header"><h2>S13: Performance</h2></div>
+  <div class="section-header"><h2>S13: Performance</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. Why are JWTs popular for REST API authentication?</div>
+<div class="quiz-options">
+<div class="quiz-opt">They need database lookup for each req</div>
+<div class="quiz-opt">They are self-contained and stateless</div>
+<div class="quiz-opt">They require server-side session storage</div>
+<div class="quiz-opt">They can only be used with SOAP calls</div>
+</div>
+<div class="quiz-explanation">💡 JWTs are self-contained (carry their own claims) and support stateless authentication.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What risk does a stolen JWT token present?</div>
+<div class="quiz-options">
+<div class="quiz-opt">No risk because tokens cannot be reused</div>
+<div class="quiz-opt">Only read access with no write ability</div>
+<div class="quiz-opt">Unauthorized access until token expires</div>
+<div class="quiz-opt">The server auto-revokes all tokens now</div>
+</div>
+<div class="quiz-explanation">💡 A stolen JWT grants unauthorized access until it expires, since it's self-contained.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s13l60">
     <h3>L60: Introduction to Performance</h3>
     <div class="eighty-twenty"><p>API performance directly impacts adoption: 53% of mobile users abandon services that take over three seconds to respond, and slow APIs lose users regardless of functionality.</p></div>
@@ -1021,7 +2394,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Performance is one of the most critical attributes of a web API. Slow responses drive users away.</li><li>Google&#x27;s research shows 53% of mobile users abandon sites loading over 3 seconds; API consumers likely behave similarly.</li><li>Performance is not strictly an API concern but is tied to the underlying code, infrastructure, and architecture.</li><li>Several techniques (async operations, caching, rate limiting, quotas) can dramatically improve API responsiveness.</li></ul>
     <div class="example-box"><div class="example-title">The 3-Second Rule</div><p>According to Google, more than half of mobile users leave a service that takes over 3 seconds to load. For APIs, the tolerance may be even lower since programmatic consumers often enforce strict timeouts.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Performance is not optional; it is a fundamental quality attribute that determines whether users adopt or abandon the API.</li><li>Performance optimization lives in the code layer beneath the API, but the API designer must be aware of these techniques.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. Why is performance important in REST API design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Users never notice API response times</div>
+<div class="quiz-opt">Fast APIs are less secure than slow ones</div>
+<div class="quiz-opt">Performance only matters for databases</div>
+<div class="quiz-opt">Slow APIs lead to poor user experiences</div>
+</div>
+<div class="quiz-explanation">💡 Poor API performance directly impacts user experience and system reliability.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What factors affect REST API performance most?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The number of developers on the team</div>
+<div class="quiz-opt">The programming language's logo design</div>
+<div class="quiz-opt">Network latency and server processing</div>
+<div class="quiz-opt">The color scheme of the documentation</div>
+</div>
+<div class="quiz-explanation">💡 Network latency, server processing time, and data payload size affect performance.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s13l61">
     <h3>L61: Important Information About This Section</h3>
     <div class="eighty-twenty"><p>Supplementary administrative note for the section; no technical content.</p></div>
@@ -1033,7 +2429,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="concept-grid"><div class="concept-card"><div class="card-icon">📋</div><div class="card-title">Administrative Note</div><div class="card-desc">Section context-setting with no technical content</div></div><div class="concept-card"><div class="card-icon">⏭️</div><div class="card-title">Proceed Forward</div><div class="card-desc">Move to next lesson for substantive material</div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Informational signposts help set context but contain no testable knowledge</li><li>Proceed directly to the next lesson for substantive content</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What aspect of APIs does the performance section cover?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Methods for writing API documentation</div>
+<div class="quiz-opt">Techniques to improve response time</div>
+<div class="quiz-opt">Strategies for choosing HTTP verb use</div>
+<div class="quiz-opt">How to design URL naming conventions</div>
+</div>
+<div class="quiz-explanation">💡 The performance section covers techniques to improve API response times and scalability.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Why should performance be considered during API design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Retrofitting performance is much harder</div>
+<div class="quiz-opt">Only hardware upgrades improve speed</div>
+<div class="quiz-opt">Design phase never affects performance</div>
+<div class="quiz-opt">Performance can always be added later on</div>
+</div>
+<div class="quiz-explanation">💡 It's much harder to fix performance issues after the API is built and deployed.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s13l62">
     <h3>L62: Async Operations</h3>
     <div class="eighty-twenty"><p>Asynchronous operations prevent threads from blocking on long-running I/O (file, database, network), freeing the web server to handle other requests concurrently and dramatically improving throughput.</p></div>
@@ -1041,7 +2460,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Synchronous code blocks the thread until an I/O operation completes; asynchronous code initiates the operation and continues executing other work.</li><li>This pattern is most relevant for I/O-bound operations: file reads, database queries, and network calls.</li><li>Almost every modern platform supports async patterns (async/await in JavaScript, C#, Python; coroutines in Kotlin, etc.).</li><li>Async operations free threads on the web server, allowing it to serve more concurrent requests with the same hardware.</li><li>The async keyword marks a function as asynchronous; the await keyword signals a non-blocking wait point within that function.</li></ul>
     <div class="example-box"><div class="example-title">Node.js Async/Await</div><p>An async function uses &#x27;await fetch(url)&#x27; to initiate a network request. The thread is released while waiting for the response. When the response arrives, execution resumes from the await point.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Always use async patterns for I/O operations in API code. Blocking threads under load causes cascading performance failures.</li><li>Async does not make individual operations faster; it makes the server more efficient by handling more requests concurrently.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. When should a REST API use async operations?</div>
+<div class="quiz-options">
+<div class="quiz-opt">When the response is always instant and ok</div>
+<div class="quiz-opt">When processing takes a long time to run</div>
+<div class="quiz-opt">When no client ever needs the result back</div>
+<div class="quiz-opt">When the operation has zero side effects</div>
+</div>
+<div class="quiz-explanation">💡 Async operations are used when requests take too long to process synchronously.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. How does an async API typically respond initially?</div>
+<div class="quiz-options">
+<div class="quiz-opt">With 200 OK and the complete result</div>
+<div class="quiz-opt">With 500 Error until task completes</div>
+<div class="quiz-opt">With 202 Accepted and a status URL</div>
+<div class="quiz-opt">With 404 Not Found until it is done</div>
+</div>
+<div class="quiz-explanation">💡 Async APIs return 202 Accepted with a URL where clients can check the operation status.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s13l63">
     <h3>L63: Caching</h3>
     <div class="eighty-twenty"><p>Caching stores frequently accessed data in-memory close to the API, eliminating repeated database/network round-trips, but requires deliberate expiration and invalidation strategies to prevent serving stale data.</p></div>
@@ -1049,7 +2491,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Caching places frequently accessed data in memory, avoiding expensive I/O operations on every request.</li><li>Cache engines (Redis, Memcached, in-process caches) store data in RAM for near-instant retrieval.</li><li>Expiration: cached data automatically expires after a predefined duration (e.g., 30 seconds, 5 minutes).</li><li>Invalidation: cached data is explicitly removed when the underlying source data changes (e.g., a new user is added to the system).</li><li>Stale data (cached data that no longer reflects reality) is the primary risk of caching and must be actively managed.</li><li>Response caching (e.g., ASP.NET ResponseCache) caches the entire API response on the web server for a set duration.</li></ul>
     <div class="example-box"><div class="example-title">ASP.NET ResponseCache</div><p>Applying [ResponseCache(Duration = 30)] to an API endpoint caches its response for 30 seconds. Subsequent requests within that window are served from cache, bypassing the database entirely.</p></div><div class="example-box"><div class="example-title">Invalidation Scenario</div><p>A cached user list becomes stale when a new user is added. The cache entry must be invalidated (deleted) upon user creation so the next request fetches the updated list from the database.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Caching is one of the highest-impact performance optimizations, but stale data is its primary pitfall.</li><li>Always implement both time-based expiration AND event-driven invalidation.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What benefit does caching provide to a REST API?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Increases network bandwidth consumption</div>
+<div class="quiz-opt">Ensures data is always fresh in real time</div>
+<div class="quiz-opt">Reduces server load and response latency</div>
+<div class="quiz-opt">Makes every request hit the database first</div>
+</div>
+<div class="quiz-explanation">💡 Caching reduces server load and improves response time by serving stored results.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which HTTP header controls cache behavior?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Authorization with the bearer token value</div>
+<div class="quiz-opt">Accept-Language with locale code settings</div>
+<div class="quiz-opt">Cache-Control with directives like max-age</div>
+<div class="quiz-opt">Content-Type with the media type specified</div>
+</div>
+<div class="quiz-explanation">💡 Cache-Control header specifies caching directives like max-age, no-cache, no-store.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s13l64">
     <h3>L64: Rate Limit</h3>
     <div class="eighty-twenty"><p>Rate limiting caps the maximum number of concurrent requests the API processes, returning a &#x27;server too busy&#x27; response to excess traffic so the API remains operational for existing requests instead of crashing under overload.</p></div>
@@ -1057,7 +2522,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Without rate limiting, a sudden traffic spike can overwhelm the API, causing a crash that affects all users.</li><li>A rate limiter sits in front of the API and enforces a maximum concurrent request threshold.</li><li>When the threshold is exceeded, additional requests receive a response code indicating the server is too busy (HTTP 429 Too Many Requests).</li><li>The API continues processing already-accepted requests normally; once those complete, it accepts new ones.</li><li>Rate limiting protects availability: it sacrifices some requests to keep the service alive for the majority.</li></ul>
     <div class="example-box"><div class="example-title">Overload Protection</div><p>An API configured with a 1,000 concurrent request limit continues serving those 1,000 normally. Request #1,001 receives a 429 response and can retry after load decreases.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Rate limiting is a safety valve: it prevents total API collapse by gracefully rejecting overflow traffic.</li><li>HTTP 429 is the standard response code for rate-limited requests.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the purpose of rate limiting in APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Remove the need for any authentication</div>
+<div class="quiz-opt">Prevent abuse by capping request volume</div>
+<div class="quiz-opt">Speed up responses for all API consumers</div>
+<div class="quiz-opt">Allow unlimited access to every client now</div>
+</div>
+<div class="quiz-explanation">💡 Rate limiting prevents abuse by restricting how many requests a client can make.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. What HTTP status code indicates rate limit exceeded?</div>
+<div class="quiz-options">
+<div class="quiz-opt">401 Unauthorized due to bad credentials</div>
+<div class="quiz-opt">503 Service Unavailable on the server</div>
+<div class="quiz-opt">429 Too Many Requests from the client</div>
+<div class="quiz-opt">200 OK with a warning in the body text</div>
+</div>
+<div class="quiz-explanation">💡 429 Too Many Requests indicates the client has exceeded the allowed rate limit.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s13l65">
     <h3>L65: Quota</h3>
     <div class="eighty-twenty"><p>Quotas limit the number of requests a specific client can make over a time window (per day, per second), preventing any single consumer from monopolizing API resources.</p></div>
@@ -1069,7 +2557,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="mini-quiz" id="quiz-s13"><h4>&#x1F4DD; Section 13 Quick Check</h4><div class="quiz-question" data-correct="1"><p>What is the difference between Rate Limit and Quota?</p><div class="quiz-option" data-idx="0" onclick="checkAnswer(this)">They are the same</div><div class="quiz-option" data-idx="1" onclick="checkAnswer(this)">Rate limit is per time window, quota is total allocation</div><div class="quiz-option" data-idx="2" onclick="checkAnswer(this)">Quota is faster</div><div class="quiz-option" data-idx="3" onclick="checkAnswer(this)">Rate limit applies only to GET</div></div></div></div>
 
 <div class="section" id="section14">
-  <div class="section-header"><h2>S14: Monitoring</h2></div>
+  <div class="section-header"><h2>S14: Monitoring</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. How does a quota differ from a rate limit?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Quota limits total usage over longer time</div>
+<div class="quiz-opt">Quota and rate limit mean the same thing</div>
+<div class="quiz-opt">Quota limits requests per second like rate</div>
+<div class="quiz-opt">Quota only applies to GET requests here</div>
+</div>
+<div class="quiz-explanation">💡 Quotas limit total usage over longer periods (daily/monthly) vs rate limits per second.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What happens when an API consumer exceeds their quota?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The API switches to a slower response</div>
+<div class="quiz-opt">All other consumers are also blocked now</div>
+<div class="quiz-opt">The server automatically raises the limit</div>
+<div class="quiz-opt">Requests are rejected until quota resets</div>
+</div>
+<div class="quiz-explanation">💡 Requests are rejected until the quota resets or the consumer upgrades their plan.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s14l66">
     <h3>L66: Introduction to Monitoring</h3>
     <div class="eighty-twenty"><p>Monitoring transforms API operations from reactive firefighting to proactive prevention by detecting developing problems (rising CPU, climbing memory, growing latency) before they cause outages.</p></div>
@@ -1077,7 +2588,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>API downtime has direct business impact: Amazon loses approximately $2.6 million per 13 minutes of downtime (Forbes).</li><li>Monitoring serves three purposes: (1) early warning of developing problems, (2) immediate detection of current failures, (3) general usage intelligence.</li><li>Clients expect APIs to always work, just as consumers expect Amazon or Netflix to be available 24/7.</li><li>Monitoring is not a &#x27;nice-to-have&#x27; addition; it is a critical operational requirement for any production API.</li><li>Without monitoring, problems are discovered only when users report them, which is always too late.</li></ul>
     <div class="example-box"><div class="example-title">Amazon Downtime Cost</div><p>Forbes calculated that 13 minutes of Amazon.com downtime costs approximately $2,646,501 in lost revenue, illustrating the financial impact of unmonitored outages.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Monitoring is the difference between learning about problems from dashboards versus learning about them from angry users.</li><li>Every production API must have monitoring; the cost of not monitoring always exceeds the cost of implementing it.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. Why is monitoring essential for production REST APIs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To detect issues before users report them</div>
+<div class="quiz-opt">To make the API documentation look better</div>
+<div class="quiz-opt">To eliminate the need for error handling</div>
+<div class="quiz-opt">To reduce the number of endpoints served</div>
+</div>
+<div class="quiz-explanation">💡 Monitoring helps detect and resolve issues before they impact users.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What should an API monitoring system track?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Just the color scheme of the API portal</div>
+<div class="quiz-opt">Only the number of lines of code written</div>
+<div class="quiz-opt">Only the names of developers on the team</div>
+<div class="quiz-opt">Response times, error rates, and traffic</div>
+</div>
+<div class="quiz-explanation">💡 Key metrics include response times, error rates, request volume, and availability.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s14l67">
     <h3>L67: Metrics for Monitoring</h3>
     <div class="eighty-twenty"><p>The essential API monitoring metrics are requests per second (throughput), failure rate, latency (response time), CPU utilization, memory usage, user count, session count, and geographic distribution.</p></div>
@@ -1085,7 +2619,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Requests per second reveals usage patterns and confirms active adoption.</li><li>Failure count identifies reliability issues; a high fail ratio (e.g., 1 in 10) signals a defect that needs investigation.</li><li>Latency measures the time a single request takes to complete, directly reflecting API performance.</li><li>CPU utilization indicates server load; persistently high CPU suggests the need to scale out.</li><li>Users vs. Sessions: &#x27;Users&#x27; counts unique individuals; &#x27;Sessions&#x27; counts total requests across all users. One user making 5 requests = 1 user, 5 sessions.</li><li>Geographic distribution guides localization decisions and data center placement.</li><li>RAM/memory utilization tracks memory health; steadily climbing memory often indicates a memory leak.</li></ul>
     <div class="example-box"><div class="example-title">Failure Monitoring Dashboard</div><p>A monitoring dashboard shows a spike in HTTP 500 errors on August 25. Even if caused by bots requesting nonexistent endpoints, the anomaly is flagged for investigation.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Monitor at minimum: throughput, errors, latency, CPU, and memory. These five cover the critical health indicators.</li><li>Users and sessions are distinct metrics; conflating them leads to incorrect capacity planning.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. Which metric indicates API reliability most directly?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Error rate as percentage of all requests</div>
+<div class="quiz-opt">Number of API versions currently active</div>
+<div class="quiz-opt">The average response body size in bytes</div>
+<div class="quiz-opt">Total number of endpoints in the system</div>
+</div>
+<div class="quiz-explanation">💡 Error rate directly measures how often the API fails to serve successful responses.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What does the P99 latency metric represent?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Maximum time before server timeout occurs</div>
+<div class="quiz-opt">The average response time for all requests</div>
+<div class="quiz-opt">Minimum possible latency on the network</div>
+<div class="quiz-opt">Response time that 99% of requests beat</div>
+</div>
+<div class="quiz-explanation">💡 P99 means 99% of requests complete within this time; only 1% are slower.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s14l68">
     <h3>L68: Implementing Monitoring</h3>
     <div class="eighty-twenty"><p>Practical monitoring implementation using tools such as Azure Application Insights (demo-based lecture with no additional conceptual content beyond the metrics covered previously).</p></div>
@@ -1098,7 +2655,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <div class="section" id="section15">
-  <div class="section-header"><h2>S15: Advanced Topics</h2></div>
+  <div class="section-header"><h2>S15: Advanced Topics</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What tool category is used for API monitoring?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Application Performance Management tools</div>
+<div class="quiz-opt">Integrated development environment editors</div>
+<div class="quiz-opt">Project management boards like Kanban</div>
+<div class="quiz-opt">Version control systems like Git repos now</div>
+</div>
+<div class="quiz-explanation">💡 APM tools (like Datadog, New Relic, Prometheus) monitor API performance and health.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is an alert threshold in API monitoring?</div>
+<div class="quiz-options">
+<div class="quiz-opt">The maximum number of API endpoints allowed</div>
+<div class="quiz-opt">A value that triggers notification when hit</div>
+<div class="quiz-opt">The minimum team size for on-call rotation</div>
+<div class="quiz-opt">A limit on how many logs can be stored</div>
+</div>
+<div class="quiz-explanation">💡 Alert thresholds trigger notifications when metrics exceed acceptable levels.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s15l69">
     <h3>L69: Introduction to Advanced Topics</h3>
     <div class="eighty-twenty"><p>Two advanced REST patterns, HATEOAS and API Gateway/Discovery, address discoverability of related resources and loose coupling between microservices, respectively.</p></div>
@@ -1107,7 +2687,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="concept-grid"><div class="concept-card"><div class="card-icon">🔗</div><div class="card-title">HATEOAS</div><div class="card-desc">Self-describing APIs where responses include links to related resources for discoverability</div></div><div class="concept-card"><div class="card-icon">🚪</div><div class="card-title">API Gateway</div><div class="card-desc">Single entry point that routes requests to appropriate microservices</div></div><div class="concept-card"><div class="card-icon">🔍</div><div class="card-title">Service Discovery</div><div class="card-desc">Dynamic registration and lookup of services to eliminate hard-coded endpoints</div></div></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>Advanced patterns become increasingly valuable as API ecosystems grow in complexity and number of services.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What makes a REST API topic considered advanced?</div>
+<div class="quiz-options">
+<div class="quiz-opt">It is easier than basic REST fundamentals</div>
+<div class="quiz-opt">It builds on core concepts with complexity</div>
+<div class="quiz-opt">It only applies to very small API projects</div>
+<div class="quiz-opt">It removes the need for HTTP verbs entirely</div>
+</div>
+<div class="quiz-explanation">💡 Advanced topics build on foundational REST concepts with additional complexity.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Why learn advanced REST API topics at all?</div>
+<div class="quiz-options">
+<div class="quiz-opt">To eliminate the need for documentation</div>
+<div class="quiz-opt">To make simple APIs unnecessarily complex</div>
+<div class="quiz-opt">To build more scalable and mature systems</div>
+<div class="quiz-opt">To avoid using standard HTTP conventions</div>
+</div>
+<div class="quiz-explanation">💡 Advanced topics help build APIs that scale better and handle complex real-world needs.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s15l70">
     <h3>L70: HATEOAS</h3>
     <div class="eighty-twenty"><p>HATEOAS (Hypermedia As The Engine Of Application State) embeds links to related resources directly within API responses, so clients need only know the root endpoint and can discover all other resources by following links returned in each response.</p></div>
@@ -1115,7 +2718,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>HATEOAS stands for Hypermedia As The Engine Of Application State.</li><li>API responses include a &#x27;links&#x27; section containing URLs to related resources (self, sub-resources, related entities).</li><li>Clients need zero prior knowledge of the API structure beyond the root endpoint; all navigation is driven by the links in responses.</li><li>This eliminates hard-coded URLs in client code, making the API more evolvable: endpoints can change without breaking clients.</li><li>Netflix&#x27;s Genie (open-source job orchestration engine) implements HATEOAS in its REST API, embedding links to job status, output, execution, and related resources in every job response.</li></ul>
     <div class="example-box"><div class="example-title">Netflix Genie API</div><p>A GET request to /api/v3/jobs/{id} returns the job entity plus a &#x27;links&#x27; section with URLs for self, output, request, execution, status, and related sub-resources, all pre-constructed for the specific job ID.</p></div><div class="example-box"><div class="example-title">Following Links</div><p>After retrieving a job, a client wanting the job&#x27;s status does not consult documentation. Instead, it reads the &#x27;status&#x27; link from the response&#x27;s links section and makes a GET request to that URL.</p></div>
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>HATEOAS makes APIs self-documenting and resilient to URL changes, since clients follow links rather than constructing URLs.</li><li>Adoption is optional but particularly valuable for complex APIs with deep resource hierarchies.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">1. What does HATEOAS stand for in REST terminology?</div>
+<div class="quiz-options">
+<div class="quiz-opt">HTTP Authentication Token Exchange Over</div>
+<div class="quiz-opt">Hypertext Allocation Through Entity Ops</div>
+<div class="quiz-opt">Hosted Application Transfer Engine On S</div>
+<div class="quiz-opt">Hypermedia As The Engine Of App State</div>
+</div>
+<div class="quiz-explanation">💡 HATEOAS = Hypermedia As The Engine Of Application State, a REST maturity concept.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What does a HATEOAS-compliant API response include?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Database connection strings for access</div>
+<div class="quiz-opt">Links to related actions and resources</div>
+<div class="quiz-opt">Only raw data without any metadata now</div>
+<div class="quiz-opt">Executable code client must run locally</div>
+</div>
+<div class="quiz-explanation">💡 HATEOAS responses include hypermedia links guiding clients to available actions.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s15l71">
     <h3>L71: API Gateway &amp; Discovery</h3>
     <div class="eighty-twenty"><p>API Gateway (centralized proxy) and Service Discovery (URL directory) both solve the &#x27;spider web&#x27; coupling problem in microservices, where direct service-to-service communication creates fragile dependencies that break when any single URL changes.</p></div>
@@ -1127,7 +2753,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <div class="section" id="section16">
-  <div class="section-header"><h2>S16: Conclusion</h2></div>
+  <div class="section-header"><h2>S16: Conclusion</h2><div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What role does an API Gateway serve?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Single entry point managing all traffic</div>
+<div class="quiz-opt">A database that stores all API responses</div>
+<div class="quiz-opt">A testing tool for running unit tests now</div>
+<div class="quiz-opt">A frontend framework for building pages</div>
+</div>
+<div class="quiz-explanation">💡 An API Gateway is a single entry point that routes, secures, and manages API traffic.</div>
+</div>
+<div class="quiz-question" data-correct="3">
+<div class="q-text">2. What is service discovery in microservices architecture?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Creating documentation for each service</div>
+<div class="quiz-opt">Manually writing IP addresses in configs</div>
+<div class="quiz-opt">Deleting services that are no longer used</div>
+<div class="quiz-opt">Automatically finding available instances</div>
+</div>
+<div class="quiz-explanation">💡 Service discovery automatically locates available service instances for routing.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s16l72">
     <h3>L72: Conclusion</h3>
     <div class="eighty-twenty"><p>REST API design is a comprehensive discipline spanning URL structure, HTTP verbs, response codes, documentation (Swagger/OpenAPI), versioning, authentication (OAuth 2.0/JWT), performance, monitoring, and advanced patterns (HATEOAS, Gateway), all of which contribute to APIs that are professional, easy to use, and attractive to developers.</p></div>
@@ -1135,7 +2784,30 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>REST API is the de facto standard for web APIs, supported by all platforms and expected by developers.</li><li>Core design pillars covered: API basics, HTTP verbs, URL structure, response codes, documentation, versioning.</li><li>Security pillar: OAuth 2.0 flow, JWT structure, and the API&#x27;s role as a credential transport mechanism.</li><li>Operational pillars: performance techniques (async, caching, rate limiting, quotas) and monitoring (metrics, dashboards, alerting).</li><li>Advanced patterns: HATEOAS for self-describing APIs, API Gateway and Discovery for microservice decoupling.</li><li>URL structure is the single most important design decision in REST API design.</li><li>A practical checklist consolidating all design principles serves as a quick reference during API development.</li></ul>
     
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>A well-designed REST API is professional, easy to use, and developer-friendly. Every design decision contributes to that goal.</li><li>Use a checklist-based approach during API design to ensure no critical aspect is overlooked.</li></ul></div>
-  </div>
+  <div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">1. What is the most important takeaway from this course?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Consistent design makes APIs developer-friendly</div>
+<div class="quiz-opt">APIs should be designed without any standards now</div>
+<div class="quiz-opt">Documentation is optional for public REST APIs here</div>
+<div class="quiz-opt">Performance never matters for API consumers at all</div>
+</div>
+<div class="quiz-explanation">💡 Consistent, standards-based design is the key to creating developer-friendly APIs.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. What should you do after completing this course?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Practice by designing and building real APIs</div>
+<div class="quiz-opt">Only read documentation without practicing ever</div>
+<div class="quiz-opt">Forget all concepts and start from scratch now</div>
+<div class="quiz-opt">Avoid building APIs until more classes are done</div>
+</div>
+<div class="quiz-explanation">💡 Hands-on practice designing and building APIs reinforces the concepts learned.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
+</div>
 <div class="lesson" id="s16l73">
     <h3>L73: BONUS: Next Steps</h3>
     <div class="eighty-twenty"><p>Supplementary bonus content with additional learning resources (no transcript content).</p></div>
@@ -1147,6 +2819,29 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     
     <div class="takeaway"><h4>&#x2713; Takeaways</h4><ul><li>REST API design mastery comes from applying principles to real projects, not just theory</li><li>Engage with the software architects community and public API documentation to reinforce learning</li></ul></div>
   </div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What is a good next step after learning REST API design?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Wait several years before practicing at all</div>
+<div class="quiz-opt">Only study theory without implementation</div>
+<div class="quiz-opt">Build a complete API project from scratch</div>
+<div class="quiz-opt">Never apply the knowledge in real projects</div>
+</div>
+<div class="quiz-explanation">💡 Building a real API project is the best way to solidify REST design knowledge.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which skill complements REST API design knowledge well?</div>
+<div class="quiz-options">
+<div class="quiz-opt">Watercolor painting for creative expression</div>
+<div class="quiz-opt">Backend development with a web framework</div>
+<div class="quiz-opt">Ancient history research and documentation</div>
+<div class="quiz-opt">Gardening techniques for growing veggies</div>
+</div>
+<div class="quiz-explanation">💡 Backend development skills let you implement the REST APIs you design.</div>
+</div>
+<div class="quiz-score"></div>
+</div>
 </div>
 
 
@@ -1284,6 +2979,41 @@ function filterLessons(query) {
     if(window.innerWidth < 1400){sidebar.classList.remove('open');overlay.classList.remove('active')}
   }));
 })();
+
+// Quiz logic
+document.addEventListener('click', function(e) {
+  var opt = e.target.closest('.quiz-opt');
+  if (!opt || opt.classList.contains('disabled')) return;
+  var question = opt.closest('.quiz-question');
+  var options = question.querySelectorAll('.quiz-opt');
+  var correct = parseInt(question.dataset.correct);
+  var idx = Array.from(options).indexOf(opt);
+  var explanation = question.querySelector('.quiz-explanation');
+  options.forEach(function(o, i) {
+    o.classList.add('disabled');
+    if (i === correct) o.classList.add('correct');
+  });
+  if (idx !== correct) opt.classList.add('wrong');
+  if (explanation) explanation.classList.add('show');
+  var section = opt.closest('.quiz-section');
+  var total = section.querySelectorAll('.quiz-question').length;
+  var answeredAll = section.querySelectorAll('.quiz-question').length === section.querySelectorAll('.quiz-opt.disabled').length / 4;
+  if (answeredAll) {
+    var userCorrect = 0;
+    section.querySelectorAll('.quiz-question').forEach(function(q) {
+      if (!q.querySelector('.quiz-opt.wrong')) userCorrect++;
+    });
+    var scoreEl = section.querySelector('.quiz-score');
+    if (scoreEl) {
+      scoreEl.textContent = 'Score: ' + userCorrect + '/' + total + (userCorrect === total ? ' Perfect!' : '');
+      scoreEl.style.display = 'block';
+    }
+  }
+});
+
+
+document.addEventListener('click',function(e){var opt=e.target.closest('.quiz-opt');if(!opt||opt.classList.contains('disabled'))return;var question=opt.closest('.quiz-question');var options=question.querySelectorAll('.quiz-opt');var correct=parseInt(question.dataset.correct);var idx=Array.from(options).indexOf(opt);var explanation=question.querySelector('.quiz-explanation');options.forEach(function(o,i){o.classList.add('disabled');if(i===correct)o.classList.add('correct')});if(idx!==correct)opt.classList.add('wrong');if(explanation)explanation.classList.add('show');var section=opt.closest('.quiz-section');var qs=section.querySelectorAll('.quiz-question');var allDone=true;qs.forEach(function(q){if(!q.querySelector('.quiz-opt.disabled'))allDone=false});if(allDone){var userCorrect=0;qs.forEach(function(q){if(!q.querySelector('.quiz-opt.wrong'))userCorrect++});var scoreEl=section.querySelector('.quiz-score');if(scoreEl){scoreEl.textContent='Score: '+userCorrect+'/'+qs.length+(userCorrect===qs.length?' 🎉 Perfect!':'');scoreEl.style.display='block'}}});
+
 </script>
 </body>
 </html>
