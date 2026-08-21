@@ -247,7 +247,7 @@ details[open] > .code-lab-summary::before { transform: rotate(90deg); }
 <div class="dir-card" onclick="document.getElementById('section40')?.scrollIntoView({behavior:'smooth'})"><div class="dir-card-header"><span class="dir-num">S40</span><span class="dir-badge" style="background:#ef4444">PROJECT</span></div><div class="dir-card-title">Project 3 - Business-Idea Evaluator</div><div class="dir-card-desc">End-to-end Project 3: multi-agent business-idea evaluator with HITL clarification loop, parallelized advisor nodes, and a synthesis report node.</div></div>
 </div></div>
 <div class="section" id="section1"><div class="section-header"><h2>S01: Understanding AI agents</h2></div>
-<div class="lesson"><h3>What Does the Course Cover</h3>
+<div id="lecture-1" class="lesson"><h3>What Does the Course Cover</h3>
 <div class="eighty-twenty"><p>The AI Agents Bootcamp is a structured curriculum that progresses from agent fundamentals through architecture patterns (LangChain, LangGraph) to full end-to-end agent projects.</p></div>
 <p>The course follows a deliberate pedagogical arc: foundational concepts first (what agents are, their types, essential components), then design patterns (augmented LLMs, prompt chaining, routing, parallelization, ReAct, ReWoo, reflection, multi-agent systems), then practical frameworks (LangChain for LLM integration, LangGraph for stateful workflows with nodes, edges, and control flow), and finally three capstone projects that consolidate theory into working systems.
 
@@ -258,7 +258,7 @@ Each section builds on prior material, making sequential completion essential. T
 <div class="step-breakdown"><div class="step-item visible"><div class="step-circle">1</div><div class="step-content"><h4>Fundamentals (S01-S09)</h4><p>Agent types, components, learning mechanisms, architecture patterns, implementation, n8n hands-on, infrastructure, business context</p></div></div><div class="step-item visible"><div class="step-circle">2</div><div class="step-content"><h4>Architecture Deep Dive (S10-S21)</h4><p>Agentic workflows, prompting strategies, all five workflow patterns, planning, memory, governance, evaluation</p></div></div><div class="step-item visible"><div class="step-circle">3</div><div class="step-content"><h4>LangChain (S22-S29)</h4><p>Tokens, models, OpenAI API, prompt templates, output parsers, LCEL chains, RAG pipeline</p></div></div><div class="step-item visible"><div class="step-circle">4</div><div class="step-content"><h4>LangGraph (S30-S35)</h4><p>States, nodes, edges, conditional routing, message management, thread persistence</p></div></div><div class="step-item visible"><div class="step-circle">5</div><div class="step-content"><h4>Capstone Projects (S36-S40)</h4><p>ReAct job helper, ReWoo job helper, multi-agent parallelized business evaluator</p></div></div></div>
 <div class="takeaway"><h4>Takeaways</h4><ul><li>Follow the course sequentially; skipping sections creates knowledge gaps that compound later.</li><li>Complete every exercise; they contain learning material not covered in lectures.</li></ul></div>
 </div>
-<div class="lesson"><h3>What Is an AI agent?</h3>
+<div id="lecture-2" class="lesson"><h3>What Is an AI agent?</h3>
 <div class="eighty-twenty"><p>An AI agent is a software system that goes beyond assisting humans to autonomously managing tasks, reasoning through problems, and executing multi-step workflows with minimal human intervention.</p></div>
 <p>The evolution from LLMs to AI agents represents a fundamental shift in how AI is deployed. LLMs proved that machines could dramatically boost productivity (writing emails in 5 minutes instead of 30, researching topics in hours instead of days). But LLMs still require a human operator. AI agents take the next step: they reason, plan, and act autonomously.
 
@@ -269,7 +269,7 @@ An AI agent combines an LLM's reasoning capability with the ability to perceive 
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. What is the key difference between an LLM and an AI agent?</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">An LLM uses neural networks while an agent uses rule-based systems</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">An agent operates autonomously toward objectives while an LLM requires human prompting for each step</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">An LLM can only process text while an agent can process images</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">An agent is always more accurate than an LLM</div></div></div>
 <div class="takeaway"><h4>Takeaways</h4><ul><li>An AI agent is defined by its autonomy loop: perceive, reason, act, evaluate, repeat.</li><li>The business value of agents comes from replacing human-in-the-loop with human-on-the-loop.</li></ul></div>
 </div>
-<div class="lesson"><h3>Why AI Agents Are Believed to Be the Next Big Thing?</h3>
+<div id="lecture-3" class="lesson"><h3>Why AI Agents Are Believed to Be the Next Big Thing?</h3>
 <div class="eighty-twenty"><p>AI agents represent a generational technology shift comparable to the internet, with industry surveys showing near-universal adoption efforts and forecasts predicting automation of up to 70% of office work within a decade.</p></div>
 <p>The momentum behind AI agents is driven by convergence of capability and economic incentive. Every major tech company has flagship agent projects. An IBM/Morning Consult survey of 1,000 enterprise AI developers found 99% were actively exploring or building AI agents. Industry forecasts predict agents could automate up to 70% of office work within ten years.
 
@@ -2715,16 +2715,16 @@ This creates a dual workforce impact: employees gain more time for high-value wo
 <span class="code-line"><span class="line-code">graph.invoke(init_state, config={"configurable": {"thread_id": "run-1"}});</span><span class="line-annotation">  # Execute the graph</span></span></code></pre></div></div></div></details>
 </div>
 <div class="section" id="section2"><div class="section-header"><h2>S02: Essential ingredients for building AI agents</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-4" class="lesson"><h3>Intro</h3>
 <p>In this section of the course, we'll explore the key components involved in building AI agents. These include the environment in which the AI agent interacts with sensors, allowing the agent to perceive its environment. The model, which helps the agent interpret its perceptions and guide its understanding. Decision making logic which determines how the agent selects appropriate actions and actuators. The mechanisms through which the agent executes actions and affects its environment. And lastly, the feedback mechanisms allow the agent to evaluate whether it has successfully achieved its intend</p>
 </div>
-<div class="lesson"><h3>Environment – The External World That the Agent Perceives and Interacts With</h3>
+<div id="lecture-5" class="lesson"><h3>Environment – The External World That the Agent Perceives and Interacts With</h3>
 <p>Okay, great. As we've discussed, AI agents can handle a wide range of tasks and adapt to changing conditions in real time. This means they're able to work in a changing environment. But what exactly do we mean by the term environment? Different types of AI agents operate in various kinds of environments. The environment of a self-driving car comprises roads, other vehicles, weather conditions, pedestrians, and traffic signs. As humans, we've naturally learned how to cross roads and drive safely under different weather conditions because we are exposed to them daily. Similarly, a self-driving c</p>
 </div>
-<div class="lesson"><h3>Sensors – How the Agent Collects Data About its Surroundings</h3>
+<div id="lecture-6" class="lesson"><h3>Sensors – How the Agent Collects Data About its Surroundings</h3>
 <p>We often overlook the remarkable capabilities of the human brain. They allow us to see the world around us and collect vast amounts of information. Our minds process countless details, subconsciously using our senses to absorb what we see, hear, and taste. This complex system allows us to understand the world, helping us interact meaningfully with everything around us. AI researchers aspire to provide agents with such capabilities using data collection tools. In a broader sense, we refer to sensors as the means by which agents receive input from their environment. Sensors allow them to gather </p>
 </div>
-<div class="lesson"><h3>Model – the Agent’s Way of Making Sense of Information</h3>
+<div id="lecture-7" class="lesson"><h3>Model – the Agent’s Way of Making Sense of Information</h3>
 <div class="eighty-twenty"><p>Every AI agent is built from five core components: environment, sensors, model, decision-making logic, and actuators/actions, connected by feedback mechanisms that enable continuous improvement.</p></div>
 <p>Before constructing any AI agent, one must understand its fundamental building blocks. The environment defines where the agent operates. Sensors allow it to perceive that environment. The model interprets sensor data into understanding. Decision-making logic determines what action to take. Actuators execute those actions. Finally, feedback mechanisms close the loop by allowing the agent to evaluate whether it achieved its intended goals.
 
@@ -2735,7 +2735,7 @@ These components are universal across all agent types, from simple thermostats t
 <div class="inline-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400"><rect width="600" height="400" fill="#0d1117"/><defs><marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#58a6ff"/></marker></defs><text x="300" y="30" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="bold" font-family="system-ui">Agent Component Loop</text><rect x="220" y="50" width="160" height="50" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="2"/><text x="300" y="80" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="system-ui">🌍 Environment</text><rect x="420" y="140" width="140" height="50" rx="8" fill="#161b22" stroke="#7ee787" stroke-width="2"/><text x="490" y="170" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="system-ui">📡 Sensors</text><rect x="420" y="220" width="140" height="50" rx="8" fill="#161b22" stroke="#d2a8ff" stroke-width="2"/><text x="490" y="250" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="system-ui">🧠 Model</text><rect x="220" y="310" width="160" height="50" rx="8" fill="#161b22" stroke="#f78166" stroke-width="2"/><text x="300" y="340" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="system-ui">⚖️ Decision Logic</text><rect x="40" y="220" width="140" height="50" rx="8" fill="#161b22" stroke="#ffa657" stroke-width="2"/><text x="110" y="250" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="system-ui">⚡ Actuators</text><rect x="40" y="140" width="140" height="50" rx="8" fill="#161b22" stroke="#79c0ff" stroke-width="2"/><text x="110" y="170" text-anchor="middle" fill="#e6edf3" font-size="12" font-family="system-ui">🔄 Feedback</text><line x1="380" y1="75" x2="420" y2="140" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow2)"/><line x1="490" y1="190" x2="490" y2="220" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow2)"/><line x1="420" y1="250" x2="380" y2="310" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow2)"/><line x1="220" y1="335" x2="180" y2="270" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow2)"/><line x1="110" y1="220" x2="110" y2="190" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow2)"/><line x1="180" y1="155" x2="220" y2="90" stroke="#58a6ff" stroke-width="1.5" marker-end="url(#arrow2)"/></svg></div>
 <div class="takeaway"><h4>Takeaways</h4><ul><li>Master each component individually before trying to build a complete agent system.</li><li>The feedback loop is what separates a static automation from an adaptive agent.</li></ul></div>
 </div>
-<div class="lesson"><h3>Decision-making Logic – Rules and Objectives that Guide the Agent’s Actions</h3>
+<div id="lecture-8" class="lesson"><h3>Decision-making Logic – Rules and Objectives that Guide the Agent’s Actions</h3>
 <div class="eighty-twenty"><p>The environment is everything external to the agent; it defines the problem space, constraints, and possibilities, and must be characterized first because agent design must align with its operational context.</p></div>
 <p>The environment is everything external to the agent. It defines the problem space, constraints, and possibilities.</p>
 <ul class="key-points"><li>The environment dictates sensors needed and actions possible.</li><li>Can be physical (roads, weather) or digital (websites, databases).</li><li>Agent design MUST align with its operational environment.</li><li>Agents must learn from environments like humans do.</li></ul>
@@ -2743,7 +2743,7 @@ These components are universal across all agent types, from simple thermostats t
 <div class="analogy-box"><div class="analogy-icon">&#x1F4CC;</div><div class="analogy-title">PE: Test Floor</div><p>Tester hardware, handlers, temperature chambers, production schedules.</p></div>
 <div class="takeaway"><h4>Takeaways</h4><ul><li>Define the environment FIRST before designing the agent.</li><li>Misalignment between agent and environment guarantees failure.</li></ul></div>
 </div>
-<div class="lesson"><h3>Actions – How the Agent Shapes the Environment</h3>
+<div id="lecture-9" class="lesson"><h3>Actions – How the Agent Shapes the Environment</h3>
 <div class="eighty-twenty"><p>Sensors are the mechanisms that allow agents to receive input from their surroundings; without them, the agent is blind regardless of how sophisticated its reasoning is.</p></div>
 <p>Mechanisms that allow agents to receive input from surroundings. Sensor choice must match the environment, and sensor fusion (combining multiple sources) gives richer understanding than any single input.</p>
 <ul class="key-points"><li>No sensors equals a blind agent, regardless of model capability.</li><li>Sensor fusion (combining multiple sources) produces richer understanding than any single input.</li><li>Sensor choice must match the environment the agent operates in.</li><li>Types span physical (cameras, lidar, GPS, IoT), digital (web scrapers, APIs, databases), and hybrid.</li></ul>
@@ -2752,7 +2752,7 @@ These components are universal across all agent types, from simple thermostats t
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. Which of the following best describes the role of sensors in an AI agent?</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">They execute the agent's decisions on the environment</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">They allow the agent to gather input data from its environment</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">They store the agent's memory of past interactions</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">They define the rules the agent must follow</div></div></div>
 <div class="takeaway"><h4>Takeaways</h4><ul><li>An agent without sensors is blind; sensor selection is a design-critical decision.</li><li>Sensor fusion (multiple sources) always beats relying on a single input.</li></ul></div>
 </div>
-<div class="lesson"><h3>The Updated Environment</h3>
+<div id="lecture-10" class="lesson"><h3>The Updated Environment</h3>
 <div class="eighty-twenty"><p>The model is the agent's brain, processing raw sensor data into meaningful understanding across a capability spectrum from simple ML (fast, interpretable) to LLMs (human-like reasoning, multi-step planning).</p></div>
 <p>The agent's brain. Processes sensor data into meaningful understanding. The model determines WHAT to do; tools handle HOW to do it. LLMs serve as the central reasoning engine in modern agentic systems.</p>
 <ul class="key-points"><li>Model capability spectrum: simple ML (fast, interpretable) to neural networks (powerful, less interpretable) to LLMs (human-like reasoning).</li><li>More capable models enable more capable agents but at higher cost.</li><li>Multimodal models unify perception across different data types (text, image, audio).</li><li>Understanding without action is useless; the model must connect to decision-making and execution.</li></ul>
@@ -2761,114 +2761,114 @@ These components are universal across all agent types, from simple thermostats t
 </div>
 </div>
 <div class="section" id="section3"><div class="section-header"><h2>S03: from simple to complex structures</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-11" class="lesson"><h3>Intro</h3>
 <p>Okay. Good. We're doing excellent. In the previous section, we defined the essential components needed to build AI agents. Equipped with this knowledge, we can proceed further and learn about the main types of AI agent structures. AI agent structures can be classified based on their complexity and functionality. We'll begin with simpler agents, such as the simple reflex agent structure, and will gradually introduce more sophisticated designs. These lessons help you gain a comprehensive understanding of the type of agents needed for specific use cases, and equip you with the skills to choose an</p>
 </div>
-<div class="lesson"><h3>Key Characteristics of AI Agents</h3>
+<div id="lecture-12" class="lesson"><h3>Key Characteristics of AI Agents</h3>
 <p>An agent is defined as a system that perceives its environment through sensors and then acts upon that environment. But as agents become more advanced, their capabilities extend far beyond just perception and action. In this lesson, we'll define five key characteristics that define sophisticated agents one profile and persona two memory, three reasoning, four actions, and five learning capabilities. Please remember that not all agent types must have all five characteristics to qualify as agents. Having 4 or 5 of these five features is typical of more sophisticated agents. The profile and perso</p>
 </div>
-<div class="lesson"><h3>Simple Reflex Agent</h3>
+<div id="lecture-13" class="lesson"><h3>Simple Reflex Agent</h3>
 <p>The first type of agent structure will consider is the simple reflex agent. As one can infer from its name, this is a fundamental tool that reacts directly based on immediate perception. It doesn't have any internal memory or sophisticated models. A good example of a simple reflex agent is a thermostat. Its environment, of course, is the temperature. At home, the thermostat uses sensors to read the environment and isn't connected to a sophisticated reasoning model. Instead, it follows a simple rule. Activate the heating. If the temperature drops below 20°C, the thermostat is connected to a hea</p>
 </div>
-<div class="lesson"><h3>Model-based Reflex Agent</h3>
+<div id="lecture-14" class="lesson"><h3>Model-based Reflex Agent</h3>
 <p>The next agent type we'll explore is the model based reflex agent. Like simple reflex agents, these agents perceive their environment and act upon it. But there's a key distinction. Model based reflex agents use memory to maintain an internal representation of the environment. They construct a model of the world around them. A good example of a model based agent is a robot vacuum cleaner. As it cleans a dirty room, the robot builds a map of the premises and the obstacles, such as furniture. Then the robot uses this map to determine which areas it has already cleaned. It also knows how to preve</p>
 </div>
-<div class="lesson"><h3>Goal-based Agent</h3>
+<div id="lecture-15" class="lesson"><h3>Goal-based Agent</h3>
 <p>Whenever you use Google Maps or Waze, the application compares the estimated time it will take to reach your desired destination via different routes, and then recommends the fastest one. But what if a car breaks in the middle of the road, and there's a traffic jam in one of the lanes that was initially recommended? At this point, the application will receive updates from its sensors, indicating that external conditions have changed, and the internal model will use this information to assess whether there's a faster way to reach your destination. The internal model aims to satisfy the decision</p>
 </div>
-<div class="lesson"><h3>Utility-based Agent</h3>
+<div id="lecture-16" class="lesson"><h3>Utility-based Agent</h3>
 <p>The next type of agent we'll consider is a utility based agent in terms of sophistication. They rank higher compared to goal based agents. The reason is that utility based agents consider multiple factors to evaluate utility, rather than just achieving a predetermined goal. Consider a simple example. It's one thing to try to find and invest in financial securities that offer an annual rate of return above 5%. That's a goal based mechanism, but a 5% return doesn't paint the whole picture. A competent investment advisor would also consider such factors as investment volatility, liquidity, and de</p>
 </div>
-<div class="lesson"><h3>Learning Agent</h3>
+<div id="lecture-17" class="lesson"><h3>Learning Agent</h3>
 <p>Learning agents possess the same capabilities as utility based and goal based agents, but are unique in their ability to learn. New experiences are added to their initial knowledge base, and as the agent gains experience, this enhances its ability to operate in unfamiliar environments and improve performance. In addition to the familiar components, environment, sensors, internal model, decision logic, and actuators, this system also includes a learning element which enhances the model over time based on feedback. With this learning element and the mechanics built into the system, the agent is </p>
 </div>
 </div>
 <div class="section" id="section4"><div class="section-header"><h2>S04: Guiding and teaching AI agents</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-18" class="lesson"><h3>Intro</h3>
 <p>In the last lesson, we briefly touched on an essential aspect the learning abilities of AI agents. This is a central topic, and that's why we'll dedicate the next couple of lessons to it. First, we'll describe how AI agents acquire knowledge by connecting to external systems, and then discuss how human knowledge is incorporated into AI agents. The knowledge you'll gain in these lessons will help you leverage agents full potential.</p>
 </div>
-<div class="lesson"><h3>Learning from Humans</h3>
+<div id="lecture-19" class="lesson"><h3>Learning from Humans</h3>
 <p>One of the most exciting aspects of AI agent systems is their ability to learn and continuously improve over time. To achieve this, they rely on three key sources. One. Learning from other agents two. Connecting to external sources of information such as the internet, and three human feedback. In this lesson, we'll examine how AI agents acquire knowledge from external sources, including other AI agents and information systems like the internet. In the next lesson, we'll discuss how AI agents learn from their interactions with humans. Right. One crucial and fascinating way in which AI agents ca</p>
 </div>
-<div class="lesson"><h3>Learning from External Systems</h3>
+<div id="lecture-20" class="lesson"><h3>Learning from External Systems</h3>
 <p>As previously noted, A.I. agents are autonomous in their decision making process. However, they require goals and predefined rules created by humans. One fundamental concept highlighting human influence throughout an AI agent's life cycle is known as human in the loop hittle. Hittle emphasizes the continuous involvement of humans in the training, monitoring, and refinement of AI systems. Let's explore this concept using an example of a customer support chatbot. First, we have the development stage. Consider a tech firm that builds the product. Human developers are directly responsible for trai</p>
 </div>
 </div>
 <div class="section" id="section5"><div class="section-header"><h2>S05: AI agent architecture patterns</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-21" class="lesson"><h3>Intro</h3>
 <p>Congratulations on making it this far into the course. Now that we've laid a solid foundation, we are ready to discuss AI agents more practically. In this section, we'll make a clear distinction between Llms AI workflows and AI agents. You will also become familiar with the two key frameworks used to build AI agents React and Riwu. We'll differentiate between single agent and multi-agent systems and explain the powerful concept of chain of thought reasoning, examining how it significantly enhances AI agent's decision making processes and developer's ability to understand AI agent decision maki</p>
 </div>
-<div class="lesson"><h3>Distinguishing LLMs vs AI Workflows vs Agents (Agentic vs Non-agentic AI)</h3>
+<div id="lecture-22" class="lesson"><h3>Distinguishing LLMs vs AI Workflows vs Agents (Agentic vs Non-agentic AI)</h3>
 <p>Is ChatGPT an AI agent? Or what about an application connected to an LLM? Is that an AI agent? And what's the difference between an LLM and AI workflow? And an AI agent. If these concepts seem a bit confusing, don't worry. I felt the same way. In this video we'll clarify matters. You've probably used ChatGPT countless times by now. It's essentially a chat interface with a large language model on top of it serving as its engine. For simplicity, we'll refer to it as an LLM. Throughout this lesson. So how does an LLM work? Usually you give the LLM a prompt, whether it's a question or a set of ins</p>
 </div>
-<div class="lesson"><h3>How AI Agents Reason and Act (ReAct)</h3>
+<div id="lecture-23" class="lesson"><h3>How AI Agents Reason and Act (ReAct)</h3>
 <p>Setting up an in-person meeting can involve more steps than you might expect. Here's what usually happens. Your business associate suggests meeting face to face. You open your calendar, find some open slots, and send these options to her. She selects a time that works best for her and then asks about your preferred place to meet. You check your schedule and realize you'll be working from home that day, so you need a nearby location. A lovely outdoor cafe comes to mind. Perfect. If the weather's good, but you remember it was pretty crowded last time, so you'll have to double check if there's sp</p>
 </div>
-<div class="lesson"><h3>How AI Agents Reason without Observation (ReWoo)</h3>
+<div id="lecture-24" class="lesson"><h3>How AI Agents Reason without Observation (ReWoo)</h3>
 <p>The other critical framework used for designing AI agents is called Riwu, which stands for reasoning without observation. With Riwu, we instruct the agent to plan all necessary steps, ensuring it's not influenced by tool outputs for action planning. Let's compare React and Riwu using the example from the previous lesson, we observed that with react, the agent reasons through each step, interacts with a tool, answers the current question, and then proceeds when it's unclear where you'll be working from, the agent will check the HR planner tool, obtain the necessary information, and then proceed</p>
 </div>
-<div class="lesson"><h3>Single Agents</h3>
+<div id="lecture-25" class="lesson"><h3>Single Agents</h3>
 <p>Whenever we discuss AI agent systems, it's essential to be aware of whether the workflow involves a single AI agent or multiple AI agents working together. In this video, we'll focus on single agent systems, which are simpler and easier to manage, making them an ideal starting point when aiming for a lean and straightforward approach. Having only one agent in a system doesn't mean it isn't powerful. Quite the opposite. Each new tool integrated into the agent significantly expands its capabilities. Using a single agent simplifies the evaluation and maintenance of the system. Take the earlier ex</p>
 </div>
-<div class="lesson"><h3>Multi-agents</h3>
+<div id="lecture-26" class="lesson"><h3>Multi-agents</h3>
 <p>When you're part of a team, you don't expect everyone to take on each other's roles. Do you suppose your company wants to redesign its website homepage? You need a graphic designer, a copywriter, a marketing specialist, a brand manager, and an SEO consultant. If everything goes smoothly, collaboration between these specialized roles will deliver a superior result. This is the same idea when it comes to teams of AI agents. Specialized AI team members can each bring their unique strengths to the table. The price we pay for adding more agents to the same project is increased complexity in terms o</p>
 </div>
 </div>
 <div class="section" id="section6"><div class="section-header"><h2>S06: Implementing AI agents in practice</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-27" class="lesson"><h3>Intro</h3>
 <p>Hi and welcome back to another exciting section of our course. So far, we've built a solid foundation. You became familiar with the key components needed for an AI agent system. Then we described several types of agents based on their functionalities and capabilities. We also learned how AI agents learn and identified some of the most essential design patterns for AI agents. We're making progress. In this section, we'll continue exploring the practical aspects of creating and working with AI agents. You'll learn how to select a model for your agent, which tools the agent will use, how to confi</p>
 </div>
-<div class="lesson"><h3>How to Implement AI Agents in Your Business</h3>
+<div id="lecture-28" class="lesson"><h3>How to Implement AI Agents in Your Business</h3>
 <p>Now that we understand what AI agents are and how they work, let's look at what it takes to implement them in your business. First, you need to define clear objectives. Understand well what you want to achieve with AI agents. Why does your business need this tool? Do you want to enhance customer satisfaction with 24 over seven support, or reduce costs by replacing human hours with AI agent hours? Having a clear goal in mind allows you to obtain a clear implementation roadmap and visualize what success looks like once you've completed that mental exercise. The next step is to consider the data </p>
 </div>
-<div class="lesson"><h3>Select a Model</h3>
+<div id="lecture-29" class="lesson"><h3>Select a Model</h3>
 <p>There are dozens of major lmes and hundreds more that are noteworthy for various reasons. So which one should you choose to power your AI agent? The smartest or most sophisticated one? Not necessarily. As cliche as it sounds, the answer is it depends. Different models come with different strengths, so it's important to factor that into your decision. Some can handle complex problems exceptionally well, but maybe slower and more expensive to run. Others are rather cheap and fast, but not as powerful. So you might want to consider using a variety of models before you decide on the optimal one. N</p>
 </div>
-<div class="lesson"><h3>External Tools the Agent Can Use</h3>
+<div id="lecture-30" class="lesson"><h3>External Tools the Agent Can Use</h3>
 <p>Agents need tools to communicate with other software. APIs frequently play this role and create a bridge between agents and the different software they work with. If there isn't an API available, then agents can interact with software as a human user would and connect with it anyway. This isn't ideal. It can reduce the accuracy of an agent's understanding and actions. Even for humans, there's a big difference between receiving structured tabular data and having to browse a website to find information on your own. We can further distinguish between data and action tools. Data tools help agents </p>
 </div>
-<div class="lesson"><h3>Configuring Instructions and Prompt Engineering Best Practices</h3>
+<div id="lecture-31" class="lesson"><h3>Configuring Instructions and Prompt Engineering Best Practices</h3>
 <p>You're likely already aware how crucial prompt engineering is when working with large language models. Just a few years ago, the term was virtually unknown. Today, it's a core skill essential to unlocking the full potential of AI models. Providing clear instructions to an LLM reduces ambiguity, resulting in higher quality output. The same principle applies to AI agents. Whenever we develop or work with one, it's essential to craft the system prompt as effectively as possible. A well-designed prompt enhances the agent's decision making and leads to smoother workflow execution with fewer errors.</p>
 </div>
-<div class="lesson"><h3>Few-shot Prompting</h3>
+<div id="lecture-32" class="lesson"><h3>Few-shot Prompting</h3>
 <p>Are you familiar with the concepts of zero shot, one shot, and few shot prompting? Don't worry if you aren't, because we'll explain what they mean in this lesson. Understanding these prompting techniques will help you when configuring AI agent systems. Let's start with zero shot prompting. Zero shot. Prompting essentially means asking an LLM to perform a task without giving it any examples. Instead, the model relies on its preexisting knowledge to provide an appropriate response. Suppose you get hired as a sales representative at AT&amp;amp;T. Your task is to sell telecommunications services. On d</p>
 </div>
-<div class="lesson"><h3>Chain of Thought Reasoning</h3>
+<div id="lecture-33" class="lesson"><h3>Chain of Thought Reasoning</h3>
 <p>Chain of thought. Cot is a prompt engineering technique that asks AI models to explain their reasoning and list the intermediate steps used to arrive at a conclusion. If you ask an LLM, which is the best month to visit Greece? If I enjoy going to the beach but have a limited budget, the response could be September. This answers the question we asked, but it doesn't provide any additional details. With chain of thought reasoning, the system must provide an explanation for its reasoning so it may respond in the following way. If you enjoy going to the beach, then the months in which you can do t</p>
 </div>
-<div class="lesson"><h3>Guardrails</h3>
+<div id="lecture-34" class="lesson"><h3>Guardrails</h3>
 <p>Why do we need guardrails on roads? They prevent cars from veering off cliffs. Right. This approach reduces the risk for drivers. But this isn't the only mechanism that reduces risk. There are also speed limits that regulate the speed at which drivers can travel, thereby reducing the likelihood of losing control. Similarly, traffic lights guide the flow of vehicles, minimizing collisions at intersections. Road signs provide critical information about hazards ahead, enabling drivers to anticipate and avoid danger. So road safety is created by combining several layered mechanisms. While a single</p>
 </div>
-<div class="lesson"><h3>The Importance of Human Intervention</h3>
+<div id="lecture-35" class="lesson"><h3>The Importance of Human Intervention</h3>
 <p>In the previous lesson, we didn't cover one of the most important safeguards for reducing risk when launching an AI agent. I'm talking about human intervention. Human interaction with the agent's output is especially important early on in the process when deploying the agent for the first time. As humans, we have unparalleled intuition and common sense that can help identify the agent's failures. Certain edge cases it runs into, and overall areas for improvement that automated tests alone might not catch. Human oversight acts as a vital feedback mechanism, allowing us to spot subtle inaccuraci</p>
 </div>
-<div class="lesson"><h3>How to Evaluate AI Agents</h3>
+<div id="lecture-36" class="lesson"><h3>How to Evaluate AI Agents</h3>
 <p>In this lesson, we'll explore how to evaluate AI agents. Put simply, we'll ask what makes an AI agent good or effective? It's a trickier question than it seems, but let's give it a shot. Is a good agent the one that responds faster? Sure. But what if those fast responses are incorrect? All right, let's try again. Is a good agent, one that's polite and adheres to high ethical standards. That's important. But what if it can't solve the task it was created for? Clearly, that's still not enough. A truly good agent needs to meet multiple criteria. Let's see which aspects it needs to balance accurac</p>
 </div>
 </div>
 <div class="section" id="section7"><div class="section-header"><h2>S07: Build an agentic automation with n8n</h2></div>
-<div class="lesson"><h3>Introduction to n8n</h3>
+<div id="lecture-37" class="lesson"><h3>Introduction to n8n</h3>
 <p>N A10, which is short for node machine, is a workflow automation tool. We can use it to create AI workflows and AI agents with little to no coding knowledge, and a user friendly interface relies on an easy to understand drag and drop builder. As soon as we create a profile and register, you'll see how intuitive and straightforward it is to create an agent with this type of workflow builder. The goal of this section of the course is to add a practical dimension and show how to start creating and working with agents in real life in just minutes, not hours. Let's go ahead and create an account no</p>
 </div>
-<div class="lesson"><h3>Node Types in n8n</h3>
+<div id="lecture-38" class="lesson"><h3>Node Types in n8n</h3>
 <p>Right. Let's pick up from where we left off. I'll select the test. A simple AI agent example option. This takes me to Nancy's user friendly and intuitive canvas. Here you can see the building blocks that we mentioned earlier. They're called nodes and represent individual tasks or actions. Arrows like this one tell us how nodes are connected and how they form a logical workflow that defines how the AI agent we're creating will operate in Nan. We have four node types triggers, action nodes, logic nodes, and an AI agent node. Every workflow starts with a trigger which defines how the automation b</p>
 </div>
-<div class="lesson"><h3>The Project We Will Build</h3>
+<div id="lecture-39" class="lesson"><h3>The Project We Will Build</h3>
 <p>Right. So, picking up from where we left off, let's take a closer look at the Nar den canvas. This is the space where all your workflows come to life. Think of it as a whiteboard where you can drag and drop and connect different nodes until your automation looks precisely the way you want it to. The canvas is designed to be intuitive and straightforward. You can zoom in and out. Move around freely. And organize your workflow however you like. Each node you add is represented as a block. And the arrows between them show how data flows from one step to the next. Okay, good. Let's discuss what we</p>
 </div>
-<div class="lesson"><h3>Defining Your Agent’s Personality: The System Prompt</h3>
+<div id="lecture-40" class="lesson"><h3>Defining Your Agent’s Personality: The System Prompt</h3>
 <p>All right. Great. So in this lesson we'll start by double clicking on the AI agent node and configuring the agent inside the parameters tab. I'll leave the tools agent because we're going to build an agent that works with tools. Then the source for the prompt I'll select is a connected chat trigger node, as this allows the agent to receive its input directly from the users messages in the chat. We don't need to change the JavaScript generated by default here, so I'll leave it as it is. I won't require a specific output format either, so let's move on to editing the system message where we defi</p>
 </div>
-<div class="lesson"><h3>Adding the Brain: Making Your Workflow Think</h3>
+<div id="lecture-41" class="lesson"><h3>Adding the Brain: Making Your Workflow Think</h3>
 <p>Okay. Great time to connect the AI agent to the model it'll be using as its brain. We'll use one of OpenAI's Llms, but in theory, you could use any provider and the agent should still work. I'll click on the model node and open it. Once here, I'll create a new credential, which means building a new bridge between my OpenAI API account and Naarden. I'll need to open my OpenAI account and then go to settings to find an API key. Once I have it, I can copy and paste it inside. Naarden. Please note that you'll need to have some funds available in your OpenAI API account, although the cost is minima</p>
 </div>
-<div class="lesson"><h3>Implementing Memory in n8n: Building Memory for Your Agent</h3>
+<div id="lecture-42" class="lesson"><h3>Implementing Memory in n8n: Building Memory for Your Agent</h3>
 <p>All right. Now that our agent has a brain, let's add some memory to it. But first, let me show you why I'm saying the agent has trouble remembering now. Inside the chat, I'll write. My name is Ned. When it replies, the agent recognizes the information I just shared. Now let's check if it remembered anything by asking what is my name? The response shows that the agent doesn't have access to my personal information. In other words, it didn't recall what I shared. Just a few lines earlier. The agent has no memory of our previous interactions, and that can be a problem for a personal assistant des</p>
 </div>
-<div class="lesson"><h3>Integrating Tools: Google Sheets and Gmail</h3>
+<div id="lecture-43" class="lesson"><h3>Integrating Tools: Google Sheets and Gmail</h3>
 <p>So far we've built an agent that can receive, understand and remember messages. But our goal is not to create a confidante. It's to build a personal assistant that can send emails to my contacts. So how does an agent do that? It needs tools, right? First, the agent needs access to my contacts database. For simplicity, I'll give access to a Google Sheets file, which can be used to find contacts email address. But using the same logic, this could have been done with more sophisticated types of databases. Once we have an email address and an agent capable of drafting a message, we need access to </p>
 </div>
-<div class="lesson"><h3>Producing the Final Output</h3>
+<div id="lecture-44" class="lesson"><h3>Producing the Final Output</h3>
 <p>All right. Good. We're almost there. The final piece of the puzzle is to configure an output node so that whatever the agent produces can be appropriately displayed back in the chat. For this, I'll add an Edit Fields node. Once it's on the canvas, I'll switch it to manual mapping. That way we're in complete control of what gets passed forward. I'll add a new field called output to keep everything clear and easy to follow. Next, I'll set its type to JSON. Since the agent's responses, such as two subject and message, are usually structured as key value pairs. This ensures the output isn't treate</p>
 </div>
 
@@ -2903,35 +2903,35 @@ These components are universal across all agent types, from simple thermostats t
   </div>
 </div>
 <div class="section" id="section8"><div class="section-header"><h2>S08: AI agent infrastructure</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-45" class="lesson"><h3>Intro</h3>
 <p>All right. We're doing excellent. We've come such a long way since the beginning of the course, haven't we? Initially, we began with the fundamentals defining what AI agents are and why big tech firm CEOs believe they're the next big thing. Then we continued by laying a solid foundation, you learned about the necessary ingredients to build AI agents, the type of AI agents, and how to train and influence agents. We also explored the most critical AI agent design patterns and discussed extensively how to implement AI agents in practice. This is incredible progress. The following key topic I'd li</p>
 </div>
-<div class="lesson"><h3>APIs</h3>
+<div id="lecture-46" class="lesson"><h3>APIs</h3>
 <p>One of the first questions to address when integrating AI agents into your business is whether to build the AI model in-house or rely on an external model. The classic make versus buy dilemma. Today, only a few organizations have the expertise and resources to develop their own large language model. The core brain behind an AI agent, as mentioned earlier. So naturally they prefer to use an external model and pay a service fee. So how do you connect an external LLM to your AI agent? Surprisingly, it's quite straightforward. With the help of APIs and API acts as a bridge, enabling your agent to </p>
 </div>
-<div class="lesson"><h3>Cloud Services</h3>
+<div id="lecture-47" class="lesson"><h3>Cloud Services</h3>
 <p>Saying that AI agents require significant computing resources would be an understatement. The more advanced your agent becomes, and the more tasks it handles, the greater its computing demands will be. If you run a business, this can be seen as another make versus buy decision. If you opt for make, you'll need to purchase hardware that can handle peak usage and ensure you have sufficient GPUs for heavy AI computations. Alternatively, buy means using an external service that provides flexibility and doesn't require a significant upfront investment. Cloud solutions provide scalable infrastructur</p>
 </div>
-<div class="lesson"><h3>Data and Knowledge Integration</h3>
+<div id="lecture-48" class="lesson"><h3>Data and Knowledge Integration</h3>
 <p>Imagine hiring a world class financial analyst but not giving them access to your company's ERP system. How effective could they be at putting your finances in order? Or picture a top tier sales team without proper knowledge of the products they're selling. How successful do you think they'd be? These scenarios closely resemble those involving AI agents, which perform best when granted access to relevant business data. Therefore, in general, you want to empower your AI agents by giving them more knowledge. This happens by connecting them to databases, enterprise systems, knowledge bases, and t</p>
 </div>
-<div class="lesson"><h3>Development Frameworks</h3>
+<div id="lecture-49" class="lesson"><h3>Development Frameworks</h3>
 <p>Modern agent projects rarely start from scratch. Instead, they're built by assembling pre-designed Lego bricks that make it easy to add features like memory planning, tool calling, and orchestration to your AI agent. In this lesson, we'll discuss several vital frameworks that enable you to do that. First, there's Lang chain. If you're going to learn just one library, this should be it. Lang chain offers two essential building blocks chains and agents. Chains are used to create agentic workflows, which we discussed earlier. Remember, in an Agentic workflow, we always have the same predefined st</p>
 </div>
-<div class="lesson"><h3>Deployment</h3>
+<div id="lecture-50" class="lesson"><h3>Deployment</h3>
 <p>You've built a prototype of your AI agent. It works perfectly. But your agent doesn't want to stay trapped in a Jupyter notebook. After all, a ship in a harbor is safe. But that's not what ships are built for. It's time to deploy the agent in an environment where users can interact with it. Picture a chat interface on your website or a dedicated space within a platform you've built, like placing an agent directly in the Q&amp;amp;A section of a learning platform, for example. Alternatively, the agent can be a back end process that operates silently in most cases to deploy your agent. You'll rely o</p>
 </div>
 </div>
 <div class="section" id="section9"><div class="section-header"><h2>S09: AI agents in business</h2></div>
-<div class="lesson"><h3>The Key Value Proposition of AI Agents</h3>
+<div id="lecture-51" class="lesson"><h3>The Key Value Proposition of AI Agents</h3>
 <p>To understand the key proposition of AI agents, we should consider what it would mean for companies to hire AI employees. Entities that, while different from humans, will increasingly be capable of performing many of the same tasks. It's natural to think about cost savings if AI agents can effectively perform tasks traditionally handled by employees. Companies may consider workforce adjustments, potentially leading to substantial cost efficiencies in the coming years. CNN reported that 41% of companies worldwide plan to reduce their workforce by 2030, due to the impact of AI. It'll be easier t</p>
 </div>
-<div class="lesson"><h3>AI Agents as Teammates</h3>
+<div id="lecture-52" class="lesson"><h3>AI Agents as Teammates</h3>
 <p>Whether you're writing code as a developer, working as a customer service agent, or packing in a distribution center, you can expect to see AI agents working alongside you. A few years from today, AI will observe your work and learn how to do some of it. Over time, it will become better and significantly faster than you in some tasks, while you'll maintain an edge in others. Make no mistake, virtual employees are coming to the job market, and companies will have no choice but to adapt and optimize their processes. If they don't, others will and will take their place in the market. Manual routi</p>
 </div>
 </div>
 <div class="section" id="section10"><div class="section-header"><h2>S10: Intro</h2></div>
-<div class="lesson"><h3>Intro</h3>
+<div id="lecture-53" class="lesson"><h3>Intro</h3>
 <p>Okay. Amazing. Now that you're familiar with AI agents, let's continue with a module in which we explore AI agent architecture. The backbone of scalable and effective AI agent systems. So let me walk you through the content you'll see next. We'll begin by explaining what AI agents are the key building blocks behind them and when it makes sense to use them. And when it doesn't. Next, we'll cover prompting frameworks and how to design system prompts that make your agents both effective and reliable. With this foundation in place, we'll move on to agentic workflows, single and multi-agent archite</p>
 </div>
 <details class="code-lab-collapsible"><summary class="code-lab-summary"><span class="code-lab-badge">Code Lab</span> First Graph: Importing Relevant Classes</summary><div class="code-lab-body"><div class="code-walkthrough"><div class="step-explanation"><p>First Graph: Importing Relevant Classes</p></div><div class="step-explanation"><p>Set the OpenAI API Key as an Environment Variable</p></div><div class="step-explanation"><p>Import Relevant Classes and Functions</p></div><div class="code-block"><button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.querySelector('code').textContent)">Copy</button><pre><code><span class="code-line"><span class="line-code">from langgraph.graph import START, END, StateGraph</span><span class="line-annotation">  # LangGraph framework imports</span></span>
@@ -4199,242 +4199,242 @@ In the following sections, we’ll employ intriguing projects using OpenAI’s m
 </div>
 <div class="section" id="section11"><div class="section-header"><h2>S11: Foundations of Agentic AI</h2></div>
 <div class="concept-grid"><div class="concept-card"><div class="card-icon">📈</div><div class="card-title">Scaling</div><div class="card-desc">Architecture determines if system handles 10 users or 10,000 without redesign</div></div><div class="concept-card"><div class="card-icon">🔒</div><div class="card-title">Reliability</div><div class="card-desc">Error handling, retry logic, and graceful degradation are architectural decisions</div></div><div class="concept-card"><div class="card-icon">🎛️</div><div class="card-title">Control</div><div class="card-desc">Governance guardrails, cost limits, and oversight hooks must be designed in from the start</div></div></div>
-<div class="lesson"><h3>Agentic Workflows vs. AI Agents</h3>
+<div id="lecture-54" class="lesson"><h3>Agentic Workflows vs. AI Agents</h3>
 <p>At the beginning of our journey, it would be beneficial to make a crucial distinction between AI workflows and AI agents. Workflows are systems that utilize Llms in predefined code paths. Agents, on the other hand, enable Llms to independently decide how to approach tasks and select the appropriate tools. When it comes to workflows, the system follows a set of predefined steps each time it runs. Programmers design this sequence in advance, and the model is expected to operate strictly within those parameters. The logic is fixed. The LLM serves as one component within a larger structured pipeli</p>
 </div>
-<div class="lesson"><h3>Core Building Blocks of an AI agent</h3>
+<div id="lecture-55" class="lesson"><h3>Core Building Blocks of an AI agent</h3>
 <p>Before we dive into the different types of agent architectures for solving real world AI engineering challenges, let's first take a few minutes to explore the key building blocks of AI agents. In this lesson, we'll introduce the concepts of perception, reasoning and planning, memory and retrieval, action and execution, feedback and adaptation, evaluation and monitoring, and governance and safety guardrails. These elements form the foundation for building effective AI agents. Throughout this course, we'll explore each of these concept families in depth, dedicating whole sections to their practi</p>
 </div>
-<div class="lesson"><h3>When (and when not) to Use AI Agents</h3>
+<div id="lecture-56" class="lesson"><h3>When (and when not) to Use AI Agents</h3>
 <p>The primary function of this course is designing practical and functional AI agents. But before diving into AI agent design patterns, it's crucial to consider when an agentic approach is essential. Let's take a moment to address this topic. Building an agentic workflow is most appropriate when the required steps are clearly defined. This typically applies to well-structured projects where the path to the solution is already known. If you have a clear understanding of what needs to be done, it's easy to outline the necessary steps and program a sequence of predefined actions with confidence. Th</p>
 </div>
-<div class="lesson"><h3>Why Architecture Matters: Scaling, Reliability &amp; Control</h3>
+<div id="lecture-57" class="lesson"><h3>Why Architecture Matters: Scaling, Reliability &amp; Control</h3>
 <p>Why does design matter when building AI workflows and agents? When gen AI tools like ChatGPT first appeared a few years ago, using AI seemed simple enough. You had a chat interface where you could interact with the model and get helpful responses. That was it. Straightforward and easy. Yes, large language models felt almost like dark magic. Yet using gen AI was as natural and effortless as texting a friend. Today, I'm struck by how far we've come from such a simple concept to something remarkably sophisticated. Initially, people began experimenting with prompts, and before long, prompt enginee</p>
 </div>
 </div>
 <div class="section" id="section12"><div class="section-header"><h2>S12: Prompting for Agentic Systems</h2></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-58" class="lesson"><h3>Section Introduction</h3>
 <p>Building a genetic workflows and agents is fascinating. But before we move on to that, we'll dedicate a few lessons to prompt engineering, which essentially sets the stage for controlling an LLM with our instructions. Once you've grasped these core concepts, you'll be ready to move beyond single prompts and start thinking in terms of systems, workflows, and agents that can act, reason, and improve over time.</p>
 </div>
-<div class="lesson"><h3>General Principles of Prompt Structuring</h3>
+<div id="lecture-59" class="lesson"><h3>General Principles of Prompt Structuring</h3>
 <p>One of the most critical aspects when designing single agent systems is how you'll structure their system prompt. It acts as the agent's foundational instruction set, defining its personality, role, tone, and limitations. It's essentially the blueprint that shapes how the agent interprets user input and generates responses. The lens through which it perceives the world. This goes far beyond a mere technical detail. The way you structure the system prompt has a direct impact on the agent's overall performance. Sometimes you'll find that minor tweaks can lead to considerable improvements. Here a</p>
 </div>
-<div class="lesson"><h3>Prompting Frameworks</h3>
+<div id="lecture-60" class="lesson"><h3>Prompting Frameworks</h3>
 <p>In this lesson, we'll talk about a few essential prompt engineering techniques that will help you when configuring AI agent systems. Depending on the amount of context or prior guidance the model needs to perform a task. You can opt for zero shot, prompting one shot prompting and few shot, prompting the apparent trade off when choosing. A prompting technique is between the size and complexity of the prompt and the model's performance. Zero shot prompting essentially means asking an LLM to perform a task without giving it any examples. Instead, the model relies on its pre-existing knowledge to </p>
 </div>
-<div class="lesson"><h3>Positive and Negative Prompting</h3>
+<div id="lecture-61" class="lesson"><h3>Positive and Negative Prompting</h3>
 <p>When working with AI models, examples are one of the most effective tools for improving results. They show the model exactly what you want. But another technique can improve results, adding do and don't instructions. The do and don't commands are about providing the model with facts. They define how it should behave when generating a response to your prompt. Positive prompting involves instructing the model on what to do. Think of it as giving the model green lights signals that highlight the qualities or structures you want it to include. For example, use a friendly conversational tone. Inclu</p>
 </div>
-<div class="lesson"><h3>Chain-of-Thought (CoT)</h3>
+<div id="lecture-62" class="lesson"><h3>Chain-of-Thought (CoT)</h3>
 <p>Chain of thought. Cot is a prompt engineering technique that instructs AI models to explain their reasoning and outline the immediate steps they take to reach a conclusion. If you ask an LLM, which is the best month to visit Greece? If I enjoy going to the beach but have a limited budget, the response could be September. This answers the question we asked, but does not provide additional details. With chain of thought reasoning, the system must explain its reasoning so it may respond in the following way. If you enjoy going to the beach, then the months in which you can do that in Greece are M</p>
 </div>
 </div>
 <div class="section" id="section13"><div class="section-header"><h2>S13: Agentic Workflows</h2></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-63" class="lesson"><h3>Section Introduction</h3>
 <p>In this section of the course, we'll dive right into our topic and start with the architecture patterns of several critical agentic workflows. We'll begin with the foundation, the augmented Lem, and then gradually move toward more complex structures, progressing from simple prompt chaining to advanced workflows such as orchestrator, worker, and evaluator optimizer models. Keep in mind that these agentic workflows are still predefined structures. They remain rigid with the Lem adhering to set patterns instead of making entirely independent decisions. The workflow helps guide the model through t</p>
 </div>
-<div class="lesson"><h3>The Augmented LLM</h3>
+<div id="lecture-64" class="lesson"><h3>The Augmented LLM</h3>
 <p>All right. As mentioned earlier, the augmented LM serves as the fundamental building block of Agentic systems. Here's the core idea behind it. An LM is powerful on its own, but it becomes even more impressive when augmented with retrieval systems, external tools, and memory capabilities. Retrieval allows the model to search external data that wasn't included in its training and gain access to it. Tools, on the other hand, allow the model to access external APIs that perform specialized tasks such as currency conversion calculations, weather forecasting, language translation, sending messages, </p>
 </div>
-<div class="lesson"><h3>Prompt Chaining</h3>
+<div id="lecture-65" class="lesson"><h3>Prompt Chaining</h3>
 <p>Sometimes the challenge you bring to gen AI is too large for an LLM to handle in one go. Picture an entrepreneur trying to generate a comprehensive business plan with AI, or a marketing executive developing a complex omnichannel campaign. Or consider a student seeking an accurate, detailed summary of a 300 page textbook. In all these cases, we cannot expect an LLM to be capable of solving such large tasks simultaneously. Instead, we should break down the enormous task into smaller and digestible steps. We refer to this approach as prompt chaining. Here's how it works. The first order of busine</p>
 </div>
-<div class="lesson"><h3>Routing</h3>
+<div id="lecture-66" class="lesson"><h3>Routing</h3>
 <p>This next type of agentic workflow architecture will discuss is known as routing. The core idea is simple no single large language model is optimal for every situation. Sometimes we want to use a model that is both cheap and fast. In other instances, advanced reasoning capabilities are the top priority. Specific models can be fine tuned for one specialized task, while others can be optimized for a different purpose. In such situations, we need an LLM dispatcher or in other words, a router that determines which model is best suited to handle each user query in the schema. You see here, once the</p>
 </div>
-<div class="lesson"><h3>Parallelization</h3>
+<div id="lecture-67" class="lesson"><h3>Parallelization</h3>
 <p>One of the key factors to consider when building an AI solution is the speed with which the system can deliver responses to user queries. Of course, it's not difficult to imagine that waiting 1 or 2 minutes is detrimental to user experience. At least that's the case today. This brings back memories of the 90s, when waiting five minutes for a program to load was normal. Today, our expectations are much higher. So how do you handle extensive queries without frustrating users? Parallelization is one way to achieve this. This approach involves dividing a task into several components and distributi</p>
 </div>
-<div class="lesson"><h3>Orchestrator-worker</h3>
+<div id="lecture-68" class="lesson"><h3>Orchestrator-worker</h3>
 <p>As workflows become more sophisticated, they also exhibit greater flexibility. One such example of this is the orchestrator worker workflow, which we'll examine in this lesson. A typical feature of this structure is the presence of an LM orchestrator or planner, which receives the user query, breaks it down into several subtasks, delegates those subtasks to other LMS, and then submits their outputs to a synthesizer LM. This workflow is used when the number of subtasks that need to be performed cannot be predicted in advance. This is precisely what differentiates it from the parallelization pro</p>
 </div>
-<div class="lesson"><h3>Evaluator-optimizer</h3>
+<div id="lecture-69" class="lesson"><h3>Evaluator-optimizer</h3>
 <p>Another intriguing workflow we'll explore is the Evaluator Optimizer pattern, which consists of two core components. On one side is the generator LM responsible for producing an initial solution based on the user's query. On the other side is the evaluator LM, which critically assesses the generator's output, highlighting its strengths, weaknesses, and opportunities for improvement. The evaluator then communicates its constructive feedback to the generator LM, prompting it to revise and refine the original solution. Through this iterative feedback loop, the generator progressively enhances the</p>
 </div>
 </div>
 <div class="section" id="section14"><div class="section-header"><h2>S14: Single-Agent Architecture Patterns</h2></div>
 <div class="concept-grid"><div class="concept-card"><div class="card-icon">🔧</div><div class="card-title">Tool Calling</div><div class="card-desc">Agent invokes external tools via function calling</div></div><div class="concept-card"><div class="card-icon">🧠</div><div class="card-title">Memory Integration</div><div class="card-desc">Persistent context across interactions</div></div><div class="concept-card"><div class="card-icon">🔄</div><div class="card-title">ReAct Loop</div><div class="card-desc">Reason-Act-Observe cycle until goal met</div></div><div class="concept-card"><div class="card-icon">📋</div><div class="card-title">Structured Output</div><div class="card-desc">Constrain LLM to produce typed responses</div></div></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-70" class="lesson"><h3>Section Introduction</h3>
 <p>Welcome to the next chapter of the course. By now, you've gained a solid introduction to agentic workflows and agents learned when and when not to use them, and understood why choosing the right architecture is crucial when developing agentic solutions. That provides a solid foundation for the topics we'll cover next in this course. In this section, we'll begin exploring autonomous AI agent systems with a focus on single agent architectures like reflection, react, reflection, and others. Having just one agent in a system doesn't make it any less powerful. In fact, quite the opposite. Each new </p>
 </div>
-<div class="lesson"><h3>When to Use a Single Agent Architecture</h3>
+<div id="lecture-71" class="lesson"><h3>When to Use a Single Agent Architecture</h3>
 <p>In the following few lessons, we'll explore several examples of single agent architectures, including reflection, react, and reflection. A typical pattern you'll notice is that single agents often include planning and self-correction capabilities. Without these mechanisms, they would risk entering an infinite loop of execution. Planning is a necessary step in the reasoning process, where the agent reflects on how to solve the problem at hand in an optimal way. This occurs before any concrete actions are carried out. By forming a plan, the agent can break down the task into manageable steps, ev</p>
 </div>
-<div class="lesson"><h3>Reflection</h3>
+<div id="lecture-72" class="lesson"><h3>Reflection</h3>
 <p>In this lesson, we want to consider a single agent architecture called reflection. Reflection basically involves an agent that receives a user request, provides an initial response, and then reflects on the response to determine whether it meets the required quality. If the response needs further refinement, the agent revises it before delivering the final output to the user. This process can be repeated as many times as necessary before the system concludes that it has produced satisfactory output. Now you might ask, hey, didn't we just study this type of architecture? Just a few lessons ago </p>
 </div>
-<div class="lesson"><h3>ReAct (Think-Do)</h3>
+<div id="lecture-73" class="lesson"><h3>ReAct (Think-Do)</h3>
 <p>All right. We're doing great. The first type of single agent architecture we considered was reflection, which focused on evaluating whether the agent's output met the desired quality standards. Please notice that in the reflection architecture, the system refrains from producing any external output or acting until it determines, through internal reasoning, that its result is satisfactory. The next key framework we'll examine is react, a term that derived from the words reason and act. In this type of system, the agent first engages in reasoning before taking any action. Then the process contin</p>
 </div>
-<div class="lesson"><h3>Reflexion</h3>
+<div id="lecture-74" class="lesson"><h3>Reflexion</h3>
 <p>The next single agent design pattern we'll explore is reflection. It closely resembles react, but with one key distinction. With reflection, an agent is assigned a specific task and then reasons through the problem in an effort to solve it. Reflection either resolves the problem successfully or recognizes its own failure. In both cases, the agent records a self-reflection summary and stores it permanently. As a result, the experience from this episode becomes part of the agent's knowledge, influencing all future interactions. The key feature of this architecture is its memory and the learning </p>
 </div>
 </div>
 <div class="section" id="section15"><div class="section-header"><h2>S15: Planning and Decomposition</h2></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-75" class="lesson"><h3>Section Introduction</h3>
 <p>Okay. We're doing great. In the previous lesson, you became familiar with single agent architectures. Now you should see multi-agent design patterns as the next logical step. But before we move to multi-agent structures, it would be highly beneficial to spend some time addressing one of the foundational skills for both single and multi-agent systems planning. Planning relates to an agent's cognitive skill set. It enables the agent to answer the question, how can I break down this complex goal into manageable steps and achieve it in the most effective way? Planning is a core cognitive function </p>
 <div class="analogy-box"><div class="analogy-icon">&#x1F4A1;</div><div class="analogy-title">Mise en Place Cooking</div><p>ReWoo planning is like mise en place in professional cooking: before you start cooking (executing), you plan every step, prep every ingredient, and lay them out in order. A chef who preps everything first (planner) then executes the recipe smoothly, vs one who improvises mid-cook and has to stop to chop onions. Planning upfront = fewer LLM calls, less backtracking, faster execution.</p></div>
 </div>
-<div class="lesson"><h3>Task Decomposition</h3>
+<div id="lecture-76" class="lesson"><h3>Task Decomposition</h3>
 <p>Task. Decomposition is something all of us must do in the workplace. We're often faced with large tasks that can feel overwhelming until we break them down into smaller, more manageable parts. If you don't have much experience being asked to launch a Facebook ads campaign for a new company, product can feel intimidating. The process feels much less intimidating when you break it down into smaller subtasks. Determine the campaign budget. Define the target audience. Write the ad copy. Create the ad visuals. Set up the audience. Copy and visuals in Facebook Ads Manager. Review everything for accu</p>
 </div>
-<div class="lesson"><h3>The Importance of Planning</h3>
+<div id="lecture-77" class="lesson"><h3>The Importance of Planning</h3>
 <p>Hi and welcome back. In this lesson, we'll explore the importance of planning. Why? It's an essential step for certain types of tasks and why it may not be necessary in others. Imagine you suddenly decided to visit a country you've never been to. Would you need to plan? The answer is almost certainly yes. You'd need to do at least some basic preparation, such as checking visa requirements, arranging travel and accommodation, exchanging local currency and researching the places you want to visit to plan the most efficient and enjoyable route through the country. There's a lot to consider if you</p>
 </div>
-<div class="lesson"><h3>Plan and Solve</h3>
+<div id="lecture-78" class="lesson"><h3>Plan and Solve</h3>
 <p>Okay. Excellent. Plan and solve is the first planning pattern we'll cover. As the name suggests, it runs in two stages. First, the agent plans by assessing the task at hand, identifying the available resources, and considering any relevant constraints. Next, the agent moves on to selecting the right tools for the job and breaking the work into a precise sequence of steps. In the second stage, the agent solves the task by executing the planned steps. What's characteristic of the plan and solve pattern is that in the second stage, the system can replan and refine its initial strategy that occurs</p>
 </div>
-<div class="lesson"><h3>ReWOO</h3>
+<div id="lecture-79" class="lesson"><h3>ReWOO</h3>
 <p>Riwu is another vital planning pattern, short for reasoning without observation. The underlying logic is quite similar to the plan and solve approach we just discussed. Riwu is an agent architecture that separates reasoning managed by a planner from task execution, managed by a worker, and concludes with a solver that synthesizes the final output. This separation of roles enables more efficient token usage. A noticeable difference with respect to plan and solve is that riwu does not allow for reassessments and replanning after every action has been taken. The entire plan is created beforehand </p>
 </div>
-<div class="lesson"><h3>Tree of Thought</h3>
+<div id="lecture-80" class="lesson"><h3>Tree of Thought</h3>
 <p>The next planning pattern we'll consider is called Tree of Thought tot not to be mistaken for chain of thought cot, which represents a different concept. Tree of thought is a unique agent architecture that merges planning with exploratory search to enhance problem solving capability, meaning that the AI system doesn't create a single plan of action it plans for multiple future states, compares them, and selects the best one of them. The focus of this system is to perform complex reasoning by considering multiple solution strategies. It's best employed in situations where you must solve a compl</p>
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. What is the main advantage of ReWoo over ReAct?</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">More creative responses</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Fewer LLM calls by planning all steps upfront</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Better memory management</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Faster token processing</div></div></div>
 </div>
 </div>
 <div class="section" id="section16"><div class="section-header"><h2>S16: Multi-Agent Architectures</h2></div>
 <div class="concept-grid"><div class="concept-card"><div class="card-icon">📐</div><div class="card-title">Vertical</div><div class="card-desc">Manager assigns tasks to specialist agents</div></div><div class="concept-card"><div class="card-icon">🤝</div><div class="card-title">Horizontal</div><div class="card-desc">Peer agents collaborate as equals</div></div><div class="concept-card"><div class="card-icon">🔀</div><div class="card-title">Shared State</div><div class="card-desc">All agents read/write common state</div></div><div class="concept-card"><div class="card-icon">📦</div><div class="card-title">Isolated State</div><div class="card-desc">Each agent maintains private context</div></div></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-81" class="lesson"><h3>Section Introduction</h3>
 <p>Now that we've covered prompt engineering Agentic workflows, single agent architectures, and planning patterns, it's time to turn our attention to multi-agent system designs. This part of the course is fascinating because it sheds light on use cases when you might need to choose multiple agents over a single one. We'll examine a variety of multi-agent architectures, uncover the strengths and tradeoffs of each, and tackle the unique challenges that arise when agents must work together. It's an intriguing topic, with numerous real world examples for us to explore. So let's get started.</p>
 <div class="analogy-box"><div class="analogy-icon">&#x1F4A1;</div><div class="analogy-title">Consulting Firm Structure</div><p>Multi-agent architecture mirrors consulting firms. Vertical = a partner (manager agent) delegates analysis to junior consultants (specialist agents) and synthesizes their work. Horizontal = a committee of equal partners debates and reaches consensus. Shared state = an open war room whiteboard everyone reads. Isolated state = each consultant works in their own office and only shares final deliverables.</p></div>
 </div>
-<div class="lesson"><h3>When to Use Single vs. Multi-agent Systems</h3>
+<div id="lecture-82" class="lesson"><h3>When to Use Single vs. Multi-agent Systems</h3>
 <p>Deciding between a single agent or multi-agent setup comes down to what best fits your current use case. In certain cases, the simplicity of a single agent structure is more effective, especially when managing well-defined processes that don't demand input from multiple specialists. Think of it like this. In a company, a social media manager can independently create and publish an Instagram post. But launching an omnichannel marketing campaign is an entirely different matter, typically involving collaboration among a copywriter, graphic designer, ads specialist and marketing manager. When a so</p>
 </div>
-<div class="lesson"><h3>Vertical vs Horizontal Architectures</h3>
+<div id="lecture-83" class="lesson"><h3>Vertical vs Horizontal Architectures</h3>
 <p>When considering multi-agent systems. A key architecture distinction lies between vertical and horizontal designs. In a vertical architecture, a single leader directs the group, with all other agents reporting directly to that leader. In some cases, agents will talk exclusively with their manager. In other instances, they will communicate with each other in a shared conversation, but the lead will assign tasks and approve the outputs of individual agents. Vertical architecture typically has lower latency for decision making because there's a clear leader assigning tasks and approving outputs. </p>
 </div>
-<div class="lesson"><h3>Challenges with Group Conversations</h3>
+<div id="lecture-84" class="lesson"><h3>Challenges with Group Conversations</h3>
 <p>A single agent stays focused without being distracted by external input. On the contrary, it remains focused, completing the task using its own abilities and the available information. That focus is a considerable advantage over multi-agent architectures, which often face challenges with group conversation and information sharing in a horizontal architecture. Agents often end up wasting time on unnecessary chatter and pleasantries when multiple agents read the same thread. It can result in inefficient resource use and higher latency. Agents might waste time on casual exchanges like how are you</p>
 </div>
-<div class="lesson"><h3>Supervisor</h3>
+<div id="lecture-85" class="lesson"><h3>Supervisor</h3>
 <p>In the following few lessons, we'll look at examples of vertical multi-agent architecture. I'd like to introduce you to three multi-agent architectures supervisor, hierarchical teams, and Dynamic Teams. Here we'll examine the supervisor pattern. It may seem familiar because we've covered a similar concept earlier in the course the routing workflow. We had an LM acting as a router, deciding which agents should handle the user query. The supervisor architecture is quite similar, featuring a supervisor agent who coordinates the agents. It's a classic example of top down control, with the supervis</p>
 </div>
-<div class="lesson"><h3>Hierarchical Teams</h3>
+<div id="lecture-86" class="lesson"><h3>Hierarchical Teams</h3>
 <p>All right. We just explored the supervisor architecture, a structure where a single agent acts as the supervisor, managing several subordinate agents, assigning tasks, offering feedback, and reviewing their output. A real life analogy would be a small firm where a manager supervises a team of employees. In this type of business, there's limited specialization so the manager can effectively oversee the work of 4 or 5 employees, sometimes even as many as 7 or 8. But as the business continues to grow, it eventually reaches a point where a new organizational structure is needed to manage operation</p>
 </div>
-<div class="lesson"><h3>Dynamic Teams</h3>
+<div id="lecture-87" class="lesson"><h3>Dynamic Teams</h3>
 <p>Next, we'll consider dynamic teams a flexible and adaptive pattern where teams are assembled, disassembled, and reconfigured as needed. The dynamic reassignment feature of this architecture is useful in situations where agents need to be added or removed from the system, depending on current needs and workload. We should remember that even though the composition of dynamic teams changes, they continue to have an authority layer that assigns tasks. For this reason, dynamic teams are a vertical type of architecture. There is, however, a subtle nuance. Some might argue that dynamic teams don't fo</p>
 </div>
 </div>
 <div class="section" id="section17"><div class="section-header"><h2>S17: Execution, Performance, and Reliability</h2></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-88" class="lesson"><h3>Section Introduction</h3>
 <p>In this part of the course, we'll touch on what happens once your designed architecture is up and running. We'll talk about key topics including asynchronous task execution, performance metrics like cost and latency, and strategies for error handling and recovery. These topics are universally applicable. Every AI agent you work with, regardless of the chosen architecture, will eventually encounter challenges related to cost, latency, or task execution. It's essential to be aware of these topics early on, and to know how to respond when things don't go as planned.</p>
 </div>
-<div class="lesson"><h3>Agents and Asyncronous Task Execution</h3>
+<div id="lecture-89" class="lesson"><h3>Agents and Asyncronous Task Execution</h3>
 <p>What's the most effective way to speed up a task that involves a lot of hands on work? Simple. Get more people working on it in parallel. In this lesson, we'll use this idea to explore asynchronous task execution and highlight the key difference between single and multi-agent systems. In many real world tasks, if one person handles everything sequentially, the overall pace is limited by that individual's speed. But if you can split up the work into several parts and involve multiple people working on them simultaneously, you can often finish much faster. The same principle applies to AI agents</p>
 </div>
-<div class="lesson"><h3>Performance Metrics - Latency and Cost</h3>
+<div id="lecture-90" class="lesson"><h3>Performance Metrics - Latency and Cost</h3>
 <p>When agents are deployed in a live environment. Two key questions to ask are one how fast is the solution we've launched? And two how much does it cost to operate? Ideally, before going live, we've confirmed that the agent can solve the intended problem. Now it's time to assess whether it can do so efficiently. Staying within the performance and budget constraints of a real world environment, latency can be divided into two main components model interference latency and orchestration. Overhead latency. Model interference depends on the type of model you select for your agent system. Generally,</p>
 </div>
-<div class="lesson"><h3>Error Handling and Recovery</h3>
+<div id="lecture-91" class="lesson"><h3>Error Handling and Recovery</h3>
 <p>The latency and cost optimization performance metrics we examined in the previous lesson are intended for situations where the agent system works as intended. This means the agent can accomplish its intended goals while striving to achieve optimal performance. But sometimes things don't go as planned. That's when error handling and recovery matter most. To accomplish their goals, agents depend on several interconnected components. They draw reasoning from an Lem, connect to external tools through APIs, and in some cases receive input from other agents. So naturally, the more sophisticated a st</p>
 </div>
 </div>
 <div class="section" id="section18"><div class="section-header"><h2>S18: Memory Systems</h2></div>
 <div class="concept-grid"><div class="concept-card"><div class="card-icon">💬</div><div class="card-title">Short-Term</div><div class="card-desc">Context buffer within conversation</div></div><div class="concept-card"><div class="card-icon">📚</div><div class="card-title">Vector Store RAG</div><div class="card-desc">Long-term retrieval from embeddings</div></div><div class="concept-card"><div class="card-icon">👤</div><div class="card-title">Entity Memory</div><div class="card-desc">Track facts about specific entities</div></div><div class="concept-card"><div class="card-icon">📖</div><div class="card-title">Episodic Memory</div><div class="card-desc">Remember past interaction episodes</div></div></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-92" class="lesson"><h3>Section Introduction</h3>
 <p>For most real world applications you'll work on, you'll quickly realize the importance of building an AI driven system that can remember past interactions. In other words, you'll need to add a memory component to your agents by remembering and reusing information over time. We enable agents to learn from past interactions. Think of it like this without memory, agents are like goldfish, able to complete a task but unable to retain any insights or lessons afterward. That's acceptable for simple tools such as a weighing scale, but by incorporating memory into the system, it can remember past perf</p>
 <div class="analogy-box"><div class="analogy-icon">&#x1F4A1;</div><div class="analogy-title">Human Memory Tiers</div><p>Agent memory types map directly to human cognition. Short-term = what you can hold in your head right now (7 items). Vector store RAG = your filing cabinet of notes you search when needed. Entity memory = knowing your friend likes coffee (facts about specific people/things). Episodic = remembering that conversation last Tuesday where you solved a bug together.</p></div>
 </div>
-<div class="lesson"><h3>Short-term Context Buffer</h3>
+<div id="lecture-93" class="lesson"><h3>Short-term Context Buffer</h3>
 <p>The most basic type of memory we can give an AI agent is known as a short term context buffer. This enables the AI agent to retain and reference a limited number of recent interactions. Imagine you've built a chatbot that's powered by one of OpenAI's GPT models. Interestingly, the OpenAI API doesn't include built in memory by default. Each API call is stateless and forgets prior interactions unless you explicitly provide the previous context in your request. If you were to design a short term memory mechanism, you'd essentially decide to retain the last, let's say, ten messages and include the</p>
 </div>
-<div class="lesson"><h3>Vector store RAG</h3>
+<div id="lecture-94" class="lesson"><h3>Vector store RAG</h3>
 <p>The key drawback of short term memory is that it doesn't allow our agent to store a significant number of past interactions. Ideally, the agent should be capable of continuing a conversation exactly where it left off, drawing on a rich store of knowledge to make the interaction feel more natural and contextually relevant. Someone with a good memory can recall past experiences and respond to questions about things they learned long ago. Similarly, for an agent to appear truly intelligent, it must be able to recall past interactions and use that knowledge to deliver more accurate and insightful </p>
 </div>
-<div class="lesson"><h3>Entity-level Memory</h3>
+<div id="lecture-95" class="lesson"><h3>Entity-level Memory</h3>
 <p>The third type of memory we'll cover is entity level memory. This type of memory focuses on retaining information about specific entities such as people, companies, or products. For example, imagine a chatbot installed as an app on your phone. Entity level memory is designed to learn about you, your preferences, habits, and past interactions, allowing it to personalize responses and adapt over time. Each time you add information about yourself in your conversations with the chatbot, the agent will add this information to its knowledge repository. So the next time you interact with it, the agen</p>
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. Which memory type is best for remembering "User prefers Python over JavaScript"?</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Short-term buffer</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Vector store RAG</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Entity memory</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Episodic memory</div></div></div>
 </div>
 </div>
 <div class="section" id="section19"><div class="section-header"><h2>S19: Oversight and Control</h2></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-96" class="lesson"><h3>Section Introduction</h3>
 <p>Welcome back to another section of the AI Agent Architecture course. In the following two lessons, we'll examine two critical ways in which agents can improve their performance once the initial architecture is in place. First, let's look at the self-reflection mechanism, which involves the agent evaluating its own actions and adjusting its output to improve performance. And second, we'll continue with the essential human in the loop concept, which involves human feedback to guide the agent's output in a desired direction. The common ground between both methods is that they establish a feedback</p>
 </div>
-<div class="lesson"><h3>Self-reflection</h3>
+<div id="lecture-97" class="lesson"><h3>Self-reflection</h3>
 <p>Every problem is solved through a sequence of small reasoning steps, each comparable to a single move in the overall thinking process. Let me show you what I mean. On Monday morning, I need to decide whether to commute to the office by car or by bicycle. There are several factors I'll take into account one. The first reasoning step is recall. I'll remember that Mondays usually have heavy traffic. Two next, I'll compare the car and the bicycle, concluding that traffic would delay me by about 15 minutes. If I choose to drive three, then comes calculation. I'll estimate the time needed to park th</p>
 </div>
-<div class="lesson"><h3>Human-in-the-loop</h3>
+<div id="lecture-98" class="lesson"><h3>Human-in-the-loop</h3>
 <p>Do you remember studying math in high school? Sometimes you'd start a problem with the wrong assumption, and every step after that would be affected by the end. The teacher no longer deducted points for a single mistake. Instead, they often marked the entire solution as wrong. AI agents often face a similar challenge. They tend to commit to a solution prematurely without adequately exploring the best approach. Once an LLM begins reasoning down the wrong path, the error can snowball, producing a final result that diverges significantly from the intended outcome. In such instances, it's benefici</p>
 </div>
 </div>
 <div class="section" id="section20"><div class="section-header"><h2>S20: Governance and Safety</h2></div>
-<div class="lesson"><h3>Governance Patterns</h3>
+<div id="lecture-99" class="lesson"><h3>Governance Patterns</h3>
 <p>Incredible. We've come a long way in this course. We have analyzed numerous workflow patterns and that's how we make agents more productive. We then explored memory and feedback patterns. The foundation of what makes agents genuinely smart. In this section of the course, we'll discuss governance patterns the guardrail mechanisms that ensure agents operate safely and ethically. This is a crucial part of modern AI agent architecture and deserves your undivided attention. Thanks for watching.</p>
 </div>
-<div class="lesson"><h3>Guardrails and Policy Enforcement</h3>
+<div id="lecture-100" class="lesson"><h3>Guardrails and Policy Enforcement</h3>
 <p>Why do we need guardrails on roads? They prevent cars from veering off cliffs. Right. This approach reduces the risk for drivers. But it's not the only mechanism that does so. There are also speed limits that regulate how fast drivers can travel, reducing the likelihood of losing control. Similarly, traffic lights guide the flow of vehicles, minimizing collisions at intersections. Road signs provide critical information about hazards ahead, enabling drivers to anticipate and avoid danger. So road safety is created by combining several layered mechanisms. While a single mechanism is unlikely to</p>
 </div>
-<div class="lesson"><h3>Cost-limiter</h3>
+<div id="lecture-101" class="lesson"><h3>Cost-limiter</h3>
 <p>If there's one thing that makes businesses uneasy, it's cost uncertainty. The thought of deploying a solution that consumes resources 24 over seven, while having little idea what the month end bill will be until it arrives, must be unsettling for management. This is vastly different from what they've seen so far. With traditional software cost limiter execution time can vary, but within acceptable limits. The cost of development personnel remains relatively stable, while deployment and maintenance expenses are minimal compared to the initial investment. As a result, company executives can gaug</p>
 </div>
-<div class="lesson"><h3>A/B Shadow Testing</h3>
+<div id="lecture-102" class="lesson"><h3>A/B Shadow Testing</h3>
 <p>Let's say your AI agent is already deployed in production. Customers are using it, and you observe their interactions and gain valuable insights on what could be improved. After a while, it becomes evident that the AI agent needs a few tweaks. Fine tuning. This type of system, however, is far from an exact science. New versions don't always guarantee better performance, and when clients interact with the product in real life situations, you don't want to risk degrading their experience by rolling out an unproven update. This is where AB shadow testing comes into play. As with a typical AB test</p>
 </div>
-<div class="lesson"><h3>Bias and Fairness Systems</h3>
+<div id="lecture-103" class="lesson"><h3>Bias and Fairness Systems</h3>
 <p>One key difference between LMS and agents is that agents can act. Therefore, any bias and fairness concerns we have are magnified many times over when it comes to agents with LMS. The output is text that the users read and interpret. While biased responses are a serious concern. Humans can still evaluate the text and judge its usefulness. Agents, on the other hand, are autonomous and can change the environment. Their biases don't just stay confined to words on a screen. An agent's capacity to take action is its greatest advantage, but it also amplifies potential risks, since even minor reasoni</p>
 </div>
 </div>
 <div class="section" id="section21"><div class="section-header"><h2>S21: Evaluation and Benchmarking</h2></div>
-<div class="lesson"><h3>Section Introduction</h3>
+<div id="lecture-104" class="lesson"><h3>Section Introduction</h3>
 <p>Okay. Great. We've come such a long way. This is the last part of the AI Agent architecture course. To complete our course, we need to address the evaluation of AI agents. It has come up a few times in previous sections, but here we'll explore it in greater depth. In practice, you can't simply launch an AI agent and call it a day. Its performance needs to be continuously monitored and improved. Without that ongoing effort, it wouldn't truly serve as a helpful tool, would it? So when preparing to launch an agent, we must also plan how its performance will be evaluated. In the following few less</p>
 </div>
-<div class="lesson"><h3>How to Measure Agent Performance</h3>
+<div id="lecture-105" class="lesson"><h3>How to Measure Agent Performance</h3>
 <p>When evaluating agent performance, several critical dimensions come to mind accuracy, cost, latency, safety, and ultimately overall user experience. This means we can't focus on a single metric in isolation, just as we wouldn't judge a car solely by its speed, but instead consider factors like fuel efficiency, safety, reliability, and comfort. Evaluating AI agents requires balancing multiple dimensions rather than optimizing for just one. There are trade offs at every stage. Increasing in agent's accuracy, for instance, might come at the cost of higher latency. User satisfaction is crucial, bu</p>
 </div>
-<div class="lesson"><h3>Offline Benchmarks</h3>
+<div id="lecture-106" class="lesson"><h3>Offline Benchmarks</h3>
 <p>A few lessons ago, we introduced the concept of ab shadow testing, a method used when companies want to avoid risking the user experience by exposing users to the output of a new, untested agent. The concept of offline evaluation is similar. It involves measuring an agent's performance under controlled test conditions using curated datasets and predefined scenarios. Imagine you've developed a customer support agent for an e-commerce company. Instead of immediately allowing it to interact with real customers, you first test it on a dataset of 500 past support tickets. Each ticket is already lab</p>
 </div>
-<div class="lesson"><h3>Online Metrics</h3>
+<div id="lecture-107" class="lesson"><h3>Online Metrics</h3>
 <p>If the product is already live, we can consider deploying our new AI agent directly into production for interaction with real users. We've discussed the drawbacks of this approach in detail, but there are situations where it's simply unavoidable. There are cases where no amount of offline testing can fully replicate the unpredictability of real world user interactions. We can't simply launch the agent and hope everything will be fine. Instead, we should focus on several online metrics that reveal how the agent performs across its thousands of interactions. Typically, you'd want to track the fo</p>
 </div>
 </div>
 <div class="section" id="section22"><div class="section-header"><h2>S22: Introduction to LangChain</h2></div>
 <div class="concept-grid"><div class="concept-card"><div class="card-icon">🔗</div><div class="card-title">Chains</div><div class="card-desc">Composable sequences of LLM calls</div></div><div class="concept-card"><div class="card-icon">🛠️</div><div class="card-title">Tools</div><div class="card-desc">External capabilities the LLM can invoke</div></div><div class="concept-card"><div class="card-icon">📝</div><div class="card-title">Prompts</div><div class="card-desc">Template-based input construction</div></div><div class="concept-card"><div class="card-icon">📤</div><div class="card-title">Output Parsers</div><div class="card-desc">Structure raw LLM text into types</div></div><div class="concept-card"><div class="card-icon">🗄️</div><div class="card-title">Retrievers</div><div class="card-desc">Fetch relevant docs from vector stores</div></div></div>
-<div class="lesson"><h3>Introduction</h3>
+<div id="lecture-108" class="lesson"><h3>Introduction</h3>
 <p>Hey everyone, welcome to the build Chat applications with OpenAI and Lang Chain course. It's a pleasure to be your instructor and guide you through this journey of cutting edge technologies. Let me begin by introducing myself. My name is Christina and I hold a master's in theoretical physics from Lund University in Sweden. My passion for this subject is tightly intertwined with my interest in mathematics, programming, and ultimately, data science. Since joining the 365 team, I've been involved in many intriguing projects, most notably creating two machine learning courses on the Naive Bayes an</p>
 </div>
-<div class="lesson"><h3>Business Applications of LangChain</h3>
+<div id="lecture-109" class="lesson"><h3>Business Applications of LangChain</h3>
 <p>Welcome back everyone. In this lesson, we'll display real life use cases where companies have sought long chain solutions to deliver cutting edge technology products to boost their staff's productivity or improve customer experience. Let's dive straight in. Consider Ally Financial, one of the US's largest bank holdings and car finance companies. Ally financial is an all digital bank, and as such, its employees must stay current with new technological advancements and offer innovative approaches to their clients. So they've partnered with Lang Chain to develop their LLM powered platform, ally A</p>
 </div>
-<div class="lesson"><h3>What Makes LangChain Powerful?</h3>
+<div id="lecture-110" class="lesson"><h3>What Makes LangChain Powerful?</h3>
 <p>Welcome back everyone. I hope the last lesson left you inspired and excited to build your first AI project. In our third intro lesson, we'll unravel the magic ingredient that makes Lang Chain a powerful tool for building LLM powered applications. Let's get started. One of the components we need for implementing exciting AI assistants is, of course, the language model. Accessing different language models is as easy as Pie. With Lang chain, since it integrates with many LLM providers. In this course we'll employ Lang chains integration with the OpenAI provider to access OpenAI's chat models, or </p>
 </div>
-<div class="lesson"><h3>What Does the Course Cover?</h3>
+<div id="lecture-111" class="lesson"><h3>What Does the Course Cover?</h3>
 <p>Hey, everyone! In the last lesson, we provided a bird's eye view of Lang Chain. We set the course goal to explore the Lang Chain Python library and employ OpenAI's GPT four model to ultimately learn how to build stateful, context aware and reasoning chatbots. Now let me outline the game plan for the remainder of the course. We'll start with a brief discussion on OpenAI's tokens, models, and pricing. The amount of text we pass to an LLM translates into tokens, and OpenAI's models are priced based on token usage. Therefore, researching the various models offered by this provider and the pricing </p>
 </div>
 </div>
 <div class="section" id="section23"><div class="section-header"><h2>S23: Tokens, Models, and Prices</h2></div>
-<div class="lesson"><h3>Tokens</h3>
+<div id="lecture-112" class="lesson"><h3>Tokens</h3>
 <p>Welcome back, everyone to this section on tokens, OpenAI models and model pricing. There's no time to waste. So let's kick things off by discussing tokens. You've likely used ChatGPT and know it works by sending a prompt to the model and expecting a text answer. The question is how does the model make sense of this text? How does it understand the meaning of the words and their mutual connection? How is it able to devise a response? This, of course, is a challenging question to answer, but in this lesson we'll look at one aspect that makes this possible tokenization. Tokenization is a process </p>
 </div>
-<div class="lesson"><h3>Models and Prices</h3>
+<div id="lecture-113" class="lesson"><h3>Models and Prices</h3>
 <p>Welcome back everyone. In the last lesson, we discussed what tokens are in the context of OpenAI's large language models. We noted that a token is roughly three quarters of a word. As a rule of thumb, and as an easier way to remember, 100 tokens amounts to approximately 75 words. Pay attention here. As OpenAI's large language model, prices are based on token consumption. The larger the text we give as an input or require as an output, the higher the price becomes. Of course, the price is also model dependent, so let's visit OpenAI's pricing page. Study the models available when this lesson was</p>
 </div>
 </div>
 <div class="section" id="section24"><div class="section-header"><h2>S24: Setting Up the Environment</h2></div>
-<div class="lesson"><h3>Setting Up a Custom Anaconda Environment for Jupyter Integration</h3>
+<div id="lecture-114" class="lesson"><h3>Setting Up a Custom Anaconda Environment for Jupyter Integration</h3>
 <p>Hey everyone, welcome to the first practical lecture of this course where we'll prepare our working environment. In the upcoming three lectures, we will create a new Anaconda environment. Use it to install the required libraries, integrate this environment into Jupyter Notebook as a new kernel. Learn how to obtain an OpenAI API key from the OpenAI website, and finally configure this API key as an environment variable. Creating new environments for your projects is a highly recommended practice. This way you can isolate different Python and package versions, avoiding potential version clashes. </p>
 </div>
-<div class="lesson"><h3>Obtaining an OpenAI API Key</h3>
+<div id="lecture-115" class="lesson"><h3>Obtaining an OpenAI API Key</h3>
 <p>Welcome back. In our previous lesson, we created a fresh anaconda environment, installed a few necessary packages for the course, and added this environment to the list of Jupyter Notebook kernels. This lecture focuses on obtaining an open AI API key, allowing us to use OpenAI's API and large language models. First, visit the OpenAI website, choose API login and either login to your account or create one. Once done, you should be redirected to a window where you can interact with ChatGPT or use OpenAI's API to integrate their models into your projects. Of course, we opt for the second option. </p>
 </div>
-<div class="lesson"><h3>Setting the API Key as an Environment Variable</h3>
+<div id="lecture-116" class="lesson"><h3>Setting the API Key as an Environment Variable</h3>
 <p>Hey, in the previous lesson, we logged into OpenAI's website, generated a personal API key, and saved it locally in a text file. We'll learn how to set this API key as an environment variable, which will soon be used to communicate with the OpenAI library. First, let's delve into the concept of environment variables. An environment variable is a key value pair used by the operating system, with the key corresponding to the name of the variable, while the value representing, in our case the OpenAI API key. The key and the value are typically stored as strings. A classic example is the path envi</p>
 </div>
 </div>
 <div class="section" id="section25"><div class="section-header"><h2>S25: The OpenAI API</h2></div>
-<div class="lesson"><h3>First Steps</h3>
+<div id="lecture-117" class="lesson"><h3>First Steps</h3>
 <p>Welcome back to the course everyone. In the previous section, we used the Anaconda prompt to create a new Lang chain environment. As emphasized, it's recommended that individual projects be run in separate environments to prevent package conflicts or the accidental removal of important documents. They also offer the flexibility to install different Python versions and maintain unique package sets in, each, without the risk of interfering with the base setup. We also registered this environment as a Jupyter kernel so that we could use it in our Jupyter notebooks. Finally, we set our OpenAI API </p>
 </div>
-<div class="lesson"><h3>System, User, and Assistant Roles</h3>
+<div id="lecture-118" class="lesson"><h3>System, User, and Assistant Roles</h3>
 <p>Hey everyone! Last time we started creating our chat completion object, we left it off at the messages parameter, a list of dictionaries where we can specify prompts as a system, a user or an assistant. Let's now discuss each of these roles individually. The system role is typically used for directing the model. It defines the model's purpose, persona, output, format, and any other necessary instructions. Providing the bot with a system message guarantees a better response for your specific use case. For instance, if you were to create a grammar corrector, an appropriate system message would b</p>
 </div>
-<div class="lesson"><h3>Creating a Sarcastic Chatbot</h3>
+<div id="lecture-119" class="lesson"><h3>Creating a Sarcastic Chatbot</h3>
 <p>Welcome back everyone. In this lesson, we'll resume the implementation of our chat completion in Jupyter Notebook. We'll start by instructing the chatbot to answer questions sarcastically through a system message, and then pass our question as a user role message. Let's get into it. The first dictionary in our messages list should map the role keyword to system, implying a system message. In addition, set the content to the one already familiar to you. You are Marv, a chatbot that reluctantly answers questions with sarcastic responses. In the second dictionary in the list, we'll create a user </p>
 </div>
-<div class="lesson"><h3>Temperature, Max Tokens, and Streaming</h3>
+<div id="lecture-120" class="lesson"><h3>Temperature, Max Tokens, and Streaming</h3>
 <p>Welcome back. In this section, we've discussed the roles we can employ when passing a message to a model, a system user or assistant role. We then used a system message to create a chatbot that adopts a sarcastic persona. In this lesson, we'll discuss a few more parameters that can affect the model's response its maximum number of completion tokens, level of randomness, and the option to stream it. Let's begin with the tokens. As discussed earlier, OpenAI sets its model prices based on the number of input tokens. The ones we feed to the model and the number of completion tokens those the model</p>
 </div>
 <div class="tool-replica" id="oai-playground-root">
@@ -5002,278 +5002,278 @@ In the following sections, we’ll employ intriguing projects using OpenAI’s m
 
 </div>
 <div class="section" id="section26"><div class="section-header"><h2>S26: Model Inputs</h2></div>
-<div class="lesson"><h3>The LangChain Framework</h3>
+<div id="lecture-121" class="lesson"><h3>The LangChain Framework</h3>
 <p>Hey everyone! In the previous section, we played around with the OpenAI API, examining message roles and key LM parameters like temperature, token limit, and the streaming feature. Now that we have the foundations for creating chatbots, it's time to utilize the OpenAI API through Lang chain. But before we start coding, let's conceptually discuss the Lang chain framework. As mentioned in previous lessons, Lang Chain allows the creation of stateful, context aware and reasoning LLM powered applications. To make this quite difficult task possible, Lang chains developers have divided it into severa</p>
 </div>
-<div class="lesson"><h3>ChatOpenAI</h3>
+<div id="lecture-122" class="lesson"><h3>ChatOpenAI</h3>
 <p>Hey, everyone! I'm thrilled to welcome you to this section of the course where our long chain journey begins. By the end of this section, we'll have our very first long chain mini project completed, implementing a helpful but sarcastic chatbot. To achieve this, we'll take the following steps. First, we'll get acquainted with the chat Open AI class in Lang Chain, which supports OpenAI's chat models. Then we'll discuss in detail the different types of messages Lang chain offers and the value of using prompt templates. After that, we'll give an overview of the most crucial concept in lang chain, </p>
 </div>
-<div class="lesson"><h3>System and Human Messages</h3>
+<div id="lecture-123" class="lesson"><h3>System and Human Messages</h3>
 <p>Welcome back everyone. In the previous lesson, we constructed a simple chatbot using the chat OpenAI class in Lang chain to invoke the model. We passed a single string containing our request and got an AI message object in return. But Lang Chain enables us to invoke chat models in several other ways. In this lesson, we'll dig a bit deeper into the system and human roles, which act like the system and user roles we encountered in the OpenAI API. To refresh your memory, these message roles specify the messages sender. A system message directs the model's behavior, such as emulating a teenager, a</p>
 </div>
-<div class="lesson"><h3>AI Messages</h3>
+<div id="lecture-124" class="lesson"><h3>AI Messages</h3>
 <p>Hey everyone. Welcome back to this series of lessons where we discuss and experiment with Lang Chains chat messages. Last time we demonstrated the purpose of a system and a human message, storing chatbot instructions and user requests, respectively. In this lesson, we'll learn how to incorporate another type of chat message the AI message. Recall that you've already encountered it as an assistant role message in OpenAI's API. Remember that our response variables were also instances of lang chains AI message class. So AI messages are ones generated by the model. They can also be used in few sho</p>
 </div>
-<div class="lesson"><h3>Prompt Templates and Prompt Values</h3>
+<div id="lecture-125" class="lesson"><h3>Prompt Templates and Prompt Values</h3>
 <p>Welcome back. We've explored and tested Lang chains chat open AI class. We meticulously examined the invoke method, noting that it accepts a string or a list of chat messages when used on chat. Open AI object. The chat messages we analyzed included a system message storing instructions for the model, a human message storing the user's questions or request, and an AI message storing the models or example responses. These message objects proved very useful but have a significant drawback they are not reusable. The developers at Lang Chain have therefore implemented prompt abstractions called cha</p>
 </div>
-<div class="lesson"><h3>Chat Prompt Templates and Chat Prompt Values</h3>
+<div id="lecture-126" class="lesson"><h3>Chat Prompt Templates and Chat Prompt Values</h3>
 <p>Welcome back everyone. Now that you understand the mechanics behind prompt templates and prompt values, you have all the tools to understand how chat prompt templates work. Open a fresh Jupyter notebook and let's begin. On the screen you can see I've prepared a familiar code. Setting up the API key as an environment variable, importing all necessary classes, and defining the chat model with all known parameters. I've also introduced several new classes including system message, human message, and chat prompt template. Following the steps from the previous lesson, let's create two string templa</p>
 </div>
-<div class="lesson"><h3>Few-Shot Chat Message Prompt Templates</h3>
+<div id="lecture-127" class="lesson"><h3>Few-Shot Chat Message Prompt Templates</h3>
 <p>Hey everyone! So far in this section we've learned how to create and use chat. OpenAI objects how to employ system human and AI messages, how prompt templates work, and how they differ from chat prompt templates. Additionally, we observed that the output of one invoke method could serve as the argument to another. More specifically, the chat value object resulting from the invocation of a chat prompt template instance could serve as an argument to the invoke method of a chat. OpenAI object. Let's now revisit the lesson where we created two human AI message pairs, which taught the model to answ</p>
 </div>
 </div>
 <div class="section" id="section27"><div class="section-header"><h2>S27: Output Parsers</h2></div>
-<div class="lesson"><h3>String Output Parser</h3>
+<div id="lecture-128" class="lesson"><h3>String Output Parser</h3>
 <p>Welcome everyone to this short but important section. Chat model classes such as chat, OpenAI output chat message objects by implementation. Sometimes, however, we need to output in a different data type a string, a list, a datetime object, a CSV, or another convenient type. Well enter the realm of output parsers. We'll start with the most straightforward one the string output parser, which, abiding by its name, converts an output to a string object. Let's demonstrate how it works. I've opened a fresh Jupyter notebook containing the environment variable setup, three imports, and the definition</p>
 </div>
-<div class="lesson"><h3>Comma-Separated List Output Parser</h3>
+<div id="lecture-129" class="lesson"><h3>Comma-Separated List Output Parser</h3>
 <p>Welcome back. In the previous lesson, we introduced the string output parser class and demonstrated how it parses chat messages to strings. We'll delve into another output parser from Lang chains robust assortment the comma separated list output parser. Let's get to coding. I've prepared the familiar setup and have imported a new parser class. Additionally, I've changed the content of the human message to I've recently adopted a dog. Could you suggest some dog names? What we're aiming for is to have all names as elements of a list object. Let's create a response variable and apply our familiar</p>
 </div>
-<div class="lesson"><h3>Datetime Output Parser</h3>
+<div id="lecture-130" class="lesson"><h3>Datetime Output Parser</h3>
 <p>Hey there. In this lesson, we'll investigate the date time parser in Lang chain. To demonstrate how it works, we'll need to make only a few modifications to the code created in the previous lesson, so there's no need to write it anew. I suggest you use the same notebook as the last lesson, or create a copy and work there. Run the cell required for setting up the OpenAI API key. Next, substitute the old parser class from the previous lesson with date time output parser. Run the cell to import the classes. Then modify the human message such that its response necessarily includes a date. I'll go </p>
 </div>
 </div>
 <div class="section" id="section28"><div class="section-header"><h2>S28: LangChain Expression Language (LCEL)</h2></div>
-<div class="lesson"><h3>Piping a Prompt, Model, and an Output Parser</h3>
+<div id="lecture-131" class="lesson"><h3>Piping a Prompt, Model, and an Output Parser</h3>
 <p>Welcome back everyone. Lang chain expression language is a way of grouping chains out of individual components known as runnable. These components and the resulting chain support a standard set of invocation methods invoke stream, batch and their asynchronous analogues. You're already familiar with the invoke method that connects one component's output with another's input. Linking the components. The stream method ensures that a completion token is printed out as soon as it's generated, making the application you're building more user friendly and responsive. The batch method, intuitively, is</p>
 <div class="analogy-box"><div class="analogy-icon">&#x1F4A1;</div><div class="analogy-title">Unix Pipes</div><p>LCEL chains work exactly like Unix pipes. Each component takes input from the previous one and passes output to the next: prompt | model | parser, just like cat file.txt | grep "error" | wc -l. Composable, streamable, and each piece is independently testable. RunnableParallel = running multiple pipes simultaneously and merging results.</p></div>
 </div>
-<div class="lesson"><h3>Batching</h3>
+<div id="lecture-132" class="lesson"><h3>Batching</h3>
 <p>Welcome back everyone. Last lesson we saw how easily chains were created in the Lang chain expression language. Recall that it uses a pipe symbol to connect components. Connecting them means that the output of one will serve as the input to the next. Additionally, we demonstrated that we can apply the invoke method to each component, allowing for transparency and traceability. In the following two lessons, we'll expand our toolbox and introduce two more methods. Batch and stream. Let's get into it. As usual, let me go through the pre implemented code I've prepared on the screen, which is quite</p>
 </div>
-<div class="lesson"><h3>Streaming</h3>
+<div id="lecture-133" class="lesson"><h3>Streaming</h3>
 <p>Welcome back everyone. Last lesson we revised the invoke method and learned about its close cousin, the batch method, which allows for invoking a chain with more than a single response quickly and efficiently. We'll dedicate this lesson to the third and final method included in the expression language's standard interface stream. Let's begin. Open the last session's notebook or a duplicate. Copy. Paste either code for invoking a chain and substitute the invoke method with stream instead. Running the cell, we get an output that should look familiar. Recall that we encountered generators back wh</p>
 </div>
-<div class="lesson"><h3>The Runnable and RunnableSequence Classes</h3>
+<div id="lecture-134" class="lesson"><h3>The Runnable and RunnableSequence Classes</h3>
 <p>Hey everyone! In the last lesson, we learned how easily chains are composed using the Lang Chain Expression language. Recall that this syntax uses a pipe symbol to connect components, implying that the output of one serves as the input of the next. Additionally, we demonstrated that we could apply the invoke method to each component, allowing for transparency and traceability. Of course, this is also true for the stream and batch methods. This lesson focuses on identifying the types of Lang chain objects that can be integrated into a chain, and the nature of the resulting chained object. On th</p>
 </div>
-<div class="lesson"><h3>Piping Chains and the RunnablePassthrough Class</h3>
+<div id="lecture-135" class="lesson"><h3>Piping Chains and the RunnablePassthrough Class</h3>
 <p>Welcome back everyone. Now that we've built solid foundations on the Lang chain expression language syntax and its inner workings, we can advance further by learning how to pipe chains together. Before that, however, we must introduce another class from the runnable module. Open a fresh notebook and ensure you have the magic commands and the necessary imports. Additionally, I've included the runnable passthrough class from the runnable module. This class serves its intended purpose precisely as its name suggests, passing inputs through without alteration in a new cell. Create an instance of th</p>
 </div>
-<div class="lesson"><h3>Graphing Runnables</h3>
+<div id="lecture-136" class="lesson"><h3>Graphing Runnables</h3>
 <p>Welcome back everyone. In the last lesson, we demonstrated the modularity of the Lang Chain expression language. We created two chat prompt templates. We then defined two chains by piping the respective templates with a chat model and a string parser. And finally, we employed the runnable passthrough class to prepare the output of the first chain as an input to the next one. Now, this short but valuable lesson focuses on visualizing these chains. We'll utilize a Python library that allows us to draw and understand the processes inside a chain. Even better, this can be especially helpful when y</p>
 </div>
-<div class="lesson"><h3>RunnableParallel</h3>
+<div id="lecture-137" class="lesson"><h3>RunnableParallel</h3>
 <p>Welcome back everyone. Last time we took a short break from Lang Chains runnable module and instead presented a library that allowed for visualizing chain nodes and their sequence through an Ascii print. In this lesson, we'll further unravel the magic of Lang Chains expression language by demonstrating the almost magical runnable parallel class. The game plan is as follows. We'll start with two chains, one suggesting three intermediate level programming language books, and another suggesting three projects on the same programming language at the same level. Both chains will accept one input, n</p>
 </div>
-<div class="lesson"><h3>Piping a RunnableParallel with Other Runnables</h3>
+<div id="lecture-138" class="lesson"><h3>Piping a RunnableParallel with Other Runnables</h3>
 <p>Welcome back everyone. Last time we introduced the runnable parallel class, which allows us to invoke more than one runnable at a time with the same input. We visualized the process with an Ascii graph, and compared the execution times of invoking runnable in parallel and sequence, which favored the former. We'll now extend this vital discussion on runnable parallel objects by passing the books and projects from the last lesson into a new prompt template, asking for an estimate of the time it would take to complete them. So, without further ado, let's jump right in. First, open the notebook fr</p>
 </div>
-<div class="lesson"><h3>RunnableLambda</h3>
+<div id="lecture-139" class="lesson"><h3>RunnableLambda</h3>
 <p>Hey everyone! So far you've acquired much knowledge about the Lang Chain expression language and its underlying mechanism. We talked about the runnable class implementing the invoke batch and stream methods. Instances of this class can be composed to create runnable sequences, also known as chains. We could also invoke several runnable simultaneously through the runnable parallel class. Another helpful class from the same module was runnable pass through, which allows objects to be passed through the chain while keeping them unmodified. Now we'll continue expanding our toolbox and learn how to</p>
 </div>
-<div class="lesson"><h3>The @chain Decorator</h3>
+<div id="lecture-140" class="lesson"><h3>The @chain Decorator</h3>
 <p>Welcome back everyone. We previously introduced Lang Chains runnable Lambda class, which allowed upgrading a function to a runnable object. We demonstrated this using Python's anonymous functions, but you can wrap any function this way, as we'll explain in a minute. Additionally, we'll introduce lang chains decorators. Let's dive in. Start by opening a new Jupyter notebook. In the lang chain environment. Import the familiar runnable lambda class from the runnable module. Next, define a simple function called find some with a single parameter x, assumed to be a list. Ensure the function's body </p>
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. In LCEL, the pipe operator (|) connects:</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Database tables</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Runnables in sequence (output of one = input of next)</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Multiple LLM providers</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Environment variables</div></div></div>
 </div>
 </div>
 <div class="section" id="section29"><div class="section-header"><h2>S29: Retrieval Augmented Generation (RAG)</h2></div>
-<div class="lesson"><h3>How to Integrate Custom Data into an LLM</h3>
+<div id="lecture-141" class="lesson"><h3>How to Integrate Custom Data into an LLM</h3>
 <p>Hey everyone! Now that you've acquired solid experience with LMS, I hope you can see that these are powerful, state of the art models trained on vast amounts of data and answering questions on various topics. The models are rapidly becoming better and more knowledgeable, but training them takes a lot of time, so the data available to LMS inevitably has a cut off date. Additionally, out of the box models can't answer questions about proprietary information such as your company's data. But imagine if there was a way to combine the power of LMS with custom data. We could use LMS to analyze and su</p>
 <div class="analogy-box"><div class="analogy-icon">&#x1F4A1;</div><div class="analogy-title">Research Assistant with Filing Cabinet</div><p>RAG is a research assistant with a well-organized filing cabinet. When you ask a question: (1) they search the cabinet for relevant documents (retrieval), (2) pull out the most relevant pages (similarity search), (3) read them to understand context (augmentation), (4) write you a summary answer (generation). Without the filing cabinet, they just guess from memory (hallucination).</p></div>
 <div class="inline-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200"><rect width="800" height="200" fill="#0d1117" rx="12"/><text x="400" y="25" text-anchor="middle" fill="#e6edf3" font-size="13" font-weight="700">RAG Pipeline</text><defs><marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a5568"/></marker></defs><rect x="20" y="60" width="100" height="55" rx="8" fill="none" stroke="#00b4d8" stroke-width="2"/><text x="70" y="82" text-anchor="middle" fill="#00b4d8" font-size="9" font-weight="600">Load</text><text x="70" y="100" text-anchor="middle" fill="#8b949e" font-size="7">PDF/DOCX</text><line x1="120" y1="87" x2="140" y2="87" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr2)"/><rect x="145" y="60" width="100" height="55" rx="8" fill="none" stroke="#8b5cf6" stroke-width="2"/><text x="195" y="82" text-anchor="middle" fill="#8b5cf6" font-size="9" font-weight="600">Split</text><text x="195" y="100" text-anchor="middle" fill="#8b949e" font-size="7">Chunks</text><line x1="245" y1="87" x2="265" y2="87" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr2)"/><rect x="270" y="60" width="100" height="55" rx="8" fill="none" stroke="#10b981" stroke-width="2"/><text x="320" y="82" text-anchor="middle" fill="#10b981" font-size="9" font-weight="600">Embed</text><text x="320" y="100" text-anchor="middle" fill="#8b949e" font-size="7">Vectors</text><line x1="370" y1="87" x2="390" y2="87" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr2)"/><rect x="395" y="60" width="100" height="55" rx="8" fill="none" stroke="#f59e0b" stroke-width="2"/><text x="445" y="82" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">Store</text><text x="445" y="100" text-anchor="middle" fill="#8b949e" font-size="7">ChromaDB</text><line x1="495" y1="87" x2="515" y2="87" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr2)"/><rect x="520" y="60" width="100" height="55" rx="8" fill="none" stroke="#ef4444" stroke-width="2"/><text x="570" y="82" text-anchor="middle" fill="#ef4444" font-size="9" font-weight="600">Retrieve</text><text x="570" y="100" text-anchor="middle" fill="#8b949e" font-size="7">Top-K similar</text><line x1="620" y1="87" x2="640" y2="87" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arr2)"/><rect x="645" y="60" width="130" height="55" rx="8" fill="none" stroke="#00b4d8" stroke-width="2"/><text x="710" y="82" text-anchor="middle" fill="#00b4d8" font-size="9" font-weight="600">Generate</text><text x="710" y="100" text-anchor="middle" fill="#8b949e" font-size="7">LLM + context</text><text x="400" y="160" text-anchor="middle" fill="#4a5568" font-size="9" font-style="italic">Indexing phase (offline) → Retrieval phase (per query)</text></svg></div>
 <div class="step-breakdown"><div class="step-item visible"><div class="step-circle">1</div><div class="step-content"><h4>Load Documents</h4><p>Read PDFs/DOCX into raw text using document loaders</p></div></div><div class="step-item visible"><div class="step-circle">2</div><div class="step-content"><h4>Split into Chunks</h4><p>Break text into overlapping chunks (500-1000 chars)</p></div></div><div class="step-item visible"><div class="step-circle">3</div><div class="step-content"><h4>Generate Embeddings</h4><p>Convert chunks to vectors via embedding model</p></div></div><div class="step-item visible"><div class="step-circle">4</div><div class="step-content"><h4>Store in Vector DB</h4><p>Index embeddings in Chroma/FAISS for fast search</p></div></div><div class="step-item visible"><div class="step-circle">5</div><div class="step-content"><h4>Retrieve Relevant Chunks</h4><p>Find top-k similar chunks to user query</p></div></div><div class="step-item visible"><div class="step-circle">6</div><div class="step-content"><h4>Generate Response</h4><p>Pass retrieved context + query to LLM for answer</p></div></div></div>
 </div>
-<div class="lesson"><h3>Introduction to RAG</h3>
+<div id="lecture-142" class="lesson"><h3>Introduction to RAG</h3>
 <p>Hey everyone! In the last lesson, we discussed different ways of integrating custom data into a model. The first way was to prompt the data directly. Although fast and straightforward, we realized this approach is only suitable for smaller data sets. The second method we covered was fine tuning a pre-trained model like GPT four, which continues the training by fiddling with the neural network's connections and weights. This technique typically results in a faster, lower priced, and more accurate model. Still, fine tuning has the disadvantage of being more involved and resource consuming. In th</p>
 </div>
-<div class="lesson"><h3>Introduction to Document Loading and Splitting</h3>
+<div id="lecture-143" class="lesson"><h3>Introduction to Document Loading and Splitting</h3>
 <p>Welcome back everyone. In the last lesson, we provided an overview of the retrieval augmented generation technique and learned that it consists of three main parts indexing, retrieval, and generation. The first part in turn comprises the following steps document loading, splitting, embedding and storing. We'll dedicate this lesson to the first two steps document loading and splitting. Let's get into it. Document loaders in long chain are classes responsible for taking a data source, a PDF, HTML, JSON, or virtually any other standard format, scraping its content and saving it as a list of docum</p>
 </div>
-<div class="lesson"><h3>Introduction to Document Embedding</h3>
+<div id="lecture-144" class="lesson"><h3>Introduction to Document Embedding</h3>
 <p>Welcome back. In the last lesson, we started our discussion by focusing on the first two components of the indexing part. Document loading and splitting. We realized the need for a mechanism that swiftly identifies the most relevant chunks for a given question. Enter document embedding. Embedding a text is a process whereby a language model converts it to a vector, effectively capturing its semantic meaning in a numerical format. With the help of these vectors, we can perform similarity searches efficiently. This likely sounds unintuitive, but it's an approach that works impressively well for </p>
 </div>
-<div class="lesson"><h3>Introduction to Document Storing, Retrieval, and Generation</h3>
+<div id="lecture-145" class="lesson"><h3>Introduction to Document Storing, Retrieval, and Generation</h3>
 <p>Welcome back everyone. Let's start with a quick recap of what we've discussed so far. Recall that we first load the data from any of lang chains supported formats. Lang chain then ensures the data is stored as a list of document objects that keep the text and the corresponding metadata. Next, we split the documents into smaller chunks, each containing meaningful information and fitting the context window limit of the chat model. The embedding process then transforms each text chunk into a vector that encapsulates its semantic essence. This vector form proves particularly advantageous for effic</p>
 </div>
-<div class="lesson"><h3>Indexing: Document Loading with PyPDFLoader</h3>
+<div id="lecture-146" class="lesson"><h3>Indexing: Document Loading with PyPDFLoader</h3>
 <p>Hey everyone. Welcome to the practical part of this section where we'll cover document loading in long chain. I'll show you how to load files with PDF and doc extensions. Lang chain offers a plethora of document loaders in addition to these two. Once you learn the procedure, you can work with any supported extensions. With that said, let's jump into coding. First, open the Anaconda prompt. If you're in the base environment, ensure you conda activate lang chain env. In this environment, pip install the pi pdf library which we'll need to load pdf files. Once the installation is complete, pip ins</p>
 </div>
-<div class="lesson"><h3>Indexing: Document Loading with Docx2txtLoader</h3>
+<div id="lecture-147" class="lesson"><h3>Indexing: Document Loading with Docx2txtLoader</h3>
 <p>Welcome back everyone. In the previous lesson we studied the pi pdf loader in Lang chain. Additionally, we pre-processed the loaded text by removing all newline characters because they didn't contribute to the formatting of the text. In this lesson, we'll solidify our knowledge of document loaders by demonstrating how to load a file with a Doc extension in Lang chain. The relevant document is in the resources complementing this lecture. Start by opening a clear Jupyter notebook running on the Lang chain environment kernel. We already installed the library necessary for loading files with a Doc</p>
 </div>
-<div class="lesson"><h3>Indexing: Document Splitting with Character Text Splitter (Theory)</h3>
+<div id="lecture-148" class="lesson"><h3>Indexing: Document Splitting with Character Text Splitter (Theory)</h3>
 <p>Hey everyone, welcome to this series of lessons on document splitting. As we've discussed, splitting a document into semantically meaningful chunks is essential in the Rag process. It helps reduce the text size, ensuring it will fit a model's context window limit and segments the text into chunks of specific topics, which improves the quality of the chatbot's responses. Lang chain offers various algorithms for splitting a document. Let's begin with splitting governed by a predefined number of characters, which means we obtain chunks of roughly equal sizes before jumping to coding. However, I t</p>
 </div>
-<div class="lesson"><h3>Indexing: Document Splitting with Character Text Splitter (Code Along)</h3>
+<div id="lecture-149" class="lesson"><h3>Indexing: Document Splitting with Character Text Splitter (Code Along)</h3>
 <p>Welcome back. In the previous lesson, we introduced Lang Chains character text splitter through a simple example. Now we'll apply this knowledge to our practical use case. Let's get to coding. I've set up a new Jupyter notebook using the Lang Chain environment kernel. Beforehand, I added a short piece of code which should be familiar to you. I've imported the doc to text loader, created an instance of this class with the name of the file as an argument, loaded the pages from the document and created a for loop, removing the newline characters from the text. Displaying the page content of the f</p>
 </div>
-<div class="lesson"><h3>Indexing: Document Splitting with Markdown Header Text Splitter</h3>
+<div id="lecture-150" class="lesson"><h3>Indexing: Document Splitting with Markdown Header Text Splitter</h3>
 <p>Hey, and welcome back to this discussion on document splitting with Lang Chain. In the previous lesson, we introduced the character text splitter, the simplest among splitters, which segments text based on a separator, maximum chunk size, and chunk overlap. The splitter did an excellent job of reducing the size of the documents, but as we discussed, we had no control over the topics they covered. That's why we'll now study another document splitting technique based on splitting concerning headers. Let's get into it. Open a fresh Jupyter notebook using the Lang Chain Environment kernel. Before </p>
 </div>
-<div class="lesson"><h3>Indexing: Text Embedding with OpenAI</h3>
+<div id="lecture-151" class="lesson"><h3>Indexing: Text Embedding with OpenAI</h3>
 <p>Hey, everyone! In the practical part of this section, we learned how to load and split the data. Next on our agenda comes embedding it. Remember, embedding refers to representing a chunk of text as a vector. This allows each chunk to live in a vector space where we can determine the semantic closeness between vectors. Earlier in this section, we explored the concept. Now let's put it into practice. I've designed a new notebook that imports the doc loader and two text splitter classes. Next, I created an instance of the loader class and used it to load the text from the document. Then I initial</p>
 </div>
-<div class="lesson"><h3>Indexing: Creating a Chroma Vector Store</h3>
+<div id="lecture-152" class="lesson"><h3>Indexing: Creating a Chroma Vector Store</h3>
 <p>Welcome back everyone. We dedicated the last couple of lessons to loading, splitting and embedding documents with Lang Chain. In the previous lesson, we applied embedding to only three of all 20 chunks in the page's character split list. Our task for this lesson is to embed and save all chunks in a vector store. Ready? Let's get to work! In the notebook, I've prepared a familiar code. I've set up the OpenAI API key as an environment variable, imported the loader markdown header and the character text splitters. Imported the OpenAI embedding class, loaded the pages of the doc file, split it bas</p>
 </div>
-<div class="lesson"><h3>Indexing: Inspecting and Managing Documents in a Vector Store</h3>
+<div id="lecture-153" class="lesson"><h3>Indexing: Inspecting and Managing Documents in a Vector Store</h3>
 <p>Welcome back to our discussion on vector stores and managing their content. In this lesson, we'll show how to add, update and delete documents within the vector store. Let's get to work! I've created a new notebook where a few lines of code are implemented. These are setting OpenAI's API key as an environment variable, importing the OpenAI embeddings, chroma and document classes, creating an instance of the OpenAI embeddings class, and creating a vector store using the files stored in the folder we called Introduction to Data Science Lectures. You can pause the lesson and implement the code at</p>
 </div>
-<div class="lesson"><h3>Retrieval: Similarity Search</h3>
+<div id="lecture-154" class="lesson"><h3>Retrieval: Similarity Search</h3>
 <p>Welcome back everyone. Last time we learned how to access and manipulate documents in a vector store, marking the end of the discussion on indexing. The upcoming lessons are dedicated to the next steps in the Rag process retrieval and generation. We'll demonstrate two of the many algorithms available for retrieving documents the similarity search and the maximal marginal relevance search. Finally, we'll introduce Lang chains vector store retriever object and its advantages. All right. There's a lot to cover. So let's not waste any time and jump straight into coding. I've created a new Jupyter </p>
 </div>
-<div class="lesson"><h3>Retrieval: Maximal Marginal Relevance Search</h3>
+<div id="lecture-155" class="lesson"><h3>Retrieval: Maximal Marginal Relevance Search</h3>
 <p>Welcome back everyone. In the previous lesson, we employed Chromas semantic similarity search algorithm and found that it performed quite well in retrieving content relevant to a user's prompt. It did, however, come with a disadvantage if a vector store contained duplicate documents with a high similarity score, the method would retrieve both the original and the duplicate. And as we'll now discover, retrieving documents based only on the similarity metric results in a lack of diversity and a chance of missing important information. In this lesson, we'll study another retrieval algorithm that </p>
 </div>
-<div class="lesson"><h3>Retrieval: Vector Store-Backed Retriever</h3>
+<div id="lecture-156" class="lesson"><h3>Retrieval: Vector Store-Backed Retriever</h3>
 <p>Hey everyone! So far we've introduced two retrieval methods the similarity search and the maximal marginal relevance search. These methods did an excellent job of retrieving information relevant to a user's query, but they aren't expected to work flawlessly in all use cases. And there's always room for improvement. If you navigate to Liangshan's documentation, you'll find many retrievers suitable for different tasks. We won't study these retrievers individually. I'll leave it to you to find the one that works best for your project. Rather, we'll create a runnable retriever object to plug it in</p>
 </div>
-<div class="lesson"><h3>Generation: Stuffing Documents</h3>
+<div id="lecture-157" class="lesson"><h3>Generation: Stuffing Documents</h3>
 <p>Hey, and welcome to this lesson where we'll implement the last step of the Rag technique, the Generation Step. We'll create an expression language chain from scratch that uses the documents returned by the retriever to generate a context specific response. I've pre implemented only the environment variable setup and the necessary imports for this lesson. Feel free to pause the lesson and transfer this code to your notebook. First, let's create a vector store object using the Intro to Data Science Lectures folder. Ensure it keeps 21 documents in total. Next, create a vector store backed retriev</p>
 </div>
-<div class="lesson"><h3>Generation: Generating a Response</h3>
+<div id="lecture-158" class="lesson"><h3>Generation: Generating a Response</h3>
 <p>Welcome back. We've made significant progress in constructing our retriever chain. So far, we've piped a dictionary with the prompt template. Recall that we obtained a string prompt value instance which stored the filled in prompt template. Now let's continue the implementation. The next component we pipe to the chain is our chat OpenAI instance. Redefine the chain accordingly and invoke it again. We obtain an AI message object where the content parameter stores the text generated by the model. We can copy paste it inside a print function for better inspection. Indeed, the model considers the </p>
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. In a RAG pipeline, what does the retriever do?</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Generates the final answer</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">Searches vector store for relevant document chunks</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Splits documents into chunks</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Embeds the user question</div></div></div>
 </div>
 </div>
 <div class="section" id="section30"><div class="section-header"><h2>S30: Introduction</h2></div>
 <div class="concept-grid"><div class="concept-card"><div class="card-icon">📊</div><div class="card-title">State</div><div class="card-desc">Typed data flowing through the graph</div></div><div class="concept-card"><div class="card-icon">⚙️</div><div class="card-title">Nodes</div><div class="card-desc">Functions that transform state</div></div><div class="concept-card"><div class="card-icon">➡️</div><div class="card-title">Edges</div><div class="card-desc">Connections between nodes</div></div><div class="concept-card"><div class="card-icon">🔀</div><div class="card-title">Conditional Edges</div><div class="card-desc">Route based on state content</div></div><div class="concept-card"><div class="card-icon">💾</div><div class="card-title">Checkpointers</div><div class="card-desc">Persist state across sessions</div></div></div>
-<div class="lesson"><h3>Welcome to the LangGraph Module</h3>
+<div id="lecture-159" class="lesson"><h3>Welcome to the LangGraph Module</h3>
 <p>Hey everyone, and welcome to this course on building conversational AI memory with Landgraf. My name is Christina and I'm excited and honored to be your instructor. Before we dive into the technical matters, let me share a bit about myself. I hold a degree in theoretical physics from Lund University in Sweden, where I spent a lot of time exploring the elegance of abstract concepts and how they shape the world around us. Along the way, I've always been deeply passionate about mathematics and programming. I enjoy the challenge of unpacking complex ideas and making them easier to grasp. It's a pr</p>
 </div>
-<div class="lesson"><h3>What You Will See Next</h3>
+<div id="lecture-160" class="lesson"><h3>What You Will See Next</h3>
 <p>So are you ready to dive into Landgraf in this lesson? We'll zoom out to get a clear view of the journey ahead. What you'll learn, build, and explore throughout the course. Let's begin. Like every exciting project, there's one unavoidable first step setting up your environment. But don't worry, we'll do this as smoothly as possible. We'll walk through installing the necessary packages, configuring your workspace, and ensuring everything is ready so you can focus on building, not debugging. Next, we'll tackle a core question what exactly is a graph? In line graph, you'll learn about the key bui</p>
 </div>
-<div class="lesson"><h3>Model Prerequisites</h3>
+<div id="lecture-161" class="lesson"><h3>Model Prerequisites</h3>
 <p>Welcome back everyone. In this lesson, we'll examine the suggested prerequisites to help you move through the course smoothly and confidently to get the most out of this course. A solid foundation in Python will be helpful if it's been a while or you're still building your confidence. We recommend checking out our introductory or intermediate Python courses for a quick refresher. Here are some concepts you'll want to be familiar with. Lists and dictionaries. List comprehension conditions and loops. Functions, classes and Methods and inheritance. A basic understanding of Python's type hints wil</p>
 </div>
 </div>
 <div class="section" id="section31"><div class="section-header"><h2>S31: Setting Up the Environment</h2></div>
-<div class="lesson"><h3>Setting Up the Environment</h3>
+<div id="lecture-162" class="lesson"><h3>Setting Up the Environment</h3>
 <p>Hey everyone and welcome. We'll dedicate this lesson to setting up a virtual environment, installing all the packages you'd need, and integrating the environment with Jupyter Notebook. Let's begin. Start by opening the Anaconda prompt. Currently, we're in the base environment. Whenever you're working on a new project that requires specific package installations, it's always a good idea to create new environments and work there. This ensures that if you experience package conflicts, accidentally delete something, or encounter any other issue, you can always revert to base and start anew. So let</p>
 </div>
 </div>
 <div class="section" id="section32"><div class="section-header"><h2>S32: Graph Components and Implementation</h2></div>
-<div class="lesson"><h3>States, Nodes, and Edges</h3>
+<div id="lecture-163" class="lesson"><h3>States, Nodes, and Edges</h3>
 <p>Welcome to this section dedicated to getting started with Landgraf. In this lesson, we'll develop a high level understanding of the graph, its key components, and how it operates. This conceptual overview will set the stage for the following practical hands on lessons. So what exactly is a graph in line graph? At its core, a graph defines an application's flow. It's a structured map of how information moves and how tasks are executed. The first essential component of a graph is its nodes. Nodes are user defined Python functions that each perform a specific task in the overall process. Two spec</p>
 <div class="step-breakdown"><div class="step-item visible"><div class="step-circle">1</div><div class="step-content"><h4>Define State</h4><p>Create TypedDict with all data fields the graph needs</p></div></div><div class="step-item visible"><div class="step-circle">2</div><div class="step-content"><h4>Write Node Functions</h4><p>Each function takes state, returns updated state</p></div></div><div class="step-item visible"><div class="step-circle">3</div><div class="step-content"><h4>Create StateGraph</h4><p>Instantiate graph with state schema</p></div></div><div class="step-item visible"><div class="step-circle">4</div><div class="step-content"><h4>Add Nodes</h4><p>Register each function as a named node</p></div></div><div class="step-item visible"><div class="step-circle">5</div><div class="step-content"><h4>Add Edges</h4><p>Connect nodes (fixed or conditional routing)</p></div></div><div class="step-item visible"><div class="step-circle">6</div><div class="step-content"><h4>Compile &amp; Run</h4><p>Finalize graph structure and invoke with initial state</p></div></div></div>
 </div>
-<div class="lesson"><h3>First Graph: Importing Relevant Classes</h3>
+<div id="lecture-164" class="lesson"><h3>First Graph: Importing Relevant Classes</h3>
 <p>Hey everyone, and welcome to our first coding lesson. We'll get started with Landgraf by creating a very simple graph. It'll consist of a starting node, a chatbot node responding to a user's question, an ending node, and two edges connecting them. So shall we. First things first ensure you're working in the Lang graph environment we created earlier. If that's not the case, go to the kernel menu, select Change Kernel and choose the desired one. We begin the notebook by setting up OpenAI's API key as an environment variable and importing relevant libraries. Recall from our Lang chain course that</p>
 </div>
-<div class="lesson"><h3>First Graph: Defining a State and a Node</h3>
+<div id="lecture-165" class="lesson"><h3>First Graph: Defining a State and a Node</h3>
 <p>In the last lesson, we set the stage for our first graph by importing the relevant classes. Now let's start building. We begin by defining the state of the graph, which will be passed from node to node and updated along the way. To do this, we'll create a new class. Let's call it state, which inherits from the typed dictionary class. This custom dictionary will contain a single key messages which will hold a sequence of items. More specifically, it will be a sequence of base message objects, human and AI messages. The part of the code that comes after the colon is a type hint, specifying the e</p>
 </div>
-<div class="lesson"><h3>First Graph: Building the Graph</h3>
+<div id="lecture-166" class="lesson"><h3>First Graph: Building the Graph</h3>
 <p>We are approaching the finish line of creating our first graph. We have all the necessary components the state, the starting and ending nodes, and the node in the middle. A Python function responding to user messages. To combine these components, we must first create an instance of the state graph class. A state graph is a graph whose nodes communicate by reading and writing to a shared state. Let's define an instance of this class and call it graph as a positional argument. Pass the schema class that defines the state. In our case, that's the state class defined earlier. All nodes in the grap</p>
 </div>
-<div class="lesson"><h3>Conditional Edges: Defining Nodes and a Routing Function</h3>
+<div id="lecture-167" class="lesson"><h3>Conditional Edges: Defining Nodes and a Routing Function</h3>
 <p>We dedicated the last three lessons to implementing a simple graph consisting only of a starting node, an ending node, a node responsible for answering a user's question, and two edges connecting them. Let's now complicate things slightly by introducing two more nodes and a condition. We'll add a new node after the starting one, prompting the user to ask their question. This will update the state with a human message storing the question. This state is then passed to the chatbot node, where it's updated to store an AI message corresponding to the model's response. This updated state is then fe</p>
 </div>
-<div class="lesson"><h3>Conditional Edges: Building the Graph</h3>
+<div id="lecture-168" class="lesson"><h3>Conditional Edges: Building the Graph</h3>
 <p>All right. We have all the components to create our graph. The three nodes and the routing function create an instance of the state graph class in the known fashion. Next, add the nodes to the graph. Ask question chat bot and ask another question. Then come the edges. We first connect the starting node with ask question, then ask question with chatbot and chatbot with ask another question. This last node can lead to one of two nodes ask question or the end node. To implement this logic, we require a different method add conditional edges. The first required keyword argument source asks for the</p>
 <div class="mini-quiz"><h4>Quick Check</h4><div class="quiz-question"><p>1. A conditional edge in LangGraph routes based on:</p><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Random selection</div><div class="quiz-option" data-correct="true" onclick="checkAnswer(this)">The current state content (via a routing function)</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">User input at runtime</div><div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">Node execution time</div></div></div>
 </div>
 </div>
 <div class="section" id="section33"><div class="section-header"><h2>S33: Message Management</h2></div>
-<div class="lesson"><h3>The Annotated Construct and Reducer Functions</h3>
+<div id="lecture-169" class="lesson"><h3>The Annotated Construct and Reducer Functions</h3>
 <p>Hey everyone, and welcome to this section where we are gradually advancing towards the crux of the course equipping a chatbot with memory. In the previous section, we outlined the essential components of a graph and the steps towards creating one. These steps included defining the graph schema as a typed dictionary, adding nodes and edges to the graph, implementing the routing functions of conditional edges if present, compiling the graph, visualizing it, and then invoking it. All went well until we realized our graph didn't retain messages across the nodes. As you've observed in previous less</p>
 </div>
-<div class="lesson"><h3>Reducer Functions in Action</h3>
+<div id="lecture-170" class="lesson"><h3>Reducer Functions in Action</h3>
 <p>Welcome back. We now know how Landgraf's ad messages function works and what the purpose of the annotated construct is. In this lesson, we will progress through the notebook and check if the state is updated according to our expectations. I've already run the cells with the magic functions, the imports and the states definition. I'll also run the next cell to define the chat OpenAI instance. Next up, we arrive at the ask question function. Let's modify it slightly as follows. First, include a for loop that iterates through the list of messages and pretty prints them. Second store. What is your</p>
 </div>
-<div class="lesson"><h3>The MessagesState Class</h3>
+<div id="lecture-171" class="lesson"><h3>The MessagesState Class</h3>
 <p>Welcome back everyone. Throughout this course, we've defined our graph state as a typed dictionary with a key named messages corresponding to a list of chat messages. We've also included a reducer function that appends each new message to this list. But a state doesn't need to be defined in this way. The key doesn't have to be called messages. Its type doesn't have to be a sequence of chat messages, and the reducer function, if present, doesn't necessarily have to update the state by appending new messages. It can be implemented in other ways that are accustomed to the specific situation. But </p>
 </div>
-<div class="lesson"><h3>The RemoveMessages Class</h3>
+<div id="lecture-172" class="lesson"><h3>The RemoveMessages Class</h3>
 <p>Hey, throughout the last couple of lessons, we used the technique of appending messages to the graph state as a form of chatbot memory. While this is a valid approach for small scale applications, a long conversation would take too much time and use up too many tokens as we keep adding more information at each step. So in this lesson, we'll implement a solution to reduce the number of messages sent to the chatbot node, a middle ground between sending just the last message and the entire conversation history. Consider the graph we previously implemented. Let's introduce one more node between as</p>
 </div>
-<div class="lesson"><h3>Trimming Messages</h3>
+<div id="lecture-173" class="lesson"><h3>Trimming Messages</h3>
 <p>Alright, open the last lessons notebook and let's start working. Make sure you've defined all the nodes. Insert a new cell and create a function called trim messages. Like all other nodes, this one also accepts a message's state object as an argument and outputs an object of the same type. Include a print statement inside the function's body that notifies us that we've entered the node. Then copy paste the definition of the remove messages list from before. Substitute Mylist with the value of the message's key from the state dictionary. Return a message's state object and feed the remove messa</p>
 </div>
-<div class="lesson"><h3>Summarizing Messages</h3>
+<div id="lecture-174" class="lesson"><h3>Summarizing Messages</h3>
 <p>Welcome back everyone. Last time we learned how to reduce the number of messages in a state, we removed messages from the state by adding them. It's a quirky concept, kind of like how cells multiply by dividing. We'll now implement yet another, more efficient approach for long running conversations. Instead of storing previous interactions verbatim, we'll summarize them. The game plan is as follows. First, we'll create a new graph state inheriting from the messages state class. It will have an additional parameter summary where we'll store the conversations running. Summary. Second, we'll modi</p>
 </div>
 </div>
 <div class="section" id="section34"><div class="section-header"><h2>S34: Thread-Level Persistence</h2></div>
-<div class="lesson"><h3>Checkpointers and Threads</h3>
+<div id="lecture-175" class="lesson"><h3>Checkpointers and Threads</h3>
 <p>Welcome to this final section where we'll learn how to persist conversations. That is how our graph can retain its memory, even after restarting the notebooks kernel or shutting down the entire system in Landgraf. This is made possible through a checkpointing system. Let's dive in. Recall the structure of a graph, a collection of nodes connected by direct or conditional edges. Nodes on different horizontal levels are executed sequentially from top to bottom. Of course, we can loop back to an earlier node using a conditional edge. Nodes on the same horizontal level are executed in parallel, wit</p>
 </div>
-<div class="lesson"><h3>Short-Term Memory with the InMemorySaver Class</h3>
+<div id="lecture-176" class="lesson"><h3>Short-Term Memory with the InMemorySaver Class</h3>
 <p>All right, let's put all that theory into practice. The code I've opened here creates the following graph. Let me walk you through it quickly, as the implementation should look familiar. We begin with the usual magic commands and some standard imports. In addition to the familiar ones, I've imported a new class in Memory Saver from the Lang Graph Checkpoint memory module. As the name implies, this class allows us to add in-memory checkpointing to our graph, enabling it to save and restore state during execution. Next, I've defined a new class, a subclass of messages state that includes a key f</p>
 </div>
-<div class="lesson"><h3>The StateSnapshot Class</h3>
+<div id="lecture-177" class="lesson"><h3>The StateSnapshot Class</h3>
 <p>Welcome back everyone. So let's study what these checkpoints look like in more detail. Create a new variable called graph states. Set it equal to graph compiled and apply the get state history method, which as the name suggests, will retrieve the entire conversation history. The method accepts the configuration dictionary as an argument. Let's insert config one, where we ask the chatbot a question and then invoked it again with a follow up. The get state history method returns a generator object. If you need a refresher on generators, refer to the streaming lesson from the Build Chat Applicati</p>
 </div>
-<div class="lesson"><h3>Long-Term Memory with SQLite</h3>
+<div id="lecture-178" class="lesson"><h3>Long-Term Memory with SQLite</h3>
 <p>Welcome to this final practical lesson on line graph and how we can integrate memory into our graphs. The previous session, we made significant progress by persisting the conversation summary to a thread. This allowed us to reinvoke the graph and continue the discussion within the same thread. But the in-memory saver class we used had a key limitation. Restarting the notebooks kernel resulted in memory loss. In this lesson, we'll wrap up our discussion on memory by learning how to store checkpoints in a local database. This approach enables us to restore the graphs state even after a kernel re</p>
 </div>
 </div>
 <div class="section" id="section35"><div class="section-header"><h2>S35: Conclusion</h2></div>
-<div class="lesson"><h3>Conclusion</h3>
+<div id="lecture-179" class="lesson"><h3>Conclusion</h3>
 <p>What a journey it's been, right? Think about where we started an hour ago and how much we've completed since then. After we set up our environment, we became familiar with the construction of a graph how to define states, nodes and edges, and then how to combine them to create a functioning graph. We also complicated the graph to include a conditional edge that could route the logic to one of two nodes. In the following section, we became familiar with an interesting typing construct, the annotated class. It was beneficial for adding metadata to our variables and more specifically, reducer fun</p>
 </div>
 </div>
 <div class="section" id="section36"><div class="section-header"><h2>S36: Introduction to the Course</h2></div>
-<div class="lesson"><h3>What does the course cover?</h3>
+<div id="lecture-180" class="lesson"><h3>What does the course cover?</h3>
 <p>Hi and welcome to the AI Agents in Practice course. I'm really glad you're here. This is one of the most exciting areas of AI right now. And by the end of the course, you'll know how to build powerful, practical, production ready agentic systems from scratch, as well as how to test and monitor them effectively. Before we begin, let me tell you a bit about myself so you know who's guiding you on this journey. My name is Peter, and I've been part of the 365 data science team for five years now. During that time, I've been deeply involved in the development of all the AI powered features you see </p>
 </div>
 </div>
 <div class="section" id="section37"><div class="section-header"><h2>S37: Agentic Systems in Practice</h2></div>
-<div class="lesson"><h3>Agent Development Tools</h3>
+<div id="lecture-181" class="lesson"><h3>Agent Development Tools</h3>
 <p>Before we start building AI agents, we need a clear understanding of the tools and frameworks that can be used and how they can be applied in various use cases. Each option brings its own strengths and limitations, so choosing wisely up front can save you hours of rework later. The ecosystem tends to fall into two broad camps. One code first frameworks and two low code graphical user interface builders, or GUI. In short, code first frameworks revolve around writing actual code to wire up models, prompts, tools, and memory stores. The most significant advantage of coding frameworks is the contr</p>
 </div>
-<div class="lesson"><h3>Why LangGraph?</h3>
+<div id="lecture-182" class="lesson"><h3>Why LangGraph?</h3>
 <p>Now that you've got a solid overview of the different types of tools and frameworks used to build AI agents, it's time to take a closer look at one of the most widely adopted frameworks on the market. Landgraf. If you've taken our course, build conversational AI memory with Landgraf, you'll already have a solid foundation and know how to work with Landgraf. In this lecture, we'll dive deeper not just into what Landgraf is, but how it compares to other tools in the ecosystem, how it fits into real world agent workflows, and why we chose it for this course despite some of the mixed opinions surr</p>
 </div>
-<div class="lesson"><h3>Anatomy of a LangGraph Project</h3>
+<div id="lecture-183" class="lesson"><h3>Anatomy of a LangGraph Project</h3>
 <p>Great. Now that we've decided we'll use Landgraf, it's time to learn more about the structure of a Landgraf project. To make things easier to understand, let's imagine your application as a humanoid robot. Each core component of a Landgraf project corresponds to a part of the robot's body. This metaphor will help us visualize the logic behind Landgraf's implementation in real life. The brain is the state object. Every robot needs a brain to remember things and keep track of what's happening in Landgraf. The state plays that role. The state is a shared memory object that flows through every nod</p>
 </div>
-<div class="lesson"><h3>Prompt Techniques Part 1</h3>
+<div id="lecture-184" class="lesson"><h3>Prompt Techniques Part 1</h3>
 <p>Before we move on to coding, let's take a moment to explore an important topic that's essential for developing AI agents prompt techniques. This is how you structure instructions for a large language model. Instead of relying on vague or inconsistent messages, applying best practices for prompting allows you to give clear guidance that helps the AI understand precisely what you need. Ultimately, the better your prompt is, the better the model will perform. Let's walk through some of the most common prompt frameworks you'll come across. First, there's the ATF role task format. This one's simple</p>
 </div>
-<div class="lesson"><h3>Prompt Techniques Part 2</h3>
+<div id="lecture-185" class="lesson"><h3>Prompt Techniques Part 2</h3>
 <p>Okay, great. In this lesson, we'll continue to discuss prompt engineering techniques, and we'll introduce a few essential concepts. You might be familiar with them from our other courses, but I'd like to view them briefly. The first prompting technique will study is the chain of thought prompting. This framework encourages the AI to present its reasoning step by step before arriving at a final answer. It's beneficial for complex tasks such as math problems, logical decisions, or multi-step plans where the process matters as much as the outcome. When dealing with multiple complex tasks, it's of</p>
 </div>
-<div class="lesson"><h3>Prompting Tips and Tricks</h3>
+<div id="lecture-186" class="lesson"><h3>Prompting Tips and Tricks</h3>
 <p>All right. Good. We've made some solid progress in the last few lessons. We've covered the core prompting techniques you need to know. They're helpful not only for development, but also for using models in general. Now, before we continue, let me share some tips and tricks from my personal experience. First, always separate logical components and split the most important tasks into separate prompts or models. For example, imagine you're building a system that can analyze a document, generate a summary, and then produce quiz questions based on that summary. Instead of relying on one massive pro</p>
 </div>
-<div class="lesson"><h3>System Input vs. User Input</h3>
+<div id="lecture-187" class="lesson"><h3>System Input vs. User Input</h3>
 <p>By now, you're probably familiar with the two types of messages you can send to a language model one the system message, which sets behavior and context, and to the user message, which delivers the user's input or question. The aspect most developers overlook is the significant impact of information placement between the system and user messages on the quality of their results. A common mistake is cramming all instructions into one message or misplacing them in the wrong section. This often leads to unstructured prompts that are harder to debug or improve over time. From our experience, mainta</p>
 </div>
-<div class="lesson"><h3>Behind Scenes - Project Helper Chatbot</h3>
+<div id="lecture-188" class="lesson"><h3>Behind Scenes - Project Helper Chatbot</h3>
 <p>In this lesson, we'll break down the magic behind one of our applications, a prompt that's currently running in production. It powers the Project Helper chatbot, a feature we developed for the 3.65 data science platform. Through this example, we'll show you how the techniques from the previous lesson come together in practice. At first glance, it looks like a regular support bot, but under the hood it's a single prompt retrieval augmented chatbot equipped with everything it needs to act smart, responsive, and context aware. It can reference task data, pull in relevant information from attached</p>
 </div>
 </div>
 <div class="section" id="section38"><div class="section-header"><h2>S38: Project 1 - Job-Helper Agent (ReAct)</h2></div>
-<div class="lesson"><h3>Project: Job-Helper agent (ReAct)</h3>
+<div id="lecture-189" class="lesson"><h3>Project: Job-Helper agent (ReAct)</h3>
 <p>In this section, we'll build a simple but functional job helper agent using the react agent framework. The application will build will be based on Lang graph and will function like a chatbot. The goal is to create an agent that can assist with job related questions, whether that's helping you write or improve your CV, answering questions about a job posting, or even checking if your current CV is a good fit for a specific role. We aim to develop a tool that supports users throughout their job search journey in a helpful way. To accomplish this, the agent requires access to two things one the u</p>
 </div>
-<div class="lesson"><h3>ReAct Аrchitecture Recap</h3>
+<div id="lecture-190" class="lesson"><h3>ReAct Аrchitecture Recap</h3>
 <p>First, let's look at the react architecture for our agent to make sure we're all on the same page. React stands for reasoning and acting and just to clarify, has nothing to do with react, the web framework. They're completely different. React is a pattern that enables language models to not only think through problems step by step, but also to take actions in between those thoughts. In simple terms, it helps the agent reason about what it knows, decide what to do next, and then perform that action. Whether that means calling a tool, asking for more input, using another LLM, or providing a fina</p>
 </div>
-<div class="lesson"><h3>Adding Funds to Your OpenAI API Account</h3>
+<div id="lecture-191" class="lesson"><h3>Adding Funds to Your OpenAI API Account</h3>
 </div>
-<div class="lesson"><h3>Setting Your OpenAI API Key</h3>
+<div id="lecture-192" class="lesson"><h3>Setting Your OpenAI API Key</h3>
 </div>
-<div class="lesson"><h3>Setup &amp; Installation</h3>
+<div id="lecture-193" class="lesson"><h3>Setup &amp; Installation</h3>
 <p>One last step before we start creating our tools. Let's make sure your environment is ready. I'll assume you already have Jupyter Notebook set up and running on your machine. If not, install it before continuing. Now we'll install the core stack we use across the following three projects at once. Open a new notebook in your project folder. Create a fresh cell and run the following command. If you prefer an alternative approach, I've also provided a requirements.txt file in the course resources. Simply download it and place it in the same directory as your current notebook. Now you can install </p>
 </div>
-<div class="lesson"><h3>Building the Tools: File Reader</h3>
+<div id="lecture-194" class="lesson"><h3>Building the Tools: File Reader</h3>
 <p>Welcome back. In this lecture we'll build the tools that our agent will use. We'll move quickly without diving too deep into every little piece of code. The goal here is to get the functionality up and running so we can integrate it into the agent. We'll start with our file reader tool, a small but essential utility. The agent will call whenever it needs to read a user CV. We'll make sure it supports the three most common text based formats docx, PDF, and Dot doc. Let's first import the libraries we'll be using. Perfect. We can start building our extractor function. We'll call this function ex</p>
 </div>
-<div class="lesson"><h3>Building the Tools: Web Search API</h3>
+<div id="lecture-195" class="lesson"><h3>Building the Tools: Web Search API</h3>
 <p>As we previously noted, the second type of tool will create is a web search instrument which does precisely what its name suggests a helper that the agent calls when it needs fresh information from the internet. In our case, these are job postings and related details. The good news is that we don't have to build a crawler. OpenAI already has a built in web search capability, and there's a model specialized for it called GPT 40 Search Preview. This model works through the Chat Completions API and supports a special parameter called web search options. When this is present and you're using a sea</p>
 </div>
-<div class="lesson"><h3>Integrating Tools into the Agent</h3>
+<div id="lecture-196" class="lesson"><h3>Integrating Tools into the Agent</h3>
 <p>In the last couple of lectures we built the tools. Our agent will use the file reader for CVS and the web search tool for job postings. Now it's time to create the agent itself. To keep everything neat, let's work in a brand new notebook. We'll begin by importing the libraries, starting with the same ones used for our tools. In addition, I'll import three additional libraries. Chat OpenAI is Lang Chains chat model wrapper for OpenAI's chat models. We'll use it to add the agent's main model to clarify why we have two different OpenAI imports the official SDKs OpenAI is our direct line to the AP</p>
 </div>
-<div class="lesson"><h3>Building the Assistant Node</h3>
+<div id="lecture-197" class="lesson"><h3>Building the Assistant Node</h3>
 <p>Welcome back. We're ready to craft the graph, which is the wiring that turns our model and tools into an actual agent that thinks, decides and uses tools. We already have the tools and the LM bound to them. Now we need a place to keep the running conversation in line graph. That place is the state for chat style agents messages. State is perfect because it simply holds a list of messages. Let's import three more libraries. Messages state is the line graph data structure that stores all messages. Human message and system message are message types from lang chain. As you already know, human mess</p>
 </div>
-<div class="lesson"><h3>Building the Graph</h3>
+<div id="lecture-198" class="lesson"><h3>Building the Graph</h3>
 <p>Next, we'll move on to wiring the graph. This part might feel a bit more complex, but stay with me. We'll break it down step by step so it's easy to follow. First let's add the libraries we'll need. State graph is the graph builder the object we use to declare nodes and edges. Start is a special entry marker that tells graph where execution begins. It's not a node that runs code, it's just the flow's starting point. Tools condition is a helper that examines the assistant's last message to determine whether we need to run tools or proceed to the end. Then we have image and display, which are us</p>
 </div>
-<div class="lesson"><h3>Running the Graph</h3>
+<div id="lecture-199" class="lesson"><h3>Running the Graph</h3>
 <p>All right, let's run our graph together. We start by creating a single user message inside the content. We add our request. I'll ask the agent to read the CV that sits in the same folder as this notebook, and compare it with three job postings. We pass this into the compiled graph, and I'll store the output in a separate variable so we don't overwrite the input. And then we can print each message to see exactly what happened. All right let's run it. Great. We receive the complete response. And we can now see through the entire process step by step. Currently running another request with the re</p>
 </div>
-<div class="lesson"><h3>Adding Memory</h3>
+<div id="lecture-200" class="lesson"><h3>Adding Memory</h3>
 <p>Right now, our agent has a bit of a goldfish memory. Every time we run it, it starts fresh and forgets anything we've said before. That's fine for one off questions, but for a real conversation, we need our assistant to remember context across multiple exchanges. Landgraf makes this possible with something called a check pointer, a storage system that keeps track of the graph state between runs. Think of it like the agent's short term memory. We'll start with the simplest built in check pointer memory saver. First we should import the library. Then we create it just like any other object. The </p>
 </div>
-<div class="lesson"><h3>Conncecting to LangSmith</h3>
+<div id="lecture-201" class="lesson"><h3>Conncecting to LangSmith</h3>
 <p>With our agent built and equipped with memory, the next step is to put it to the test. Evaluation. We want to understand how our agent behaves under the hood. We need to examine certain aspects, such as the duration of each run, the tools invoked, the number of tokens used, and whether the responses are consistent. For that, we'll use Lang Smith. Let's import the Lang Smith Library at the top of our notebook. Next, head over to the Lang Smith website. If you don't have an account, you can create one. Once you're in, click set up tracing. This will give you everything you need to connect your n</p>
 </div>
 <div class="tool-replica" id="langsmith-replica">
@@ -6026,51 +6026,51 @@ In the following sections, we’ll employ intriguing projects using OpenAI’s m
 
 </div>
 <div class="section" id="section39"><div class="section-header"><h2>S39: Project 2 - ReWOO Job-Helper Agent</h2></div>
-<div class="lesson"><h3>ReWOO Architecture Overview</h3>
+<div id="lecture-202" class="lesson"><h3>ReWOO Architecture Overview</h3>
 <p>Welcome to the next section of our course. Up to this point, we've been building our agent using the react architecture and it's performed impressively. The react agent can think through problems, make decisions, call tools, observe results, and continue reasoning step by step. Now it's time to change direction and explore a different kind of architecture. Riwu. At its core, Riwu separates planning from execution. With react, the agent pauses after each action. It thinks, acts, observes the outcome, and then repeats the cycle. This approach is flexible, but it also forces the agent to constant</p>
 </div>
-<div class="lesson"><h3>Building the Planner Node</h3>
+<div id="lecture-203" class="lesson"><h3>Building the Planner Node</h3>
 <p>Now that we've tested the planner prompt and observed how it generates a structured plan, let's integrate that logic within a proper planner node function. This approach allows it to serve as a reusable component within our lane graph workflow. First, we'll create a regex pattern. This regular expression is designed to parse the raw output of the planner prompt. With this part, we capture the text after the word plan. The next part extracts the placeholder variable such as e1, for example. Here we extract the tool name. Finally, we retrieve the tools input such as a file path or a URL in this </p>
 </div>
-<div class="lesson"><h3>Implementing the Executor</h3>
+<div id="lecture-204" class="lesson"><h3>Implementing the Executor</h3>
 <p>Okay. We're doing great. We're making excellent progress. Next, we'll clean up the code by removing components that are no longer required from the react build. In react, the LM operated in a loop controlled by a tool node and a tool's condition in Rwu. However, the executor calls tools directly based on the planner steps, so there's no need for an automatic tool calling loop. We'll also remove the assistant node and its system prompt, since the assistant role is now handled by three dedicated nodes planner, executor, and solver. Now on to the central part. First, we'll create a small helper f</p>
 </div>
-<div class="lesson"><h3>Implementing the Solver</h3>
+<div id="lecture-205" class="lesson"><h3>Implementing the Solver</h3>
 <p>Now that we have both the planner and the executor, it's time for the final piece of the puzzle the solver. Its role is simple yet critical to gather all the collected evidence and synthesize it into a clear, polished answer. Let's start by creating the solver prompt. First, we remind the LM of its objective to use the plan and the collected evidence to solve the task. Next, we include a placeholder called Plan block, where all the steps and their corresponding evidence will be inserted. Finally, we restate the original task at the end to keep the model focused and maintain clarity. After that</p>
 </div>
-<div class="lesson"><h3>Wiring Up the ReWOO Graph</h3>
+<div id="lecture-206" class="lesson"><h3>Wiring Up the ReWOO Graph</h3>
 <p>All right, let's wire up the review graph. We'll go through it line by line, explaining each change from the react setup and the reasoning behind it. We'll begin with a router function, which determines the next step of the graph after each executor completes its run. If no steps remain, the process moves to the solver. Otherwise, we stay in the tool loop. Next, let's bring in the graph bits. We import the libraries previously used for the start and end state graph. Note that the state graph we're about to initialize contains the Riwu state, not the Chatmessage state used in react. Next, we'll</p>
 </div>
-<div class="lesson"><h3>ReAct vs ReWOO</h3>
+<div id="lecture-207" class="lesson"><h3>ReAct vs ReWOO</h3>
 <p>Great. Now that we have both the react and Rwu application setup, it's time to run them side by side and compare the results in length. Smith. First, let's open the react application and run our project. We can instantly see the results in Smith. The performance exceeds expectations. It's fast, cost effective and straightforward. Now let's see how Rwu performs. We'll copy the same task into our review user request state. Run the graph and observe the results. And immediately we notice the difference. React is significantly faster and cheaper than rwu. But why is that? Let's take a closer look </p>
 </div>
 </div>
 <div class="section" id="section40"><div class="section-header"><h2>S40: Project 3 - Business-Idea Evaluator</h2></div>
-<div class="lesson"><h3>Project Overview</h3>
+<div id="lecture-208" class="lesson"><h3>Project Overview</h3>
 <p>Welcome back. In the previous section, we built projects using two different agent architectures React and Riwu, and compared their performance. Now it's time to raise the bar and create something more advanced. In this new project, we'll be developing a Business Idea evaluator, an AI driven system to help founders assess their startup concepts from multiple professional perspectives. We'll employ two key techniques parallelization and a human in the loop approach. Here's how it'll work. First, the system will talk with the user directly. It won't just take the initial idea at face value. Inst</p>
 </div>
-<div class="lesson"><h3>Human-in-the-Loop (HITL)</h3>
+<div id="lecture-209" class="lesson"><h3>Human-in-the-Loop (HITL)</h3>
 <p>In this lesson, we'll take a deeper look at the concept of human in the loop. Human in the loop can take many forms depending on when and how people interact with the system, whether before, during, or after the AI makes a decision. Understanding these variations allows us to identify the type of human oversight most appropriate for each situation. In other words, understanding the human role in the loop enables us to strike the right balance between automation and human judgment. Below are the main patterns found in agentic systems, along with guidance on when to use each one. We'll begin wit</p>
 </div>
-<div class="lesson"><h3>Parallelization</h3>
+<div id="lecture-210" class="lesson"><h3>Parallelization</h3>
 <p>In the previous lesson, we explored human in the loop concepts and the various strategies used to implement them. In this lesson, we'll discuss parallelization. One of the key advantages of working with Landgraf the Landgraf framework makes it especially simple to implement. But first, let me introduce you or remind you of the concept of parallelization. At the core, parallelization enables multiple processes to run simultaneously rather than sequentially. In traditional systems, tasks are executed one after another, each starting only after the previous one finishes. But in many situations, e</p>
 </div>
-<div class="lesson"><h3>Initializing the State</h3>
+<div id="lecture-211" class="lesson"><h3>Initializing the State</h3>
 <p>All right. Let's begin with the first part of the project. We'll move quickly through the setup so we can focus most of our time on the loop logic. First, we import all necessary libraries and initialize variable to keep the notebook organized. The variables are almost identical, except a few new ones. First we have operator. We'll be using it inside our graph state to merge dictionaries. This will come in handy when we'll need to create multiple advisor reports in parallel, and then combine them without overwriting each other. Next is annotated. It lets us add extra behavior to our state fiel</p>
 </div>
-<div class="lesson"><h3>Building the Human-in-the-loop</h3>
+<div id="lecture-212" class="lesson"><h3>Building the Human-in-the-loop</h3>
 <p>Let's start with the human in the loop part. As I described earlier, this is the short back and forth with the agent asks the founder for any missing details until it has enough context to proceed. We'll start by defining a system instruction for the loop. Next, we'll shift our focus to the decider. This is the first node that runs after the start. It takes the entire conversation so far. Prepends the system message, calls the model and returns the assistant's reply as a new message. Since our messages field uses add underscore messages, returning a list with just the new AI message automatica</p>
 </div>
-<div class="lesson"><h3>Creating Pre-Made “Advisor” Nodes</h3>
+<div id="lecture-213" class="lesson"><h3>Creating Pre-Made “Advisor” Nodes</h3>
 <p>Excellent. Now that the first part of our graph is in place, it's time to add the real power behind our project. The specialized nodes we call advisors who will assess a business idea from different angles. It's fairly straightforward and will use the same structure for all of them, only changing the prompt. Let's walk through the pattern. In every advisor function, we start by passing in the state at the top. This, as you already know, gives the advisor access to the user's idea and any other stored information. Next, we write a role specific system prompt. Here, for example, the market analy</p>
 </div>
-<div class="lesson"><h3>Collection Node and Building the Graph</h3>
+<div id="lecture-214" class="lesson"><h3>Collection Node and Building the Graph</h3>
 <p>Welcome back. Let's build the node that is responsible for collecting the outputs from the advisors and producing the final report. We'll call this node collect and report at the top. Of course we add the state. Next we create a small safeguard. If fewer than four advisor reports are available, the node won't run. It simply returns an empty dictionary. This prevents the report from firing too early. Once the reports are ready, we build a new prompt. This tells the model to act as a senior consultant and combine all the advisor notes into one structured evaluation. The advisor reports dictionar</p>
 </div>
-<div class="lesson"><h3>Finalizing the project</h3>
+<div id="lecture-215" class="lesson"><h3>Finalizing the project</h3>
 <p>Welcome to the final lecture for this section. We've built all the pieces of our business idea evaluator, the clarification loop, the advisors, the collection node and the graph wiring. Now it's time to run the project and see it in action. We begin with a simple print statement to greet the user and ask for their business idea. Right after that, we use Python's input function to capture the response. This becomes the very first piece of information our system will use. Next up we create the initial state. We save the raw idea string under idea and also add it as the first message in messages.</p>
 </div>
-<div class="lesson"><h3>Bonus lecture</h3>
+<div id="lecture-216" class="lesson"><h3>Bonus lecture</h3>
 </div>
 </div>
 <div class="section" id="section-extra"><div class="section-header"><h2>Additional Code Labs</h2></div>
