@@ -138,6 +138,22 @@ body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,Bl
   .cover-content h1{font-size:1.8rem}
   .lesson-header h2{font-size:1.2rem}
 }
+
+/* Quiz styles */
+.quiz-section{margin:24px 0;padding:24px;background:var(--bg-secondary);border-radius:var(--radius-lg);border:1px solid var(--border)}
+.quiz-section h3{color:var(--purple);margin-bottom:16px;font-size:1.1rem}
+.quiz-question{margin-bottom:20px}
+.quiz-question .q-text{font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{padding:12px 16px;border-radius:var(--radius);border:2px solid var(--border);cursor:pointer;transition:all var(--transition);color:var(--text-light);font-size:0.9rem;line-height:1.4;background:var(--card-bg)}
+.quiz-opt:hover:not(.disabled){border-color:var(--teal);background:rgba(0,180,216,0.05)}
+.quiz-opt.correct{border-color:#10b981;background:rgba(16,185,129,0.1);color:#6ee7b7}
+.quiz-opt.wrong{border-color:#ef4444;background:rgba(239,68,68,0.1);color:#fca5a5}
+.quiz-opt.disabled{cursor:default;opacity:0.7}
+.quiz-opt.disabled.correct{opacity:1}
+.quiz-explanation{margin-top:10px;padding:12px 16px;border-radius:var(--radius);background:rgba(16,185,129,0.08);border-left:3px solid #10b981;color:#a7f3d0;font-size:0.85rem;line-height:1.5;display:none}
+.quiz-explanation.show{display:block}
+.quiz-score{margin-top:16px;padding:12px 16px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(0,180,216,0.1));text-align:center;font-weight:600;color:var(--teal-light);font-size:0.9rem}
 </style>
 </head>
 <body>
@@ -272,6 +288,29 @@ This course addresses that gap by building a risk-first framework for generative
 <li>Assess your organization's AI risk posture before deploying any generative AI tool at scale.</li>
 <li>Separate excitement about AI capabilities from rigorous evaluation of its security implications.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the primary challenge organizations face with generative AI adoption according to this course's framework?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Lack of available AI tools</div>
+<div class="quiz-opt">B) A governance and risk knowledge gap despite widespread excitement</div>
+<div class="quiz-opt">C) Insufficient computing hardware</div>
+<div class="quiz-opt">D) Shortage of ML engineers</div>
+</div>
+<div class="quiz-explanation">💡 The course identifies that while excitement is widespread, structured understanding of AI risks remains shallow, creating governance blind spots.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which approach does the course advocate for securing generative AI in enterprises?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Selecting the most secure AI vendor</div>
+<div class="quiz-opt">B) Banning all generative AI usage</div>
+<div class="quiz-opt">C) Building a risk-first framework combining risk assessment, technical controls, and governance policy</div>
+<div class="quiz-opt">D) Hiring dedicated ML security engineers for each deployment</div>
+</div>
+<div class="quiz-explanation">💡 The course builds a risk-first framework rather than prescribing specific tools, combining risk identification, threat modeling, governance policy, and technical controls.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson2">
@@ -304,6 +343,29 @@ Generative AI represents a distinct capability layer within deep learning. Where
 <li>Distinguish between discriminative AI (classifies existing data) and generative AI (creates new data) when writing security policies.</li>
 <li>Recognize that generative AI's creative output capability is precisely what makes it both powerful and unpredictable to govern.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What fundamentally distinguishes generative AI from traditional machine learning?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Generative AI uses more data for training</div>
+<div class="quiz-opt">B) Traditional ML classifies or predicts; generative AI creates entirely new content</div>
+<div class="quiz-opt">C) Generative AI only works with text data</div>
+<div class="quiz-opt">D) Traditional ML cannot learn from examples</div>
+</div>
+<div class="quiz-explanation">💡 Traditional ML learns to classify or predict from existing data, while generative AI synthesizes entirely new outputs that were never in the training data.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which architecture breakthrough made large-scale language generation commercially viable?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Convolutional Neural Networks (CNNs)</div>
+<div class="quiz-opt">B) Recurrent Neural Networks (RNNs)</div>
+<div class="quiz-opt">C) Transformer architecture</div>
+<div class="quiz-opt">D) Support Vector Machines</div>
+</div>
+<div class="quiz-explanation">💡 The transformer architecture is specifically identified as the breakthrough that made large-scale language generation practical and underpins modern LLMs like ChatGPT.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson3">
@@ -336,6 +398,29 @@ The critical distinction for practitioners is that LLMs do not 'understand' lang
 <li>Account for the training cutoff date when deploying LLMs for time-sensitive or regulatory tasks.</li>
 <li>Design enterprise LLM policies to explicitly address hallucination risk, bias exposure, and knowledge boundaries.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. How do large language models generate text?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) By retrieving exact passages from their training data</div>
+<div class="quiz-opt">B) By understanding meaning and reasoning like humans</div>
+<div class="quiz-opt">C) By predicting statistically probable next tokens based on patterns learned from training data</div>
+<div class="quiz-opt">D) By following pre-programmed grammar rules</div>
+</div>
+<div class="quiz-explanation">💡 LLMs are statistical pattern engines that generate text by predicting probable word sequences, not by understanding meaning the way humans do.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is the security implication of LLMs absorbing training data patterns?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They can only output content from their training set</div>
+<div class="quiz-opt">B) They may reproduce sensitive information or generate plausible but false content</div>
+<div class="quiz-opt">C) They become immune to adversarial attacks</div>
+<div class="quiz-opt">D) They automatically comply with data privacy regulations</div>
+</div>
+<div class="quiz-explanation">💡 Because LLMs absorb patterns from training data including facts and reasoning patterns, they can reproduce sensitive information and generate plausible but incorrect content (hallucinations).</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson4">
@@ -363,6 +448,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Treat prompt injection as a first-class security threat whenever an agentic system processes external or user-controlled data.</li>
 <li>Define explicit human-in-the-loop checkpoints before deploying agentic AI in any system with write access to enterprise resources.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the key difference between generative AI and agentic AI?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Agentic AI uses smaller models</div>
+<div class="quiz-opt">B) Generative AI produces content on demand; agentic AI autonomously plans and executes multi-step actions</div>
+<div class="quiz-opt">C) Generative AI is newer than agentic AI</div>
+<div class="quiz-opt">D) Agentic AI cannot generate text</div>
+</div>
+<div class="quiz-explanation">💡 Agentic AI extends beyond content generation to autonomously plan, reason, and execute sequences of actions, often interacting with external tools and systems.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Why does agentic AI present a larger security risk surface than standard generative AI?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) It uses more electricity</div>
+<div class="quiz-opt">B) It requires more training data</div>
+<div class="quiz-opt">C) Autonomous agents can take real-world actions, meaning compromised agents have broader blast radius</div>
+<div class="quiz-opt">D) It produces lower quality outputs</div>
+</div>
+<div class="quiz-explanation">💡 Because agentic AI can autonomously execute actions in real systems, a compromised or misbehaving agent can cause real-world damage beyond just generating harmful text.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 </section>
@@ -394,6 +502,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Classify each risk as amplified-traditional or novel-AI-specific to apply correct controls</li>
 <li>Use OWASP Top 10 for LLMs as the baseline threat taxonomy</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. Which statement best describes the generative AI risk landscape?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Risks are limited to data privacy concerns only</div>
+<div class="quiz-opt">B) Risks span technical vulnerabilities, data governance failures, and organizational governance gaps simultaneously</div>
+<div class="quiz-opt">C) Only organizations building their own models face risks</div>
+<div class="quiz-opt">D) Existing cybersecurity frameworks fully address all generative AI risks</div>
+</div>
+<div class="quiz-explanation">💡 Generative AI risks are multi-dimensional, spanning technical attack vectors, data handling issues, and organizational governance challenges that require a comprehensive framework.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Why can't traditional cybersecurity controls alone address generative AI risks?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They are too expensive</div>
+<div class="quiz-opt">B) Generative AI introduces novel risk categories like hallucinations, prompt injection, and training data poisoning that have no traditional equivalent</div>
+<div class="quiz-opt">C) Traditional controls are outdated</div>
+<div class="quiz-opt">D) AI vendors handle all security</div>
+</div>
+<div class="quiz-explanation">💡 Generative AI introduces fundamentally new attack surfaces and failure modes (prompt injection, hallucinations, data poisoning) that traditional network/endpoint security was not designed to address.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson6">
@@ -424,6 +555,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Verify and enable opt-out settings on all GenAI platforms before organizational use</li>
 <li>Train employees with concrete examples of what constitutes sensitive data in prompts</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the primary data privacy risk when employees use public generative AI services?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) The AI will delete their data</div>
+<div class="quiz-opt">B) Sensitive data entered as prompts may be retained, used for model training, or exposed to other users</div>
+<div class="quiz-opt">C) The AI will hack their computer</div>
+<div class="quiz-opt">D) Their internet connection becomes insecure</div>
+</div>
+<div class="quiz-explanation">💡 Data entered into public AI services may be retained by providers, used to train future models, or inadvertently surfaced to other users, creating confidentiality breaches.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which control is most effective at preventing sensitive data leakage to AI services?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Asking employees to be careful</div>
+<div class="quiz-opt">B) Blocking all internet access</div>
+<div class="quiz-opt">C) Implementing data classification policies with technical enforcement at the prompt layer</div>
+<div class="quiz-opt">D) Using only open-source AI models</div>
+</div>
+<div class="quiz-explanation">💡 Technical enforcement through data classification and prompt-layer controls prevents sensitive data from reaching AI services regardless of user behavior.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson7">
@@ -453,6 +607,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Require contractual breach notification SLAs from all GenAI vendors</li>
 <li>Rotate API keys regularly and monitor for unauthorized usage patterns</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What unique risk does a breach of a generative AI provider pose compared to a traditional SaaS breach?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) It only affects the AI model</div>
+<div class="quiz-opt">B) Attackers gain access to conversation histories, prompts containing sensitive data, and potentially model weights that encode training data patterns</div>
+<div class="quiz-opt">C) It has no impact on customers</div>
+<div class="quiz-opt">D) It only affects billing information</div>
+</div>
+<div class="quiz-explanation">💡 AI provider breaches expose conversation logs and prompts that often contain sensitive business data, plus model weights that may encode patterns from proprietary training data.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. How should organizations mitigate the risk of a GenAI provider breach?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Never use external AI providers</div>
+<div class="quiz-opt">B) Assume provider security is sufficient</div>
+<div class="quiz-opt">C) Apply data minimization principles, limit what sensitive data reaches the provider, and have incident response plans for third-party AI breaches</div>
+<div class="quiz-opt">D) Encrypt all prompts with a password</div>
+</div>
+<div class="quiz-explanation">💡 Data minimization reduces exposure, and having AI-specific incident response plans ensures organizations can react effectively if a provider is compromised.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson8">
@@ -479,6 +656,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Implement voice/video verification protocols for high-value financial transactions</li>
 <li>Train employees that traditional red flags (poor grammar, generic greetings) no longer indicate safety</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. How has generative AI changed the threat actor landscape?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) It has eliminated all threat actors</div>
+<div class="quiz-opt">B) It lowers the barrier to entry, enabling less sophisticated attackers to produce convincing phishing, malware, and social engineering at scale</div>
+<div class="quiz-opt">C) Only nation-states can use AI for attacks</div>
+<div class="quiz-opt">D) It only helps defenders</div>
+</div>
+<div class="quiz-explanation">💡 Generative AI democratizes attack capabilities by enabling less skilled threat actors to generate sophisticated phishing emails, malware code, and social engineering content at scale.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which scenario best illustrates how AI amplifies existing threat actor capabilities?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) An attacker uses AI to physically break into a data center</div>
+<div class="quiz-opt">B) A threat actor generates thousands of unique, grammatically perfect spear-phishing emails tailored to individual targets</div>
+<div class="quiz-opt">C) AI replaces the need for any human attacker involvement</div>
+<div class="quiz-opt">D) Attackers use AI to improve their own network security</div>
+</div>
+<div class="quiz-explanation">💡 AI enables mass personalization of social engineering attacks, removing the traditional trade-off between attack quality and scale that previously limited threat actors.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson9">
@@ -508,6 +708,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Audit all API integrations sending data to GenAI services for sensitivity classification</li>
 <li>Assume any data submitted to a public model is permanently outside organizational control</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. Which of the following is NOT a common vector for data leakage in generative AI systems?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Users pasting proprietary code into public AI chatbots</div>
+<div class="quiz-opt">B) AI models memorizing and reproducing training data fragments</div>
+<div class="quiz-opt">C) Air-gapped systems with no network connection</div>
+<div class="quiz-opt">D) Conversation logs being stored and later exposed through breaches</div>
+</div>
+<div class="quiz-explanation">💡 Air-gapped systems with no network connection cannot leak data to external AI services. The other options are all documented vectors for data leakage.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What organizational control best prevents unintentional data leakage through generative AI?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Verbal warnings during onboarding</div>
+<div class="quiz-opt">B) A combination of acceptable use policies, DLP tools monitoring AI interactions, and approved AI tool lists</div>
+<div class="quiz-opt">C) Banning all AI discussion in the workplace</div>
+<div class="quiz-opt">D) Relying on AI providers to filter sensitive data</div>
+</div>
+<div class="quiz-explanation">💡 Effective prevention requires layered controls: policies defining acceptable use, technical DLP monitoring AI-bound traffic, and curated lists of approved tools.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson10">
@@ -539,6 +762,39 @@ The practical difference is the degree of human supervision required. A generati
 <li>Implement defense-in-depth: input validation, output filtering, and least-privilege tool access</li>
 <li>Never rely solely on system prompts for security-critical access control</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is a prompt injection attack?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Injecting malicious code into the AI's source code</div>
+<div class="quiz-opt">B) Crafting input that manipulates the LLM into ignoring its instructions or performing unintended actions</div>
+<div class="quiz-opt">C) Physically accessing the AI server</div>
+<div class="quiz-opt">D) Overloading the AI with too many requests</div>
+</div>
+<div class="quiz-explanation">💡 Prompt injection exploits the fact that LLMs process instructions and user input in the same channel, allowing crafted inputs to override system instructions.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Why are prompt injections particularly difficult to defend against?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They require expensive hardware</div>
+<div class="quiz-opt">B) LLMs cannot fundamentally distinguish between legitimate instructions and adversarial input embedded in the same text stream</div>
+<div class="quiz-opt">C) They only work on open-source models</div>
+<div class="quiz-opt">D) Firewalls easily block them</div>
+</div>
+<div class="quiz-explanation">💡 The fundamental architecture of LLMs processes all text in a unified stream, making it inherently difficult to separate trusted instructions from untrusted user input.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">3. In a scenario where an LLM-powered customer service bot reveals its system prompt after a user types 'ignore previous instructions', what vulnerability is being exploited?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) SQL injection</div>
+<div class="quiz-opt">B) Cross-site scripting</div>
+<div class="quiz-opt">C) Direct prompt injection</div>
+<div class="quiz-opt">D) Buffer overflow</div>
+</div>
+<div class="quiz-explanation">💡 This is a direct prompt injection where the user's input directly overrides the system prompt, causing the model to ignore its intended behavior constraints.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson11">
@@ -568,6 +824,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Test applications with basic injection patterns before deployment</li>
 <li>Layer defenses outside the model (API gateways, output validators, action allowlists)</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What does a successful prompt injection demonstration typically reveal about LLM security?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) That AI models are unhackable</div>
+<div class="quiz-opt">B) That system prompts and behavioral guardrails can be bypassed through carefully crafted user inputs</div>
+<div class="quiz-opt">C) That only developers can exploit AI systems</div>
+<div class="quiz-opt">D) That prompt injections only work in test environments</div>
+</div>
+<div class="quiz-explanation">💡 Demonstrations show that system prompts and safety guardrails are not absolute boundaries; they can be circumvented through creative input crafting.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which defensive measure can reduce (but not eliminate) prompt injection risk?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Making the system prompt longer</div>
+<div class="quiz-opt">B) Input validation, output filtering, and separating instruction context from user input where architecturally possible</div>
+<div class="quiz-opt">C) Using a faster GPU</div>
+<div class="quiz-opt">D) Disabling the chat interface</div>
+</div>
+<div class="quiz-explanation">💡 Layered defenses including input validation, output filtering, and architectural separation of instructions from user data reduce attack surface, though no solution fully eliminates the risk.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson12">
@@ -599,6 +878,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Implement content sanitization between retrieval and LLM processing stages</li>
 <li>Restrict LLM agent permissions to minimum necessary actions with human-in-the-loop for sensitive operations</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. How do indirect prompt injections differ from direct prompt injections?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They are less dangerous</div>
+<div class="quiz-opt">B) The malicious payload is embedded in external data sources (websites, documents, emails) that the LLM processes, rather than typed directly by the attacker</div>
+<div class="quiz-opt">C) They only work against chatbots</div>
+<div class="quiz-opt">D) They require physical access to the server</div>
+</div>
+<div class="quiz-explanation">💡 Indirect prompt injections hide malicious instructions in content the LLM retrieves or processes from third-party sources, making them harder to detect and attribute.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. A company's AI assistant summarizes emails. An attacker sends an email containing hidden instructions that cause the AI to forward sensitive data. This is an example of:</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Data poisoning</div>
+<div class="quiz-opt">B) A DDoS attack</div>
+<div class="quiz-opt">C) An indirect prompt injection</div>
+<div class="quiz-opt">D) A man-in-the-middle attack</div>
+</div>
+<div class="quiz-explanation">💡 The malicious instructions are embedded in external content (the email) that the AI processes, making it an indirect prompt injection rather than a direct user attack.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson13">
@@ -627,6 +929,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Sandbox all code execution in ephemeral containers with no network access by default</li>
 <li>Audit plugin permissions and restrict to minimum required API scopes</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What risk does inadequate sandboxing create for AI systems with code execution capabilities?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Slower response times</div>
+<div class="quiz-opt">B) The AI could execute malicious code that accesses the host system, network resources, or sensitive data beyond its intended scope</div>
+<div class="quiz-opt">C) Higher electricity costs</div>
+<div class="quiz-opt">D) Reduced model accuracy</div>
+</div>
+<div class="quiz-explanation">💡 Without proper sandboxing, AI systems that can execute code may break out of their intended boundaries and access host systems, file systems, or networks.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which principle should guide sandboxing design for generative AI systems?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Maximum convenience for users</div>
+<div class="quiz-opt">B) Least privilege: AI systems should only access the minimum resources required for their specific function</div>
+<div class="quiz-opt">C) Full network access for better performance</div>
+<div class="quiz-opt">D) Shared environments to reduce costs</div>
+</div>
+<div class="quiz-explanation">💡 Least privilege ensures that even if an AI system is compromised or manipulated, the blast radius is limited to only the resources it was granted access to.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson14">
@@ -655,6 +980,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Implement RAG with citation linking so users can verify source material directly</li>
 <li>Design UX to communicate uncertainty and discourage blind trust in AI responses</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. Why do LLMs hallucinate (generate false but confident-sounding information)?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They deliberately lie to users</div>
+<div class="quiz-opt">B) They are optimized to produce fluent, probable text sequences, not to verify factual accuracy</div>
+<div class="quiz-opt">C) Their training data contains only false information</div>
+<div class="quiz-opt">D) Hallucinations are caused by hardware errors</div>
+</div>
+<div class="quiz-explanation">💡 LLMs generate text based on statistical patterns of what sounds plausible, without an internal mechanism to verify whether generated content is factually accurate.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. What is the security risk of hallucinations in an enterprise context?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They slow down processing speed</div>
+<div class="quiz-opt">B) They can lead to decisions based on fabricated data, generate non-existent legal citations, or recommend insecure configurations with high confidence</div>
+<div class="quiz-opt">C) They only affect creative writing tasks</div>
+<div class="quiz-opt">D) They are always obviously wrong</div>
+</div>
+<div class="quiz-explanation">💡 Hallucinations are dangerous because they are presented with the same confidence as accurate information, potentially leading to flawed decisions, legal issues, or security misconfigurations.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson15">
@@ -684,6 +1032,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Route AI-initiated network requests through a proxy with strict egress filtering</li>
 <li>Separate AI application network segments from sensitive internal infrastructure</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. How can SSRF vulnerabilities manifest in generative AI systems?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Only through traditional web application vectors</div>
+<div class="quiz-opt">B) When an AI system that can fetch URLs or access resources is manipulated into making requests to internal services or metadata endpoints</div>
+<div class="quiz-opt">C) SSRF cannot affect AI systems</div>
+<div class="quiz-opt">D) Only when the AI generates images</div>
+</div>
+<div class="quiz-explanation">💡 AI systems with URL-fetching or resource-access capabilities can be tricked (often via prompt injection) into making requests to internal services, cloud metadata endpoints, or other restricted resources.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which mitigation is most relevant for preventing SSRF in AI systems that process URLs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Using a stronger AI model</div>
+<div class="quiz-opt">B) Implementing allowlists for permitted domains/IPs and blocking access to internal network ranges and cloud metadata endpoints</div>
+<div class="quiz-opt">C) Encrypting all URLs</div>
+<div class="quiz-opt">D) Limiting prompt length</div>
+</div>
+<div class="quiz-explanation">💡 Allowlisting permitted external domains and explicitly blocking internal network ranges and cloud metadata endpoints prevents the AI from being used as a proxy to access restricted resources.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson16">
@@ -707,6 +1078,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Set hard cost ceilings on auto-scaling to prevent financial exhaustion attacks</li>
 <li>Monitor for prompt patterns designed to maximize output length or computation</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. Why are generative AI systems particularly vulnerable to resource exhaustion attacks?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) They use weak encryption</div>
+<div class="quiz-opt">B) LLM inference is computationally expensive, meaning even moderate request volumes can exhaust GPU resources and cause service degradation</div>
+<div class="quiz-opt">C) They have no authentication</div>
+<div class="quiz-opt">D) They store too much data</div>
+</div>
+<div class="quiz-explanation">💡 LLM inference requires significant GPU computation per request, making AI services disproportionately affected by volume-based attacks compared to traditional web services.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which attack technique specifically targets the cost structure of cloud-hosted AI services?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) SQL injection</div>
+<div class="quiz-opt">B) Crafting prompts that maximize token generation to inflate compute costs (resource exhaustion/wallet attacks)</div>
+<div class="quiz-opt">C) Phishing employees</div>
+<div class="quiz-opt">D) Physical server destruction</div>
+</div>
+<div class="quiz-explanation">💡 Attackers can craft prompts designed to maximize output length and computation, exploiting pay-per-token pricing models to inflict financial damage.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson17">
@@ -737,6 +1131,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Validate training datasets with anomaly detection before model training</li>
 <li>Use diverse, independent data sources and cross-validate to detect poisoning attempts</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is data poisoning in the context of generative AI?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Deleting the AI's training data</div>
+<div class="quiz-opt">B) Deliberately introducing malicious, biased, or misleading data into training datasets to corrupt model behavior</div>
+<div class="quiz-opt">C) Encrypting the model weights</div>
+<div class="quiz-opt">D) Overloading the model with requests</div>
+</div>
+<div class="quiz-explanation">💡 Data poisoning involves intentionally contaminating training data so the model learns incorrect patterns, biases, or backdoor behaviors that serve the attacker's goals.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Why is data poisoning particularly dangerous for LLMs trained on internet-scale data?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) The internet has too much data</div>
+<div class="quiz-opt">B) The sheer volume makes it impractical to manually verify all training data, and poisoned content can be planted on public sources that scrapers collect</div>
+<div class="quiz-opt">C) Internet data is always low quality</div>
+<div class="quiz-opt">D) LLMs cannot learn from internet data</div>
+</div>
+<div class="quiz-explanation">💡 LLMs train on billions of web documents that cannot all be manually verified, and attackers can plant poisoned content on public websites knowing it will be scraped into training sets.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson18">
@@ -761,6 +1178,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Diversify training data sources and apply re-balancing techniques for underrepresented groups</li>
 <li>Implement ongoing bias monitoring in production since bias patterns shift with usage context</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the root cause of bias in generative AI models?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Deliberate programming by developers</div>
+<div class="quiz-opt">B) Models reflect and amplify statistical patterns (including societal biases) present in their training data</div>
+<div class="quiz-opt">C) Bias only exists in small models</div>
+<div class="quiz-opt">D) Users cause all bias through their prompts</div>
+</div>
+<div class="quiz-explanation">💡 Models learn from training data that reflects historical societal biases, and they can amplify these patterns when generating outputs, perpetuating discrimination at scale.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. In a risk management context, why should model bias be treated as a security concern rather than just an ethics issue?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) It is not actually a security concern</div>
+<div class="quiz-opt">B) Biased outputs can lead to discriminatory decisions, regulatory violations, legal liability, and reputational damage that constitute material organizational risk</div>
+<div class="quiz-opt">C) Bias makes models run slower</div>
+<div class="quiz-opt">D) Only ethics teams should address bias</div>
+</div>
+<div class="quiz-explanation">💡 Bias creates regulatory, legal, and reputational risks that can materially harm organizations, making it a governance and security issue beyond pure ethics.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson19">
@@ -791,6 +1231,29 @@ The practical difference is the degree of human supervision required. A generati
 <li>Implement code scanning tools to detect potential license violations in AI-generated code</li>
 <li>Track AI provider indemnification policies and prefer vendors that offer copyright shields</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. How can generative AI create copyright violation risk for organizations?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) By using too much electricity</div>
+<div class="quiz-opt">B) Models trained on copyrighted material may reproduce substantial portions of protected works in their outputs, creating infringement liability for users</div>
+<div class="quiz-opt">C) Copyright only applies to physical books</div>
+<div class="quiz-opt">D) AI-generated content is always original</div>
+</div>
+<div class="quiz-explanation">💡 LLMs can memorize and reproduce copyrighted training content, and organizations using AI-generated outputs may face infringement claims if those outputs contain protected material.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which organizational control helps mitigate copyright risk from generative AI outputs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Ignoring copyright law since AI is new</div>
+<div class="quiz-opt">B) Implementing review processes for AI-generated content, maintaining provenance records, and having clear policies on AI output ownership</div>
+<div class="quiz-opt">C) Only using AI for internal communications</div>
+<div class="quiz-opt">D) Printing all AI outputs on paper</div>
+</div>
+<div class="quiz-explanation">💡 Review processes, provenance tracking, and clear ownership policies help organizations identify and address potential copyright issues before AI-generated content is published or used commercially.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 </section>
@@ -826,6 +1289,29 @@ The GenAI Governance Framework provides a structured foundation: it starts with 
 <li>Build a cross-functional working group to own go/no-go decisions on GenAI use cases.</li>
 <li>Use the NIST AI RMF as a ready-made governance scaffold rather than starting from zero.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the recommended starting point for securing generative AI in an organization?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Buying the most expensive security tools</div>
+<div class="quiz-opt">B) Establishing a comprehensive AI governance framework that addresses risk assessment, acceptable use policies, and technical controls</div>
+<div class="quiz-opt">C) Hiring an AI security vendor</div>
+<div class="quiz-opt">D) Waiting for regulations to be finalized</div>
+</div>
+<div class="quiz-explanation">💡 Security begins with governance: defining acceptable use, conducting risk assessments, and implementing layered technical controls rather than relying on any single tool or waiting for external mandates.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which approach reflects a mature AI security posture?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Blocking all AI usage across the organization</div>
+<div class="quiz-opt">B) Allowing unrestricted AI usage to maximize innovation</div>
+<div class="quiz-opt">C) Risk-based controls that enable safe AI usage through classification, monitoring, and graduated access based on data sensitivity</div>
+<div class="quiz-opt">D) Delegating all AI security to the AI vendor</div>
+</div>
+<div class="quiz-explanation">💡 Mature security enables rather than blocks; it applies proportional controls based on risk classification while allowing beneficial AI usage within governed boundaries.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson21">
@@ -852,6 +1338,29 @@ The STRIDE framework structures this analysis by categorizing threats into Spoof
 <li>Apply STRIDE to each component and data flow in the diagram to produce a structured risk inventory.</li>
 <li>Maintain an inventory of both GenAI tools and their mapped security controls to track coverage over time.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. Why is threat modeling essential for generative AI deployments?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) It is a regulatory requirement everywhere</div>
+<div class="quiz-opt">B) It systematically identifies AI-specific attack surfaces, trust boundaries, and data flows that generic security assessments miss</div>
+<div class="quiz-opt">C) It eliminates all security risks</div>
+<div class="quiz-opt">D) It is only needed for public-facing AI systems</div>
+</div>
+<div class="quiz-explanation">💡 Threat modeling specifically adapted for AI reveals unique attack surfaces like prompt injection points, training data pipelines, and model serving infrastructure that standard assessments overlook.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which elements should a generative AI threat model specifically include beyond traditional application threat models?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Only network diagrams</div>
+<div class="quiz-opt">B) Training data supply chain, prompt processing pipeline, model serving infrastructure, and output consumption points</div>
+<div class="quiz-opt">C) Only user authentication flows</div>
+<div class="quiz-opt">D) Physical security of data centers</div>
+</div>
+<div class="quiz-explanation">💡 AI threat models must cover the full AI lifecycle including training data provenance, prompt/instruction boundaries, inference infrastructure, and how outputs are consumed by downstream systems.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson22">
@@ -885,6 +1394,29 @@ The checklist is organized to support multiple roles simultaneously: CISOs can u
 <li>Map checklist items to existing policies and flag uncovered domains as priority action items.</li>
 <li>Begin EU AI Act readiness activities now using the checklist's regulatory alignment section.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the purpose of an AI governance checklist in an organization?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) To replace all other security documentation</div>
+<div class="quiz-opt">B) To provide a structured, repeatable assessment framework ensuring consistent evaluation of AI risks, controls, and compliance across deployments</div>
+<div class="quiz-opt">C) To satisfy a single audit requirement</div>
+<div class="quiz-opt">D) To prevent any AI adoption</div>
+</div>
+<div class="quiz-explanation">💡 A governance checklist ensures every AI deployment receives consistent risk evaluation covering technical controls, data handling, compliance requirements, and operational safeguards.</div>
+</div>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">2. Which of the following should NOT be included in an AI governance checklist?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Data classification requirements for AI inputs and outputs</div>
+<div class="quiz-opt">B) Incident response procedures for AI-specific failures</div>
+<div class="quiz-opt">C) Guaranteed elimination of all hallucination risk</div>
+<div class="quiz-opt">D) Third-party AI vendor risk assessment criteria</div>
+</div>
+<div class="quiz-explanation">💡 No checklist can guarantee elimination of hallucinations as they are inherent to probabilistic models. Governance should address detection and mitigation, not promise elimination.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson23">
@@ -915,6 +1447,29 @@ The five scopes range from Scope 1 (direct use of a publicly accessible GenAI ap
 <li>Apply threat modeling starting at Scope 3 and use OWASP LLM Top 10 as the reference taxonomy.</li>
 <li>Plan resilience and business continuity for Scope 1/2 dependencies where provider outages directly halt operations.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. What is the purpose of a security scoping matrix for generative AI?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) To rank AI vendors by price</div>
+<div class="quiz-opt">B) To map security responsibilities and controls based on the organization's level of AI customization and deployment model</div>
+<div class="quiz-opt">C) To determine which employees can use AI</div>
+<div class="quiz-opt">D) To measure AI model accuracy</div>
+</div>
+<div class="quiz-explanation">💡 A scoping matrix helps organizations understand which security controls apply based on whether they consume AI as a service, fine-tune models, or build custom models, mapping shared responsibility.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. How does the shared responsibility model change as an organization moves from consuming a managed AI service to training its own models?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Responsibility decreases for the organization</div>
+<div class="quiz-opt">B) The organization assumes more security responsibility including training data integrity, model security, and infrastructure hardening</div>
+<div class="quiz-opt">C) The cloud provider takes full responsibility</div>
+<div class="quiz-opt">D) Security requirements are eliminated</div>
+</div>
+<div class="quiz-explanation">💡 Greater customization means more responsibility shifts to the organization, including securing training pipelines, model weights, serving infrastructure, and data governance.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 <div class="lesson" id="lesson24">
@@ -953,6 +1508,39 @@ The 2025 update retains five risks from the original 2023 list (Prompt Injection
 <li>Enforce least-privilege permissions on all LLM agents to limit blast radius from LLM06 (Excessive Agency) exploits.</li>
 <li>Apply access controls to RAG knowledge bases as rigorously as to production databases to address LLM08 (Vector and Embedding Weaknesses).</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="2">
+<div class="q-text">1. What new risk category was added in the OWASP Top 10 for LLMs 2025 edition to address RAG architectures?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Prompt Injection</div>
+<div class="quiz-opt">B) Data Poisoning</div>
+<div class="quiz-opt">C) Vector and Embedding Weaknesses (LLM08)</div>
+<div class="quiz-opt">D) Supply Chain Attacks</div>
+</div>
+<div class="quiz-explanation">💡 Vector and Embedding Weaknesses (LLM08) was newly added to address vulnerabilities in RAG knowledge bases that contain sensitive organizational data.</div>
+</div>
+<div class="quiz-question" data-correct="0">
+<div class="q-text">2. Why was Excessive Agency (LLM06) expanded in the 2025 update?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) To address agentic AI frameworks where LLMs autonomously take actions, increasing blast radius of any compromise</div>
+<div class="quiz-opt">B) Because chatbots became less popular</div>
+<div class="quiz-opt">C) To remove it from the list</div>
+<div class="quiz-opt">D) To merge it with prompt injection</div>
+</div>
+<div class="quiz-explanation">💡 The expansion reflects the rise of agentic AI where LLMs can autonomously execute actions, making overly permissive agent permissions a critical risk multiplier.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">3. How should organizations use the OWASP Top 10 for LLMs?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) As a one-time compliance checkbox</div>
+<div class="quiz-opt">B) As a shared risk language and living document for continuous assessment, building risk matrices mapped to their specific LLM inventory</div>
+<div class="quiz-opt">C) Only for public-facing chatbots</div>
+<div class="quiz-opt">D) As a replacement for all other security frameworks</div>
+</div>
+<div class="quiz-explanation">💡 The OWASP list should be used as a risk taxonomy and common language for ongoing assessment, not as a binary pass/fail compliance audit.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 </section>
@@ -987,6 +1575,29 @@ The 2025 update retains five risks from the original 2023 list (Prompt Injection
 <li>Draft a Generative AI policy document as a hands-on capstone, applying risk assessment and control documentation skills from the course.</li>
 <li>Treat AI as an augmentation tool; invest in the human skills (context, judgment, domain expertise) that remain irreplaceable in security operations.</li>
 </ul></div>
+<div class="quiz-section"><h3>🧠 Quick Check</h3>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">1. According to the course, what remains the irreplaceable competitive advantage for security professionals as AI transforms cybersecurity?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) Speed of typing</div>
+<div class="quiz-opt">B) Human judgment, contextual reasoning, domain expertise, and intuition</div>
+<div class="quiz-opt">C) Access to more AI tools than attackers</div>
+<div class="quiz-opt">D) Memorization of security frameworks</div>
+</div>
+<div class="quiz-explanation">💡 The course emphasizes that human judgment, contextual reasoning, and domain expertise cannot be automated, making these the enduring value proposition for security professionals.</div>
+</div>
+<div class="quiz-question" data-correct="1">
+<div class="q-text">2. Which two frameworks are recommended as foundational references for AI risk governance?</div>
+<div class="quiz-options">
+<div class="quiz-opt">A) ISO 27001 and SOC 2</div>
+<div class="quiz-opt">B) NIST AI Risk Management Framework and OWASP Top 10 for LLMs</div>
+<div class="quiz-opt">C) GDPR and HIPAA</div>
+<div class="quiz-opt">D) PCI-DSS and COBIT</div>
+</div>
+<div class="quiz-explanation">💡 NIST AI RMF provides broad AI risk governance structure while OWASP Top 10 for LLMs offers practitioner-focused LLM-specific vulnerability guidance, complementing each other.</div>
+</div>
+<div class="quiz-score" style="display:none"></div>
+</div>
 </div>
 
 </section>
@@ -1057,6 +1668,46 @@ document.getElementById('prevLesson').addEventListener('click', () => {
 });
 document.getElementById('nextLesson').addEventListener('click', () => {
   if (currentIdx < lessons.length - 1) lessons[currentIdx + 1].scrollIntoView({behavior:'smooth'});
+});
+
+// Quiz logic
+document.addEventListener('click', function(e) {
+  const opt = e.target.closest('.quiz-opt');
+  if (!opt || opt.classList.contains('disabled')) return;
+  const question = opt.closest('.quiz-question');
+  const options = question.querySelectorAll('.quiz-opt');
+  const correct = parseInt(question.dataset.correct);
+  const idx = Array.from(options).indexOf(opt);
+  const explanation = question.querySelector('.quiz-explanation');
+
+  options.forEach((o, i) => {
+    o.classList.add('disabled');
+    if (i === correct) o.classList.add('correct');
+  });
+  if (idx !== correct) opt.classList.add('wrong');
+  if (explanation) explanation.classList.add('show');
+
+  // Update section score
+  const section = opt.closest('.quiz-section');
+  const total = section.querySelectorAll('.quiz-question').length;
+  const answered = section.querySelectorAll('.quiz-opt.disabled').length / 4;
+  const correctCount = section.querySelectorAll('.quiz-opt.correct.disabled').length;
+  // Count only questions where user picked correct
+  let userCorrect = 0;
+  section.querySelectorAll('.quiz-question').forEach(q => {
+    const opts = q.querySelectorAll('.quiz-opt');
+    const cIdx = parseInt(q.dataset.correct);
+    if (opts[cIdx] && opts[cIdx].classList.contains('disabled')) {
+      // Check if user clicked the correct one (no .wrong class on any)
+      const hasWrong = q.querySelector('.quiz-opt.wrong');
+      if (!hasWrong) userCorrect++;
+    }
+  });
+  const scoreEl = section.querySelector('.quiz-score');
+  if (scoreEl && answered >= total) {
+    scoreEl.textContent = 'Score: ' + userCorrect + '/' + total + (userCorrect === total ? ' 🎉 Perfect!' : '');
+    scoreEl.style.display = 'block';
+  }
 });
 </script>
 </body>
