@@ -226,10 +226,10 @@ footer a:hover{color:var(--accent)}
 </div>
 
 <div class="stats">
-    <div class="stat"><div class="value">3</div><div class="label">Courses</div></div>
-    <div class="stat"><div class="value">386</div><div class="label">Lectures</div></div>
-    <div class="stat"><div class="value">65</div><div class="label">Code Labs</div></div>
-    <div class="stat"><div class="value">3</div><div class="label">Tool Replicas</div></div>
+    <div class="stat"><div class="value" id="stat-courses">—</div><div class="label">Courses</div></div>
+    <div class="stat"><div class="value" id="stat-lectures">—</div><div class="label">Lectures</div></div>
+    <div class="stat"><div class="value" id="stat-labs">—</div><div class="label">Code Labs</div></div>
+    <div class="stat"><div class="value" id="stat-replicas">—</div><div class="label">Tool Replicas</div></div>
 </div>
 
 <div class="search-wrapper">
@@ -436,5 +436,42 @@ footer a:hover{color:var(--accent)}
 })();
 </script>
 
+
+<script>
+(function(){
+  // Count courses from cards on the page
+  const cards = document.querySelectorAll('.card[href*="courses/"]');
+  document.getElementById('stat-courses').textContent = cards.length;
+
+  // For each course, fetch and count lectures, code labs, tool replicas
+  let totalLectures = 0, totalLabs = 0, totalReplicas = 0;
+  let loaded = 0;
+
+  cards.forEach(card => {
+    const href = card.getAttribute('href');
+    fetch(href).then(r => r.text()).then(html => {
+      // Count lessons (lesson-card class or lesson-section class)
+      const lectureMatches = html.match(/class="lesson-card"|class="lesson-section"|class="lesson"/g);
+      totalLectures += lectureMatches ? lectureMatches.length : 0;
+
+      // Count code labs (code-walkthrough, code-lab, code-step containers)
+      const labMatches = html.match(/class="code-walkthrough"|class="code-lab"|class="code-along"/g);
+      totalLabs += labMatches ? labMatches.length : 0;
+
+      // Count tool replicas (tool-replica, canvas-tool, interactive-tool)
+      const replicaMatches = html.match(/class="tool-replica"|class="canvas-tool"|class="interactive-tool"/g);
+      totalReplicas += replicaMatches ? replicaMatches.length : 0;
+
+      loaded++;
+      // Update stats after all courses loaded
+      if (loaded === cards.length) {
+        document.getElementById('stat-lectures').textContent = totalLectures || '—';
+        document.getElementById('stat-labs').textContent = totalLabs || '—';
+        document.getElementById('stat-replicas').textContent = totalReplicas || '—';
+      }
+    }).catch(() => { loaded++; });
+  });
+})();
+</script>
 </body>
 </html>

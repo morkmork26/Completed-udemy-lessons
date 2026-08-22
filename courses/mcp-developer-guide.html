@@ -191,6 +191,57 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 .quiz-explanation{margin-top:10px;padding:12px 16px;border-radius:var(--radius,12px);background:rgba(16,185,129,0.08);border-left:3px solid #10b981;color:#a7f3d0;font-size:0.85rem;line-height:1.5;display:none}
 .quiz-explanation.show{display:block}
 .quiz-score{margin-top:16px;padding:12px 16px;border-radius:var(--radius,12px);background:linear-gradient(135deg,rgba(139,92,246,0.1),rgba(0,180,216,0.1));text-align:center;font-weight:600;color:var(--teal-light,#48cae4);font-size:0.9rem;display:none}
+
+/* ELI5 Toggle */
+.eli5-toggle{display:inline-flex;border-radius:20px;border:1px solid var(--border);overflow:hidden;margin:8px 0;font-size:0.75rem}
+.eli5-toggle button{padding:6px 14px;border:none;background:transparent;color:var(--text-muted);cursor:pointer;font-weight:600;transition:all 0.2s;font-family:inherit}
+.eli5-toggle button.active{background:var(--teal);color:#fff}
+.eli5-content{display:none;padding:12px 16px;background:rgba(0,180,216,0.05);border-radius:8px;border-left:3px solid var(--teal);margin:8px 0;font-size:0.9rem;line-height:1.5}
+.eli5-content.visible{display:block}
+.concept-grid.hidden{display:none}
+
+/* Boss Challenge */
+.boss-challenge{margin:2rem 0;padding:24px;border:2px solid #f59e0b;border-radius:16px;background:rgba(245,158,11,0.05)}
+.boss-challenge h3{color:#f59e0b;margin-bottom:12px;font-size:1.1rem}
+.boss-challenge ol{padding-left:1.2rem;color:var(--text)}
+.boss-challenge ol li{margin-bottom:8px;line-height:1.5}
+
+/* Mistake Bank */
+.mistake-bank{margin:16px 0;border-left:3px solid var(--red);border-radius:8px;background:rgba(239,68,68,0.04);overflow:hidden}
+.mistake-bank summary{padding:12px 16px;cursor:pointer;font-weight:600;color:var(--red);font-size:0.9rem;list-style:none;display:flex;align-items:center;gap:8px}
+.mistake-bank summary::before{content:'\26A0';font-size:1rem}
+.mistake-bank .mb-content{padding:0 16px 16px}
+.mistake-item{margin-bottom:12px;font-size:0.85rem;line-height:1.5}
+.mistake-item .wrong{color:var(--red);font-weight:600}
+.mistake-item .why{color:var(--text-muted);font-style:italic;margin:2px 0}
+.mistake-item .correct{color:var(--green);font-weight:600}
+
+/* Cheat Sheet */
+.cheat-sheet{max-width:1200px;margin:2rem auto;padding:2rem;background:var(--card-bg);border:1px solid var(--border);border-radius:16px}
+.cheat-sheet h2{color:var(--teal);margin-bottom:1rem}
+.cheat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.cheat-col h4{color:var(--purple);margin-bottom:8px;font-size:0.9rem}
+.cheat-col code{display:block;background:rgba(0,0,0,0.3);padding:8px 12px;border-radius:6px;font-size:0.78rem;margin-bottom:6px;color:var(--teal);font-family:'Fira Code',monospace}
+.cheat-col p{font-size:0.8rem;color:var(--text-muted);margin-bottom:12px}
+.print-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,var(--teal),var(--purple));border:none;border-radius:8px;color:#fff;font-weight:600;cursor:pointer;font-size:0.85rem;margin-bottom:1rem}
+.print-btn:hover{transform:scale(1.03)}
+@media print{.cheat-sheet{border:2px solid #333;break-inside:avoid}.cheat-grid{grid-template-columns:1fr 1fr}.print-btn{display:none}.section,.cover,.section-directory{display:none!important}.cheat-sheet{display:block!important}}
+
+/* Active Recall */
+.active-recall{margin:16px 0;background:rgba(0,0,0,0.35);border-radius:10px;border:1px solid var(--border);overflow:hidden}
+.active-recall .ar-prompt{padding:16px;font-family:'Fira Code',monospace;font-size:0.82rem;color:var(--amber);line-height:1.5}
+.active-recall details{border-top:1px solid var(--border)}
+.active-recall summary{padding:12px 16px;cursor:pointer;color:var(--teal);font-weight:600;font-size:0.85rem}
+.active-recall .ar-solution{padding:0 16px 16px;font-size:0.85rem;line-height:1.5}
+
+/* Concept Dependency Map */
+.dep-map{max-width:1000px;margin:2rem auto;padding:2rem;text-align:center}
+.dep-map h2{color:var(--teal);margin-bottom:1.5rem}
+.dep-map svg{max-width:100%;height:auto}
+.dep-node{cursor:pointer;transition:all 0.3s}
+.dep-node:hover{filter:brightness(1.3)}
+.dep-node.passed{filter:drop-shadow(0 0 8px #10b981)}
+
 </style>
 </head>
 <body>
@@ -480,6 +531,37 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 </div>
 
 <!-- All Sections -->
+
+<div class="dep-map" id="conceptMap">
+<h2>&#x1F5FA; Concept Dependency Map</h2>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#8b949e"/></marker></defs>
+<!-- Nodes -->
+<a href="#section1"><circle class="dep-node" cx="100" cy="200" r="35" fill="rgba(0,180,216,0.2)" stroke="#00b4d8" stroke-width="2"/><text x="100" y="205" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">AI Agents</text></a>
+<a href="#section2"><circle class="dep-node" cx="230" cy="120" r="35" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="2"/><text x="230" y="125" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">Agent Build</text></a>
+<a href="#section3"><circle class="dep-node" cx="230" cy="280" r="35" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/><text x="230" y="285" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">MCP Core</text></a>
+<a href="#section4"><circle class="dep-node" cx="370" cy="200" r="35" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2"/><text x="370" y="205" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">APIs</text></a>
+<a href="#section5"><circle class="dep-node" cx="500" cy="120" r="35" fill="rgba(0,180,216,0.2)" stroke="#00b4d8" stroke-width="2"/><text x="500" y="125" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">News Server</text></a>
+<a href="#section6"><circle class="dep-node" cx="500" cy="280" r="35" fill="rgba(139,92,246,0.2)" stroke="#8b5cf6" stroke-width="2"/><text x="500" y="285" text-anchor="middle" fill="#e6edf3" font-size="10" font-weight="600">Transports</text></a>
+<a href="#section7"><circle class="dep-node" cx="630" cy="120" r="30" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="2"/><text x="630" y="125" text-anchor="middle" fill="#e6edf3" font-size="9" font-weight="600">Security</text></a>
+<a href="#section8"><circle class="dep-node" cx="630" cy="280" r="30" fill="rgba(16,185,129,0.2)" stroke="#10b981" stroke-width="2"/><text x="630" y="285" text-anchor="middle" fill="#e6edf3" font-size="9" font-weight="600">Remote</text></a>
+<a href="#section9"><circle class="dep-node" cx="720" cy="200" r="35" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="2"/><text x="720" y="195" text-anchor="middle" fill="#e6edf3" font-size="9" font-weight="600">OAuth</text><text x="720" y="210" text-anchor="middle" fill="#e6edf3" font-size="9" font-weight="600">Auth</text></a>
+<a href="#section10"><circle class="dep-node" cx="630" cy="370" r="30" fill="rgba(0,180,216,0.2)" stroke="#00b4d8" stroke-width="2"/><text x="630" y="375" text-anchor="middle" fill="#e6edf3" font-size="9" font-weight="600">RAG</text></a>
+<!-- Edges -->
+<line x1="135" y1="185" x2="195" y2="135" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="135" y1="215" x2="195" y2="265" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="265" y1="135" x2="335" y2="185" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="265" y1="265" x2="335" y2="215" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="405" y1="185" x2="465" y2="135" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="405" y1="215" x2="465" y2="265" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="535" y1="135" x2="600" y2="125" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="535" y1="265" x2="600" y2="275" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="655" y1="140" x2="695" y2="175" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="655" y1="265" x2="695" y2="220" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="535" y1="295" x2="600" y2="355" stroke="#8b949e" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>
+</div>
+
 <div class="section" id="section1">
   <div class="section-header">
     <span class="section-badge" style="background:#10b981">Foundation</span>
@@ -499,6 +581,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="card-title">Protocol</div>
         <div class="card-desc">A universal standard for agent-to-tool communication, replacing per-agent custom integrations</div>
       </div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="1">MCP is like a universal power adapter for AI. Instead of needing a different plug for every country (tool), you just carry one adapter that works everywhere.</div>
       <div class="concept-card" style="border-color:var(--purple)">
         <div class="card-icon">&#x1F512;</div>
         <div class="card-title">Security</div>
@@ -521,6 +605,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="example-item"><strong>Coding agent:</strong> VS Code with MCP can connect to database, file system, and documentation servers simultaneously</div>
     </div>
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>MCP is the USB-C of AI tooling: one standard connector for all agent-tool interactions</li><li>Remote MCP servers with OAuth 2.1 can be productized and access-controlled like APIs</li></ul></div>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Putting ALL logic in a single prompt without tool decomposition</div><div class="why">Why: The LLM hallucinates actions it cannot perform</div><div class="correct">&#x2713; Break capabilities into discrete tools the agent can call individually</div></div><div class="mistake-item"><div class="wrong">&#x2717; Not handling tool call failures in the agent loop</div><div class="why">Why: Agent crashes or returns incomplete results silently</div><div class="correct">&#x2713; Always wrap tool calls in try/catch and implement retry or fallback logic</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. What is the primary purpose of the Model Context Protocol (MCP)?</div>
@@ -681,6 +766,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
   <div class="section-header">
     <span class="section-badge" style="background:#10b981">Foundation</span>
     <h2>S02: Building AI Agents Step by Step</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Putting ALL logic in a single prompt without tool decomposition</div><div class="why">Why: The LLM hallucinates actions it cannot perform</div><div class="correct">&#x2713; Break capabilities into discrete tools the agent can call individually</div></div><div class="mistake-item"><div class="wrong">&#x2717; Not handling tool call failures in the agent loop</div><div class="why">Why: Agent crashes or returns incomplete results silently</div><div class="correct">&#x2713; Always wrap tool calls in try/catch and implement retry or fallback logic</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Course Structure', what is the role of transport in MCP?</div>
@@ -931,12 +1017,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. Token streaming</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 2</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>How would an AI agent decide which tool to call if multiple tools could satisfy a user request?</li><li>Design a retry strategy for an agent whose tool call fails due to a network timeout.</li><li>What happens if an agent's ReAct loop produces the same action twice in a row? How would you break the cycle?</li><li>Compare function-calling agents vs. ReAct agents: when would you choose each?</li></ol></div>
 </div>
 
 <div class="section" id="section3">
   <div class="section-header">
     <span class="section-badge" style="background:#00b4d8">Core</span>
     <h2>S03: Mastering Model Context Protocol (MCP)</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Defining tools with vague descriptions</div><div class="why">Why: The LLM picks the wrong tool or never picks yours</div><div class="correct">&#x2713; Write tool descriptions as if explaining to a new developer: input, output, side effects</div></div><div class="mistake-item"><div class="wrong">&#x2717; Returning raw API responses without formatting</div><div class="why">Why: Agent struggles to parse nested JSON blobs</div><div class="correct">&#x2713; Transform tool output into clean, structured summaries the LLM can reason about</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. Regarding 'Agent Demo', which statement about MCP tools is correct?</div>
@@ -1006,6 +1095,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Companion materials for MCP are available in the course resources</li><li>Review reference links to deepen understanding of MCP concepts</li><li>Use these resources alongside hands-on practice for best results</li></ul>
     <div class="concept-grid">
       <div class="concept-card"><div class="card-icon">&#x1F4DA;</div><div class="card-title">Documentation</div><div class="card-desc">Official docs and specs for MCP</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="3">MCP works like a restaurant menu. The server lists what it can do (menu items), the client orders what it needs (tool calls), and there's a standard format so any customer can order from any restaurant.</div>
       <div class="concept-card"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Code Samples</div><div class="card-desc">Reference implementations and starter templates</div></div>
       <div class="concept-card"><div class="card-icon">&#x1F517;</div><div class="card-title">External Links</div><div class="card-desc">Community resources and tutorials</div></div>
     </div>
@@ -1524,12 +1615,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. Client, Server, Transport</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 3</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>If an MCP server exposes 50 tools, how does the client decide which ones are relevant to the current query?</li><li>Explain how MCP's capability negotiation prevents version mismatch bugs between client and server.</li><li>Design a scenario where resources are better than tools for serving data to an agent.</li><li>Why does MCP use JSON-RPC instead of REST? What would break if it used REST?</li></ol></div>
 </div>
 
 <div class="section" id="section4">
   <div class="section-header">
     <span class="section-badge" style="background:#10b981">Foundation</span>
     <h2>S04: APIs for AI Developers: Foundations &amp; Hands-On</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Hardcoding API keys directly in MCP server source</div><div class="why">Why: Keys leak when code is shared or committed to git</div><div class="correct">&#x2713; Use environment variables or a secrets manager; never inline credentials</div></div><div class="mistake-item"><div class="wrong">&#x2717; Ignoring rate limits from upstream APIs</div><div class="why">Why: Server gets blocked after burst traffic</div><div class="correct">&#x2713; Implement exponential backoff and surface rate-limit errors as tool responses</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Install Your MCP Server', what is the relationship between MCP servers and clients?</div>
@@ -1564,6 +1658,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>If you have never consumed a REST API, complete this module before building MCP servers</li><li>The mental model for MCP + APIs: an MCP tool is a Python function that makes an HTTP request and returns the result</li></ul></div>
     <div class="concept-grid">
       <div class="concept-card" style="border-color:var(--teal)"><div class="card-icon">&#x1F527;</div><div class="card-title">Api</div><div class="card-desc">L21 Introduction This module covers API fundamentals for developers who have ...</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="4">APIs are like drive-through windows. You pull up, say what you want in a specific format, and get your food back. MCP just gives your AI assistant a map of all the drive-throughs nearby.</div>
       <div class="concept-card" style="border-color:var(--purple)"><div class="card-icon">&#x1F512;</div><div class="card-title">Rest</div><div class="card-desc">L21 Introduction This module covers API fundamentals for developers who have ...</div></div>
       <div class="concept-card" style="border-color:var(--green)"><div class="card-icon">&#x1F4E1;</div><div class="card-title">Apis</div><div class="card-desc">L21 Introduction This module covers API fundamentals for developers who have ...</div></div>
       <div class="concept-card" style="border-color:var(--amber)"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Mcp</div><div class="card-desc">L21 Introduction This module covers API fundamentals for developers who have ...</div></div>
@@ -1973,6 +2069,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. Swagger UI</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 4</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>You need to integrate a legacy SOAP API into an MCP server. What adapter pattern would you use?</li><li>An API returns paginated results but your MCP tool must return all items. Design the buffering strategy.</li><li>Compare authentication patterns: API keys in headers vs OAuth tokens vs MCP's built-in auth.</li></ol></div>
 </div>
 
 <div class="section" id="section5">
@@ -1984,6 +2082,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="step-item"><div class="step-circle">2</div><div class="step-content"><h4>Step 2</h4><p>Write python code to call each api programmatically.</p></div></div>
     </div>
 
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Not validating tool input parameters</div><div class="why">Why: Malformed requests crash the server or produce garbage</div><div class="correct">&#x2713; Use Pydantic models or JSON Schema validation on every tool input</div></div><div class="mistake-item"><div class="wrong">&#x2717; Forgetting to handle the initialize handshake properly</div><div class="why">Why: Client connects but tools never appear</div><div class="correct">&#x2713; Always implement the full capability negotiation in the initialize response</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Challenge', what is the relationship between MCP servers and clients?</div>
@@ -2029,6 +2128,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="example-item"><strong>Keyword Search:</strong> Agent asks &#x27;news about OpenAI&#x27;; server calls GNews /search with q=OpenAI; returns matching articles</div>
     </div>
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>LLM-assisted development is the recommended workflow for MCP servers: scaffold with AI, review and customize</li><li>Two tools covering different access patterns (browse headlines vs. search by keyword) is a common MCP server design</li></ul></div>
+  <div class="active-recall"><div class="ar-prompt">// Challenge: Write a minimal MCP tool function that accepts a 'country' parameter and returns a formatted string of top headlines. Use the @mcp.tool() decorator pattern.</div><details><summary>&#x1F4A1; Reveal Solution</summary><div class="ar-solution">Use @mcp.tool() decorator, define async function with country: str parameter, call the news API, format results as bullet points, return the string.</div></details></div>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. Regarding 'Introduction', which statement about MCP tools is correct?</div>
@@ -2060,6 +2160,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <ul class="key-points"><li>Companion materials for News MCP Server are available in the course resources</li><li>Review reference links to deepen understanding of News MCP Server concepts</li><li>Use these resources alongside hands-on practice for best results</li></ul>
     <div class="concept-grid">
       <div class="concept-card"><div class="card-icon">&#x1F4DA;</div><div class="card-title">Documentation</div><div class="card-desc">Official docs and specs for News MCP Server</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="5">Building a news MCP server is like setting up a newspaper delivery route. You connect to the news source (GNews API), package headlines neatly, and deliver them whenever an AI asks for news.</div>
       <div class="concept-card"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Code Samples</div><div class="card-desc">Reference implementations and starter templates</div></div>
       <div class="concept-card"><div class="card-icon">&#x1F517;</div><div class="card-title">External Links</div><div class="card-desc">Community resources and tutorials</div></div>
     </div>
@@ -2405,6 +2507,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. Bing News Search</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 5</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>Your news MCP server returns stale results. Design a caching layer with TTL that respects rate limits.</li><li>How would you add a third tool (sentiment analysis) to the news server without breaking existing clients?</li><li>An agent calls your news server 100 times/minute. Design rate-limiting that gives useful error messages.</li><li>Extend the news server to support multiple languages. What changes to the tool schema are needed?</li></ol></div>
 </div>
 
 <div class="section" id="section6">
@@ -2418,6 +2522,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="step-item"><div class="step-circle">4</div><div class="step-content"><h4>Step 4</h4><p>This challenge reinforces the most important skill for MCP development: the a...</p></div></div>
     </div>
 
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Using STDIO transport for a multi-user production deployment</div><div class="why">Why: Only one client can connect at a time</div><div class="correct">&#x2713; Use Streamable HTTP transport for any server that needs concurrent connections</div></div><div class="mistake-item"><div class="wrong">&#x2717; Not implementing keep-alive for long-running HTTP connections</div><div class="why">Why: Connection drops silently after idle timeout</div><div class="correct">&#x2713; Send periodic heartbeat events or configure appropriate timeout values</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. Regarding 'Challenge', in 'Challenge', what is the relationship between MCP servers and clients?</div>
@@ -2638,12 +2743,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. REST</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 6</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>When should you choose STDIO transport vs Streamable HTTP? List 3 deciding factors.</li><li>Design a reconnection strategy for a Streamable HTTP client that loses connection mid-stream.</li><li>How would you debug a transport-layer issue where messages are delivered but responses never arrive?</li><li>Compare SSE vs WebSocket for MCP streaming. What tradeoffs does MCP's choice of SSE imply?</li></ol></div>
 </div>
 
 <div class="section" id="section7">
   <div class="section-header">
     <span class="section-badge" style="background:#ef4444">Security</span>
     <h2>S07: MCP Security — Protecting Your AI Systems</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Exposing file system tools without path restrictions</div><div class="why">Why: Agent can read /etc/passwd or overwrite system files</div><div class="correct">&#x2713; Implement allowlist of directories and validate all paths are within sandbox</div></div><div class="mistake-item"><div class="wrong">&#x2717; Trusting tool descriptions from untrusted MCP servers</div><div class="why">Why: Prompt injection via malicious tool descriptions</div><div class="correct">&#x2713; Only connect to verified servers; review tool descriptions before enabling</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Transports in MCP', what is the role of transport in MCP?</div>
@@ -2683,6 +2791,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="card-title">Agent Visibility Gap</div>
         <div class="card-desc">Agents see only tool metadata (name, description, schema), never the code that executes behind the call.</div>
       </div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="7">MCP security is like a bouncer at a club. It checks IDs (auth tokens), controls who enters (access control), and makes sure nobody sneaks into the VIP section (tool permissions).</div>
       <div class="concept-card" style="border-color:var(--purple)">
         <div class="card-icon">&#x1F512;</div>
         <div class="card-title">Stdio Risk</div>
@@ -2868,12 +2978,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. Sending invalid JSON-RPC</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 7</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>An MCP server exposes a file-write tool. Design a permission model that prevents path traversal attacks.</li><li>How would you audit which tools an agent actually called during a session? Design the logging schema.</li><li>A malicious prompt tries to get the agent to call a dangerous tool. What guardrails does MCP provide?</li></ol></div>
 </div>
 
 <div class="section" id="section8">
   <div class="section-header">
     <span class="section-badge" style="background:#8b5cf6">Advanced</span>
     <h2>S08: Remote MCP Servers — Scaling AI Beyond Local</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Deploying without HTTPS</div><div class="why">Why: Credentials and data transmitted in plaintext</div><div class="correct">&#x2713; Always use TLS; most cloud platforms provide free certificates</div></div><div class="mistake-item"><div class="wrong">&#x2717; No health check or readiness probe</div><div class="why">Why: Load balancer sends traffic to crashed instances</div><div class="correct">&#x2713; Implement /health endpoint that verifies all dependencies are reachable</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="0">
 <div class="q-text">1. What is the core concept taught in 'Create a Malicious MCP Server'?</div>
@@ -2926,6 +3039,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="example-item"><strong>Multi-server FastAPI app:</strong> A single FastAPI backend hosting both a documentation server and an email server on different mount paths.</div>
     </div>
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>Remote MCP servers are the production-grade deployment model; stdio is for development and personal use.</li><li>Plan to host MCP servers behind a real backend (FastAPI, Express) when building for users beyond yourself.</li></ul></div>
+  <div class="active-recall"><div class="ar-prompt">// Challenge: Write the server startup code that exposes an MCP server over Streamable HTTP on port 8000. Include the transport configuration.</div><details><summary>&#x1F4A1; Reveal Solution</summary><div class="ar-solution">Use mcp.run(transport='streamable-http', host='0.0.0.0', port=8000) or configure StreamableHTTPTransport with the FastMCP app instance.</div></details></div>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Introduction to Remote MCP', what is the role of transport in MCP?</div>
@@ -2959,6 +3073,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>Refer to the attached resources for deployment guides and code templates.</li></ul></div>
     <div class="concept-grid">
       <div class="concept-card"><div class="card-icon">&#x1F4DA;</div><div class="card-title">Documentation</div><div class="card-desc">Official docs and specs for remote servers</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="8">Remote MCP servers are like cloud kitchens. Instead of cooking at home (local), you rent a kitchen online (cloud) so anyone anywhere can order your food (use your tools).</div>
       <div class="concept-card"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Code Samples</div><div class="card-desc">Reference implementations and starter templates</div></div>
       <div class="concept-card"><div class="card-icon">&#x1F517;</div><div class="card-title">External Links</div><div class="card-desc">Community resources and tutorials</div></div>
     </div>
@@ -3228,12 +3344,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. It&#x27;s not possible</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 8</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>Design a health-check endpoint for a remote MCP server that reports tool availability.</li><li>Your remote server needs to handle 1000 concurrent connections. What infrastructure choices matter?</li><li>Compare deploying an MCP server on AWS Lambda vs a persistent container. When does each win?</li><li>How do you version a remote MCP server without breaking existing clients?</li></ol></div>
 </div>
 
 <div class="section" id="section9">
   <div class="section-header">
     <span class="section-badge" style="background:#8b5cf6">Advanced</span>
     <h2>S09: MCP Authentication — Securing Access</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Storing OAuth tokens in localStorage without encryption</div><div class="why">Why: XSS attack steals all user tokens</div><div class="correct">&#x2713; Use httpOnly cookies or server-side token storage with PKCE flow</div></div><div class="mistake-item"><div class="wrong">&#x2717; Not implementing token refresh logic</div><div class="why">Why: Users get logged out mid-conversation</div><div class="correct">&#x2713; Check token expiry before each request; refresh proactively before expiration</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. Regarding 'Multiple MCP Servers on a Single App', which statement about MCP tools is correct?</div>
@@ -3278,6 +3397,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="example-item"><strong>Scope-based access control:</strong> A web search tool requiring the &#x27;search:read&#x27; scope, which the client must be authorized for before the server executes the tool.</div>
     </div>
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>OAuth 2.1 is not optional for production remote MCP servers; it is the spec-mandated standard.</li><li>Use an auth provider (ScaleKit, Auth0, etc.) to handle the OAuth flow complexity rather than implementing from scratch.</li></ul></div>
+  <div class="active-recall"><div class="ar-prompt">// Challenge: Define the OAuth 2.1 metadata endpoint response for an MCP server. Include issuer, authorization_endpoint, and token_endpoint fields.</div><details><summary>&#x1F4A1; Reveal Solution</summary><div class="ar-solution">Return JSON with issuer (server URL), authorization_endpoint (/authorize), token_endpoint (/token), response_types_supported, grant_types_supported.</div></details></div>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. What security aspect is covered in 'Introduction to Authentication'?</div>
@@ -3311,6 +3431,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>Refer to the attached resources for OAuth 2.1 specification documents and ScaleKit setup guides.</li></ul></div>
     <div class="concept-grid">
       <div class="concept-card"><div class="card-icon">&#x1F4DA;</div><div class="card-title">Documentation</div><div class="card-desc">Official docs and specs for authentication</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="9">OAuth is like a hotel key card system. You check in once (authenticate), get a card (token) that opens only your room (authorized resources), and it expires when you check out.</div>
       <div class="concept-card"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Code Samples</div><div class="card-desc">Reference implementations and starter templates</div></div>
       <div class="concept-card"><div class="card-icon">&#x1F517;</div><div class="card-title">External Links</div><div class="card-desc">Community resources and tutorials</div></div>
     </div>
@@ -3940,12 +4062,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. Scanning ports for MCP</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 9</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>Walk through the full OAuth 2.1 flow for an MCP client connecting to a remote server for the first time.</li><li>Design a token refresh strategy that doesn't interrupt an active agent conversation.</li><li>How would you implement role-based access control (admin vs read-only) in an MCP server?</li><li>What happens if the OAuth provider is down? Design graceful degradation for your MCP server.</li></ol></div>
 </div>
 
 <div class="section" id="section10">
   <div class="section-header">
     <span class="section-badge" style="background:#f59e0b">Project</span>
     <h2>S10: Agentic RAG with MCP</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Using fixed chunk sizes without considering document structure</div><div class="why">Why: Tables and code blocks get split across chunks</div><div class="correct">&#x2713; Use semantic chunking that respects headings, paragraphs, and code fences</div></div><div class="mistake-item"><div class="wrong">&#x2717; Not including metadata (source, page) in retrieved chunks</div><div class="why">Why: Agent cannot cite sources or verify accuracy</div><div class="correct">&#x2713; Always attach source metadata to each chunk for traceability</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. Regarding 'Auth In Action', which statement about MCP tools is correct?</div>
@@ -3990,6 +4115,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="example-item"><strong>Chat with PDFs:</strong> Extracting research paper content and querying it conversationally through an MCP-connected agent.</div>
     </div>
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>RAG is the standard pattern for giving LLMs access to data outside their training set.</li><li>Prototype individual tool functions before packaging them into an MCP server.</li></ul></div>
+  <div class="active-recall"><div class="ar-prompt">// Challenge: Write a function that chunks a document by paragraphs, adds overlap of 1 sentence between chunks, and returns a list of chunk dictionaries with text and metadata.</div><details><summary>&#x1F4A1; Reveal Solution</summary><div class="ar-solution">Split by double newline, for each chunk include last sentence of previous chunk as overlap, return [{text: ..., metadata: {index, source, char_count}}].</div></details></div>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="0">
 <div class="q-text">1. What is the core concept taught in 'Intro'?</div>
@@ -4023,6 +4149,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>Download all provided starter code and reference materials before beginning the hands-on exercises.</li></ul></div>
     <div class="concept-grid">
       <div class="concept-card"><div class="card-icon">&#x1F4DA;</div><div class="card-title">Documentation</div><div class="card-desc">Official docs and specs for Agentic RAG</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="10">RAG is like giving an AI a reference library. Instead of memorizing everything, it looks up relevant pages (retrieval) before answering, so it stays accurate and current.</div>
       <div class="concept-card"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Code Samples</div><div class="card-desc">Reference implementations and starter templates</div></div>
       <div class="concept-card"><div class="card-icon">&#x1F517;</div><div class="card-title">External Links</div><div class="card-desc">Community resources and tutorials</div></div>
     </div>
@@ -4964,12 +5092,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. It requires fine-tuning</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 10</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>Design a chunking strategy for a 500-page PDF that preserves table structure for RAG retrieval.</li><li>Your RAG pipeline returns irrelevant chunks. List 3 retrieval improvements beyond naive cosine similarity.</li><li>Compare embedding models for code documentation vs. natural language documents in an MCP RAG server.</li><li>How would you evaluate RAG quality programmatically without human labelers?</li></ol></div>
 </div>
 
 <div class="section" id="section11">
   <div class="section-header">
     <span class="section-badge" style="background:#8b5cf6">Deploy</span>
     <h2>S11: Final Project: Deploy Your MCP Server</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Deploying with DEBUG=True or verbose logging in production</div><div class="why">Why: Sensitive data appears in logs; performance degrades</div><div class="correct">&#x2713; Use environment-specific configs; strip debug flags in CI/CD pipeline</div></div><div class="mistake-item"><div class="wrong">&#x2717; No graceful shutdown handler</div><div class="why">Why: In-flight requests get terminated on deploy</div><div class="correct">&#x2713; Implement SIGTERM handler that finishes active requests before exiting</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'MCP Server: Test it on Remote Client!', what is the relationship between MCP servers and clients?</div>
@@ -5013,6 +5144,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
       <div class="example-item"><strong>GNews MCP Server:</strong> The news API server from earlier modules serves as the deployment target.</div>
     </div>
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>Production MCP servers require three things: HTTP transport, authentication, and cloud hosting.</li><li>The deployment workflow covered here applies to any MCP server, not just the GNews example.</li></ul></div>
+  <div class="active-recall"><div class="ar-prompt">// Challenge: Write a Dockerfile for an MCP server that installs dependencies, copies source, and exposes port 8000 with a health check.</div><details><summary>&#x1F4A1; Reveal Solution</summary><div class="ar-solution">FROM python:3.11-slim, WORKDIR /app, COPY requirements.txt and pip install, COPY src, EXPOSE 8000, HEALTHCHECK curl localhost:8000/health, CMD python server.py.</div></details></div>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Introduction', what is the relationship between MCP servers and clients?</div>
@@ -5046,6 +5178,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
     <div class="takeaway"><h4>&#x2713; Key Takeaways</h4><ul><li>Download deployment configuration templates and starter code before beginning the deployment exercises.</li></ul></div>
     <div class="concept-grid">
       <div class="concept-card"><div class="card-icon">&#x1F4DA;</div><div class="card-title">Documentation</div><div class="card-desc">Official docs and specs for deployment</div></div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="11">Deploying is like opening a restaurant to the public. You've been cooking at home (developing locally), and now you need a real kitchen, health inspections (security), and a sign out front (URL).</div>
       <div class="concept-card"><div class="card-icon">&#x1F4BB;</div><div class="card-title">Code Samples</div><div class="card-desc">Reference implementations and starter templates</div></div>
       <div class="concept-card"><div class="card-icon">&#x1F517;</div><div class="card-title">External Links</div><div class="card-desc">Community resources and tutorials</div></div>
     </div>
@@ -5456,12 +5590,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="quiz-option" data-correct="false" onclick="checkAnswer(this)">D. DNS records</div>
       </div>
   </div>
+
+<div class="boss-challenge"><h3>&#x1F3C6; BOSS CHALLENGE — Section 11</h3><p style="color:var(--text-muted);margin-bottom:12px;font-size:0.85rem">Synthesis questions combining everything up to this point:</p><ol><li>Design a CI/CD pipeline for an MCP server that runs integration tests against a mock client.</li><li>Your deployed server's latency spikes from 200ms to 2s. Walk through your debugging process.</li><li>How would you implement canary deployment for an MCP server serving production agents?</li><li>Design monitoring alerts for an MCP server: what metrics would you track?</li></ol></div>
 </div>
 
 <div class="section" id="section12">
   <div class="section-header">
     <span class="section-badge" style="background:#10b981">Wrap-Up</span>
     <h2>S12: Conclusion</h2>
+  <details class="mistake-bank"><summary>Common Mistakes</summary><div class="mb-content"><div class="mistake-item"><div class="wrong">&#x2717; Deploying with DEBUG=True or verbose logging in production</div><div class="why">Why: Sensitive data appears in logs; performance degrades</div><div class="correct">&#x2713; Use environment-specific configs; strip debug flags in CI/CD pipeline</div></div><div class="mistake-item"><div class="wrong">&#x2717; No graceful shutdown handler</div><div class="why">Why: In-flight requests get terminated on deploy</div><div class="correct">&#x2713; Implement SIGTERM handler that finishes active requests before exiting</div></div></div></details>
   <div class="quiz-section"><h3>🧠 Quick Check</h3>
 <div class="quiz-question" data-correct="1">
 <div class="q-text">1. In 'Demo of Deployment', what is the relationship between MCP servers and clients?</div>
@@ -5500,6 +5637,8 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
         <div class="card-title">Build</div>
         <div class="card-desc">Create MCP servers with tools, resources, and prompts using FastMCP</div>
       </div>
+    <div class="eli5-toggle"><button class="active" onclick="toggleEli5(this,'expert')">Expert</button><button onclick="toggleEli5(this,'simple')">Simple</button></div>
+    <div class="eli5-content" data-section="12">You've learned the full stack: from understanding what AI agents need, to building the servers that feed them, to deploying and securing everything in production.</div>
       <div class="concept-card" style="border-color:var(--purple)">
         <div class="card-icon">&#x1F512;</div>
         <div class="card-title">Secure</div>
@@ -5556,6 +5695,61 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--navy);
 <div class="quiz-explanation">💡 MCP is an open protocol; no paid license is required. The other options are actual lesson points.</div>
 </div>
 <div class="quiz-score"></div>
+</div>
+</div>
+
+
+<div class="cheat-sheet" id="cheatSheet">
+<h2>&#x1F4D1; MCP Developer Cheat Sheet</h2>
+<button class="print-btn" onclick="window.print()">&#x1F5A8; Print Cheat Sheet</button>
+<div class="cheat-grid">
+<div class="cheat-col">
+<h4>Server Setup</h4>
+<code>from mcp.server.fastmcp import FastMCP</code>
+<code>mcp = FastMCP("my-server")</code>
+<code>@mcp.tool()</code>
+<code>async def my_tool(param: str) -> str:</code>
+<code>    return f"Result: {param}"</code>
+<p>Define tools with typed params and docstrings</p>
+
+<h4>Transport Config</h4>
+<code># Local (STDIO)</code>
+<code>mcp.run(transport="stdio")</code>
+<code># Remote (HTTP)</code>
+<code>mcp.run(transport="streamable-http", port=8000)</code>
+<p>STDIO for local dev, HTTP for production</p>
+
+<h4>Resources</h4>
+<code>@mcp.resource("docs://{topic}")</code>
+<code>async def get_doc(topic: str) -> str:</code>
+<code>    return load_document(topic)</code>
+<p>URI templates for dynamic data access</p>
+</div>
+<div class="cheat-col">
+<h4>Client Connection</h4>
+<code># claude_desktop_config.json</code>
+<code>{"mcpServers": {"my-server": {</code>
+<code>  "command": "python",</code>
+<code>  "args": ["server.py"]}}}</code>
+<p>Register servers in client config</p>
+
+<h4>OAuth 2.1 Auth</h4>
+<code>from mcp.server.auth import OAuthProvider</code>
+<code>provider = OAuthProvider(</code>
+<code>  issuer="https://myserver.com",</code>
+<code>  authorize_url="/authorize",</code>
+<code>  token_url="/token")</code>
+<p>PKCE flow with token refresh support</p>
+
+<h4>Key Patterns</h4>
+<code># Error handling in tools</code>
+<code>raise McpError("descriptive message")</code>
+<code># Prompts (reusable templates)</code>
+<code>@mcp.prompt()</code>
+<code>async def analyze(data: str) -> str:</code>
+<code>    return f"Analyze: {data}"</code>
+<p>Prompts are LLM-facing templates</p>
+</div>
 </div>
 </div>
 
@@ -5717,5 +5911,48 @@ document.addEventListener('click',function(e){var opt=e.target.closest('.quiz-op
 
 document.addEventListener("click",function(e){var opt=e.target.closest(".quiz-opt");if(!opt||opt.classList.contains("disabled"))return;var question=opt.closest(".quiz-question");var options=question.querySelectorAll(".quiz-opt");var correct=parseInt(question.dataset.correct);var idx=Array.from(options).indexOf(opt);var explanation=question.querySelector(".quiz-explanation");options.forEach(function(o,i){o.classList.add("disabled");if(i===correct)o.classList.add("correct")});if(idx!==correct)opt.classList.add("wrong");if(explanation)explanation.classList.add("show");var section=opt.closest(".quiz-section");var qs=section.querySelectorAll(".quiz-question");var allDone=true;qs.forEach(function(q){if(!q.querySelector(".quiz-opt.disabled"))allDone=false});if(allDone){var userCorrect=0;qs.forEach(function(q){if(!q.querySelector(".quiz-opt.wrong"))userCorrect++});var scoreEl=section.querySelector(".quiz-score");if(scoreEl){scoreEl.textContent="Score: "+userCorrect+"/"+qs.length+(userCorrect===qs.length?" 🎉 Perfect!":"");scoreEl.style.display="block"}}});
 </script>
+
+<script>
+// ELI5 Toggle
+function toggleEli5(btn, mode) {
+  const toggle = btn.parentElement;
+  toggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const eli5 = toggle.nextElementSibling;
+  const conceptGrid = toggle.previousElementSibling;
+  if (mode === 'simple') {
+    eli5.classList.add('visible');
+    if (conceptGrid && conceptGrid.classList.contains('concept-grid')) conceptGrid.classList.add('hidden');
+  } else {
+    eli5.classList.remove('visible');
+    if (conceptGrid && conceptGrid.classList.contains('concept-grid')) conceptGrid.classList.remove('hidden');
+  }
+  localStorage.setItem('eli5Mode', mode);
+}
+// Restore ELI5 preference
+(function(){
+  const mode = localStorage.getItem('eli5Mode');
+  if (mode === 'simple') {
+    document.querySelectorAll('.eli5-toggle').forEach(t => {
+      t.querySelectorAll('button')[1].click();
+    });
+  }
+})();
+
+// Concept Map - green glow on quiz pass (check localStorage)
+(function(){
+  const map = document.getElementById('conceptMap');
+  if (!map) return;
+  map.querySelectorAll('.dep-node').forEach(node => {
+    const link = node.closest('a');
+    if (link) {
+      const sectionId = link.getAttribute('href').replace('#','');
+      const passed = localStorage.getItem('quizPassed_' + sectionId);
+      if (passed === 'true') node.classList.add('passed');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
